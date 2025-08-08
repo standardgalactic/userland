@@ -1,1 +1,13 @@
-As you can see, this is way too ambitious. I might come back to it in a year or so.
+# Category theory lets you compress big ideas into small spaces. 
+
+Tutorial on Category Theory: Part 1- Pure and Classical
+https://youtu.be/6eWn9nG5d7o?si=DFq76KZMyubdxd5z
+
+Tutorial on Category Theory: Part 2 - Applied
+https://youtu.be/eIjPxaFbEeg?si=3ogdFveILV3PJgt0
+
+Lecture 3: Sheaf Neural Networks - Cristian Bodnar
+https://youtu.be/90MbHphnPUU?si=PklVUepArgdvxCLU
+
+Lecture.4:Equivariant CNNs I (Euclidean Spaces) - Maurice Weiler
+https://youtu.be/co9xtgkV-ko?si=Pe3okNGz-JI7P_zi
