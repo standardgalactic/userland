@@ -11,3 +11,9 @@ https://youtu.be/90MbHphnPUU?si=PklVUepArgdvxCLU
 
 Lecture.4:Equivariant CNNs I (Euclidean Spaces) - Maurice Weiler  <br>
 https://youtu.be/co9xtgkV-ko?si=Pe3okNGz-JI7P_zi
+
+
+
+# Issues
+
+The mp3 files are really screwed up. 
