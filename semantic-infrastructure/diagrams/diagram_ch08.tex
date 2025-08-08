@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\begin{document}
+\begin{tikzpicture}
+\end{center}
+
+\section{Symmetric Monoidal Structure of Semantic Modules}
+\label{sec:chapter8}
+
+The monoidal structure enables parallel composition.
+
+\subsection{Rationale}
+Parallel composition enhances scalability, with $\otimes$ composing orthogonal flows.
+
+\subsection{Anecdote}
+In a data pipeline, $\otimes$ ensures orthogonality of preprocessing and inference modules.
+
+\subsection{Foundations: Monoidal Categories}
+Monoidal categories \cite{mac2013categories} have $\otimes$, $\mathbb{I}$, and isomorphisms satisfying coherence conditions.
+
+\subsection{Monoidal Structure}
+\[
+M_1 \otimes M_2 = (F_1 \cup F_2, \Sigma_1 \times \Sigma_2, D_1 \sqcup D_2, \phi_1 \oplus \phi_2).
+\]
+
+\subsection{Proposition D.1: Associativity}
+$(M_1 \otimes M_2) \otimes M_3 \cong M_1 \otimes (M_2 \otimes M_3)$.
+
+**Proof**: Mac Lane’s coherence theorem ensures associativity \cite{lurie2009higher} (Appendix G).
+
+**Natural Language Explanation**: The order of combining modules doesn’t affect the result, like mixing ingredients.
+
+\begin{center}
+\begin{tikzpicture}
+  \node (M12) at (-2,0) {$(M_1 \otimes M_2) \otimes M_3$};
+  \node (M23) at (2,0) {$M_1 \otimes (M_2 \otimes M_3)$};
+  \draw[->] (M12) -- (M23) node[midway, above] {$\alpha$};
+\end{tikzpicture}
+\end{document}

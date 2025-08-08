@@ -1,0 +1,43 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\begin{document}
+\begin{tikzpicture}
+\end{center}
+
+\section{Stacks, Derived Categories, and Obstruction}
+\label{sec:chapter5}
+
+Stacks and derived categories handle complex merge obstructions.
+
+\subsection{Rationale}
+Sheaf gluing fails for higher-order conflicts. Stacks model these, ensuring coherence.
+
+\subsection{Anecdote}
+In federated AI, stacks resolve conflicting $\Phi$-fields across datasets.
+
+\subsection{Foundations: Stacks and Derived Categories}
+Stacks assign categories to $U$, with descent data. Derived categories $D(\mathcal{F})$ model obstructions via $\mathrm{Ext}^n(\mathbb{L}_M, \mathbb{T}_M)$ \cite{illusie1971complexe}.
+
+\subsection{Obstruction Classes}
+Obstructions are $\mathrm{Ext}^n(\mathbb{L}_M, \mathbb{T}_M)$, resolved by stacks aligning $\frac{\delta S}{\delta \Phi} = 0$.
+
+\subsection{Historical Context}
+Stacks and derived categories originated in algebraic geometry, with applications in type inference.
+
+\subsection{Connections}
+Chapter 4 provides sheaves, Chapter 2 informs obstructions, Chapter 6 uses $\mathrm{Ext}^n$.
+
+\begin{center}
+\begin{tikzpicture}
+  \node (U) at (0,0) {$U$};
+  \node (U1) at (-2,2) {$U_1$};
+  \node (U2) at (2,2) {$U_2$};
+  \node (U12) at (0,4) {$U_1 \cap U_2$};
+  \node (S) at (0,6) {$\mathcal{S}(U)$};
+  \draw[->] (U1) -- (S) node[midway, left] {$\mathcal{S}(U_1)$};
+  \draw[->] (U2) -- (S) node[midway, right] {$\mathcal{S}(U_2)$};
+  \draw[->] (U12) -- (U1) node[midway, left] {};
+  \draw[->] (U12) -- (U2) node[midway, right] {};
+\end{tikzpicture}
+\end{document}

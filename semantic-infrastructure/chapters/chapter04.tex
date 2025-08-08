@@ -1,0 +1,44 @@
+\section{Plural Ontologies and Polysemantic Merge}
+\label{sec:chapter14}
+
+Polysemantic merges reconcile ontologies.
+
+\subsection{Rationale}
+Interdisciplinary projects require ontology alignment.
+
+\subsection{Anecdote}
+Physics and biology models are merged via sheaves.
+
+\subsection{Foundations: Ontology}
+Topos theory aligns ontologies via sheaves.
+
+\subsection{Implementation}
+Sheaves over a topos glue modules.
+
+\begin{center}
+data Contributor = Contributor { name :: String, pubKey :: String }
+data Function (a :: SemanticTag) where
+  EntropyFlow :: String -> Function 'RSVP
+  MemoryCurve :: String -> Function 'SIT
+  CustomFunc  :: String -> Function ('Custom s)
+data Module (a :: SemanticTag) = Module
+  { moduleName  :: String
+  , functions   :: [Function a]
+  , dependencies :: [Module a]
+  , semantics   :: SemanticTag
+  , phi         :: PhiField
+  }
+semanticMerge :: Module a -> Module a -> Either String (Module a)
+semanticMerge m1 m2 = if semantics m1 == semantics m2
+  then Right $ Module
+    { moduleName = moduleName m1 ++ "_merged_" ++ moduleName m2
+    , functions = functions m1 ++ functions m2
+    , dependencies = dependencies m1 ++ dependencies m2
+    , semantics = semantics m1
+    , phi = combinePhi (phi m1) (phi m2)
+    }
+  else Left "Incompatible semantic tags"
+\end{lstlisting}
+
+This supports Chapter 10.
+

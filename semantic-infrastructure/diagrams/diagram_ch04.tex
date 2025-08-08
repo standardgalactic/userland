@@ -1,0 +1,59 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\begin{document}
+\begin{tikzpicture}
+\end{center}
+
+\section{Sheaf-Theoretic Modular Gluing}
+\label{sec:chapter4}
+
+Sheaf theory ensures local-to-global consistency in merges.
+
+\subsection{Rationale}
+GitHub’s merges ignore semantics, risking incoherence. Sheaves glue local modules into global structures, preserving RSVP dynamics.
+
+\subsection{Anecdote}
+In an AI project, developers fork a model. Sheaves ensure weight and architecture changes glue coherently.
+
+\subsection{Foundations: Sheaf Theory}
+Sheaf theory \cite{mac2013categories} models consistency. A sheaf $\mathcal{F}$ on $X$ satisfies:
+
+\[
+\mathcal{F}(U) \to \prod_i \mathcal{F}(U_i) \rightrightarrows \prod_{i,j} \mathcal{F}(U_i \cap U_j).
+\]
+
+Grothendieck topologies generalize this to sites.
+
+\subsection{Theorem B.1: Semantic Coherence}
+Let $\mathcal{F}$ assign $(\Phi, \vec{v}, S)$ to $U \subseteq X$. If fields agree on overlaps, there exists a unique global triple.
+
+**Proof**: The equalizer condition ensures unique gluing via the limit $\mathcal{F}(X) \cong \varprojlim \mathcal{F}(U_i)$ \cite{mac2013categories} (Appendix G).
+
+**Natural Language Explanation**: Sheaf gluing assembles a puzzle where pieces fit perfectly, forming a coherent picture.
+
+\subsection{Module Gluing}
+$\mathcal{F}$ assigns modules $M_i$, with gluing:
+
+\[
+M_i|_{U_i \cap U_j} = M_j|_{U_i \cap U_j} \implies \exists M \in \mathcal{F}(U_i \cup U_j).
+\]
+
+\subsection{Historical Context}
+Sheaf theory originated with Leray, generalized by Grothendieck, with applications in distributed systems.
+
+\subsection{Connections}
+Chapter 3 provides objects, Chapter 2 informs gluing, Chapter 5 extends to stacks.
+
+\begin{center}
+\begin{tikzpicture}
+  \node (U) at (0,0) {$U$};
+  \node (U1) at (-2,2) {$U_1$};
+  \node (U2) at (2,2) {$U_2$};
+  \node (U12) at (0,4) {$U_1 \cap U_2$};
+  \draw[->] (U) -- (U1) node[midway, left] {$\text{res}_1$};
+  \draw[->] (U) -- (U2) node[midway, right] {$\text{res}_2$};
+  \draw[->] (U1) -- (U12) node[midway, left] {$\text{res}_{12}$};
+  \draw[->] (U2) -- (U12) node[midway, right] {$\text{res}_{21}$};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,99 @@
+\section{Sheaf-Theoretic Modular Gluing}
+\label{sec:chapter4}
+
+Sheaf theory ensures local-to-global consistency in merges.
+
+\subsection{Rationale}
+GitHub’s merges ignore semantics, risking incoherence. Sheaves glue local modules into global structures, preserving RSVP dynamics.
+
+\subsection{Anecdote}
+In an AI project, developers fork a model. Sheaves ensure weight and architecture changes glue coherently.
+
+\subsection{Foundations: Sheaf Theory}
+Sheaf theory \cite{mac2013categories} models consistency. A sheaf $\mathcal{F}$ on $X$ satisfies:
+
+\[
+\mathcal{F}(U) \to \prod_i \mathcal{F}(U_i) \rightrightarrows \prod_{i,j} \mathcal{F}(U_i \cap U_j).
+\]
+
+Grothendieck topologies generalize this to sites.
+
+\subsection{Theorem B.1: Semantic Coherence}
+Let $\mathcal{F}$ assign $(\Phi, \vec{v}, S)$ to $U \subseteq X$. If fields agree on overlaps, there exists a unique global triple.
+
+**Proof**: The equalizer condition ensures unique gluing via the limit $\mathcal{F}(X) \cong \varprojlim \mathcal{F}(U_i)$ \cite{mac2013categories} (Appendix G).
+
+**Natural Language Explanation**: Sheaf gluing assembles a puzzle where pieces fit perfectly, forming a coherent picture.
+
+\subsection{Module Gluing}
+$\mathcal{F}$ assigns modules $M_i$, with gluing:
+
+\[
+M_i|_{U_i \cap U_j} = M_j|_{U_i \cap U_j} \implies \exists M \in \mathcal{F}(U_i \cup U_j).
+\]
+
+\subsection{Historical Context}
+Sheaf theory originated with Leray, generalized by Grothendieck, with applications in distributed systems.
+
+\subsection{Connections}
+Chapter 3 provides objects, Chapter 2 informs gluing, Chapter 5 extends to stacks.
+
+\begin{center}
+
+\subsection{Historical Context}
+Obstruction theory extends cohomology, with applications in version control.
+
+\subsection{Connections}
+Chapter 5 handles obstructions, Chapter 4 provides context, Chapter 2 defines alignment.
+
+\begin{center}
+\end{lstlisting}
+
+\subsection{Connections}
+Chapter 6’s $\mu$ is generalized, Chapter 5 handles obstructions.
+
+\begin{center}
+\subsection{Rationale}
+Tiling ensures a coherent semantic space, minimizing entropy.
+
+\subsection{Anecdote}
+In a knowledge graph, tiling ensures continuity of $\Phi$-fields.
+
+\subsection{Foundations: Topological Dynamics}
+An atlas $\{ U_i \}$ has transition maps $\Phi_i : U_i \to \mathcal{Y}$. Variational methods minimize:
+
+\[
+J(S) = \sum_{i,j} \|\nabla (S_i - S_j)\|^2.
+\]
+
+\subsection{Theorem E.1: Topological Tiling}
+$X = \bigcup_i U_i$ admits a global $S : X \to \mathbb{R}$ minimizing $J(S)$.
+
+**Proof**: Minimize $\mathcal{L}(S) = \sum_{i,j} \int_{U_i \cap U_j} |\nabla (S_i - S_j)|^2 \, d^4x$, yielding $\Delta S = 0$ \cite{evans2010partial} (Appendix G).
+
+**Natural Language Explanation**: Tiling forms a mosaic with smooth transitions.
+
+\begin{center}
+\subsection{Rationale}
+Embeddings map modules to $\mathbb{R}^n$, unlike GitHub’s search.
+
+\subsection{Anecdote}
+Embeddings reveal related drug discovery models.
+
+\subsection{Foundations: Embedding Theory}
+Embeddings use Gromov-Wasserstein distances:
+
+\[
+d_\Phi(M_1, M_2) = \|\Phi(M_1) - \Phi(M_2)\|_2.
+\]
+
+\subsection{Implementation}
+$\Phi : \mathcal{M} \to \mathbb{R}^n$ embeds modules.
+
+\begin{center}
+\subsection{Thesis}
+Code persists through composition, with $\Phi$, $\vec{v}$, $S$ as coherence, momentum, novelty.
+
+\subsection{Connections}
+Chapters 6–9 provide foundations.
+

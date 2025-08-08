@@ -1,0 +1,44 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\begin{document}
+\begin{tikzpicture}
+\end{center}
+
+\section{Category-Theoretic Infrastructure}
+\label{sec:chapter3}
+
+Category theory provides a framework for semantic modularity, addressing GitHub’s limitations.
+
+\subsection{Rationale}
+GitHub obscures semantic relationships, necessitating a categorical framework where modules preserve intent.
+
+\subsection{Anecdote}
+In a bioinformatics collaboration, GitHub forces manual reconciliation. A categorical approach models modules in $\mathcal{C}$, preserving RSVP fields.
+
+\subsection{Foundations: Higher Category Theory}
+Category theory abstracts structures via objects and morphisms. Higher categories \cite{lurie2009higher} include higher morphisms, modeled via simplicial sets. Fibered categories support pullbacks, and functors preserve structure. Haskell’s type classes reflect categorical ideas.
+
+\subsection{Module Category}
+$\mathcal{C}$ is a symmetric monoidal $\infty$-category over $\mathcal{T}$, with objects $M = (F, \Sigma, D, \phi)$ and morphisms $f = (f_F, f_\Sigma, f_D, \Psi)$. The fibration $\pi : \mathcal{C} \to \mathcal{T}$ contextualizes modules.
+
+\subsection{Historical Context}
+Category theory’s applications \cite{lawvere2009conceptual} include denotational semantics. Fibered categories and $\infty$-categories provide precursors.
+
+\subsection{Connections}
+Chapter 1 motivates $\mathcal{C}$, Chapter 2 informs morphisms, Chapter 4 introduces sheaves.
+
+\begin{center}
+\begin{tikzpicture}
+  \node (C) at (0,2) {$\mathcal{C}$};
+  \node (T) at (0,0) {$\mathcal{T}$};
+  \node (M1) at (-2,3) {$M_1$};
+  \node (M2) at (2,3) {$M_2$};
+  \node (T1) at (-2,1) {$T_1$};
+  \node (T2) at (2,1) {$T_2$};
+  \draw[->] (C) -- (T) node[midway, left] {$\pi$};
+  \draw[->] (M1) -- (T1) node[midway, left] {$\pi$};
+  \draw[->] (M2) -- (T2) node[midway, right] {$\pi$};
+  \draw[->] (M1) -- (M2) node[midway, above] {$f$};
+\end{tikzpicture}
+\end{document}

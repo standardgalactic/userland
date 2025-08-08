@@ -1,0 +1,51 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\begin{document}
+\begin{tikzpicture}
+\end{center}
+
+\section{Multi-Way Merge via Homotopy Colimit}
+\label{sec:chapter7}
+
+Multi-way merges reconcile multiple forks.
+
+\subsection{Rationale}
+Pairwise merges risk incoherence. Homotopy colimits ensure higher coherence.
+
+\subsection{Anecdote}
+In an AI consortium, homotopy colimits align regional model forks.
+
+\subsection{Foundations: Homotopy Theory}
+A diagram $D : \mathcal{I} \to \mathcal{C}$ has homotopy colimit:
+
+\[
+\mathrm{hocolim}_\mathcal{I} D = \left| N_\bullet(\mathcal{I}) \otimes D \right|.
+\]
+
+\subsection{Theorem C.1 (Extended)}
+If $\mathrm{Ext}^1 = 0$, $\mu(D) = \mathrm{hocolim}_\mathcal{I} D$ is unique.
+
+**Proof**: The colimit is a derived pushout, with $\mathrm{Ext}^1 = 0$ ensuring existence \cite{lurie2009higher} (Appendix G).
+
+\subsection{Implementation}
+\begin{lstlisting}
+data Diagram a = Diagram { nodes :: [Module a], edges :: [(Int, Int, Morphism a)] }
+hocolim :: Diagram a -> Either String (Module a)
+\end{lstlisting}
+
+\subsection{Connections}
+Chapter 6’s $\mu$ is generalized, Chapter 5 handles obstructions.
+
+\begin{center}
+\begin{tikzpicture}
+  \node (M1) at (0,0) {$M_1$};
+  \node (M2) at (2,0) {$M_2$};
+  \node (M3) at (1,-1.732) {$M_3$};
+  \node (M) at (1,2) {$M$};
+  \draw[->] (M1) -- (M2) node[midway, above] {$f_{12}$};
+  \draw[->] (M2) -- (M3) node[midway, right] {$f_{23}$};
+  \draw[->] (M3) -- (M1) node[midway, left] {$f_{31}$};
+  \draw[->, dashed] (M1) -- (M) node[midway, left] {$\iota_1$};
+\end{tikzpicture}
+\end{document}

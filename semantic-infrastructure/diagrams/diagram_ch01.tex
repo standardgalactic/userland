@@ -1,0 +1,45 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\begin{document}
+\begin{tikzpicture}
+\end{center}
+
+\section{From Source Control to Semantic Computation}
+\label{sec:chapter1}
+
+GitHub’s syntactic approach obscures the semantic intent of collaborative computation, necessitating a mathematically rigorous, entropy-respecting framework. This chapter critiques these limitations, introduces semantic modular computation, and establishes foundational concepts.
+
+\subsection{Rationale}
+GitHub prioritizes textual diffs, leading to namespace collisions, loss of intent in merges, and fragmented forks. Semantic modular computation treats code as structured flows of meaning, grounded in RSVP field dynamics and higher category theory, enabling intent-preserving collaboration.
+
+\subsection{Anecdote}
+A research team developing a climate prediction model faces challenges in GitHub. One contributor optimizes the loss function to reduce entropy, another enhances preprocessing for coherence, and a third adjusts hyperparameters. These changes, appearing as textual diffs, may conflict syntactically despite semantic compatibility. A semantic framework aligns these contributions via RSVP fields, ensuring coherent integration.
+
+\subsection{Foundations: Version Control and Semantics}
+Version control evolved from SCCS (1970s) and RCS (1980s), tracking file changes, to Git’s content-addressable commits (2005). These systems ignore semantic relationships. Ontology-based approaches (RDF, OWL) and type-theoretic languages (Agda, Coq) provide precursors for semantic modularity. Category theory abstracts algebraic structures, sheaf theory ensures local-to-global consistency, and stochastic field theory models dynamic systems.
+
+\subsection{Semantic Modules}
+A semantic module is $M = (F, \Sigma, D, \phi)$, where $F$ is function hashes, $\Sigma$ is type annotations, $D$ is a dependency graph, and $\phi : \Sigma \to \mathcal{S}$ maps to RSVP fields $(\Phi, \vec{v}, S)$. Modules reside in a symmetric monoidal $\infty$-category $\mathcal{C}$, with morphisms preserving field dynamics. The energy functional:
+
+\[
+E = \int_M \left( \frac{1}{2} |\nabla \Phi|^2 + \frac{1}{2} |\vec{v}|^2 + \frac{1}{2} S^2 \right) d^4x,
+\]
+
+ensures stability. Modules are entropy packets, with $\Phi$ encoding coherence, $\vec{v}$ directing dependencies, and $S$ quantifying uncertainty.
+
+\subsection{Historical Context}
+Git introduced distributed workflows, but semantic approaches (ontologies, type systems) emerged in the 1990s. Category theory’s applications \cite{lawvere2009conceptual} and sheaf theory’s use in distributed systems inform RSVP.
+
+\subsection{Connections}
+This chapter motivates semantic computation, with Chapter 2 formalizing RSVP, Chapter 3 constructing $\mathcal{C}$, and later chapters developing merges and implementations.
+
+\begin{center}
+\begin{tikzpicture}
+  \node[rectangle, draw] (Git) at (0,0) {Git: Files, Diffs};
+  \node[rectangle, draw] (Sem) at (4,0) {Modules: $M = (F, \Sigma, D, \phi)$};
+  \draw[->] (Git) -- (Sem) node[midway, above] {Encode Intent};
+  \node[ellipse, draw] (RSVP) at (4,2) {RSVP Fields};
+  \draw[->] (Sem) -- (RSVP) node[midway, right] {$\phi$};
+\end{tikzpicture}
+\end{document}

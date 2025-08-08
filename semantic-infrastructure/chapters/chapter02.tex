@@ -1,0 +1,79 @@
+\section{RSVP Theory and Modular Fields}
+\label{sec:chapter2}
+
+RSVP models computation as dynamic entropy flows within a field-theoretic plenum, providing a foundation for semantic modules.
+
+\subsection{Rationale}
+RSVP redefines computation as a thermodynamic process, with code as semantic energy flows governed by $\Phi$, $\vec{v}$, and $S$, ensuring dynamic evolution and entropy minimization.
+
+\subsection{Anecdote}
+In a distributed AI system, modules for inference, training, and evaluation evolve independently. GitHub’s syntactic merges risk disruption, but RSVP aligns $\Phi$, $\vec{v}$, and $S$, ensuring coherence.
+
+\subsection{Foundations: Field Theory and Stochastic PDEs}
+Classical field theory (Faraday, Maxwell) models systems via fields over manifolds. Stochastic PDEs \cite{daprato2014stochastic} extend this to uncertain systems, formulated in Sobolev spaces $H^s(M)$:
+
+\[
+\|u\|_{H^s(M)}^2 = \int_M \sum_{|\alpha| \leq s} |\partial^\alpha u|^2 \, d^4x.
+\]
+
+RSVP fields evolve via:
+
+\[
+d\Phi_t = \left[ \nabla \cdot (D \nabla \Phi_t) - \vec{v}_t \cdot \nabla \Phi_t + \lambda S_t \right] dt + \sigma_\Phi dW_t,
+\]
+
+\[
+d\vec{v}_t = \left[ -\nabla S_t + \gamma \Phi_t \vec{v}_t \right] dt + \sigma_v dW'_t,
+\]
+
+\[
+dS_t = \left[ \delta \nabla \cdot \vec{v}_t - \eta S_t^2 \right] dt + \sigma_S dW''_t,
+\]
+
+over $M = \mathbb{R} \times \mathbb{R}^3$ with Minkowski metric.
+
+\subsection{Theorem A.1: Well-Posedness of RSVP SPDEs}
+Let $\Phi_t$, $\vec{v}_t$, $S_t$ evolve via the SPDEs with smooth initial conditions. The system admits a unique global strong solution in $L^2([0,T]; H^1(M))$, with conserved energy:
+
+\[
+E(t) = \int_M \left( \frac{1}{2} |\nabla \Phi_t|^2 + \frac{1}{2} |\vec{v}_t|^2 + \frac{1}{2} S_t^2 \right) d^4x.
+\]
+
+**Proof**: In $H = H^1(M) \times H^1(M)^3 \times H^1(M)$, the drift:
+
+\[
+F(\Phi, \vec{v}, S) = \begin{pmatrix}
+\nabla \cdot (D \nabla \Phi) - \vec{v} \cdot \nabla \Phi + \lambda S \\
+-\nabla S + \gamma \Phi \vec{v} \\
+\delta \nabla \cdot \vec{v} - \eta S^2
+\end{pmatrix},
+\]
+
+is Lipschitz. Noise terms are trace-class. A fixed-point argument ensures local existence, with global existence via a priori bounds. Itô’s formula shows $\mathbb{E}[dE(t)] = 0$ \cite{daprato2014stochastic} (Appendix G).
+
+**Natural Language Explanation**: The proof ensures RSVP fields evolve smoothly, like a stable ecosystem, with energy balanced over time, enabling reliable computation.
+
+\subsection{Module Definition}
+A module $M = (F, \Sigma, D, \phi)$ is a sheaf section over $U \subseteq M$, with $\phi$ mapping to $(\Phi, \vec{v}, S)|_U$. Code induces:
+
+\[
+\Phi_f(x, t) = \Phi_1(x, t) + \int_0^t \vec{v}_f(\tau) \cdot \nabla \Phi_1(x, \tau) \, d\tau.
+\]
+
+\subsection{Historical Context}
+RSVP builds on Maxwell’s field theory, Itô’s stochastic processes, and Hairer’s regularity structures \cite{hairer2014theory}.
+
+\subsection{Connections}
+Chapter 1 motivates RSVP, Chapter 3 constructs $\mathcal{C}$, Chapter 4 extends to sheaves. Appendix G provides the full proof.
+
+\begin{center}
+  \node (M2) at (2,3) {$M_2$};
+  \node (T1) at (-2,1) {$T_1$};
+  \node (T2) at (2,1) {$T_2$};
+  \draw[->] (C) -- (T) node[midway, left] {$\pi$};
+  \draw[->] (M1) -- (T1) node[midway, left] {$\pi$};
+  \draw[->] (M2) -- (T2) node[midway, right] {$\pi$};
+  \draw[->] (M1) -- (M2) node[midway, above] {$f$};
+\end{tikzpicture}
+\end{center}
+

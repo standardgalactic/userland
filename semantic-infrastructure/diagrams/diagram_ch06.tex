@@ -1,0 +1,59 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\begin{document}
+\begin{tikzpicture}
+\end{center}
+
+\section{Semantic Merge Operator}
+\label{sec:chapter6}
+
+The merge operator $\mu$ resolves conflicts semantically.
+
+\subsection{Rationale}
+Git’s textual merges obscure meaning. The operator $\mu$ aligns RSVP fields, ensuring coherence.
+
+\subsection{Anecdote}
+In bioinformatics, $\mu$ aligns sequence alignment and visualization modules.
+
+\subsection{Foundations: Obstruction Theory}
+For $M_1, M_2 \in \mathcal{F}(U_1), \mathcal{F}(U_2)$, the difference $\delta = M_1|_{U_{12}} - M_2|_{U_{12}}$ is resolved by:
+
+\[
+\mu(M_1, M_2) = \begin{cases} 
+M & \text{if } \mathrm{Ext}^1 = 0, \\
+\texttt{Fail}(\omega) & \text{otherwise}.
+\end{cases}
+\]
+
+\subsection{Theorem C.1: Merge Validity}
+The merge exists if $\mathrm{Ext}^1(\mathbb{L}_M, \mathbb{T}_M) = 0$.
+
+**Proof**: The merge is a pushout in $D(\mathcal{F})$. Vanishing $\mathrm{Ext}^1$ ensures existence \cite{illusie1971complexe} (Appendix G).
+
+**Natural Language Explanation**: The merge operator mediates modules, ensuring compatibility or flagging conflicts.
+
+\subsection{Implementation}
+\begin{lstlisting}
+merge :: Module a -> Module a -> Either String (Module a)
+merge m1 m2 = if deltaPhi m1 m2 == 0 then Right (glue m1 m2) else Left "Obstruction"
+\end{lstlisting}
+
+\subsection{Historical Context}
+Obstruction theory extends cohomology, with applications in version control.
+
+\subsection{Connections}
+Chapter 5 handles obstructions, Chapter 4 provides context, Chapter 2 defines alignment.
+
+\begin{center}
+\begin{tikzpicture}
+  \node (U12) at (0,0) {$U_{12}$};
+  \node (M1) at (-2,2) {$M_1$};
+  \node (M2) at (2,2) {$M_2$};
+  \node (M) at (0,4) {$M$};
+  \draw[->] (U12) -- (M1) node[midway, left] {$\text{res}_1$};
+  \draw[->] (U12) -- (M2) node[midway, right] {$\text{res}_2$};
+  \draw[->, dashed] (M1) -- (M) node[midway, left] {$\iota_1$};
+  \draw[->, dashed] (M2) -- (M) node[midway, right] {$\iota_2$};
+\end{tikzpicture}
+\end{document}
