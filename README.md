@@ -9,7 +9,7 @@ https://youtu.be/eIjPxaFbEeg?si=3ogdFveILV3PJgt0
 Lecture 3: Sheaf Neural Networks - Cristian Bodnar  <br>
 https://youtu.be/90MbHphnPUU?si=PklVUepArgdvxCLU
 
-Lecture.4:Equivariant CNNs I (Euclidean Spaces) - Maurice Weiler  <br>
+Lecture.4: Equivariant CNNs I (Euclidean Spaces) - Maurice Weiler  <br>
 https://youtu.be/co9xtgkV-ko?si=Pe3okNGz-JI7P_zi
 
 
