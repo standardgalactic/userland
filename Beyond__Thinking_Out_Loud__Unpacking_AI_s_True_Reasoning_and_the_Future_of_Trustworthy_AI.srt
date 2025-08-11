@@ -1,0 +1,392 @@
+1
+00:00:00,000 --> 00:00:03,940
+Welcome to the Deep Dive. Today we're getting into something pretty fascinating.
+
+2
+00:00:04,660 --> 00:00:10,960
+How advanced AI really thinks, or maybe how it doesn't think in the way we assume.
+
+3
+00:00:11,240 --> 00:00:11,360
+Right.
+
+4
+00:00:11,540 --> 00:00:17,400
+You've probably seen AI that seems to think out loud, you know, what researchers call chain of
+
+5
+00:00:17,400 --> 00:00:24,340
+thought or co-T. But the big question is, is that genuine reasoning? Or is it just, well,
+
+6
+00:00:24,560 --> 00:00:25,420
+putting on a good show?
+
+7
+00:00:25,420 --> 00:00:29,980
+That really is the core question. And what's so interesting, maybe even a bit worrying,
+
+8
+00:00:30,220 --> 00:00:34,840
+is that often this thinking out loud isn't the real reasoning process at all.
+
+9
+00:00:35,280 --> 00:00:39,220
+Think about like someone explaining why they did something after they already did it.
+
+10
+00:00:39,500 --> 00:00:41,720
+It sounds plausible, maybe totally convincing.
+
+11
+00:00:41,860 --> 00:00:42,420
+A post-talk rationalization.
+
+12
+00:00:43,260 --> 00:00:44,800
+Exactly. A good story.
+
+13
+00:00:44,920 --> 00:00:45,140
+Yeah.
+
+14
+00:00:45,360 --> 00:00:49,460
+But maybe not the actual step-by-step causal chain that led to the decision inside the AI.
+
+15
+00:00:49,600 --> 00:00:53,240
+That's a huge difference. So, okay, if that thinking out loud isn't necessarily the real
+
+16
+00:00:53,240 --> 00:00:56,780
+McCoy, what are the big problems with relying on this chain of thought approach?
+
+17
+00:00:56,880 --> 00:01:02,980
+Well, a major criticism is that co-T outputs often feel more like linguistic performances
+
+18
+00:01:02,980 --> 00:01:05,440
+rather than showing you the actual causal mechanism.
+
+19
+00:01:05,760 --> 00:01:06,560
+Like good acting.
+
+20
+00:01:06,800 --> 00:01:11,840
+Kind of, yeah. Some studies have found that even if you, like, change the intermediate steps
+
+21
+00:01:11,840 --> 00:01:16,560
+in the AI's explanation, sometimes the final answer doesn't even change.
+
+22
+00:01:16,660 --> 00:01:17,880
+Whoa, really?
+
+23
+00:01:17,880 --> 00:01:21,980
+Yeah. It suggests the models can sort of confabulate. They generate these explanations
+
+24
+00:01:21,980 --> 00:01:26,700
+that sound coherent, sound totally plausible, but they might not actually reflect how the answer
+
+25
+00:01:26,700 --> 00:01:32,700
+was reached. It's built on narrative plausibility, you know, sounding good, not necessarily causal
+
+26
+00:01:32,700 --> 00:01:33,280
+traceability.
+
+27
+00:01:33,340 --> 00:01:39,380
+Okay. That's a bit unsettling if you're relying on that explanation. So if Kanita has these flaws,
+
+28
+00:01:39,700 --> 00:01:45,600
+what's the alternative? How do we get to AI that we can genuinely understand, maybe even trust?
+
+29
+00:01:45,600 --> 00:01:50,540
+This is where things get really interesting with concepts like the chain of memory or calm.
+
+30
+00:01:50,800 --> 00:01:51,260
+Chain of memory.
+
+31
+00:01:51,440 --> 00:01:55,500
+Okay. Yeah. It's a different paradigm. Think memory first, latent reasoning. So instead of the
+
+32
+00:01:55,500 --> 00:02:01,580
+reasoning happening in the words, the tokens that the AI spits out, the real thinking,
+
+33
+00:02:01,820 --> 00:02:06,580
+if you want to call it that, happens internally in these hidden latent memory trajectories. It's
+
+34
+00:02:06,580 --> 00:02:10,660
+like the AI is manipulating its own internal scratch pad, its memory.
+
+35
+00:02:10,880 --> 00:02:12,580
+And the words, the explanation.
+
+36
+00:02:12,740 --> 00:02:14,860
+That's optional. It's an on-demand narration.
+
+37
+00:02:15,600 --> 00:02:18,940
+Generated only if we need to see what happened or ask for an interpretation.
+
+38
+00:02:19,880 --> 00:02:23,540
+The priority in calm is causal faithfulness.
+
+39
+00:02:23,860 --> 00:02:24,160
+Meaning?
+
+40
+00:02:24,480 --> 00:02:28,900
+Meaning we can actually trace the why. Using techniques like gradient-based tracing,
+
+41
+00:02:28,900 --> 00:02:33,900
+we can see how changes in the internal memory state directly influence the final output.
+
+42
+00:02:34,280 --> 00:02:37,020
+It gives us real oversight, not just a plausible story.
+
+43
+00:02:37,020 --> 00:02:44,820
+Okay. So calm sounds like a path towards, well, deeper and more trustworthy AI. But how deep does
+
+44
+00:02:44,820 --> 00:02:49,360
+this idea of AI memory go? Is it just storing data or is there more to it?
+
+45
+00:02:49,420 --> 00:02:53,780
+Oh, it can go much, much deeper. It starts connecting to some really advanced, almost physics-like
+
+46
+00:02:53,780 --> 00:02:54,380
+concepts.
+
+47
+00:02:54,620 --> 00:02:55,000
+Like what?
+
+48
+00:02:55,000 --> 00:02:59,360
+Well, for instance, in what's called RSVP-based calm, the memory states aren't just static
+
+49
+00:02:59,360 --> 00:03:02,720
+points. They're more like points in a dynamic field, constantly adjusting.
+
+50
+00:03:02,760 --> 00:03:04,060
+A field, like in physics.
+
+51
+00:03:04,160 --> 00:03:08,240
+Sort of analogous, yeah. The internal dynamics are governed by principles that ensure coherence,
+
+52
+00:03:08,560 --> 00:03:13,160
+like thermodynamic and structural stability. It's about maintaining a consistent internal
+
+53
+00:03:13,160 --> 00:03:14,600
+world or memory landscape.
+
+54
+00:03:15,000 --> 00:03:17,520
+Wow. Okay. And you mentioned another one, Tartan.
+
+55
+00:03:17,520 --> 00:03:22,780
+Right. Tartan takes things even further by integrating something called oscillatory semantics.
+
+56
+00:03:23,360 --> 00:03:24,420
+This is pretty mind-bending.
+
+57
+00:03:24,740 --> 00:03:25,920
+Oscillatory semantics.
+
+58
+00:03:26,200 --> 00:03:31,040
+It interprets even stillness, the absence of change, as a dynamic state, like a subtle
+
+59
+00:03:31,040 --> 00:03:37,060
+oscillation. It means tiny, tiny micro-movements or patterns within the AI's internal state
+
+60
+00:03:37,060 --> 00:03:40,760
+can encode really complex embodied abstractions.
+
+61
+00:03:40,840 --> 00:03:45,740
+So like reading meaning from a tiny twitch, or even no twitch at all.
+
+62
+00:03:45,740 --> 00:03:51,140
+Exactly. Forming what they call cognitive glyphs. Imagine an AI understanding nuance from something
+
+63
+00:03:51,140 --> 00:03:55,800
+as subtle as a slight shift in posture, or the lack of an expected micro-movement. It's
+
+64
+00:03:55,800 --> 00:03:58,000
+a much deeper level of semantic understanding.
+
+65
+00:03:58,280 --> 00:04:02,340
+Yeah, that's pretty profound. So where does all this lead? We have calm for traceable reasoning,
+
+66
+00:04:02,580 --> 00:04:07,380
+RSVP for dynamic memory fields, Tartan for deep semantics. Are these being combined?
+
+67
+00:04:07,560 --> 00:04:11,920
+They are. Researchers are working on unified architectures. One example mentioned is Heishwydere.
+
+68
+00:04:11,920 --> 00:04:18,240
+Yeah. It aims to bring together personalization, aspects of neurocognitive realism. So mimicking
+
+69
+00:04:18,240 --> 00:04:23,640
+brain functions a bit, comms, causal interpretability, and the kind of deep semantic grounding we see
+
+70
+00:04:23,640 --> 00:04:25,140
+in RSVP and Tartan.
+
+71
+00:04:25,260 --> 00:04:28,760
+So the goal is truly understandable AI.
+
+72
+00:04:29,040 --> 00:04:34,260
+The goal is AI reasoning that is causally faithful. You can trust its explanation.
+
+73
+00:04:34,400 --> 00:04:34,560
+Right.
+
+74
+00:04:34,740 --> 00:04:39,280
+It's personalized and deeply grounded in meaning, not just surface level patterns.
+
+75
+00:04:39,280 --> 00:04:43,720
+Okay. This is clearly cutting edge stuff, but let's bring it back. Why should you,
+
+76
+00:04:43,960 --> 00:04:50,520
+listening right now, care about this shift? Moving from AI thinking out loud to AI remembering
+
+77
+00:04:50,520 --> 00:04:53,020
+and using these complex internal dynamics?
+
+78
+00:04:53,200 --> 00:04:57,160
+Well, fundamentally, it's about trust and safety. This whole direction moves us towards AI systems
+
+79
+00:04:57,160 --> 00:04:59,480
+with genuine epistemic transparency.
+
+80
+00:04:59,760 --> 00:05:00,500
+Knowing how it knows.
+
+81
+00:05:00,600 --> 00:05:04,520
+Exactly. Instead of using AI, whose reasoning is effectively a black box where the explanations
+
+82
+00:05:04,520 --> 00:05:08,860
+cannot be trusted or verified, this path promises AI cognition that's robust,
+
+83
+00:05:09,200 --> 00:05:11,700
+more generalizable, and truly interpretable.
+
+84
+00:05:11,760 --> 00:05:12,460
+And that matters for-
+
+85
+00:05:12,460 --> 00:05:18,500
+Think about safety-critical applications, medical diagnosis, self-driving cars, complex financial
+
+86
+00:05:18,500 --> 00:05:23,640
+modeling, places where you absolutely need to know why the AI reached its conclusion.
+
+87
+00:05:24,140 --> 00:05:28,940
+This is about building AI that genuinely, verifiably thinks before it speaks.
+
+88
+00:05:29,320 --> 00:05:32,000
+AI we can actually interrogate, not just listen to.
+
+89
+00:05:32,000 --> 00:05:35,000
+Precisely. And, you know, this really opens up a fascinating question.
+
+90
+00:05:35,160 --> 00:05:35,500
+Go on.
+
+91
+00:05:35,740 --> 00:05:41,560
+If AI can genuinely reason through these internal memory pathways, these latent trajectories,
+
+92
+00:05:41,780 --> 00:05:45,700
+and even pull meaning from subtle oscillatory semantics or stillness,
+
+93
+00:05:46,340 --> 00:05:51,240
+what new depths of understanding might that unlock? Not just about AI cognition.
+
+94
+00:05:51,440 --> 00:05:53,880
+But maybe about our own. How we think and remember.
+
+95
+00:05:54,140 --> 00:05:56,260
+Exactly. It could be a mirror, in a way.
+
+96
+00:05:56,420 --> 00:06:01,300
+A truly mind-bending journey, indeed. Something for you to definitely mull over. Join us next time for
+
+97
+00:06:01,300 --> 00:06:02,080
+another deep dive.
+
+98
+00:06:02,080 --> 00:06:02,140
+Another deep dive.
+
