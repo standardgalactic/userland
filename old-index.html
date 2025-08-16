@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Vim Space Exploration Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/keymap/vim.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/codemirror.min.css">
+</head>
+<body>
+    <div id="editor-container" style="display: none;"></div>
+    <div id="command-input" style="position: absolute; bottom: 10px; left: 10px; color: white;">Command: </div>
+    <div id="score" style="position: absolute; top: 10px; right: 10px; color: white;">Score: 0</div>
+    <script src="js/commands.json" type="application/json"></script>
+    <script src="js/skillTracker.js"></script>
+    <script src="js/galaxyMap.js"></script>
+    <script src="js/bubbleShooter.js"></script>
+    <script src="js/vimPuzzle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

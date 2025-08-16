@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Vim Space Exploration Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+        }
+        #editor-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: #1e1e1e;
+            border: 2px solid white;
+        }
+        .CodeMirror {
+            height: 100%;
+            font-size: 16px;
+        }
+        #command-input {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-family: monospace;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-family: monospace;
+        }
+        #mode-indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: monospace;
+        }
+        #level-message {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: monospace;
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="js/vendor/codemirror.css">
+    <script src="js/vendor/three.min.js"></script>
+    <script src="js/vendor/OrbitControls.js"></script>
+    <script src="js/vendor/codemirror.min.js"></script>
+    <script src="js/vendor/vim.min.js"></script>
+</head>
+<body>
+    <div id="editor-container" style="display: none;"></div>
+    <div id="command-input">Command: </div>
+    <div id="score">Score: 0</div>
+    <div id="mode-indicator">Flight Mode</div>
+    <div id="level-message">Type i to initiate planetary landing sequence</div>
+    <script>
+        // Global variables
+        let scene, camera, renderer, controls;
+        let levels = [], stars, dustParticles;
+        let flightMode = true;
+        let pressedKeys = new Set();
+        let movementSpeed = 5;
+        let rotationSpeed = Math.PI / 180 * 2;
+        let currentLevel = 0;
+        let commandBuffer = '';
+        let score = 0;
+        let isBubbleMode = false;
+        let bubbles = [];
+        let editor;
+        let skillLevel = 'beginner';
+        let startTime = 0;
+        let selectedLevel = null;
+        let halo = null;
+        let triangles = [];
+
+        // Sounds
+        const popSound = new Audio('assets/sounds/pop.wav');
+        const backgroundSound = new Audio('assets/sounds/background.wav');
+        const levelCompleteSound = new Audio('assets/sounds/level_complete.wav');
+        const errorSound = new Audio('assets/sounds/error.wav');
+        popSound.volume = 0.3;
+        backgroundSound.volume = 0.3;
+        levelCompleteSound.volume = 0.3;
+        errorSound.volume = 0.3;
+        backgroundSound.loop = true;
+
+        // Audio unlock
+        function unlockAudioOnce() {
+            backgroundSound.play().catch(() => console.log("Audio play blocked"));
+            document.removeEventListener('keydown', unlockAudioOnce);
+            document.removeEventListener('click', unlockAudioOnce);
+        }
+        document.addEventListener('keydown', unlockAudioOnce);
+        document.addEventListener('click', unlockAudioOnce);
+
+        // Commands data
+        const commands = [
+            {"level": 0, "command": "h", "description": "Move left", "difficulty": "beginner"},
+            {"level": 0, "command": "j", "description": "Move down", "difficulty": "beginner"},
+            {"level": 1, "command": "dd", "description": "Delete line", "difficulty": "intermediate"},
+            {"level": 2, "command": ":s", "description": "Substitute", "difficulty": "advanced"},
+            {"level": 3, "command": "yy", "description": "Yank line", "difficulty": "intermediate"},
+            {"level": 4, "command": "p", "description": "Paste", "difficulty": "intermediate"},
+            {"level": 5, "command": "/", "description": "Search", "difficulty": "advanced"},
+            {"level": 6, "command": "q", "description": "Record macro", "difficulty": "advanced"},
+            {"level": 7, "command": "Ctrl-v", "description": "Visual block", "difficulty": "advanced"},
+            {"level": 8, "command": "i", "description": "Insert", "difficulty": "beginner"},
+            {"level": 9, "command": ":w", "description": "Save", "difficulty": "beginner"},
+            {"level": 10, "command": "k", "description": "Move up", "difficulty": "beginner"},
+            {"level": 11, "command": "l", "description": "Move right", "difficulty": "beginner"}
+        ];
+
+        // Skill tracking
+        function startTask() {
+            startTime = Date.now();
+            console.log("Task started");
+        }
+
+        function endTask(success) {
+            const timeTaken = (Date.now() - startTime) / 1000;
+            const accuracy = success ? 100 : 0;
+            console.log(`Task ended: time=${timeTaken}s, success=${success}`);
+            updateSkillLevel(timeTaken, accuracy);
+        }
+
+        function updateSkillLevel(timeTaken, accuracy) {
+            if (accuracy > 95 && timeTaken < 15) {
+                skillLevel = 'advanced';
+            } else if (accuracy > 80 && timeTaken < 30) {
+                skillLevel = 'intermediate';
+            } else {
+                skillLevel = 'beginner';
+            }
+            console.log(`Skill level updated to ${skillLevel}`);
+        }
+
+        // Vim puzzle
+        function initVimPuzzle(levelId) {
+            if (!window.CodeMirror) {
+                console.error("CodeMirror not loaded");
+                return;
+            }
+            flightMode = false;
+            document.getElementById('mode-indicator').textContent = "Insert Mode (press Escape to return to Flight Mode)";
+            const container = document.getElementById('editor-container');
+            container.style.display = 'block';
+            startTask();
+
+            const cmd = commands.find(c => c.level === levelId) || { command: "dd", description: "Delete line" };
+            const puzzleText = `Edit this text for level ${levelId}.\nDelete this line with ${cmd.command}.`;
+            editor = CodeMirror(container, {
+                value: puzzleText,
+                mode: 'text',
+                keyMap: 'vim',
+                lineNumbers: true,
+                theme: 'default'
+            });
+
+            editor.on('change', () => {
+                if (editor.getValue() === `Edit this text for level ${levelId}.`) {
+                    document.getElementById('editor-container').style.display = 'none';
+                    levelCompleteSound.play();
+                    endTask(true);
+                    updateScore(50);
+                    flightMode = true;
+                    document.getElementById('mode-indicator').textContent = "Flight Mode";
+                    if (currentLevel + 1 < levels.length) {
+                        levels[currentLevel + 1].userData.unlocked = true;
+                        updateLevelColors();
+                    }
+                    console.log(`Vim puzzle completed for level ${levelId}`);
+                }
+            });
+        }
+
+        // Bubble shooter
+        function initBubbleShooter(levelId) {
+            flightMode = false;
+            isBubbleMode = true;
+            document.getElementById('mode-indicator').textContent = "Insert Mode (press Escape to return to Flight Mode)";
+            bubbles.forEach(b => scene.remove(b));
+            bubbles = [];
+            startTask();
+
+            const levelCommands = levels[levelId].userData.commands || [];
+            levelCommands.forEach(cmd => {
+                const material = new THREE.MeshBasicMaterial({ color: 0x00FFFF, transparent: true, opacity: 0.5 });
+                const geometry = new THREE.SphereGeometry(0.3, 32, 32);
+                const bubble = new THREE.Mesh(geometry, material);
+                const pos = levels[levelId].position.clone();
+                bubble.position.set(pos.x + Math.random() * 2 - 1, pos.y + Math.random() * 2 - 1, pos.z);
+                bubble.userData = { command: cmd.command, description: cmd.description };
+                scene.add(bubble);
+                bubbles.push(bubble);
+                console.log(`Bubble added: ${cmd.description} (${cmd.command})`);
+            });
+        }
+
+        function checkBubblePop(input) {
+            let popped = false;
+            bubbles.forEach((bubble, index) => {
+                if (input === bubble.userData.command) {
+                    scene.remove(bubble);
+                    bubbles.splice(index, 1);
+                    popSound.play();
+                    endTask(true);
+                    updateScore(10);
+                    commandBuffer = '';
+                    document.getElementById('command-input').textContent = `Command: `;
+                    popped = true;
+                    if (bubbles.length === 0) {
+                        levelComplete();
+                    }
+                }
+            });
+            if (!popped && input) {
+                errorSound.play();
+                endTask(false);
+            }
+        }
+
+        function levelComplete() {
+            isBubbleMode = false;
+            levelCompleteSound.play();
+            endTask(true);
+            updateScore(50);
+            if (currentLevel + 1 < levels.length) {
+                levels[currentLevel + 1].userData.unlocked = true;
+                updateLevelColors();
+            }
+            flightMode = true;
+            document.getElementById('mode-indicator').textContent = "Flight Mode";
+            console.log(`Level ${currentLevel} completed`);
+        }
+
+        // Galaxy map
+        function initScene() {
+            console.log("Initializing scene");
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000033);
+            document.body.appendChild(renderer.domElement);
+            console.log("Renderer initialized");
+
+            camera.position.set(0, 0, 10);
+            try {
+                controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.05;
+                console.log("OrbitControls initialized");
+            } catch (e) {
+                console.error("Failed to initialize OrbitControls:", e);
+            }
+
+            const starMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 0.05 });
+            const starVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = (Math.random() - 0.5) * 2000;
+                starVertices.push(x, y, z);
+            }
+            const starGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+            console.log("Star field added");
+
+            const numLevels = 12;
+            levels = [];
+            const a = 0.1;
+            const b = 0.2;
+            const maxTheta = 4 * Math.PI;
+            for (let i = 0; i < numLevels; i++) {
+                const theta = (i / (numLevels - 1)) * maxTheta;
+                const radius = a * Math.exp(b * theta) * 10;
+                const x = radius * Math.cos(theta);
+                const y = radius * Math.sin(theta);
+                const z = 0;
+                const color = getLevelColor(i);
+                const material = new THREE.MeshBasicMaterial({ color: color });
+                const geometry = new THREE.SphereGeometry(0.5, 32, 32);
+                const level = new THREE.Mesh(geometry, material);
+                level.position.set(x, y, z);
+                level.userData = {
+                    id: i,
+                    difficulty: i < 4 ? 'beginner' : i < 8 ? 'intermediate' : 'advanced',
+                    unlocked: i === 0,
+                    commands: commands.filter(c => c.level === i)
+                };
+                scene.add(level);
+                levels.push(level);
+                console.log(`Level ${i} added at (${x.toFixed(2)}, ${y.toFixed(2)}, ${z})`);
+            }
+
+            const dustMaterial = new THREE.PointsMaterial({ color: 0xAAAAAA, size: 0.02, opacity: 0.5, transparent: true });
+            const dustVertices = [];
+            for (let i = 0; i < 2000; i++) {
+                const x = (Math.random() - 0.5) * 200;
+                const y = (Math.random() - 0.5) * 200;
+                const z = -Math.random() * 200 - 10;
+                dustVertices.push(x, y, z);
+            }
+            const dustGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(dustVertices, 3));
+            dustParticles = new THREE.Points(dustGeometry, dustMaterial);
+            scene.add(dustParticles);
+            console.log("Dust particles added");
+
+            console.log("Camera at (0, 0, 10)");
+
+            document.addEventListener('keydown', (e) => {
+                pressedKeys.add(e.key.toLowerCase());
+                if (flightMode && (e.key === ' ' || e.key.toLowerCase() === 'i')) {
+                    selectLevel();
+                }
+                console.log("Key pressed:", e.key, "Pressed keys:", Array.from(pressedKeys));
+            });
+            document.addEventListener('keyup', (e) => {
+                pressedKeys.delete(e.key.toLowerCase());
+                console.log("Key released:", e.key);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    if (!flightMode) {
+                        flightMode = true;
+                        if (isBubbleMode) {
+                            isBubbleMode = false;
+                            bubbles.forEach(b => scene.remove(b));
+                            bubbles = [];
+                        }
+                        if (editor) {
+                            document.getElementById('editor-container').style.display = 'none';
+                        }
+                        document.getElementById('mode-indicator').textContent = "Flight Mode";
+                        console.log("Exited to flight mode");
+                    }
+                } else if (flightMode) {
+                    return;
+                } else if (event.key.length === 1) {
+                    commandBuffer += event.key;
+                    document.getElementById('command-input').textContent = `Command: ${commandBuffer}`;
+                    checkBubblePop(commandBuffer);
+                } else if (event.key === 'Enter') {
+                    commandBuffer = '';
+                    document.getElementById('command-input').textContent = `Command: `;
+                } else if (event.key === 'Backspace') {
+                    commandBuffer = commandBuffer.slice(0, -1);
+                    document.getElementById('command-input').textContent = `Command: ${commandBuffer}`;
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                console.log("Window resized");
+            });
+
+            animate();
+        }
+
+        function getLevelColor(levelId) {
+            if (levelId === currentLevel) return 0x00FF00;
+            if (levelId > currentLevel) return 0xFF4500;
+            return 0xFFFFFF;
+        }
+
+        function updateLevelColors() {
+            levels.forEach(level => {
+                level.material.color.setHex(getLevelColor(level.userData.id));
+            });
+        }
+
+        function updateLevelIndicators() {
+            // Remove existing triangles and halo
+            triangles.forEach(t => scene.remove(t));
+            triangles = [];
+            if (halo) {
+                scene.remove(halo);
+                halo = null;
+            }
+            document.getElementById('level-message').style.display = 'none';
+
+            if (!flightMode) return;
+
+            // Find nearest level
+            let nearestLevel = null;
+            let minDistance = Infinity;
+            levels.forEach(level => {
+                const distance = camera.position.distanceTo(level.position);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    nearestLevel = level;
+                }
+            });
+
+            // Add triangles if close enough
+            if (nearestLevel && minDistance < 5) {
+                const pos = nearestLevel.position;
+                const triangleMaterial = new THREE.MeshBasicMaterial({ color: 0xFFFF00, side: THREE.DoubleSide });
+                const triangleGeometry = new THREE.BufferGeometry();
+                const vertices = new Float32Array([
+                    0, 0.5, 0,
+                    -0.25, -0.25, 0,
+                    0.25, -0.25, 0
+                ]);
+                triangleGeometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+                for (let i = 0; i < 4; i++) {
+                    const triangle = new THREE.Mesh(triangleGeometry, triangleMaterial);
+                    const angle = (i * Math.PI) / 2;
+                    triangle.position.set(
+                        pos.x + Math.cos(angle) * 1,
+                        pos.y + Math.sin(angle) * 1,
+                        pos.z
+                    );
+                    triangle.lookAt(camera.position);
+                    scene.add(triangle);
+                    triangles.push(triangle);
+                }
+            }
+
+            // Check for selectable level
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
+            const intersects = raycaster.intersectObjects(levels);
+            if (intersects.length > 0 && intersects[0].object.userData.unlocked) {
+                selectedLevel = intersects[0].object;
+                const ringGeometry = new THREE.RingGeometry(0.6, 0.7, 32);
+                const ringMaterial = new THREE.MeshBasicMaterial({ color: 0xFFFF00, side: THREE.DoubleSide });
+                halo = new THREE.Mesh(ringGeometry, ringMaterial);
+                halo.position.copy(selectedLevel.position);
+                halo.lookAt(camera.position);
+                scene.add(halo);
+                document.getElementById('level-message').style.display = 'block';
+            } else {
+                selectedLevel = null;
+            }
+        }
+
+        function selectLevel() {
+            console.log("Attempting level selection");
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
+            const intersects = raycaster.intersectObjects(levels);
+            if (intersects.length > 0) {
+                const selected = intersects[0].object;
+                console.log(`Selected level ${selected.userData.id} (${selected.userData.difficulty})`);
+                if (selected.userData.unlocked) {
+                    flightMode = false;
+                    currentLevel = selected.userData.id;
+                    if (currentLevel % 3 === 0) {
+                        addMaze(currentLevel);
+                    } else if (currentLevel % 2 === 0) {
+                        initBubbleShooter(currentLevel);
+                    } else {
+                        initVimPuzzle(currentLevel);
+                    }
+                } else {
+                    errorSound.play();
+                    console.log("Level locked");
+                }
+            } else {
+                console.log("No level intersected");
+            }
+        }
+
+        function addMaze(levelId) {
+            flightMode = false;
+            document.getElementById('mode-indicator').textContent = "Insert Mode (press Escape to return to Flight Mode)";
+            startTask();
+            for (let i = 0; i < 10; i++) {
+                const material = new THREE.MeshBasicMaterial({ color: 0x808080 });
+                const geometry = new THREE.BoxGeometry(1, 1, 1);
+                const obstacle = new THREE.Mesh(geometry, material);
+                obstacle.position.set(
+                    levels[levelId].position.x + Math.random() * 10 - 5,
+                    levels[levelId].position.y + Math.random() * 10 - 5,
+                    levels[levelId].position.z + Math.random() * 10 - 5
+                );
+                scene.add(obstacle);
+                console.log(`Maze obstacle added near level ${levelId}`);
+            }
+            initBubbleShooter(levelId);
+        }
+
+        function updateScore(points) {
+            score += points;
+            document.getElementById('score').textContent = `Score: ${score}`;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (controls) controls.update();
+
+            if (flightMode) {
+                const delta = 1 / 60;
+                const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(camera.quaternion);
+                const right = new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion);
+                const up = new THREE.Vector3(0, 1, 0);
+
+                if (pressedKeys.has('w')) camera.position.add(forward.clone().multiplyScalar(movementSpeed * delta));
+                if (pressedKeys.has('s')) camera.position.add(forward.clone().multiplyScalar(-movementSpeed * delta));
+                if (pressedKeys.has('a')) camera.position.add(right.clone().multiplyScalar(-movementSpeed * delta));
+                if (pressedKeys.has('d')) camera.position.add(right.clone().multiplyScalar(movementSpeed * delta));
+                if (pressedKeys.has('r')) camera.position.add(up.clone().multiplyScalar(movementSpeed * delta));
+                if (pressedKeys.has('f')) camera.position.add(up.clone().multiplyScalar(-movementSpeed * delta));
+                if (pressedKeys.has('q')) camera.rotateOnWorldAxis(up, rotationSpeed);
+                if (pressedKeys.has('e')) camera.rotateOnWorldAxis(up, -rotationSpeed);
+                if (pressedKeys.has('j')) camera.rotateOnAxis(new THREE.Vector3(0, 0, 1).applyQuaternion(camera.quaternion), rotationSpeed);
+                if (pressedKeys.has('l')) camera.rotateOnAxis(new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion), -rotationSpeed);
+                if (pressedKeys.has('k')) camera.rotateOnAxis(new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion), rotationSpeed);
+                if (pressedKeys.has(';')) camera.rotateOnAxis(new THREE.Vector3(0, 0, 1).applyQuaternion(camera.quaternion), -rotationSpeed);
+            }
+
+            const positions = dustParticles.geometry.attributes.position.array;
+            for (let i = 2; i < positions.length; i += 3) {
+                positions[i] += 1;
+                if (positions[i] > 0) {
+                    positions[i] = -Math.random() * 200 - 10;
+                }
+            }
+            dustParticles.geometry.attributes.position.needsUpdate = true;
+
+            updateLevelIndicators();
+
+            renderer.render(scene, camera);
+        }
+
+        initScene();
+    </script>
+</body>
+</html>
