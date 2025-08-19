@@ -24,6 +24,7 @@ const playlistFiles = [
   "playlist/22%20-%20Carmen%20Scientiae.mp3",
   "playlist/23%20-%20Regal%20Wind.mp3",
   "playlist/24%20-%20I%20am%20in%20Need%20of%20Music.mp3",
+  "playlist/Beyond_Catharsis__How_Universal_Incompleteness_Shapes_Emotion%2C_Logic%2C_and_the_Cosmos.mp3",
   "playlist/Beyond_Git__Semantic_Infrastructure_and_the_Future_of_Collaborative_Computation.mp3",
   "playlist/Beyond_GitHub_s_Illusions__Engineering_Semantic_Infrastructure_for_Truly_Coherent_Digital_Collaborat.mp3",
   "playlist/Entropy_%20The%20Engine%20of%20Structure%20and%20Time.mp3",
