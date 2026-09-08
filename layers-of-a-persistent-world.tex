@@ -1,0 +1,410 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,microtype,setspace,xcolor}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue!55!black]{hyperref}
+\setstretch{1.18}
+\newtheorem{definition}{Definition}
+\newtheorem{principle}{Principle}
+\newtheorem{invariant}{Invariant}
+\newcommand{\Fold}{\operatorname{fold}}
+\newcommand{\Render}{\mathcal{R}}
+\newcommand{\Adm}{\mathcal{A}}
+\newcommand{\Viab}{\operatorname{Viab}}
+\title{\textbf{Layers of a Persistent World}\\[4pt]\large Appearance, State, History, and the Conditions of Recurrence}
+\author{Flyxion\\\small Independent Researcher}
+\date{September 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Interactive systems are often called ``world models'' because they generate convincing continuations of a scene, predict the consequence of an action, or maintain a shared environment across users. These accomplishments are not equivalent. A rendered continuation can remain visually coherent without preserving object identity; a stateful simulator can support controllable transitions without retaining the history that warrants its present; an append-only log can preserve events without supplying an efficient operative state; and a distributed snapshot can be globally consistent without corresponding to an instantaneous state that all processes jointly occupied. This paper develops a layered account of persistent worldhood that separates appearance, operative state, provenance state, and committed history. Appearance is a disposable projection. Operative state governs evolution between commitments. Provenance state summarizes historically active relations such as ownership, permission, repair lineage, and evidential standing. History is an append-only, causally structured record of proposals, admissions, refusals, attestations, repairs, checkpoints, and replay discrepancies. Operative and provenance states are certified folds over the same history, while checkpoints accelerate recurrence without becoming rival authorities.
+
+The proposal is evaluated against five bodies of work: rendering and learned world models; state-transition and process semantics; event histories and persistent distributed systems; deterministic replay and checkpointing; and partial observability. The literature establishes the components separately but does not supply their proposed integration. The result is therefore a synthesis with explicit limits, not a claim that virtual worlds, neural models, and quantum systems instantiate one established theory. The paper introduces invariants for pure rendering, attestation-sensitive commitment, refusal-aware provenance, causal commutation, and graded replay equivalence. It concludes with an implementation schema and a research program for testing whether persistent identity can be preserved when exact recurrence is unavailable.
+\end{abstract}
+
+\section{Introduction}
+
+The word \emph{world} has become unusually permissive. A game engine is a world because it stores objects and applies rules. A persistent multiplayer service is a world because many participants return to a shared environment that outlives any one session. A learned dynamics model is a world because an agent can imagine trajectories through it. An action-conditioned video generator is a world because its next frames respond to player input. A scientific simulation is a world because local rules generate global consequences that were not transparent in advance. These uses overlap, but they do not coincide.
+
+The ambiguity matters whenever persistence is treated as a consequence of rendering. A model may generate a room, leave it, and later regenerate a perceptually similar room. That does not establish that the second room is the same room, that its objects have retained their identities, that an earlier transfer of ownership remains binding, or that a prohibited action remains prohibited. Visual recurrence is evidence about appearance. It is not by itself evidence about historical identity.
+
+The reverse reduction is equally misleading. An append-only event log may preserve a complete sequence of accepted commands, yet be too expensive to scan during every render or solver step. A current snapshot may be operationally authoritative without containing the warrants by which it became authoritative. A system that conflates state and history is therefore forced into a false choice: either the current state is the world and the past is optional metadata, or the log is the world and every present operation must reconstruct it from the beginning.
+
+This paper rejects that choice. It proposes that a persistent world is organized by distinct layers with distinct kinds of authority. The visible appearance $x_t$ is rendered from efficient current projections. The operative state $M_t$ contains variables used by the dynamics. A provenance and permission state $Q_t$ contains historically active relations that affect interpretation and admissibility. An append-only history $H_t$ records identity-bearing commitments and their causal dependencies. The current states $M_t$ and $Q_t$ are certified folds over $H_t$, but they may also evolve provisionally between commitment boundaries. A checkpoint binds those folds to a history frontier, ruleset, solver identity, seed policy, and verification result.
+
+The central thesis can be stated compactly: \emph{rendering governs appearance, state governs evolution, history governs identity, and certified folds connect them without collapsing them}. This division is architectural rather than metaphysical. It does not assert that reality literally runs on an external computer, nor that a game is secretly quantum mechanical. It asks what a system must preserve if later states are to count as continuations of earlier ones rather than fresh outputs that happen to resemble them.
+
+Five questions organize the inquiry. What makes an appearance a projection rather than a state? What must operative state contain for transitions to be controllable? Which historical records are constitutive of identity rather than merely diagnostic? What does replay establish when hardware, floating-point behavior, or stochasticity prevent bitwise identity? What can an observer know when its view is partial, delayed, and interest-managed? Each question has a substantial literature. The novelty lies in assigning their answers to a single layered architecture while keeping the epistemic status of each connection explicit.
+
+\section{The Layers Problem}
+
+Suppose an interactive environment presents an observation $x_t$, maintains an internal configuration $s_t$, and stores a history $H_{\leq t}$. A tempting formulation is
+\[
+x_t = R(s_t,H_{\leq t},\omega_t),
+\]
+where $R$ is a renderer and $\omega_t$ is an observer or camera parameter. This expression is too loose for a large persistent world. If rendering consults the full history, every frame potentially requires an unbounded scan. If $s_t$ already summarizes everything in the history, the direct dependence on $H$ is redundant. If viewing changes the history, observer count acquires causal power over the world merely by producing frames.
+
+A second temptation is to identify state with history: $s_t=H_{\leq t}$. This is coherent in situation calculus, where a situation denotes an action history, and it is attractive in event-sourced systems where materialized views are projections of an event stream. Yet a numerical simulation can execute millions of solver substeps that should not each become identity-bearing historical events. The state used to resolve a collision or integrate a field is not generally identical to the record needed to justify a property transfer, preserve a repair lineage, or audit a refused command.
+
+A third temptation is snapshot primacy. Let the present snapshot be authoritative and retain logs only for debugging, recovery, or analytics. This is common and often adequate. It becomes inadequate when two extensionally identical snapshots have different rights, liabilities, authorship, or repair histories. The present arrangement of bytes does not tell us whether a component is original, legitimately replaced, illicitly copied, or reconstructed after a failed replay. A snapshot can answer \emph{what is currently operative?} while remaining silent about \emph{why is this state entitled to count as the present?}
+
+The layers problem is therefore not a dispute over which representation is ``really'' the world. It is a problem of divided authority. Different representations answer different questions, and an architecture becomes unstable when one layer silently inherits authority it cannot support.
+
+\begin{definition}[Persistent world]
+A persistent world is a system whose present operative and interpretive states are recoverably related to prior commitments, including relevant refusals and repairs, such that identity claims can survive change even when exact bitwise recurrence is unavailable.
+\end{definition}
+
+This definition is deliberately stronger than session continuity and weaker than perfect archival reconstruction. It requires an addressable relation to prior commitments, not the retention of every microstate. It also makes room for disagreement, damage, missing artifacts, and changed implementations, provided those differences are appended rather than silently erased.
+
+\section{A Four-Layer Architecture}
+
+\subsection{Appearance}
+
+Appearance is what an observer receives:
+\[
+x_t = \Render(M_t,Q_t,\omega_t,\rho_t),
+\]
+where $\omega_t$ represents viewpoint and observer permissions, and $\rho_t$ represents disposable rendering conditions such as level of detail, stochastic sampling, display resolution, or compression. The renderer may read a certified state and an observer-specific index. It should not consult the entire event history during ordinary operation, and its production of $x_t$ should not itself commit an event.
+
+Appearance is many-valued. The same state can yield a first-person image, a map, an accessibility description, an administrative view, or a scientific instrument trace. Conversely, perceptually similar appearances can be produced by different states. This many-to-many relation defeats any straightforward identification of frames with worlds. Learned video systems intensify the problem: their outputs may maintain short-horizon visual coherence while object relations, inventories, causal dependencies, or off-screen facts drift.
+
+\begin{invariant}[Pure rendering]
+For fixed certified inputs, rendering does not alter $M_t$, $Q_t$, or $H_t$. If a produced observation later becomes evidence, a distinct attestation operation must commit it.
+\end{invariant}
+
+This invariant does not forbid logging performance data, access counts, or screenshots. It requires those operations to be named as separate events with their own purposes. Merely seeing a thing is not identical to making the sight historically constraining.
+
+\subsection{Operative state}
+
+The operative state $M_t$ contains variables required by transition rules: positions, velocities, fields, object relations, inventories, health values, environmental resources, and other dynamically active quantities. Between commitments it may pass through provisional configurations
+\[
+\widetilde{M}_{t+\Delta}=F_{\Delta}(\widetilde{M}_t;\theta,\xi),
+\]
+where $\theta$ identifies the rules and solver versions and $\xi$ records controlled stochastic input. The tilde marks a state that can be recomputed, rolled back, or refined before any identity-bearing commitment is made.
+
+An operative state is not merely a compression latent. It qualifies as state relative to a task when transition and query operations are defined over it and when distinctions relevant to those operations remain recoverable. A vector may be an excellent predictor of pixels while failing to represent persistent object identity. Another latent may omit pixels entirely while preserving sufficient statistics for control. Statehood is therefore task-relative but not arbitrary: it is tested by the operations the system must support.
+
+\subsection{Provenance and permission state}
+
+The provenance fold $Q_t$ carries historically active relations that affect interpretation or admissibility without necessarily changing immediate physics. Examples include ownership, authorship, repair lineage, access rules, warranties, sanctions, disputed claims, signed measurements, and scars understood as attributions rather than geometry. These relations often need efficient current access. Storing them only in a remote archive would force admissibility gates to rescan history, while placing them indiscriminately in the physics state would turn $M$ into an untyped warehouse.
+
+The separation is logical rather than absolute. A permission can produce a physical effect when it opens a door; a damaged surface can become a provenance-bearing scar when its origin matters. What matters is that each fold have a declared update function and that cross-layer consequences occur through typed events rather than hidden mutation.
+
+\subsection{Committed history}
+
+The committed history $H$ is an append-only collection of typed events. Under a single authority it may be represented as a sequence. In a distributed world it is more naturally a directed acyclic graph whose edges identify causal dependence. An event should state more than a value change. It should record the proposal, the gate or procedure applied, the relevant frontier, the result, and the evidence needed to interpret that result.
+
+A minimal vocabulary includes
+\[
+\begin{split}
+\{&\textsc{proposed},\textsc{admitted},\textsc{refused},\textsc{attested},\\
+  &\textsc{repaired},\textsc{checkpointed},\textsc{replay-discrepant}\}.
+\end{split}
+\]
+The exact ontology is domain-specific, but an admitted-only history is insufficient. Refusals reveal boundaries and attacks. Repairs preserve the difference between the first attempt and the corrected result. Replay discrepancies preserve the difference between what a prior checkpoint promised and what a later environment reproduced.
+
+\section{One History, Several Folds}
+
+The current operative and provenance states are certified caches produced by distinct folds over the same committed history:
+\[
+M_t=\Fold(f_{\mathrm{phys}},M_0,H_t), \qquad
+Q_t=\Fold(f_{\mathrm{prov}},Q_0,H_t).
+\]
+Additional folds can support accounting, narrative summaries, scientific measurements, search indexes, and observer-specific views. The world is not a snapshot plus optional logs. It is an authoritative event structure together with a family of certified folds and checkpoints.
+
+The phrase \emph{history is authoritative} needs qualification. At commitment boundaries, history determines which certified folds are warranted. Between boundaries, an operative state can be authoritative for simulation even though its individual solver steps have not entered history. Thus authority alternates by question: $M$ determines the next provisional physical update; $H$ determines whether a purported $M$ is entitled to be treated as the certified continuation of a prior world.
+
+\begin{principle}[Divided authority]
+History is authoritative at commitment boundaries. Operative state is authoritative between them only as the provisional or certified result of admissible evolution. Appearance is never authoritative merely because it was rendered.
+\end{principle}
+
+This principle prevents two opposite pathologies. Log fundamentalism would require continuous reconstruction and infinite storage of numerical work. Snapshot fundamentalism would permit silent replacement of the warrants that make a present state legitimate. Certified folds preserve the speed of snapshots and the accountability of history.
+
+\section{Admission, Refusal, and Attestation}
+
+Let $c$ be a candidate transition. Its disposition is determined by an admissibility gate
+\[
+\Adm(c\mid M_t,Q_t,\phi_t,W_t)\in\{\mathrm{admit},\mathrm{refuse},\mathrm{repair},\mathrm{defer}\},
+\]
+where $\phi_t$ is the causal frontier and $W_t$ is a bounded witness set drawn from history. The gate should ordinarily consult current folds. Direct historical witnesses are reserved for cases in which a current summary is insufficient: a disputed signature, the exact terms of a prior authorization, or a replay claim tied to a particular artifact.
+
+This distinction answers an efficiency objection. A history-primary identity does not imply that every permission check scans $H$. The relevant historical effects are folded into $Q$. The event retains the witness by which the fold can be audited or rebuilt.
+
+Observation requires a similarly sharp distinction. Sensors and users may sample a world continually. If every sample were a commit, history would grow with frame rate and observer count. More importantly, rendering would acquire causal force merely because someone looked. An observation becomes historical only when an identified procedure registers it as evidence that changes what may be asserted or done:
+\[
+\text{looking}:\ \Render(M_t,Q_t,\omega)\to x \quad [\text{no commit}],
+\]
+\[
+\text{attesting}:\ (x,\text{witness},\text{rule})\to e_{t+1}\quad [\text{admissible set altered}].
+\]
+The decisive property is constraining work. A transient camera frame may be discarded. A signed measurement that authorizes a repair becomes an attestation. An administrator opening a dashboard does not necessarily change the world; certifying an exception does.
+
+Refusal is historically important because it can affect one fold without affecting another. A rejected transfer leaves the physical location of an object unchanged, yet it may alter audit status, suspicion, rate limits, or future permissions. This is not a paradox. Events describe relations between proposals and constraints as well as physical transitions.
+
+\begin{invariant}[Refusal visibility]
+A refused proposal produces no admitted physical mutation, but its historically relevant effects remain available to designated provenance folds.
+\end{invariant}
+
+The qualifier ``designated'' matters. An adversary could otherwise inflate history with meaningless attempts or poison reputation merely by provoking rejections. Systems need aggregation, retention, identity, and rate policies for refusals. Durability need not mean unbounded literal retention; it means that compression itself is governed and auditable.
+
+\section{What Established State Models Supply}
+
+Transition-system research gives precise forms to several parts of the architecture. In a labeled transition system, a world is a set of states with a relation $s\xrightarrow{a}s'$. Structural operational semantics makes admissibility explicit: a transition exists when it can be derived from rules. Planning formalisms use preconditions and effects. Markov decision processes add stochastic transition kernels and rewards; partially observable variants distinguish the underlying state from an agent's observations and beliefs.
+
+These approaches establish that a world need not be defined by its images. Its identity as a computational object can be given by variables, admissible actions, and transition laws. They also expose a limitation of the generic word \emph{state}. A Markov state is sufficient for predicting task-relevant futures under the model. A database state is a current assignment of values. A causal state in computational mechanics is an equivalence class of histories with identical conditional distributions over futures. A situation in situation calculus is itself an action history. These are different constructions answering different questions.
+
+The proposed $M$ should be Markov-sufficient only relative to operative dynamics. It need not absorb every provenance distinction. The proposed $Q$ is a task-indexed summary of historically active relations. The pair $(M,Q)$ can therefore be sufficient for ordinary transition and admission decisions even when $H$ remains necessary for identity, audit, and disputed reconstruction.
+
+Computational mechanics supplies a particularly useful analogy. Causal states group pasts that yield the same predictive distribution over futures. This formalizes the idea that state can be a quotient of history rather than a duplicate of it. Yet predictive equivalence is not provenance equivalence. Two pasts may license identical predictions while differing in ownership or responsibility. The layered architecture therefore uses multiple quotients of one history instead of demanding a single universally sufficient state.
+
+Viability and reachability add a second distinction. Reachability asks which states can be attained from an initial set under permitted controls. Viability asks from which states constraints can continue to be satisfied. If institutional constraints are represented in $Q$, then the relevant kernel is not defined over $M$ alone:
+\[
+\Viab(K)\subseteq M\times Q.
+\]
+A physically reachable transfer may be institutionally inadmissible; a physically identical repair can differ depending on certification. This extension is proposed rather than established in the persistent-world literature, but it is mathematically natural once admissibility depends on both folds.
+
+Event structures provide a closer formal home for irreversible history. A configuration is a causally closed, conflict-free set of events. Configurations grow, while conflict records alternatives that cannot jointly occur. This resembles a history DAG better than a single total trace does. It also supports a precise notion of branch exclusion: admitting one event can permanently rule out another without pretending that the excluded proposal never existed.
+
+\section{Persistence in Distributed Computational Worlds}
+
+Persistent multiplayer systems distinguish the durable world from any participant's session. Engineering surveys emphasize spatial partitioning, interest management, load distribution, replication, and database persistence. The relevant theoretical point is not that MMO architectures already implement the present proposal. It is that they repeatedly separate an authoritative state from partial replicas and durable records, because no one representation satisfies latency, scale, consistency, and recovery simultaneously.
+
+State-machine replication provides the cleanest baseline. A deterministic service can be replicated when replicas begin in the same state and execute the same ordered requests. Agreement about requests and their order allows the replicated states to remain equivalent. This establishes a strong relation among operation ordering, deterministic transition, and authoritative state. It does not, by itself, say which rejected proposals deserve durable history, how observer-specific views relate to evidence, or how to grade replay when determinism is imperfect.
+
+Optimistic distributed simulation supplies another crucial mechanism. Jefferson's Virtual Time permits logical processes to advance provisionally, roll back when a message arrives from the simulated past, issue antimessages to cancel consequences, and discard obsolete recovery information once a global virtual time frontier makes rollback behind it unnecessary. The conceptual contribution is a disciplined separation between provisional computation and committed past. Fossil collection also shows that persistence does not require preserving every provisional state forever. What matters is a justified frontier beyond which discarded detail is no longer required for the promised form of recovery.
+
+Distributed snapshots establish an epistemic limit. Chandy and Lamport define a consistent global state of an asynchronous system without stopping all processes. The recorded cut can be meaningful for evaluating stable properties even though it need not equal an instantaneous physical configuration that every process simultaneously occupied. A dashboard that displays a consistent distributed snapshot should therefore not be interpreted naively as a photograph of one universal now. This supports the separation of appearance from authoritative causal structure.
+
+Interest management gives each participant a partial, often stale projection of a shared state. A client may know nearby objects at high fidelity, remote regions at low fidelity, and hidden objects not at all. Such a view is not a defective copy of the whole world; it is an observer-relative projection governed by bandwidth, relevance, and permission. The world model must therefore distinguish the shared folds from the view $x_t^{(i)}$ available to participant $i$.
+
+In a distributed history, events name causal parents. For two concurrent events $e_i$ and $e_j$,
+\[
+e_i\perp e_j \Longrightarrow \Fold(e_i; e_j)=\Fold(e_j; e_i)
+\]
+only if their effects commute and neither changes the other's admissibility. Concurrent attempts to consume one resource, transfer one object, or change one another's permissions are not independent merely because they arrived at different replicas. The system must order, refuse, repair, or branch them.
+
+\begin{invariant}[Causal commutation]
+Events may be folded in either order only when independence is certified with respect to both operative and provenance effects.
+\end{invariant}
+
+This strengthens conventional conflict detection. Two operations may commute physically while differing in provenance: two identical replacements can yield the same geometry but different authorship. Independence is therefore fold-relative, and global independence requires commutation across every authoritative fold affected by the events.
+
+\section{Replay, Checkpoints, and Recurrence}
+
+Replay is often treated as a yes-or-no property. Either the same inputs regenerate the same state or they do not. In practice, recurrence has several levels. Hardware, parallel scheduling, floating-point semantics, nondeterministic libraries, learned components, and external dependencies can defeat bitwise identity while leaving higher-level behavior stable.
+
+A checkpoint should bind more than state bytes:
+\[
+C_k=(\phi_k,M_k,Q_k,V_k,\Xi_k,T_k,h_k),
+\]
+where $\phi_k$ is the history frontier; $V_k$ records rule, solver, model, and schema versions; $\Xi_k$ records seeds and nondeterministic inputs; $T_k$ records tolerances and equivalence policies; and $h_k$ records verification hashes. A checkpoint accelerates reconstruction. It does not replace the history that identifies what the state purports to continue.
+
+At least five replay claims should be distinguished. \emph{Bitwise replay} reproduces identical bytes. \emph{Numerical replay} stays within declared tolerances. \emph{Semantic replay} preserves task-relevant facts and outcomes. \emph{Causal replay} preserves the dependency structure and disposition of events. \emph{Provenance replay} preserves warrants, attributions, refusals, and repair relations. None entails all the others. A compressed state might preserve task performance while losing causal lineage; a faithfully archived log might preserve provenance while relying on an obsolete solver that cannot regenerate the old bits.
+
+\begin{definition}[Replay profile]
+The replay profile of an artifact is the tuple $\mathfrak{R}=(r_b,r_n,r_s,r_c,r_p)$, whose components state the verified degree of bitwise, numerical, semantic, causal, and provenance recurrence under declared conditions.
+\end{definition}
+
+When replay diverges, the earlier checkpoint should not be patched in place. The system appends a replay-discrepancy event containing the expected result, observed result, execution environment, equivalence tests, and disposition. A repair can then produce a new checkpoint. This policy distinguishes epistemic immutability from operational rigidity: service may be restored and models improved without representing the improved result as what originally occurred.
+
+Deterministic replay research supports the engineering value of recording nondeterministic inputs, scheduling decisions, or message order. Optimistic simulation supports checkpoint-and-rollback. Event sourcing supports reconstructing projections from an append-only event stream. None of these literatures alone establishes that a refusal is part of world identity or that a failed replay must remain as a first-class provenance event. Those are additions of the present synthesis.
+
+Continuous simulation creates a storage objection. A field solver may execute thousands of microsteps between semantically important events. The solution is to distinguish numerical work from commitment:
+\[
+\text{solver ticks}\to\text{semantic candidates}\to\text{committed events}.
+\]
+A field-level commit can preserve the previous certified state, boundary conditions, forcing data, solver identity, interval, stochastic inputs, constraint checks, and output hash. Intermediate values can be retained for diagnostics or discarded under policy. Commit frequency is task-relative: collision, ownership transfer, irreversible phase change, public attestation, or branching decision may matter even when embedded in much finer integration.
+
+\section{Partial Observability and Private Views}
+
+POMDPs distinguish an underlying state $s_t$, an observation $o_t$, and a belief distribution updated from actions and observations. This is the established formal baseline for partial observability. It clarifies that an agent's information state is not the world state and that action can change both the world and what becomes knowable.
+
+The layered account adds two qualifications. First, the observation emitted to an agent is an appearance, not automatically an event. Only attested evidence changes authoritative history. Second, permissions and provenance can determine what observation function applies. Thus an observer-specific appearance can be written
+\[
+x_t^{(i)}\sim O_i(\cdot\mid M_t,Q_t,a_{<t}^{(i)}),
+\]
+where $Q_t$ helps determine access, disclosure, trust, and evidential status.
+
+Private views produce a distinction among physical truth, available evidence, and registered evidence. An object can exist in $M$ while remaining outside an agent's interest region. A sensor reading can enter an agent's local belief without being accepted by the shared world. A signed report can become a shared attestation even when its raw perceptual source is later unavailable. These are not merely degrees of uncertainty; they are different relations among the layers.
+
+Distributed snapshots prevent a simplistic God's-eye interpretation. Even a consistent global cut may be a constructed epistemic object rather than an occupied simultaneous state. The system should therefore record how a summary was assembled, at which causal frontier, and under which consistency criterion. Appearance must expose its epistemic status when it is used for audit or science.
+
+Computational mechanics suggests another useful boundary. Histories can be grouped by their predictive futures. POMDP belief states group uncertainty over latent state. Neither construction automatically preserves the distinctions that make a claim attributable or a repair legitimate. Predictive sufficiency, control sufficiency, and provenance sufficiency must therefore be tested separately.
+
+\section{Learned World Models and Neural Game Engines}
+
+The learned world-model literature contains a well-established state-centric lineage. World Models, PlaNet, Dreamer, and MuZero learn representations and transition mechanisms that support prediction, planning, value estimation, or policy learning. Their internal states are not required to reconstruct every visual detail; they are useful because an agent can iterate them to evaluate possible futures. This is strong evidence for distinguishing an operative state from rendered content.
+
+Action-conditioned generative environments occupy a different position. Systems such as GameNGen and Genie can produce interactive visual continuations from frames and actions. They demonstrate that a high-dimensional renderer can absorb part of what a conventional engine separates into simulation and rendering. Yet action responsiveness and short-horizon visual consistency do not establish persistent state. Off-screen entities, inventories, causal commitments, or ownership relations may have no stable addressable representation.
+
+The important distinction is not symbolic versus neural. A neural state can be operative if it supports stable queries, counterfactual transitions, object relations, and recurrence. A symbolic engine can fail to be historically persistent if it silently overwrites its state and discards the events that warranted it. The distinction is between \emph{compression latents}, optimized to encode or regenerate observations, and \emph{state latents}, tested by the transitions and invariants the world must maintain.
+
+Three tests help separate them. The off-screen persistence test asks whether an entity retains identity and properties while absent from the current observation. The intervention test asks whether changing one state variable produces localized, law-governed consequences rather than a wholesale visual resampling. The recurrence test asks whether a declared checkpoint and event suffix regenerate the same semantic and provenance commitments. Passing the first two supports controllable state; passing the third supports historical persistence.
+
+Recent memory-augmented generative systems retain frames, poses, timestamps, geometry, or compressed context to extend coherence. This is an engineering convergence toward explicit persistence mechanisms, not evidence that pixels alone were sufficient. Memory can still be opaque: if no event boundary or identity criterion is exposed, the ledger may have been relocated into weights or recurrent activations rather than eliminated.
+
+For any renderer that maps multiple historically distinct states to the same appearance, equality of rendered outputs is insufficient to establish equality of persistent worlds. If $(M,Q,H)\neq(M',Q',H')$ but $R(M,Q,\omega)=R(M',Q',\omega)$, appearance cannot decide which history or provenance relation obtains. This is commonplace: two visually identical objects can have different owners, repairs, or causal origins.
+
+\section{Evidence Map: Results, Analogies, and Gaps}
+
+The literature is strongest when each field is asked to support only the claim it actually establishes. Table~\ref{tab:evidence} summarizes that allocation.
+
+\small
+\begin{longtable}{p{0.15\textwidth}p{0.25\textwidth}p{0.24\textwidth}p{0.23\textwidth}}
+\caption{Evidential status of the principal connections.}\label{tab:evidence}\\
+\toprule
+Domain & Established result & Legitimate use here & Unresolved extension\\
+\midrule
+\endfirsthead
+\toprule
+Domain & Established result & Legitimate use here & Unresolved extension\\
+\midrule
+\endhead
+State-machine replication & Ordered deterministic commands maintain equivalent replicated services. & Connects transition order, authority, and reproducible state. & Refusal-aware and provenance-sensitive replication across heterogeneous folds.\\
+\addlinespace
+Distributed snapshots & A consistent global cut can be recorded without a universal simultaneous snapshot. & Limits naive identification of displayed global state with an occupied instant. & User-facing representations of causal-frontier uncertainty.\\
+\addlinespace
+Optimistic simulation & Provisional execution can be rolled back; a committed frontier permits fossil collection. & Separates solver work from historically settled state. & Formal commitment criteria when provenance, not simulation time, determines finality.\\
+\addlinespace
+POMDPs & State, observation, belief, action, and stochastic transition are distinct. & Grounds partial, observer-relative views. & Incorporating attestations, permissions, and historical warrants without bloating state.\\
+\addlinespace
+Computational mechanics & Predictive states can be equivalence classes of histories with identical future distributions. & Shows how state may be a quotient of history. & Multiple simultaneous quotients for physical, predictive, and provenance sufficiency.\\
+\addlinespace
+Event structures & Causality, concurrency, conflict, and irreversible configuration growth are explicit. & Formal analogue for a causal committed history. & Typed refusals and repairs linked to materialized world folds.\\
+\addlinespace
+Learned world models & Iterated latent dynamics can support planning and policy learning. & Establishes operative state without full rendering. & Verifiable persistent identity in learned representations.\\
+\addlinespace
+Generative game engines & Actions can condition coherent visual continuation. & Tests the boundary between appearance and controllable state. & Long-horizon off-screen identity, audit, replay, and provenance.\\
+\addlinespace
+Viability theory & Kernels characterize states from which constraints remain satisfiable. & Suggests admissible future volume over $(M,Q)$. & Institutional and provenance-aware viability kernels.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+Several attractive comparisons remain analogical. Artificial-life and agent-based models show how local rules generate global histories, but they do not generally distinguish provenance authority from operative state. Categorical process theories supply languages of composition, but no established literature derives persistent game architecture from categorical quantum mechanics. Quantum instruments sharply distinguish transformations and measurement operations, yet they do not establish that observation in a multiplayer world should be treated as quantum measurement. Such fields can discipline vocabulary; they cannot substitute for an implementation or validation result.
+
+The most important negative finding concerns quantum geometry. Generalized probabilistic theories, geometric quantum mechanics, quantum instruments, and categorical quantum mechanics offer mature accounts of states, transformations, distinguishability, and composition. No credible literature located in the source search directly connects quantum-state geometry to MMO persistence, event-sourced world histories, or neural game engines. The defensible bridge is methodological and primarily classical: Markov categories and information geometry study stochastic processes and distinguishability in compositional form. Treating this as a direct quantum theory of virtual worlds would overstate the evidence.
+
+The artificial-life and social-simulation literatures are also best treated briefly. Schelling, Sugarscape, Tierra, Avida, and related systems demonstrate that global organization can emerge from local agent rules and that simulation can disclose consequences not transparent from premises. This supports simulation as an epistemic instrument. It does not establish the stronger layered claim that refusals and provenance are constitutive of persistent identity.
+
+\section{Formal Invariants}
+
+The architecture can be summarized by seven invariants suitable for implementation and testing.
+
+\paragraph{Layer non-collapse.} No equality is presumed among $x_t$, $M_t$, $Q_t$, and $H_t$. Mappings among them are typed and many-to-one mappings declare which distinctions they discard.
+
+\paragraph{Pure rendering.} Rendering can read certified folds and observer parameters but cannot mutate authoritative state merely by producing a view.
+
+\paragraph{Attestation boundary.} A perception enters committed history only through an identified evidential procedure. The event records the witness, rule, causal frontier, and resulting constraint.
+
+\paragraph{Fold certification.} Every authoritative fold identifies the history frontier, schema, reducer version, and checkpoint or replay evidence that certifies it.
+
+\paragraph{Refusal visibility.} A refused candidate leaves operative state unchanged unless the refusal itself has defined physical consequences, but it can update audit and permission folds under explicit policy.
+
+\paragraph{Append-only repair.} A correction creates a new event related to the defective proposal, state, or checkpoint. It does not overwrite the record it corrects.
+
+\paragraph{Graded recurrence.} Replay claims name their equivalence level and execution conditions. ``Reproducible'' without a profile is not a valid verification result.
+
+These invariants are stronger than conventional event sourcing in some respects and weaker in others. They do not require every mutation in memory to become an event. They do require every identity-bearing transition to cross a visible commitment boundary. What counts as identity-bearing is specified by the domain's recurrence and accountability obligations.
+
+\section{An Implementation Schema}
+
+A practical event envelope might contain an event identifier, type, causal parents, proposer, candidate payload hash, gate identity and version, bounded witness references, disposition, affected folds, reducer versions, timestamp policy, and signature or integrity field. The content can be stored as a sequence under a single sequencer or as a DAG under distributed authority.
+
+Each reducer is a total or explicitly partial function over its declared event types. The physical reducer ignores a refused transfer unless policy gives the attempt a physical consequence. The provenance reducer may update risk or audit state. An accounting reducer may record fees. A narrative reducer may summarize the attempt without becoming authoritative for permissions. Reducer version changes are events because they alter how future folds are produced.
+
+At runtime, the system loads the latest trusted checkpoint compatible with the required replay profile, verifies its binding to frontier $\phi_k$, and folds the subsequent event cone. Provisional simulation proceeds from the certified $M_k$ while proposals accumulate. Admission gates consult $M$, $Q$, and bounded historical witnesses. Accepted candidates generate committed events and updated folds. A view service renders from those folds through observer-specific permissions and interest management.
+
+Failure handling is equally important. If a checkpoint hash fails, the system appends a discrepancy rather than normalizing the mismatch away. If a historical witness is missing, the affected claim becomes unresolved or degraded rather than inferred from the present snapshot. If reducer versions disagree, the fold is labeled with its implementation and equivalence result. If two concurrent events fail the commutation test, the system orders, branches, refuses, or repairs them.
+
+The schema permits selective retention. Raw sensor samples, solver traces, and intermediate states can be placed in content-addressed auxiliary storage with retention policies. Committed events retain their hashes and dispositions even after auxiliary bytes expire. This preserves the fact and scope of an attestation without pretending that every underlying datum remains recoverable forever. A provenance claim must say which artifacts survive.
+
+\section{Failure Cases}
+
+The framework becomes clearer when applied to failures. Consider first the beautiful reset. A neural renderer regenerates a village after a server restart. Buildings, weather, and characters look convincing, but a repaired bridge has reverted to its pre-repair structure and the model cannot recover who performed the work. Appearance recurred; operative and provenance state did not. The system generated a compatible scene rather than continuing the same persistent world.
+
+Consider next the authoritative screenshot. An administrator treats a dashboard image as proof of a distributed world's exact global state. The image was assembled from a consistent but temporally distributed cut. It may support a stable-property claim, but not the assertion that every displayed value coexisted at one physical instant. The appearance is epistemically useful only with its snapshot semantics attached.
+
+In the case of an invisible refusal, an unauthorized transfer is rejected and discarded. Repeated attempts later succeed because no rate, audit, or suspicion state changed. The physical reducer behaved correctly at each step, yet the world failed to preserve a boundary-relevant history. Refusal needed to affect a provenance fold.
+
+In the repaired-past failure, a replay on new hardware diverges numerically. Operators replace the old checkpoint with a newly generated one and retain only the latest hash. Service resumes, but the system can no longer distinguish original recurrence from reconstruction. Operational recovery has erased epistemic history.
+
+A refusal-aware system can itself fail through a poisoned ledger. An adversary submits millions of invalid proposals to inflate the append-only history. The solution is not to erase refusals conceptually but to apply typed aggregation, rate policies, content addressing, and retention commitments. A durable summary can remain an auditable fold if its compression rule and frontier are recorded.
+
+Finally, an opaque state latent predicts actions well within its training distribution. When queried about an object that has been off-screen, its identity drifts. The representation was control-sufficient for the benchmark but not persistence-sufficient for the world. Calling it a state without naming the task concealed the limitation.
+
+\section{Research Program}
+
+The central empirical question is whether the proposed separation yields measurable advantages over snapshot-primary and frame-history systems. A minimal testbed should contain a small persistent environment with hidden objects, ownership changes, repairs, refused actions, concurrent proposals, stochastic physics, and observer-specific views. It should implement a conventional snapshot baseline, an admitted-event log, and the full refusal-aware multi-fold architecture.
+
+The first experiment would test off-screen identity. Agents leave and revisit objects after long generative intervals. Success requires not merely perceptual similarity but stable identifiers, properties, and provenance. The second would test replay profiles across hardware and solver versions. The system would report which equivalence levels survive and whether discrepancies remain addressable. The third would test distributed concurrency by generating commuting and noncommuting event pairs and checking whether fold-relative independence is correctly certified.
+
+The fourth would test observation versus attestation. Many clients would view and sample the world, but only selected measurements would enter shared evidence. Storage growth, audit quality, and causal side effects could then be compared with a design that commits every observation. The fifth would test adversarial refusal load and evaluate bounded aggregation policies without losing security-relevant lineage.
+
+Several formal questions remain open. What is the smallest event vocabulary that reconstructs both operative and provenance folds without making solver ticks historical? Which admissibility predicates can rely on $Q$ and which require direct witnesses in $H$? Under what conditions does commutation in one fold imply commutation in all authoritative folds? Can replay profiles form a lattice ordered by evidential strength? Can a learned representation expose stable, queryable identity without an explicit ledger? Can a viability kernel over $(M,Q)$ be computed efficiently enough to guide institutional as well as physical action?
+
+Another open problem is historical distance. Information geometry measures distinguishability among probability distributions, and latent-space geometry can measure local changes in generative representations. Neither directly measures the loss incurred when two provenance-distinct worlds collapse to one extensionally identical snapshot. A useful metric would have to be task-relative: it would assign high distance when discarded distinctions change admissible future actions, responsibility, or recurrence claims, even if current pixels and physics are identical.
+
+\section{Discussion}
+
+The layered account makes a stronger claim than ``keep logs.'' It argues that persistence is a relation among present operation, historical warrant, and future admissibility. A log that cannot certify current folds is archival but not operative. A state that cannot expose its lineage is operative but not historically accountable. A renderer that creates coherent frames is presentational but not thereby world-preserving.
+
+The account also avoids treating history as an indiscriminate transcript. History records semantic commitments, including selected refusals and discrepancies. Numerical microsteps remain provisional unless they cross an identity-bearing boundary. This answers the practical objection that history-primary architecture must store infinite continuous evolution.
+
+There is no claim that the proposed layers are ontologically fundamental. They are functional distinctions determined by what a system promises to preserve. A temporary arcade game may need only appearance and operative state. A collaborative scientific world may require signed attestations, replay profiles, and provenance-preserving checkpoints. A legal or economic world may treat permission and ownership folds as coequal with physics. Worldhood comes in strengths.
+
+Those strengths can be ordered. \emph{Renderability} is the ability to produce an appearance. \emph{Responsiveness} is the ability to condition appearances on actions. \emph{Controllability} is the ability to apply structured transitions to state. \emph{Recurrence} is the ability to reproduce a state under declared conditions. \emph{Provenance} is the ability to recover the lineage and warrants of that state. \emph{Persistence} is the ability to preserve identity through change by keeping commitments, refusals, and repairs addressable. Each level adds an obligation that the preceding level does not entail.
+
+This hierarchy clarifies current claims about neural game engines. They are significant demonstrations of renderability and responsiveness, and some approach controllability. They should not be credited with provenance or persistence without evidence about off-screen state, event identity, replay, and historical warrant. Conversely, conventional engines should not receive those stronger labels automatically merely because their state is explicit. A mutable database without durable, typed commitments can forget a world as thoroughly as a video model can.
+
+\section{Method and Source Discipline}
+
+This synthesis began from two differently useful source artifacts. The earlier literature search assembled a wide field of possible connections, including persistent-world engineering, learned dynamics, game benchmarks, artificial life, formal transition systems, causal modeling, and quantum geometry. Its breadth made it valuable as a discovery instrument but unsuitable as a finished evidential argument: peer-reviewed results, technical reports, project pages, and speculative bridges appeared at different levels of verification. The later layers report supplied a much cleaner architecture but cited only a selective backbone. The present paper therefore does not simply merge the documents. It uses the later architecture as the question and the earlier search as a candidate pool.
+
+Sources were retained according to a contribution test. A work had to clarify at least one of five focal distinctions: appearance versus state; state versus history; provisional execution versus commitment; exact replay versus graded recurrence; or shared state versus partial observation. State-machine replication, Virtual Time, distributed snapshots, POMDPs, computational mechanics, event structures, and state-centric learned world models survived this test because each supplies a defined object or result. Works concerning artificial life, social simulation, categorical formalisms, and quantum geometry were demoted to brief comparisons when they supplied vocabulary without validating the proposed architecture.
+
+The word \emph{established} is used narrowly. It marks a result recognized within its home field: deterministic ordered execution in state-machine replication, consistent cuts in distributed systems, rollback in optimistic simulation, belief-state reasoning in POMDPs, or action-conditioned visual generation in recent neural systems. It does not mean that transferring the result into the four-layer architecture has already been validated. \emph{Analogy} marks a structural resemblance that can discipline formulation but cannot carry an empirical conclusion. \emph{Emerging} marks systems supported principally by recent conference papers, preprints, or originating-group documentation. \emph{Unresolved} marks a construction proposed here for which no direct precedent was found.
+
+This grading also governs negative claims. Failure to locate a direct quantum-geometric theory of persistent game worlds is not proof that none exists. It is a report about the reviewed literature and a warning against treating shared words such as state, observation, and transformation as evidence of a shared theory. Conversely, the absence of a single paper combining all four layers does not prove the synthesis is novel in every implementation detail. Its defensible novelty lies in the explicit allocation of authority, the observation--attestation boundary, refusal-aware history, multiple certified folds, and replay profiles considered together.
+
+The bibliography is intentionally narrower than the discovery corpus. It favors canonical articles, peer-reviewed proceedings, academic books, and originating papers whose claims are actually used in the argument. Recent neural systems are included to mark the live boundary between rendering and state, not to create a catalog of products. Sources whose identifiers or relevance could not be made sufficiently clear were omitted rather than preserved for apparent comprehensiveness. This means the paper is a conceptual synthesis with a verified backbone, not a systematic review with exhaustive search strings, inclusion counts, and risk-of-bias coding.
+
+That limitation suggests a future companion study. A systematic review could operationalize persistence claims and code systems for explicit state, off-screen identity, authoritative event history, refusal retention, checkpoint binding, deterministic or graded replay, observer-specific projection, and provenance recovery. Such a matrix would permit empirical comparison across conventional engines and learned environments. Until then, the present classifications should be read as carefully bounded judgments whose purpose is to make the next experiments possible.
+
+\section{Conclusion}
+
+The layers question is resolved by assigning different kinds of authority to different representations. Appearance is a disposable, observer-relative projection. Operative state governs dynamics between commitment boundaries. Provenance and permission state summarize historically active relations. Committed history governs identity, auditability, and the legitimacy of recurrence. One causal history can support many efficient folds, so historical authority need not entail an unbounded log scan or the retention of every numerical step.
+
+The decisive boundary is between provisional computation and attested constraint. Looking is not an event; attesting is. A refusal can be historically real without changing physical state. A failed replay can be repaired without rewriting what failed. A checkpoint can accelerate recurrence without becoming the source of truth. A distributed snapshot can be consistent without being a photograph of one universal instant. A rendered continuation can be convincing without continuing the same world.
+
+The established literature supplies strong components: explicit transitions, replicated state machines, rollback, consistent cuts, partial observability, causal histories, predictive state constructions, and learned dynamics. It does not already combine them into a refusal-aware, provenance-sensitive architecture of persistent identity. That integration is the paper's contribution and its burden of proof. A world persists, on this account, not because it can show the same scene again, but because it can say what was committed, what was refused, how the present was derived, and under which standard it is entitled to count as a continuation of its past.
+
+\begin{thebibliography}{99}\small
+\bibitem{astrom1965} K. J. Astr\"om, ``Optimal control of Markov processes with incomplete state information,'' \emph{Journal of Mathematical Analysis and Applications}, 10, 174--205, 1965. \url{https://doi.org/10.1016/0022-247X(65)90154-X}.
+\bibitem{aubin1991} J.-P. Aubin, \emph{Viability Theory}. Birkh\"auser, 1991. \url{https://doi.org/10.1007/978-0-8176-4910-4}.
+\bibitem{barrett2007} J. Barrett, ``Information processing in generalized probabilistic theories,'' \emph{Physical Review A}, 75, 032304, 2007. \url{https://doi.org/10.1103/PhysRevA.75.032304}.
+\bibitem{bartle2003} R. A. Bartle, \emph{Designing Virtual Worlds}. New Riders, 2003.
+\bibitem{chandy1985} K. M. Chandy and L. Lamport, ``Distributed snapshots: Determining global states of distributed systems,'' \emph{ACM Transactions on Computer Systems}, 3(1), 63--75, 1985. \url{https://doi.org/10.1145/214451.214456}.
+\bibitem{coecke2017} B. Coecke and A. Kissinger, \emph{Picturing Quantum Processes}. Cambridge University Press, 2017. \url{https://doi.org/10.1017/9781316219317}.
+\bibitem{crutchfield1989} J. P. Crutchfield and K. Young, ``Inferring statistical complexity,'' \emph{Physical Review Letters}, 63, 105--108, 1989. \url{https://doi.org/10.1103/PhysRevLett.63.105}.
+\bibitem{epstein1999} J. M. Epstein, ``Agent-based computational models and generative social science,'' \emph{Complexity}, 4(5), 41--60, 1999.
+\bibitem{fritz2020} T. Fritz, ``A synthetic approach to Markov kernels, conditional independence and theorems on sufficient statistics,'' \emph{Advances in Mathematics}, 370, 107239, 2020. \url{https://doi.org/10.1016/j.aim.2020.107239}.
+\bibitem{ha2018} D. Ha and J. Schmidhuber, ``World Models,'' 2018. \url{https://arxiv.org/abs/1803.10122}.
+\bibitem{hafner2019} D. Hafner et al., ``Learning latent dynamics for planning from pixels,'' \emph{Proceedings of ICML}, 2019. \url{https://arxiv.org/abs/1811.04551}.
+\bibitem{hafner2020} D. Hafner et al., ``Dream to Control: Learning behaviors by latent imagination,'' \emph{Proceedings of ICLR}, 2020. \url{https://arxiv.org/abs/1912.01603}.
+\bibitem{jefferson1985} D. R. Jefferson, ``Virtual Time,'' \emph{ACM Transactions on Programming Languages and Systems}, 7(3), 404--425, 1985. \url{https://doi.org/10.1145/3916.3988}.
+\bibitem{kaelbling1998} L. P. Kaelbling, M. L. Littman, and A. R. Cassandra, ``Planning and acting in partially observable stochastic domains,'' \emph{Artificial Intelligence}, 101, 99--134, 1998. \url{https://doi.org/10.1016/S0004-3702(98)00023-X}.
+\bibitem{martens2015} C. Martens, ``Ceptre: A language for modeling generative interactive systems,'' \emph{Proceedings of AIIDE}, 2015. \url{https://ojs.aaai.org/index.php/AIIDE/article/view/12736}.
+\bibitem{muzero2020} J. Schrittwieser et al., ``Mastering Atari, Go, chess and shogi by planning with a learned model,'' \emph{Nature}, 588, 604--609, 2020. \url{https://doi.org/10.1038/s41586-020-03051-4}.
+\bibitem{rutten2000} J. J. M. M. Rutten, ``Universal coalgebra: a theory of systems,'' \emph{Theoretical Computer Science}, 249(1), 3--80, 2000. \url{https://doi.org/10.1016/S0304-3975(00)00056-6}.
+\bibitem{schneider1990} F. B. Schneider, ``Implementing fault-tolerant services using the state machine approach: A tutorial,'' \emph{ACM Computing Surveys}, 22(4), 299--319, 1990. \url{https://doi.org/10.1145/98163.98167}.
+\bibitem{shalizi2001} C. R. Shalizi and J. P. Crutchfield, ``Computational mechanics: Pattern and prediction, structure and simplicity,'' \emph{Journal of Statistical Physics}, 104, 817--879, 2001. \url{https://doi.org/10.1023/A:1010388907793}.
+\bibitem{smallwood1973} R. D. Smallwood and E. J. Sondik, ``The optimal control of partially observable Markov processes over a finite horizon,'' \emph{Operations Research}, 21(5), 1071--1088, 1973. \url{https://doi.org/10.1287/opre.21.5.1071}.
+\bibitem{gameNGen2024} L. Valevski et al., ``Diffusion models are real-time game engines,'' 2024. \url{https://arxiv.org/abs/2408.14837}.
+\bibitem{genie2024} J. Bruce et al., ``Genie: Generative interactive environments,'' \emph{Proceedings of ICML}, 2024. \url{https://proceedings.mlr.press/v235/bruce24a.html}.
+\bibitem{winskel1987} G. Winskel, ``Event structures,'' in \emph{Petri Nets: Applications and Relationships to Other Models of Concurrency}, LNCS 255, 325--392, 1987. \url{https://doi.org/10.1007/3-540-17906-2_31}.
+\end{thebibliography}
+\end{document}

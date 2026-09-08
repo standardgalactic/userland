@@ -1,0 +1,468 @@
+\documentclass[12pt]{article}
+\usepackage[left=1.5in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{courier}
+\renewcommand{\familydefault}{\ttdefault}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{ifthen}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage.}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ---------- Screenplay macros ----------
+\newcommand{\sceneheading}[1]{%
+  \bigskip\noindent\textbf{#1}\par\smallskip
+}
+\newcommand{\action}[1]{%
+  \noindent #1\par\medskip
+}
+\newcommand{\charcue}[1]{%
+  \par\hspace*{2.2in}\textbf{#1}\par
+}
+\newenvironment{dialogue}{%
+  \begin{list}{}{\leftmargin=1.5in\rightmargin=2in\itemsep=0pt\parsep=0pt\topsep=0pt}
+  \item[]
+}{%
+  \end{list}\medskip
+}
+\newcommand{\parenthetical}[1]{%
+  \hspace*{1.9in}(#1)\par
+}
+\newcommand{\transition}[1]{%
+  \hfill\textbf{#1}\par\medskip
+}
+\newcommand{\actbreak}[1]{%
+  \clearpage\thispagestyle{empty}\vspace*{3in}
+  \begin{center}{\Large\textbf{#1}}\end{center}
+  \clearpage
+}
+% ----------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{3in}
+\begin{center}
+{\LARGE \textbf{CHLEOMANCER}}\\[1em]
+screenplay by Flyxion
+\end{center}
+\vfill
+\end{titlepage}
+
+\setcounter{page}{1}
+
+\actbreak{ACT ONE\\ \large THE TALE OF ANTICHLIARIOS}
+
+FADE IN:
+
+\sceneheading{EXT. CAMP -- KNAPPING GROUND -- DAY}
+
+\action{ANTICHLIARIOS, elderly, thick-knuckled, sits cross-legged with a core of flint. A handful of YOUNGER BAND MEMBERS crouch nearby, watching her hands rather than the stone. She turns the core, feels along an edge with her thumb, and strikes once. A flake falls clean away.}
+
+\action{She sets the core down and lifts a discarded scraper instead, taps it once against another stone. A thin, quick sound. She turns the scraper in her palm, taps it again, held differently. A duller sound, dying faster. She repeats this several times, comparing, her stillness read by the others as concentration on the blade rather than on the sound.}
+
+\action{No one watching sees what she is actually doing. To them she is a craftswoman with sensitive hands. She is beginning to keep two kinds of knowledge at once: how a stone cuts, and how a stone sounds.}
+
+\sceneheading{EXT. MARSH -- DAY}
+
+\action{Antichliarios kneels at the water's edge, stripping cattail stems and rolling the fibers against her thigh, twisting them into cord. The work is slow, repetitive, ordinary. Her eyes are elsewhere.}
+
+\sceneheading{EXT. CAMP -- TROUGH SITE -- EVENING}
+
+\action{A half-hollowed log lies propped on two support stones -- a trough in progress, meant for rendering fat. A coil of drying cord hangs from a branch above it. Antichliarios ties a small worked point to the end of the cord and lets it hang. Wind moves it. The point swings, strikes the side of the trough.}
+
+\action{It rings.}
+
+\action{She goes still. Ties a second point to a shorter length of cord, a third to a longer one, hangs all three from the branch. She sets them swinging in turn, listening.}
+
+\action{The short cord swings fast, strikes twice before the long cord completes one pass. She shortens it further, lengthens the other, testing. The rhythm changes -- how often a strike returns -- but the note itself does not change with the cord.}
+
+\action{She lifts a heavier point, strikes it against the trough's thick base. A low tone, held. She lifts a thin point, strikes it near the rim. A high tone, gone almost before it starts.}
+
+\action{She sits back on her heels, moving her attention between the two discoveries: the cord governs how often a sound returns, the stone and the point of impact govern what the sound is made of. Two dials, not one, though she has no word yet for either.}
+
+\sceneheading{EXT. CAMP -- TROUGH SITE -- CONTINUOUS}
+
+\action{She twists a hung point tight between two fingers and releases it. It spins, unwinds, spins back the other way, striking the trough twice for every release -- and the gap between those two strikes lengthens or shortens depending on how tightly she wound it.}
+
+\action{She does it again. And again, this time in a pattern: three quick strikes from the short cord, a pause, one low strike from the long one. She repeats the whole sequence, watching her own hands as if checking their work.}
+
+\action{It comes out recognizably the same. Not identical -- no two strikes ever land quite alike -- but recognizably itself, the way a piece of her own knapped work is recognizably hers and not someone else's. She has learned to want the same pattern twice, and built a way of getting it.}
+
+\sceneheading{EXT. CAMP -- FIRESIDE -- NIGHT}
+
+\action{The fire has burned low. The BAND sits close together against the cold, with little else to do. Antichliarios rigs a frame of lashed branches over the trough and hangs three points from it -- short, medium, long.}
+
+\action{She moves among them. Spins one, strikes it. Spins another. The sounds layer, fade, layer again. She does not perform this quickly; she lets each strike finish before starting the next.}
+
+\action{The band goes quiet in a way they do not go quiet for stories, or for warnings of predators. Children reach toward the swinging cords and are pulled back by their mothers. An OLD HUNTER, who has watched Antichliarios work stone for forty years, stares at her hands as though she has become, in this moment, someone he does not know.}
+
+\action{She finishes. Silence holds a beat longer than it should.}
+
+\charcue{FIRST LISTENER}
+\begin{dialogue}
+The dead are speaking. Through the hanging stones.
+\end{dialogue}
+
+\charcue{SECOND LISTENER}
+\begin{dialogue}
+No -- she's found a way to make the wind visible.
+\end{dialogue}
+
+\charcue{THIRD LISTENER}
+\begin{dialogue}
+\parenthetical{flat, unimpressed}
+She built something clever with cord. That's all this is.
+\end{dialogue}
+
+\action{No two accounts of what has just happened will agree, even before the night is over. Each listener reaches for the nearest word they already own and forces the event to fit inside it.}
+
+\sceneheading{EXT. CAMP -- VARIOUS -- DAY (MONTAGE)}
+
+\action{IDU, a boy, Antichliarios's grandnephew, sits with her at the trough. She shows him how to tie a point, how to spin it, how to strike. He copies the motion well enough -- the trough rings under his hand on the second try.}
+
+\action{She asks him, gesturing between a heavy point and a thin one: why does this one hold and that one vanish? He shrugs. He is looking at whether he made a sound at all, not at why one sound differs from another.}
+
+\action{A few more attempts. His attention drifts to the other children playing nearby. He sets the cord down, unfinished, and goes to join them.}
+
+\action{Antichliarios watches him go. She does not call him back.}
+
+\action{TIME PASSES. She shows the technique to two or three others -- an older cousin, a woman from a neighboring band visiting for a season -- with the same result: interest, a few tries, no staying with it.}
+
+\action{Antichliarios, much older now, lies still on a sleeping mat, breathing shallow. The band sits near her, subdued, waiting.}
+
+\action{Later: the frame of lashed branches over the trough sags, untended, then is dismantled for other use. A length of cord, unspooled from its point, is retied around a haft. Cord is precious. A song was never obviously worth more than a spare length of rope.}
+
+\action{A YOUNG WOMAN, not born when Antichliarios was alive, tells a half-remembered version of the story to a child -- an old woman who made the wind sing, once, a long time ago. Neither of them can say how.}
+
+\actbreak{ACT TWO\\ \large THE CURIOUS WIND}
+
+\sceneheading{EXT. LIMESTONE OUTCROP -- DAY}
+
+\action{Generations later. TAK, young, unremarkable, the kind of man a band tolerates rather than depends on, crouches at a narrow crack in the rock. He holds his palm to it. Cold air moves against his skin, though the surrounding stone has sat in sun since morning.}
+
+\action{An OLDER COUSIN passes, glances at him crouched there.}
+
+\charcue{OLDER COUSIN}
+\begin{dialogue}
+Plenty of holes breathe cold air. None of them go anywhere worth the trouble.
+\end{dialogue}
+
+\action{Tak doesn't answer. He is still holding his hand to the crack, working something out behind his eyes: air does not come from nowhere. Somewhere behind this crack is a space large enough to hold air the day hasn't warmed yet.}
+
+\sceneheading{EXT. OUTCROP -- DAY (MONTAGE)}
+
+\action{Tak scrapes at the crack with an antler pick. A handful of loosened stone falls. He returns the next day, and the next, always after his other work is done.}
+
+\action{The crack widens by the width of a finger over the course of a month. CHILDREN are sent to peer into it, report back that it goes nowhere, run off laughing.}
+
+\action{A rockfall catches Tak's hip; he limps for a season. Later, a blade of stone opens his palm to the bone; he binds it and keeps working once it closes enough to grip the pick again.}
+
+\action{Seasons turn. The hole becomes a known feature of the camp, pointed out to visitors the way a lightning-struck tree is pointed out -- an oddity, a fixture, a joke that has worn smooth from repetition. Tak keeps digging. He could not say, if asked, exactly why the cold breath still means something after so many seasons of finding only more rock. It has simply not stopped meaning something.}
+
+\sceneheading{EXT./INT. CAVE PASSAGE -- DAY}
+
+\action{Seventh year. The antler pick breaks through into open space. Cold air rushes out hard enough to knock Tak back from the hole. He widens it -- shoulders, then hips -- and on a morning he tells no one about in advance, in case he is wrong, pushes himself into a passage barely wider than his own body. Total darkness. Both hands occupied with the crawl; the torch unlit, dragged behind him on a cord.}
+
+\action{The passage narrows twice, hard enough that he nearly turns back, chest scraping stone above and below.}
+
+\sceneheading{INT. CAVE CHAMBER -- CONTINUOUS}
+
+\action{The passage opens all at once into space his torch, lit now, held ahead of him, cannot find the edges of. Pale formations hang from a ceiling he cannot see. Pools of still black water. Bones near one wall. Claw marks scored deep into a slope of hardened clay -- something large has used this chamber, may still use it.}
+
+\action{Tak's own breathing returns to him from directions he cannot account for. A stone slips from his hand, falls, strikes the floor -- and the strike does not simply stop. It continues outward, returns changed, layered over itself, holding in the air far longer than it has any right to.}
+
+\sceneheading{INT. CAVE CHAMBER -- CONTINUOUS}
+
+\action{Climbing past a hanging formation, Tak brushes it without meaning to. The note it gives off is unlike anything a stone has done in his hands before -- sustained, clear, holding long after his hand has moved on.}
+
+\action{He strikes it again, deliberately. Then another formation nearby. Then another. Each answers differently -- some dull, some ringing, one almost silent -- depending on shape, thickness, how it hangs from the rock above.}
+
+\action{He sits in the dark a long time, moving between formations, building a rough sequence he can repeat: strike, strike, pause, strike. He does not know that a woman whose name he has never heard once arranged sounds the same way, from three points on cattail cord, generations before him. He has found the same thing twice removed.}
+
+\action{He climbs back out into daylight already rehearsing, in his head, how he will tell this. He does not yet know he is about to fail.}
+
+\actbreak{ACT THREE\\ \large A TRUTH WITHOUT PASSAGE}
+
+\sceneheading{EXT. CAMP -- GATHERING AREA -- DAY}
+
+\action{The BAND has gathered, drawn by the fact that Tak has finally come back from his hole with something to say. He tells it in order: the cold breath, the years of digging, the crawl, the chamber larger than any space he's stood in, the stones that answer when struck.}
+
+\action{Said all together, in one telling, it does not sound like a report. Faces in the crowd shift from curiosity toward concern as he speaks. Seven years of digging in a hole everyone had already decided meant nothing, capped now with a hidden room of singing rock.}
+
+\charcue{TAK}
+\begin{dialogue}
+I know how it sounds. I'm telling you what I heard.
+\end{dialogue}
+
+\action{No one answers him directly. That, itself, is an answer.}
+
+\sceneheading{EXT. CAMP -- RIVERBED -- DAY}
+
+\action{Tak kneels at the river's edge in front of the gathered band, a pile of loose stones beside him. He strikes one. A dull, ordinary knock. He tries a flatter stone. A larger one. He suspends one from a scrap of cord, in rough imitation of what he half-remembers being said about Antichliarios's descendants, and strikes that too.}
+
+\action{Nothing rings the way the cave stones rang. Each attempt lands worse than silence would have. A few in the crowd exchange looks -- not cruel, just settling into a conclusion.}
+
+\sceneheading{EXT. CAMP -- VARIOUS -- DAY}
+
+\action{Overheard fragments, moving through the camp like weather:}
+
+\charcue{VOICE (O.S.)}
+\begin{dialogue}
+An echo. Rock does strange things with sound. He heard an echo and made it into something more.
+\end{dialogue}
+
+\charcue{VOICE (O.S.)}
+\begin{dialogue}
+Seven years alone in a hole would unsettle anyone. That chamber's in his head, not the ground.
+\end{dialogue}
+
+\charcue{VOICE (O.S.)}
+\begin{dialogue}
+\parenthetical{less generous}
+He needed a story big enough to justify the digging. So he built one.
+\end{dialogue}
+
+\action{Each explanation lets its holder keep the world exactly as they already understood it. None of them requires entering the passage.}
+
+\sceneheading{EXT. CAMP -- DAY}
+
+\action{Tak, cornered by his own persistence, describes the chamber again to anyone who will listen -- the exact ring of one formation, the way sound seemed to arrive from more directions than it left. The more precisely he tries to describe it, the more it reads, to people who were not there, as elaboration rather than accuracy.}
+
+\action{People who once tolerated his strangeness with mild amusement now speak of him more carefully -- the way one speaks of someone whose judgment can no longer quite be trusted.}
+
+\sceneheading{EXT. CAMP -- DAY}
+
+\action{Tak asks, in front of a small gathering, if anyone will come with him and see it directly.}
+
+\action{A pause. A few actually consider it. The passage is narrow enough that a person twice Tak's size would not fit through it at all. The floor of the crawl shows no daylight for a distance no one can measure from outside. There are claw marks -- Tak has told them so himself.}
+
+\action{No one volunteers. Weighed against seven years of watching him dig a hole that led nowhere anyone had confirmed, the risk of the crawl does not seem worth taking. The one piece of evidence that could settle the matter completely -- witnessed presence in the chamber -- is exactly the piece no one is willing to acquire for themselves.}
+
+\sceneheading{EXT. OUTCROP -- CAVE MOUTH -- DAY}
+
+\action{Alone again at the mouth of his own hole, Tak sits with his back against the rock. He understands the shape of the problem now, more clearly than he has words for. Language is carrying almost none of what matters -- not the years that made the discovery credible, not the strangeness that made it worth discovering, not the danger that makes other people's caution reasonable.}
+
+\action{What he has found cannot be handed to anyone secondhand. It will have to be brought to them directly, whole -- or brought to them in some form small enough to carry through a passage most of the band will never willingly enter.}
+
+\actbreak{ACT FOUR\\ \large KYTHERA}
+
+\sceneheading{EXT. CAMP -- KYTHERA'S AREA -- DAY}
+
+\action{KYTHERA, older than Tak by two decades, sits surrounded by the odd, half-used relics of a life spent keeping other people's fragments: worn cords, a cracked bowl no one else thought worth mending, bundles of dried plants tied with knots that mean something only to her. Tak has come to tell her his account -- the whole thing, again, patiently.}
+
+\action{She listens without visible reaction. Asks him to go back and describe the sound itself, not the chamber around it. Something in his description -- a struck stone ringing longer than it should -- snags against the oldest fragment she keeps: an old woman, cords, spinning points, a sound the first listeners had no word for.}
+
+\sceneheading{EXT. CAMP -- KYTHERA'S AREA -- CONTINUOUS}
+
+\action{Tak, encouraged, asks her directly to stand with him -- to tell the others she believes him.}
+
+\action{Kythera's refusal, when it comes, stings more than dismissal would have.}
+
+\charcue{KYTHERA}
+\begin{dialogue}
+My believing you changes nothing for anyone who hasn't heard it themselves. Sincerity isn't evidence. A person can be entirely honest and entirely wrong.
+\end{dialogue}
+
+\charcue{KYTHERA (CONT'D)}
+\begin{dialogue}
+If you want them to accept it, sincerity is the wrong currency. You need something they can examine for themselves.
+\end{dialogue}
+
+\action{What she doesn't say yet: if she helps him rebuild what her old fragment only gestures toward, she will be doing to Antichliarios's memory exactly what she has spent her life refusing to let anyone do to the accounts in her keeping. Filling a gap has never, before now, felt like the same act as preserving what stands on either side of it.}
+
+\sceneheading{EXT. CAMP -- TROUGH SITE -- DAY (MONTAGE)}
+
+\action{Kythera and Tak twist cord from marsh reeds. Hang worked points at different lengths from a branch over an old trough. Spin them. Strike them against the wood, chasing the half-remembered shape of the old fragment.}
+
+\action{Most attempts produce nothing but an ordinary knock. They keep trying -- different lengths, different points, different force.}
+
+\action{Eventually: a note that lingers. A sequence, repeated on purpose rather than stumbled into. Modest, next to what Tak remembers from the cave -- but real, and made in the open, where anyone could watch it happen.}
+
+\action{Tak watches the cord swing, the point strike, the sound hang in the evening air. He and a woman generations dead found different faces of the same thing.}
+
+\sceneheading{EXT. CAMP -- DAY}
+
+\action{Kythera presses him harder than he wants to be pressed.}
+
+\charcue{KYTHERA}
+\begin{dialogue}
+Why did the short cord ring higher.
+\end{dialogue}
+
+\charcue{TAK}
+\begin{dialogue}
+\parenthetical{beat}
+It didn't. It just came back faster.
+\end{dialogue}
+
+\charcue{KYTHERA}
+\begin{dialogue}
+Then what changed the note.
+\end{dialogue}
+
+\charcue{TAK}
+\begin{dialogue}
+The stone. Where it hit.
+\end{dialogue}
+
+\action{He doesn't have full answers, but forming the questions teaches him to take apart what he'd been calling one thing into several: timing, set by cord and spin. Excitation, the strike itself. Resonance, whatever in a stone's shape lets it ring rather than thud. Enclosure, the space a sound travels through afterward, carrying a note out and back, or letting it die flat in open air. Four things, easy to hear together, easy to lose once pulled apart.}
+
+\sceneheading{EXT. CAMP -- DAY}
+
+\action{Tak has turned the idea over enough times to say it plainly.}
+
+\charcue{TAK}
+\begin{dialogue}
+If it's about how the ends are held, and I can't carry the cave's way of holding it out of the ground -- then I bring the stone anyway. Find some new way to hold it.
+\end{dialogue}
+
+\action{Kythera pushes back harder than she has before -- and not only because she doubts it will work.}
+
+\charcue{KYTHERA}
+\begin{dialogue}
+That stone isn't a thing with a voice hiding inside it. It's one end of a fixed joint, grown into that ceiling longer than either of us can reckon. It sings because that joint holds one end rigid while the tip hangs free. Break the joint and there's no promise anything you build after will sound like what you heard.
+\end{dialogue}
+
+\action{And beneath the argument about resonance sits the older one she hasn't said aloud. Taking a whole, singing thing and breaking it on the chance of learning something from the pieces is exactly the kind of act she has spent her life guarding fragments against. She has watched what remains of Antichliarios's actual voice dwindle to a badly told story precisely because people handled it carelessly, generation after generation, each one certain their small alteration would cost nothing. Tak is asking her to make that alteration herself, on purpose, to the one intact thing they have found.}
+
+\sceneheading{EXT. CAMP -- DAY}
+
+\action{A long silence between them. Kythera looks at Tak -- past arguing him out of it now, and knows it.}
+
+\charcue{KYTHERA}
+\begin{dialogue}
+If it's coming out of that cave regardless, it comes out with someone who understands, even partly, what made it sing.
+\end{dialogue}
+
+\action{It costs her something to say. She has spent her life keeping fragments from being disturbed any further than they already have been, and here she is agreeing to help break a whole, singing thing into a fragment on purpose -- on the hope that a fragment carried into the light is worth more than a whole thing left forever in the dark. She is not certain, even now, that she believes this.}
+
+\action{She goes anyway.}
+
+\actbreak{ACT FIVE\\ \large CATHARSIS}
+
+\sceneheading{INT. CAVE CHAMBER -- DAY}
+
+\action{Tak, Kythera, and TWO YOUNGER HELPERS move through the chamber by torchlight, striking formations one at a time, arguing in whispers over which can be spared. They settle on a stalactite near the outer wall -- smaller than the ones deeper in, its note clear but not the richest they've heard, its loss unlikely to threaten the formations around it.}
+
+\sceneheading{INT. CAVE CHAMBER -- LATER}
+
+\action{They drive dry wedges of hardened wood into hairline cracks already present in the stone. Kythera soaks the wedges with water carried in from the entrance pool. The wood drinks, swells; by the second soaking the cracks have visibly widened without another blow struck.}
+
+\action{One of the helpers gestures toward a bundle of dry tinder, suggesting fire -- pack coals against the base, crack it with heat the way flint sometimes splits.}
+
+\charcue{KYTHERA}
+\begin{dialogue}
+No. Fire in a space this closed could bring the ceiling down on all of us as easily as it splits that stone.
+\end{dialogue}
+
+\action{They work leverage bars of green branch under the base instead, patient rather than forceful, widening what the swollen wood has already started. Twice a crack runs further than intended; they stop, certain they've ruined it, and find on inspection that the stone still holds.}
+
+\sceneheading{INT. CAVE CHAMBER -- CONTINUOUS}
+
+\action{The stalactite comes loose with a crack loud enough to echo through the whole chamber, startling all four of them into stillness -- certain, for a moment, that something worse than a falling stone is coming down. Nothing follows.}
+
+\action{They lower it on ropes of twisted hide, wrap it, and begin the slow work of moving it toward the passage.}
+
+\sceneheading{INT. CAVE PASSAGE -- CONTINUOUS}
+
+\action{The crawl that barely admitted Tak's body years ago now has to admit four people and a wrapped stone heavier than any of them wants to say aloud. They pass it hand to hand, foot by foot, in total darkness at the narrowest point.}
+
+\sceneheading{EXT. OUTCROP -- CAVE MOUTH -- DAY}
+
+\action{They emerge scraped, exhausted, in possession of a piece of the cave that has never before existed outside it.}
+
+\sceneheading{EXT. CAMP -- GATHERING AREA -- DAY}
+
+\action{Word has already spread. The band is gathered before the stone is even fully unwrapped. Tak sets it up in rough imitation of how it hung underground -- suspended from a crude frame by hide rope -- and strikes it in front of everyone.}
+
+\action{A flat, short knock. Indistinguishable from any ordinary dropped stone. He adjusts the angle, strikes again. The same dead sound.}
+
+\charcue{VOICE (O.S.)}
+\begin{dialogue}
+You risked your necks and cut a day out of the rock for that. My child could make that sound with a handful of pebbles.
+\end{dialogue}
+
+\action{The doubt that has followed Tak for years settles back over him heavier than before. This time he brought them the proof itself, and the proof failed in front of everyone.}
+
+\sceneheading{EXT. CAMP -- GATHERING AREA -- CONTINUOUS}
+
+\action{Kythera is the one who does not walk away disappointed. She crouches by the stone, turns it, runs her hand along the break where it separated from the ceiling.}
+
+\charcue{KYTHERA}
+\begin{dialogue}
+\parenthetical{half to herself}
+Of course it's silent. In the chamber it was fixed at one end, rigid where it joined the rock, free only at the tip. Hanging loose like this, free at both ends and rigid at neither -- it isn't failing to make its old sound. It's a different thing entirely. Same stone. Different ends.
+\end{dialogue}
+
+\action{She sits with that a moment, turning the stone again.}
+
+\charcue{KYTHERA (CONT'D)}
+\begin{dialogue}
+There's no voice hiding in here waiting to be let out. Just a stone that can make many different sounds depending on how its ends are held. We need a new way of holding one end fixed and the other free -- close enough to the cave's way -- to get something that counts, for them, as the same discovery.
+\end{dialogue}
+
+\sceneheading{EXT. CAMP -- WORKSHOP AREA -- DAY (MONTAGE)}
+
+\action{Kythera abandons the idea of hanging the stone loose at both ends. Instead: they wedge the thick base into a cleft between two rocks, pack it tight with wet clay left to dry hard, so that end cannot shift at all. Only the narrow tip hangs free.}
+
+\action{Tak and the two helpers build a hollow structure around the free end from hide stretched over a bent-branch frame -- an attempt at something like the chamber's enclosing effect, though none of them expects it to matter as much as getting the fixed end right.}
+
+\action{Trial after trial: packing the base tighter, looser. Adjusting the depth of the hollow around the free tip. Striking, listening, adjusting again. They are not trying to rebuild the cave. They are trying to find some new way of fixing one end and freeing the other that draws a related note out of the same stone -- not the identical note, since the identical note belonged to a connection that no longer exists anywhere but underground.}
+
+\action{Most attempts: a dull knock. A few: something thin, short-lived, but unmistakably a note rather than a noise.}
+
+\sceneheading{EXT. CAMP -- GATHERING AREA -- DAY}
+
+\action{The band gathers again, smaller this time, most having lost interest after the first failure. Tak stands by the reworked frame.}
+
+\charcue{TAK}
+\begin{dialogue}
+This won't sound like what I heard in the ground. I'm not asking you to believe it matches. Judge only whether a stone can sing this way at all. Not whether it matches what I told you.
+\end{dialogue}
+
+\action{He strikes it.}
+
+\action{The sound that comes back is thinner than the chamber's, shorter, without the layered return that unsettled him underground -- but it rings, clearly, unmistakably, long enough that no one watching can call it an ordinary knock of stone.}
+
+\action{It is not the cave's voice. It is evidence that a voice like that can exist -- built where everyone can see how it was built, and could, if they wished, learn to build another one themselves.}
+
+\sceneheading{EXT. CAMP -- GATHERING AREA -- NIGHT}
+
+\action{What follows is not orderly. Some in the crowd step back from the stone as though it might do something further. Others press closer, wanting to strike it themselves, to hear the note again under their own hand. A few begin, almost without deciding to, swaying to the rhythm Tak strikes out -- a movement with no established form, because nothing has asked their bodies to move this way before.}
+
+\action{By the following night, others are building their own frames, hanging their own stones, arguing over cord lengths and hollow depths the way they might argue over the best angle to strike a blade. What was one man's obsession and one woman's careful correction becomes, almost immediately, something that belongs to whoever wants to make it belong to them.}
+
+\sceneheading{INT. CAVE CHAMBER -- DAY -- LATER}
+
+\action{Tak alone, torch in hand, some time after the reconstruction has already spread beyond anything he can still call his own. He finds the gap in the ceiling where the stalactite hung -- a pale scar among formations that have grown undisturbed longer than anyone can reckon.}
+
+\action{He strikes the neighboring stones out of habit more than hope. They still answer as they always have. The space where his stone was answers nothing at all.}
+
+\action{He wanted, more than anything, for the band to believe him. They believe him now, more thoroughly than he could have arranged any other way. What he had not fully understood, seven years into his digging, was that believing him would cost the cave something it could not get back -- a single voice among many, removed to make the rest of the voices credible.}
+
+\sceneheading{EXT. CAMP -- DAY -- LATER}
+
+\action{Time has passed. Children run past a frame of hanging stones, unremarkable now, part of the furniture of the camp. An OLD WOMAN, not Kythera, tells a version of the story to a listener too young to have seen any of it happen.}
+
+\charcue{OLD WOMAN}
+\begin{dialogue}
+They call him the one who commanded the singing stones.
+\end{dialogue}
+
+\action{Across the clearing, TAK, older now, overhears this in passing. He does not correct it. His eyes find KYTHERA, seated nearby, working cord as she always has. Something passes between them -- neither commanded the cave. He found it, failed to describe it, watched it refuse to travel in language, and finally learned, with help he could not have supplied alone, how to carry out enough of its relations, and lose enough of the rest, that someone standing far from that dark chamber could hear a version of what he heard and recognize it as true.}
+
+\action{The cave still sings, wherever it still has voices left to sing with. What Tak gave the band was not the cave. It was the smallest working copy of it he was able to build -- and it is, in the end, the only version anyone but him will ever get to keep.}
+
+FADE OUT.
+
+\bigskip
+\centerline{THE END}
+
+\end{document}

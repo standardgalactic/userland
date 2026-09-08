@@ -1,0 +1,1 @@
+S is currently associated with partition/fiber entropy heuristically, not derived. Open task: produce an actual derivation connecting S to the underlying partition-entropy structure, rather than an analogy.

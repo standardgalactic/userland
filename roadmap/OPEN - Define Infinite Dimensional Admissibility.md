@@ -1,0 +1,1 @@
+Admissibility has been defined case-by-case in finite-dimensional settings. Open task: state a version of admissibility that holds in infinite-dimensional (e.g. function-space) settings without silently assuming finiteness.

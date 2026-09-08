@@ -1,0 +1,1 @@
+The distinction between a persistent world's physical state and its semantic/narrative history is used but not cleanly defined. Open task: give each its own precise definition and state how they relate.

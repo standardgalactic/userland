@@ -1,0 +1,1 @@
+Distinction is used informally throughout the corpus as a primitive. Open task: give distinction an actual topological structure (a notion of nearness/continuity between distinctions) rather than treating it as an unstructured atom.

@@ -1,0 +1,1 @@
+Continuation is currently a theoretical claim (survival of organization across change). Task: build a minimal operational test where continuation succeeds or fails under an explicit, adjustable constraint.

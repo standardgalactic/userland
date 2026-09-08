@@ -1,0 +1,1 @@
+Run numerical simulations of Gaussian-throat wormhole metrics (smoothed, non-singular throat geometry rather than idealized thin-shell models) and check what they predict for lensing, exotic-matter requirements, and stability, as a concrete testbed connected to the RSVP entropic-gravity program.

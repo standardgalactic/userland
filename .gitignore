@@ -1,0 +1,12 @@
+*.toc
+*.out
+*.aux
+*.fls
+
+*.log
+
+*.fdb_latexmk
+
+*.json
+*.srt
+*.tsv

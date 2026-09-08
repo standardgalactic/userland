@@ -1,0 +1,1 @@
+Companion hypothesis to phase coherence: instantaneous frequency should carry a specific semantic signal. Test independently, since a hypothesis surviving alongside a failed one is not the same as it being confirmed.

@@ -1,0 +1,1 @@
+Repair Theory currently has qualitative categories (record/admit/commit, recoverable vs. non-recoverable) but no quantitative observables. Task: define measurable quantities that would let two repairs be compared, not just classified.

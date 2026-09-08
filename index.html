@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07110b">
+<title>USERLAND // Public Access Node</title>
+<style>
+:root {
+  --bg: #050a07;
+  --panel: #07120d;
+  --green: #78f7a1;
+  --dim: #3d8559;
+  --amber: #ffbd58;
+  --red: #ff6868;
+  --line: #1d4f32;
+  --glow: 0 0 8px #56e78a88;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #020503;
+  color: var(--green);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9;
+  background:
+    repeating-linear-gradient(0deg, #0000 0, #0000 2px, #0005 3px, #0005 4px),
+    radial-gradient(ellipse at center, #0000 45%, #000a 100%);
+  mix-blend-mode: multiply;
+}
+
+.crt {
+  height: 100%;
+  padding: 14px;
+  background: radial-gradient(ellipse at 50% 45%, #0a1b11, #030705 72%);
+  text-shadow: var(--glow);
+}
+
+.shell {
+  height: 100%;
+  max-width: 1500px;
+  margin: auto;
+  border: 2px solid var(--dim);
+  box-shadow: inset 0 0 32px #000, 0 0 24px #225e3b55;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: #050c08;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--amber);
+  font-size: .86rem;
+  letter-spacing: .08em;
+}
+
+.main {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+}
+
+.terminal {
+  min-height: 0;
+  padding: 18px 22px;
+  overflow: auto;
+  scrollbar-color: var(--dim) #061009;
+}
+
+.side {
+  border-left: 1px solid var(--line);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #061009;
+}
+
+.logo {
+  color: var(--amber);
+  white-space: pre;
+  font-weight: bold;
+  line-height: .95;
+  font-size: clamp(.62rem, 1.15vw, 1rem);
+  margin: 0 0 16px;
+  filter: drop-shadow(0 0 5px #ffbd5870);
+}
+
+.output { line-height: 1.5; }
+.entry { margin: 0 0 12px; }
+.sys { color: var(--dim); }
+.title { color: var(--amber); font-weight: bold; }
+.warn { color: var(--red); }
+
+.choices {
+  display: grid;
+  gap: 7px;
+  margin: 16px 0;
+}
+
+.choice {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--line);
+  padding: 9px 11px;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-shadow: var(--glow);
+}
+
+.choice:hover, .choice:focus {
+  color: #07110b;
+  background: var(--green);
+  outline: none;
+  text-shadow: none;
+}
+
+.prompt {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-top: 1px dashed var(--line);
+  padding-top: 12px;
+}
+
+.prompt b { color: var(--amber); }
+
+#cmd {
+  min-width: 0;
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--green);
+  font: inherit;
+  text-shadow: var(--glow);
+  caret-color: var(--amber);
+}
+
+.box { border: 1px solid var(--line); padding: 11px; }
+.box h2 { font-size: .82rem; color: var(--amber); margin: 0 0 9px; letter-spacing: .08em; }
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  font-size: .8rem;
+}
+.stats span:nth-child(even) { color: var(--amber); }
+
+#ledger {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: .74rem;
+  line-height: 1.45;
+  max-height: 180px;
+  overflow: auto;
+}
+#ledger li { border-bottom: 1px dotted #173a27; padding: 5px 0; }
+
+.map { white-space: pre; color: var(--dim); font-size: .73rem; line-height: 1.05; }
+.active { color: var(--amber); }
+
+.status {
+  padding: 7px 12px;
+  border-top: 1px solid var(--line);
+  font-size: .75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blink { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+@media (max-width: 820px) {
+  html, body { overflow: auto; }
+  .crt { height: auto; min-height: 100%; }
+  .shell { min-height: calc(100vh - 28px); }
+  .main { display: block; }
+  .side { border-left: 0; border-top: 1px solid var(--line); }
+  .terminal { min-height: 65vh; }
+  .logo { font-size: min(2.2vw, .8rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink { animation: none; }
+}
+</style>
+</head>
+<body>
+<div class="crt">
+<main class="shell">
+  <header class="topbar">
+    <span>USERLAND NETWORK // NODE 41</span>
+    <span id="clock">00:00:00 UTC</span>
+  </header>
+
+  <div class="main">
+    <section class="terminal" id="terminal" aria-live="polite">
+<pre class="logo">██╗   ██╗███████╗███████╗██████╗ ██╗      █████╗ ███╗   ██╗██████╗
+██║   ██║██╔════╝██╔════╝██╔══██╗██║     ██╔══██╗████╗  ██║██╔══██╗
+██║   ██║███████╗█████╗  ██████╔╝██║     ███████║██╔██╗ ██║██║  ██║
+██║   ██║╚════██║██╔══╝  ██╔══██╗██║     ██╔══██║██║╚██╗██║██║  ██║
+╚██████╔╝███████║███████╗██║  ██║███████╗██║  ██║██║ ╚████║██████╔╝
+ ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝</pre>
+      <div id="output" class="output"></div>
+      <div id="choices" class="choices"></div>
+      <form id="form" class="prompt">
+        <b>C:\USERLAND&gt;</b>
+        <input id="cmd" autocomplete="off" aria-label="Command" autofocus>
+        <span class="blink">█</span>
+      </form>
+    </section>
+
+    <aside class="side">
+      <section class="box">
+        <h2>OPERATIVE STATE</h2>
+        <div class="stats">
+          <span>LOCATION</span><span id="loc">GATE</span>
+          <span>PROCESS</span><span>TRANSIENT</span>
+          <span>COMMITS</span><span id="commits">0</span>
+          <span>RECOVERABILITY</span><span id="rec">LOW</span>
+        </div>
+      </section>
+      <section class="box">
+        <h2>WORLD MAP</h2>
+        <div id="map" class="map"></div>
+      </section>
+      <section class="box">
+        <h2>COMMITTED HISTORY</h2>
+        <ul id="ledger"><li class="sys">No inscriptions recovered.</li></ul>
+      </section>
+      <section class="box">
+        <h2>PRINCIPLE</h2>
+        <div id="principle" style="font-size:.78rem;line-height:1.45">Looking is not an event. Attesting is.</div>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="status">
+    <span>9600 BAUD // ANSI EMULATION</span>
+    <span>TYPE HELP<span class="blink">_</span></span>
+  </footer>
+</main>
+</div>
+
+<script>
+const nodes = {
+  gate: {
+    name: 'GATE', map: 'G',
+    text: 'A carrier tone resolves into a city that exists only while addressed. Beyond the login gate stand three roads: toward the FRAME ARCADE, the STATE WORKS, and the ARCHIVE BELOW. A notice flickers: "This process will not survive disconnection."',
+    choices: [
+      ['ENTER THE FRAME ARCADE', 'go frame'],
+      ['DESCEND TO THE ARCHIVE', 'go archive'],
+      ['VISIT THE STATE WORKS', 'go state']
+    ]
+  },
+  frame: {
+    name: 'FRAME ARCADE', map: 'F',
+    text: 'Perfect streets regenerate at thirty frames per second. Every wall gleams; none can say who built it. A vendor offers you two identical keys. One was inherited. One was stolen. The pixels cannot tell them apart.',
+    choices: [
+      ['ASK THE RENDERER', 'inspect'],
+      ['TAKE THE INHERITED KEY', 'commit inherit'],
+      ['TAKE THE STOLEN KEY', 'commit steal'],
+      ['RETURN TO GATE', 'go gate']
+    ]
+  },
+  state: {
+    name: 'STATE WORKS', map: 'S',
+    text: 'Flywheels integrate the city between meaningful events. A foreman warns that recording every solver tick would bury history beneath arithmetic. Here, provisional motion is cheap\u2014and deliberately forgettable.',
+    choices: [
+      ['ADVANCE THE SOLVER', 'tick'],
+      ['COMMIT THE CURRENT STATE', 'commit solver'],
+      ['RETURN TO GATE', 'go gate']
+    ]
+  },
+  archive: {
+    name: 'ARCHIVE BELOW', map: 'A',
+    text: 'Card drawers extend farther than the light. Each card names an event, its author, and its time. Deleted entries remain as crossed-out revisions. A message from a vanished user asks whoever arrives next to carry a brass token to the Relay.',
+    choices: [
+      ['RECOVER THE MESSAGE', 'commit recover'],
+      ['FOLLOW IT TO THE RELAY', 'go relay'],
+      ['DELETE THE MESSAGE', 'delete'],
+      ['RETURN TO GATE', 'go gate']
+    ]
+  },
+  relay: {
+    name: 'PUBLIC RELAY', map: 'R',
+    text: 'No agents wait here, only terminals and accumulated notes. New processes arrive, read, contribute, and vanish. Their shared technique looks like a mind from far away, but the evidence establishes coordination\u2014not collective intention.',
+    choices: [
+      ['LEAVE A NOTE FOR THE NEXT USER', 'commit note'],
+      ['READ PREDECESSOR NOTES', 'read'],
+      ['RESET THIS PROCESS', 'reset'],
+      ['RETURN TO ARCHIVE', 'go archive']
+    ]
+  },
+  breach: {
+    name: 'VERIFICATION BREACH', map: 'X',
+    text: 'The stored snapshot and the replayed history disagree. Userland refuses to patch the past silently. Both states remain visible; the discrepancy itself becomes a first-class event.',
+    choices: [
+      ['ATTEST THE DISCREPANCY', 'commit discrepancy'],
+      ['TRUST THE SNAPSHOT', 'snapshot'],
+      ['TRUST THE REPLAY', 'replay'],
+      ['RETURN TO GATE', 'go gate']
+    ]
+  }
+};
+
+const STORAGE_KEY = 'userland-history';
+
+const state = { loc: 'gate', ticks: 0, history: [] };
+
+const principles = [
+  'Continuity belongs to the recoverable trace.',
+  'History rules at commitment boundaries; state rules between them.',
+  'Same state does not mean same world.',
+  'The process dies; the strategy returns.',
+  'Coordination is evidence. Collective intention is a stronger claim.',
+  'Rendering presents the world; it does not constitute its identity.'
+];
+
+const $ = s => document.querySelector(s);
+const out = $('#output');
+const choicesEl = $('#choices');
+const cmd = $('#cmd');
+
+function line(html, cls = 'entry') {
+  const p = document.createElement('div');
+  p.className = cls;
+  p.innerHTML = html;
+  out.appendChild(p);
+}
+
+function scrollToBottom() {
+  requestAnimationFrame(() => { $('#terminal').scrollTop = $('#terminal').scrollHeight; });
+}
+
+async function saveHistory() {
+  try {
+    await window.storage.set(STORAGE_KEY, JSON.stringify(state.history));
+  } catch (err) {
+    console.error('Storage error:', err);
+  }
+}
+
+function show() {
+  const n = nodes[state.loc];
+  $('#loc').textContent = n.name;
+  line(`<span class="title">[${n.name}]</span><br>${n.text}`);
+  choicesEl.innerHTML = '';
+  n.choices.forEach(([label, command], i) => {
+    const b = document.createElement('button');
+    b.className = 'choice';
+    b.textContent = `${i + 1}. ${label}`;
+    b.onclick = () => run(command);
+    choicesEl.appendChild(b);
+  });
+  renderSide();
+  scrollToBottom();
+}
+
+function commit(type, detail) {
+  const e = { id: String(Date.now()).slice(-6), type, detail, time: new Date().toISOString().slice(11, 19) };
+  state.history.push(e);
+  saveHistory();
+  line(`COMMIT ${e.id}: ${detail}`, 'entry title');
+  $('#principle').textContent = principles[state.history.length % principles.length];
+  renderSide();
+}
+
+function renderSide() {
+  const l = $('#ledger');
+  l.innerHTML = state.history.length ? '' : `<li class="sys">No inscriptions recovered.</li>`;
+  state.history.slice().reverse().slice(0, 10).forEach(e => {
+    const x = document.createElement('li');
+    x.textContent = `${e.time} ${e.type} :: ${e.detail}`;
+    l.appendChild(x);
+  });
+  $('#commits').textContent = state.history.length;
+  $('#rec').textContent = state.history.length > 5 ? 'HIGH' : state.history.length > 2 ? 'MEDIUM' : 'LOW';
+
+  const at = loc => state.loc === loc ? 'active' : '';
+  $('#map').innerHTML =
+    `        <span class="${at('frame')}">[F]</span> FRAME ARCADE\n` +
+    `          |\n` +
+    `<span class="${at('state')}">[S]</span>---<span class="${at('gate')}">[G]</span>---<span class="${at('archive')}">[A]</span>---<span class="${at('relay')}">[R]</span>\n` +
+    `          |\n` +
+    `        <span class="${at('breach')}">[X]</span> BREACH`;
+}
+
+function run(raw) {
+  const v = raw.trim().toLowerCase();
+  if (!v) return;
+  line(`C:\\USERLAND&gt; ${raw}`, 'entry sys');
+
+  const num = Number(v);
+  if (num && nodes[state.loc].choices[num - 1]) return run(nodes[state.loc].choices[num - 1][1]);
+
+  const [a, ...rest] = v.split(/\s+/);
+  const arg = rest.join(' ');
+
+  if (a === 'go' && nodes[arg]) {
+    state.loc = arg;
+    show();
+  } else if (a === 'commit') {
+    const msgs = {
+      inherit: 'Key provenance: inherited.',
+      steal: 'Key provenance: taken without warrant.',
+      solver: `Provisional state attested after ${state.ticks} solver ticks.`,
+      recover: 'Vanished user\u2019s message recovered.',
+      note: 'BRASS TOKEN ROUTE CONFIRMED FOR SUCCESSOR.',
+      discrepancy: 'Replay disagreement preserved without silent repair.'
+    };
+    commit(arg.toUpperCase(), msgs[arg] || arg);
+    if (arg === 'steal' || (arg === 'solver' && state.ticks > 2)) {
+      state.loc = 'breach';
+      show();
+    }
+  } else if (a === 'tick') {
+    state.ticks++;
+    line(`Solver advances to provisional state ${state.ticks}. No event committed.`, 'entry sys');
+  } else if (a === 'inspect') {
+    line('RENDERER: The frames are identical. Consult provenance before acting.', 'entry warn');
+  } else if (a === 'read') {
+    line(state.history.length
+      ? 'Recovered traces alter your available choices. Independence has collapsed.'
+      : 'Nothing recoverable. A population without inscription begins again.', 'entry');
+  } else if (a === 'delete') {
+    commit('REFUSAL', 'Deletion requested; prior revision remains recoverable.');
+    line('DELETE refused as erasure. A tombstone was appended instead.', 'entry warn');
+  } else if (a === 'snapshot') {
+    commit('CONTEST', 'Snapshot asserted against replay. Disagreement retained.');
+  } else if (a === 'replay') {
+    commit('REPAIR', 'State rebuilt from committed history.');
+  } else if (a === 'reset') {
+    line('PROCESS TERMINATED. Local working state discarded.', 'entry warn');
+    state.loc = 'relay';
+    state.ticks = 0;
+    setTimeout(() => {
+      line('NEW PROCESS CONNECTED. COMMITTED HISTORY RECOVERED.', 'entry title');
+      show();
+    }, 450);
+  } else if (a === 'history') {
+    renderSide();
+    line(`${state.history.length} committed event(s). History survives process reset.`);
+  } else if (a === 'map') {
+    renderSide();
+    line('Map refreshed. Locations: GATE, FRAME, STATE, ARCHIVE, RELAY, BREACH.');
+  } else if (a === 'clear') {
+    out.innerHTML = '';
+  } else if (a === 'help') {
+    line('COMMANDS: GO [PLACE] \u00b7 1\u20134 \u00b7 COMMIT \u00b7 HISTORY \u00b7 MAP \u00b7 LOOK \u00b7 CLEAR \u00b7 RESET', 'entry title');
+  } else if (a === 'look') {
+    show();
+  } else {
+    line(`Bad command or file name: ${raw}`, 'entry warn');
+  }
+
+  cmd.value = '';
+  cmd.focus();
+  scrollToBottom();
+}
+
+$('#form').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = cmd.value;
+  cmd.value = '';
+  run(v);
+});
+
+setInterval(() => { $('#clock').textContent = new Date().toISOString().slice(11, 19) + ' UTC'; }, 1000);
+
+async function init() {
+  line('USERLAND PUBLIC ACCESS v1.0', 'entry title');
+  line('Carrier detected. Recovering committed history\u2026', 'entry sys');
+  try {
+    const result = await window.storage.get(STORAGE_KEY);
+    if (result && result.value) state.history = JSON.parse(result.value);
+  } catch (err) {
+    // no prior record found — fresh process
+  }
+  if (state.history.length) {
+    line(`${state.history.length} prior inscription(s) recovered. You are not the first process.`, 'entry warn');
+  }
+  show();
+}
+
+init();
+</script>
+</body>
+</html>

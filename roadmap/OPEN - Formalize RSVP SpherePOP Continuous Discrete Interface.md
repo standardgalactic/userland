@@ -1,0 +1,1 @@
+RSVP is continuous-field and SpherePOP is discrete-event; the bridge between them is asserted but not formally specified. Open task: define the interface precisely enough to state what is preserved and what is lost crossing it.

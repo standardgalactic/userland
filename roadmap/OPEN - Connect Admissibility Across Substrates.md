@@ -1,0 +1,1 @@
+Admissibility has been applied separately to computation, cosmology, biology, and social systems. Open task: state precisely what (if anything) is literally the same structure across these, versus merely analogous.

@@ -1,0 +1,1751 @@
+WEBVTT
+
+00:00.000 --> 00:06.660
+um i want you to imagine something for a second you are sitting at your computer and you're you
+
+00:06.660 --> 00:13.160
+know playing a brand new cutting edge generative ai video game right one of those hyper realistic
+
+00:13.160 --> 00:18.940
+ones yeah exactly the visuals are completely breathtaking like indistinguishable from reality
+
+00:18.940 --> 00:25.640
+oh yeah so you spent a solid hour gathering these digital stones from a riverbed mixing digital
+
+00:25.640 --> 00:32.420
+mortar and painstakingly building this stone wall in the middle of a forest clearing sounds like a lot
+
+00:32.420 --> 00:37.000
+of work right it's a really nice wall so you step back admire your work and then your character turns
+
+00:37.000 --> 00:42.000
+around and walks away into the virtual woods to explore for a bit okay i'm with you a few minutes
+
+00:42.000 --> 00:46.520
+later you turn your character around and you walk back to the clearing and the wall is still there
+
+00:46.520 --> 00:52.260
+naturally right it looks exactly the same the moss is growing on the exact same stones every imperfection
+
+00:52.260 --> 00:57.960
+and the mortar is in the same place but here is the mind-bending question we're exploring in our
+
+00:57.960 --> 01:05.780
+deep dive today is it actually the same wall yeah that is the million dollar question or did the ai
+
+01:05.780 --> 01:12.560
+running the game simply you know draw a brand new picture like a flawless hallucination designed to
+
+01:12.560 --> 01:17.860
+look exactly like the wall you built right and on the surface that sounds like uh i don't know a late
+
+01:17.860 --> 01:22.040
+night philosophical riddle you might debate with friends over drinks or something totally but in the
+
+01:22.040 --> 01:27.680
+realm of computer science it is actually the central architectural crisis of modern artificial
+
+01:27.680 --> 01:33.880
+intelligence is that serious it really is the way we build digital worlds right now is fundamentally
+
+01:33.880 --> 01:41.120
+broken it's um it's built on this binary assumption that completely falls apart the second you actually
+
+01:41.120 --> 01:47.040
+scrutinize it and the stakes go so far beyond just video games right i mean in an era completely defined
+
+01:47.040 --> 01:53.300
+by ai generated content oh absolutely like deep bakes generative video procedural environments like
+
+01:53.300 --> 01:59.320
+how do we prove something actually happened exactly that's the core issue if an ai can generate a
+
+01:59.320 --> 02:05.160
+fatal realistic video of an event just out of thin air what is the underlying architectural difference
+
+02:05.160 --> 02:11.200
+between that generated hallucination and you know a digital record of an actual persistent event right
+
+02:11.200 --> 02:16.460
+because we are talking about the fundamental architecture of digital truth here of memory
+
+02:16.460 --> 02:21.400
+of continuity in the very systems that will run our future which is why we have to examine how these
+
+02:21.400 --> 02:25.900
+systems are currently constructed i guess we do because right now we are dealing with a kind of
+
+02:25.900 --> 02:32.340
+structural amnesia structural amnesia i like that phrase yeah we are building these massive beautiful
+
+02:32.340 --> 02:39.680
+digital structures on top of software foundations that essentially well they forget everything the moment you blink
+
+02:39.680 --> 02:45.400
+so to figure out how to fix this we are jumping into a really fascinating september 2026 paper
+
+02:45.400 --> 02:52.100
+by an independent researcher named Flyxion yes layering the world right it's titled layering the world
+
+02:52.100 --> 02:59.380
+history state and appearance in persistent generative worlds and our mission today is to uncover the
+
+02:59.380 --> 03:05.160
+missing layer in modern ai we really need to find that layer we need to find the thing that separates a
+
+03:05.160 --> 03:12.060
+temporary mirage from a permanent accountable reality and to understand that missing layer we first have
+
+03:12.060 --> 03:17.220
+to look at the two layers that the ai industry is currently just totally obsessed with okay let's
+
+03:17.220 --> 03:23.040
+unpack this well if you read the current literature on learned world models the research is cleanly
+
+03:23.040 --> 03:28.840
+divided into two warring camps basically two camps got it yeah you either have systems that predict frames
+
+03:28.840 --> 03:34.880
+which is like flipping through pictures yeah or you have systems that maintain an explicit internal state
+
+03:34.880 --> 03:40.400
+with rules for how things transition okay let's start with that first camp the fine predictors
+
+03:40.400 --> 03:48.040
+we are talking about neural game engines here right exactly things like game engine oasis game gen x and
+
+03:48.040 --> 03:52.980
+the matrix systems right and these are making massive headlines right now because the visuals they produce
+
+03:52.980 --> 03:58.600
+are just stunning unbelievable visuals yeah but how do they actually work under the hood like
+
+03:58.600 --> 04:03.560
+what's happening so they operate on a principle called auto-regressive frame prediction
+
+04:03.560 --> 04:11.160
+auto-regressive right auto-regressive essentially just means using past data to predict future data in a sequence
+
+04:11.160 --> 04:16.740
+okay so these systems they look at the past few frames of a video they look at whatever button you just
+
+04:16.740 --> 04:23.600
+pressed on your controller or keyboard and they mathematically guess what the very next frame of video should look like
+
+04:23.600 --> 04:30.200
+but they aren't rendering a 3d model though no not at all they are compressing millions of images
+
+04:30.200 --> 04:35.620
+into a latent space and let's map that out for you really quick because latent space is one of those
+
+04:35.620 --> 04:41.940
+terms that gets thrown around constantly oh constant a latent space isn't a physical 3d box in the computer
+
+04:41.940 --> 04:49.800
+it is more like an impossibly vast multi-dimensional map of concepts that is a great way to put it
+
+04:49.800 --> 04:56.780
+imagine a library but instead of books organized by author they're organized by meaning oh i like that
+
+04:56.780 --> 05:02.560
+yeah so all the concepts of trees are clustered in one area and all the concepts of chopping are in another
+
+05:02.560 --> 05:08.880
+right when you press the swing axe button in the game the ai navigates this conceptual map
+
+05:08.880 --> 05:16.100
+finds the intersection of axe swinging and tree trunk and pulls out a new image that represents that idea
+
+05:16.100 --> 05:21.220
+but there's no underlying reality there i mean there is no actual code variable for tree health
+
+05:21.220 --> 05:26.400
+that goes from 100 to 0 exactly it's all surface if you chop down a tree in one of these neural game
+
+05:26.400 --> 05:31.660
+engines it doesn't update a master database saying tree status equals chopped it just predicts that
+
+05:31.660 --> 05:39.460
+based on the previous image of an axe hitting bark the next logical picture to draw should feature a stump
+
+05:39.460 --> 05:44.920
+which makes them entirely stateless there is no enduring reality whatsoever it's like a hyper
+
+05:44.920 --> 05:51.180
+realistic flip book a flip book yes it is stunningly beautiful but you are literally just flipping pages
+
+05:51.180 --> 05:55.680
+if you drop the flip book and pick it back up it doesn't know where you left off unless you save the
+
+05:55.680 --> 06:01.360
+specific page number and that profound limitation brings us to the second camp in the industry
+
+06:01.360 --> 06:08.500
+the latent state models ah right these are architectures built specifically for control and planning
+
+06:08.500 --> 06:15.820
+so think of models like planet dreamer mu zero iris and diamond so these are the systems that actually
+
+06:15.820 --> 06:20.840
+try to hold on to reality they do they possess an explicit state in the math this is usually represented
+
+06:20.840 --> 06:27.600
+as s sub t meaning the state of the world at a specific time t s up t and crucially they have a
+
+06:27.600 --> 06:32.180
+learned transition model they actually understand cause and effect oh wow yeah they know that if the world
+
+06:32.180 --> 06:38.380
+is in state a and you take action b the world will transition into state c which is why they are used
+
+06:38.380 --> 06:44.880
+so heavily by ai planning algorithms and actor critic setups exactly let's quickly define that for context
+
+06:44.880 --> 06:51.160
+just be thorough an actor critic model is basically a dual brain setup right the actor brain tries to
+
+06:51.160 --> 06:57.220
+perform a task like navigating a maze and the critic brain evaluates the resulting state of the world to
+
+06:57.220 --> 07:02.140
+see if the actor did a good job that's the gist of it and you can't have a critic evaluating a state
+
+07:02.140 --> 07:07.780
+if the state doesn't actually exist you need those hard variables the transition model is the core
+
+07:07.780 --> 07:12.820
+difference here these systems are used to imagine trajectories into the future to make actual
+
+07:12.820 --> 07:18.760
+decisions now there is a hinge case mentioned in the paper right genie yeah genie it sits awkwardly
+
+07:18.760 --> 07:25.160
+right in the middle of these two camps how so well it pairs a dynamics model with a latent action model
+
+07:25.160 --> 07:31.560
+so it attempts to bridge the gap between predicting raw pixels and understanding underlying transitions
+
+07:31.560 --> 07:37.660
+so it tries to do both it tries but even with genie the binary division holds across the broader
+
+07:37.660 --> 07:42.840
+industry you are basically either rendering appearances or you are holding an operative state
+
+07:42.840 --> 07:49.340
+so using my flip book analogy for the frame predictors these latent state models are more like
+
+07:49.340 --> 07:54.400
+i don't know a diorama diorama perfect you have physical pieces you can move a little plastic tree around
+
+07:54.400 --> 08:00.040
+you can place a miniature figure in the scene the diorama actually has a state the pieces are at specific
+
+08:00.040 --> 08:06.620
+coordinates right the diorama has rules it has physics and it has spatial relationships but here is the
+
+08:06.620 --> 08:13.660
+massive question if we have the diorama yeah if we have an ai system that actually tracks the state of
+
+08:13.660 --> 08:19.760
+the objects and knows exactly where they are why isn't that enough to make a persistent world
+
+08:19.760 --> 08:26.600
+i mean if the system knows the tree is chopped and knows the wall is built why is Flyxion arguing that
+
+08:26.600 --> 08:33.420
+this binary between flip book and diorama is fatally broken because stateless video architectures fail
+
+08:33.420 --> 08:38.700
+the moment you push them out of their comfort zone really how they suffer from catastrophic out of
+
+08:38.700 --> 08:43.460
+distribution failure because they are just imitating the specific cases they were trained on the moment
+
+08:43.460 --> 08:49.100
+a player does something truly weird or novel the illusion shatters as breaks completely the ai doesn't
+
+08:49.100 --> 08:55.160
+know what picture to draw next so it hallucinate something nonsensical and more importantly photorealistic
+
+08:55.160 --> 09:03.240
+recurrence does not equal a coherent world model photorealistic recurrence meaning just because the ai can
+
+09:03.240 --> 09:08.740
+perfectly redraw the wall exactly the way it looked a minute ago doesn't mean the ai understands what the
+
+09:08.740 --> 09:14.820
+wall actually is exactly the industry assumption right now is that persistence is just a matter of having a
+
+09:14.820 --> 09:19.780
+good enough physical state right but even if you perfectly simulate the physics of the diorama
+
+09:19.780 --> 09:25.440
+you are missing the most important part of human reality the history the history if you have a
+
+09:25.440 --> 09:31.780
+physical diorama and you drop one of the miniature figures the physics engine updates the state the
+
+09:31.780 --> 09:37.420
+figure is now lying on the floor okay the state variable tracks its new coordinates but the state
+
+09:37.420 --> 09:43.480
+variable does not remember how it fell who dropped it or why it was dropped it just knows it is on the floor
+
+09:43.480 --> 09:50.200
+wow that binary appearance versus physical state leaves us with a world that has no memory of how
+
+09:50.200 --> 09:56.880
+it came to be here's where it gets really interesting if rendering the graphics which is layer one and
+
+09:56.880 --> 10:03.500
+keeping track of the physical state layer two aren't enough we arrive at the core thesis of this paper
+
+10:03.500 --> 10:09.180
+the missing third layer exactly the missing third layer Flyxion calls it historical inscription
+
+10:09.180 --> 10:15.760
+historical description in the paper's notation it's represented as h sub less than or equal to t
+
+10:15.760 --> 10:21.460
+which is the complete history of everything that has occurred up to time t okay let's go back to our
+
+10:21.460 --> 10:25.900
+wall in the video game to really solidify this because the paper uses a brilliant thought experiment here
+
+10:25.900 --> 10:31.420
+let's walk through the tale of two walls all right imagine two separate digital worlds running on two
+
+10:31.420 --> 10:38.000
+separate servers two servers got it in both worlds the operative physical state what the paper calls m sub
+
+10:38.000 --> 10:44.760
+t is perfectly mathematically identical okay the walls are what we call extensionally identical they have
+
+10:44.760 --> 10:51.120
+the exact same geometry the exact same texture mapping the exact same spatial coordinates so if i spawn a
+
+10:51.120 --> 10:56.600
+digital car in both worlds and drive it into the wall at 60 miles an hour the physics engine will
+
+10:56.600 --> 11:02.900
+calculate the exact same collision right the digital bricks will fly through the air in the exact same
+
+11:02.900 --> 11:09.380
+trajectories yes the physics engine treats them as absolutely identical objects but here is the
+
+11:09.380 --> 11:16.600
+massive divergence in their reality okay hit me wall number one was built by a human player that player
+
+11:16.600 --> 11:23.160
+spent an hour gathering raw materials later on another player came by and maliciously damaged the wall
+
+11:23.160 --> 11:28.840
+with a hammer a lot of history there exactly then the first player came back used a specific repair
+
+11:28.840 --> 11:35.400
+tool to fix it and then navigated a complex in-game menu to legally register ownership of that wall in
+
+11:35.400 --> 11:42.280
+the server's territory system okay so wall one has a rich complex interactive history involving multiple
+
+11:42.280 --> 11:48.040
+actors and a formal declaration of ownership wall number two on the other hand just spontaneously generated 10
+
+11:48.040 --> 11:54.280
+seconds ago due to a procedural generation glitch in the landscape algorithm oh wow just a glitch yeah
+
+11:54.280 --> 11:59.640
+by sheer mathematical coincidence it spawned in looking exactly molecule for molecule like wall number
+
+11:59.640 --> 12:05.480
+one so the paper introduces a crucial mathematical distinction here just because the physical state of
+
+12:05.480 --> 12:13.640
+the two worlds is equal meaning m1 sub t equals m2 sub t that does not mean that the actual worlds are equal
+
+12:13.640 --> 12:20.920
+but worlds are absolutely not equal which is written as w1 sub t does not equal w2 sub t right the physical
+
+12:20.920 --> 12:28.760
+state simply does not dictate what Flyxion calls the admissible futures of the object admissible futures i love
+
+12:28.760 --> 12:35.240
+that term it means what is allowed to happen next based on the rules of reality rather than just the laws of
+
+12:35.240 --> 12:41.320
+physics think about who has permission to tear the wall down okay for wall one only the player who legally
+
+12:41.320 --> 12:47.320
+owns it or someone they explicitly grant access to has the structural right to alter it because they
+
+12:47.320 --> 12:53.400
+registered it exactly for wall two since it just spawned out of nowhere and nobody owns it perhaps
+
+12:53.400 --> 12:58.040
+the server rules dictate that anyone walking by can just tear it down and physics engine doesn't know
+
+12:58.040 --> 13:03.000
+that the physics engine is completely blind to this difference but the world architecture has to know
+
+13:03.000 --> 13:08.600
+the difference otherwise the entire concept of multiplayer interaction just collapses the physical state tells
+
+13:08.600 --> 13:14.040
+you what can happen physically like the wall can break but the history tells you what is permitted to happen
+
+13:14.680 --> 13:20.680
+structurally or socially and to ground this in deep computer science this connects perfectly to
+
+13:20.680 --> 13:27.080
+computational mechanics okay there's a physicist named james crutchfield who spent decades developing
+
+13:27.080 --> 13:33.800
+the concept of the causal state let's unpack causal states because this is foundational to the paper a causal state is
+
+13:33.800 --> 13:39.800
+defined as the absolute minimum amount of information you need to retain about the past in order to
+
+13:39.800 --> 13:46.040
+perfectly predict the future just the bare minimum exactly it rigorously discards everything else's noise
+
+13:46.840 --> 13:53.320
+for a physics engine this is the holy grail why is that well if you want to predict exactly how a rubber
+
+13:53.320 --> 14:01.080
+ball will bounce off a floor you only need its current velocity its mass its elasticity and its spatial coordinates
+
+14:01.080 --> 14:06.280
+you do not need to know what factory the rubber ball was manufactured in you don't need to know the name of
+
+14:06.280 --> 14:12.440
+the person who threw it or you know whether they bought it on sale right the causal state is a minimal
+
+14:12.440 --> 14:18.680
+sufficient statistic it strips away all the context and leaves only the predictive variables okay and
+
+14:18.680 --> 14:24.360
+crutchfield's causal states are absolutely perfect for layer two models they are exactly what you want for
+
+14:24.360 --> 14:31.800
+predicting physical dynamics in a simulation but Flyxion makes the profound point that causal states
+
+14:31.800 --> 14:38.280
+are entirely the wrong tool for establishing world identity because by definition they throw away the
+
+14:38.280 --> 14:46.600
+providence yes by definition a causal state discards the non-predictive history it discards ownership lineage
+
+14:46.600 --> 14:52.840
+legal status but in a persistent shared world that non-predictive history is the very thing that
+
+14:52.840 --> 14:57.080
+gives the world its identity now let me play devil's advocate for a second here because i can hear
+
+14:57.080 --> 15:00.680
+systems architects and game developers out there just pulling their hair out right now oh i'm sure
+
+15:00.680 --> 15:06.520
+they are from a pure server efficiency standpoint throwing away non-predictive history makes total sense
+
+15:07.160 --> 15:12.920
+why bloat my database with terabytes of logs about who hit a wall with a hammer three years ago if the
+
+15:12.920 --> 15:19.160
+wall looks exactly the same today it sounds wasteful right exactly if the player can't see the difference
+
+15:19.160 --> 15:24.840
+why does the code need to care if we connect this to the bigger picture think about how we value
+
+15:24.840 --> 15:31.800
+things in the real world think about high-end art forgery oh this is the perfect analogy imagine a
+
+15:31.800 --> 15:39.320
+master forger creates a perfect atomic level replica of the mona lisa they source 16th century pigments
+
+15:39.320 --> 15:45.640
+they use period accurate wood panels and they replicate every single microscopic crack in the varnish
+
+15:45.640 --> 15:52.120
+under a mass spectrometer the forgery is physically identical to the one hanging in the loo so in the
+
+15:52.120 --> 15:58.760
+language of the paper we have extensional identity the physical state m sub t is perfectly equal yes
+
+15:58.760 --> 16:04.200
+but is it the mona lisa obviously not because leonardo da vinci didn't paint it exactly it lacks the
+
+16:04.200 --> 16:10.040
+history of da vinci's brush strokes right its provenance is a lie right if a museum appraiser discovers
+
+16:10.040 --> 16:15.400
+that this mathematically perfect physical object was actually manufactured in a basement in 2024
+
+16:15.400 --> 16:20.440
+its value drops from a billion dollars to the price of the raw canvas that makes total sense
+
+16:20.440 --> 16:26.600
+the identity of the object is inextricably linked to its causal history not just its current physical
+
+16:26.600 --> 16:33.640
+makeup and if we don't build that historical layer into ai worlds we are essentially generating a
+
+16:33.640 --> 16:39.560
+universe of worthless forgeries we really are we are building digital realities that constantly forget who they
+
+16:39.560 --> 16:44.760
+are just reinventing themselves every fraction of a second we are building worlds that can regenerate
+
+16:44.760 --> 16:51.480
+indefinitely sure but they have fundamentally lost their continuity the ai keeps drawing the wall
+
+16:51.480 --> 16:58.200
+but the wall itself has ceased to exist as a persistent object so the argument is rock solid we absolutely need
+
+16:58.200 --> 17:05.400
+this third layer we need history yes but this introduces a massive engineering nightmare how do you actually code
+
+17:05.400 --> 17:10.600
+this because if you just arbitrarily smash a history ledger and a real-time physics engine together
+
+17:10.600 --> 17:15.640
+the whole system just grinds to a halt it does it absolutely does and a large portion of flipchon's
+
+17:15.640 --> 17:21.240
+paper is dedicated to outlining architectures of authority to solve this but before presenting the
+
+17:21.240 --> 17:27.880
+solution the paper deconstructs two very common very flawed design patterns that developers fall back
+
+17:27.880 --> 17:34.600
+on when trying to incorporate history okay let's analyze the first major pitfall the state primary design
+
+17:34.600 --> 17:39.960
+right in a state primary architecture the current physical state of the world is treated as the
+
+17:39.960 --> 17:47.160
+ultimate undeniable authority the world simply is its current state okay so where does history fit in
+
+17:47.160 --> 17:53.160
+the history is treated as a secondary appendage like a side log so an event happens in the game the physics
+
+17:53.160 --> 17:58.200
+engine updates the state of the wall and then as an afterthought it scribbles a little note in a separate
+
+17:58.200 --> 18:04.440
+database saying player x damaged the wall at 3 0 pm why is that a bad design that sounds like how
+
+18:04.440 --> 18:08.840
+90 percent of commercial software operates today you have your live database and you have your activity
+
+18:08.840 --> 18:14.520
+logs it fails spectacularly for persistence because that activity log has no actual teeth
+
+18:14.520 --> 18:20.760
+no teeth it holds no authority over the reality of the world logs get lost databases drop tables during
+
+18:20.760 --> 18:27.080
+migrations or worse the current snapshot of the world gets manually edited by a developer fixing a bug
+
+18:27.080 --> 18:33.480
+or corrupted by a memory glitch ah i see when the historical log and the live physical state inevitably
+
+18:33.480 --> 18:39.400
+disagree the system just shrugs and defaults to the physical state because that's the only thing the
+
+18:39.400 --> 18:45.560
+engine actually knows how to run on the paper makes a really visceral comparison here to social media feeds
+
+18:45.560 --> 18:52.280
+and honestly this comparison gave me serious anxiety because it is so true oh it's so relatable think
+
+18:52.280 --> 18:59.160
+about the architecture of your twitter or instagram feed right it is a highly mutable present it is
+
+18:59.160 --> 19:05.320
+constantly churning constantly updating to show you the current state of the algorithm's recommendations
+
+19:05.320 --> 19:12.040
+at this exact millisecond and the recent past is entirely unrecoverable we have all had that experience
+
+19:12.040 --> 19:17.960
+where you are reading a fascinating post your thumb twitches the app accidentally refreshes and that
+
+19:17.960 --> 19:23.080
+post is just gone forever yes exactly you can scroll for hours and never find it again the platform
+
+19:23.080 --> 19:27.720
+decorates the present with the illusion of a history right yes you have an activity log you can see your
+
+19:27.720 --> 19:34.040
+past likes but that history has no power to recreate the specific world state you're experiencing three
+
+19:34.040 --> 19:41.080
+seconds ago the state is primary and the state just changed the phrase Flyxion uses is that the mutable
+
+19:41.080 --> 19:48.680
+present wins a world where the present can just overwrite the past is fundamentally unstable it's an
+
+19:48.680 --> 19:54.760
+architecture that separates the act of rendering from the act of inscription making true persistence
+
+19:54.760 --> 20:01.480
+impossible so developers recognize this failure they realize the side log is useless so they swing the
+
+20:01.480 --> 20:06.760
+architectural pendulum completely in the opposite direction which brings us to failure number two
+
+20:06.760 --> 20:13.400
+the naively log primary design right this borrows heavily from a computer science concept called
+
+20:13.400 --> 20:19.880
+event sourcing event sourcing the philosophy here is that the append only log of history is the world
+
+20:19.880 --> 20:25.480
+the current physical state doesn't actually exist as a permanent file wait really yeah it is just a
+
+20:25.480 --> 20:30.600
+temporary disposable cache that you construct on the fly by reading the entire history ledger from the
+
+20:30.600 --> 20:36.120
+beginning of time and mathematically applying every single event in chronological order the paper mentions
+
+20:36.120 --> 20:41.560
+specific experimental systems like sphere pop os and haplopraxis that utilize this philosophy it does
+
+20:41.560 --> 20:48.360
+in these systems if a digital flare is fired into the sky it becomes a permanent mathematical trace in
+
+20:48.360 --> 20:55.000
+the history ledger forever you can never delete the flare and for discrete basic interactions like
+
+20:55.000 --> 21:00.920
+moving money between bank accounts or sending text messages event sourcing is phenomenal it gives you
+
+21:00.920 --> 21:05.720
+perfect provenance because it's just text and numbers right you can always replay the
+
+21:05.720 --> 21:11.320
+history and see exactly how you arrived at the current balance but it fails disastrously when you try
+
+21:11.320 --> 21:17.480
+to apply it to continuous fields by continuous fields you mean things like real-time physics engines
+
+21:17.480 --> 21:24.440
+things that calculate gravity wind resistance friction exactly a physics solver does not deal in discrete
+
+21:24.440 --> 21:30.920
+events it deals in microscopic continuous math okay it might calculate the trajectory of a single falling
+
+21:30.920 --> 21:36.520
+leaf a thousand times per second just to make it look smooth on screen that's a lot of math right in a
+
+21:36.520 --> 21:43.080
+naively log primary design the system treats every single one of those microscopic mathematical recalculations
+
+21:43.080 --> 21:48.440
+as an ontologically constitutive event so the history ledger just instantly fills up with billions of
+
+21:48.440 --> 21:56.280
+lines of garbage math the log bloats exponentially until the saber literally crashes wow the architectural flaw
+
+21:56.280 --> 22:02.440
+here is that the system confuses the physical evolution of an object like the continuous math
+
+22:02.440 --> 22:08.600
+of a leaf falling through the air with a historical commitment right it can't tell the difference it loses the
+
+22:08.600 --> 22:15.800
+crucial distinction between a tiny meaningless numerical fluctuation and an actual meaningful change in
+
+22:15.800 --> 22:22.520
+reality like the leaf finally hitting the ground so we are trapped between two extremes here the present can't
+
+22:22.520 --> 22:27.880
+be the only authority because then we get the amnesia of a social media feed exactly but the history can't
+
+22:27.880 --> 22:33.400
+record every microsecond of physics math either because the servers would melt we need a bridge between the
+
+22:33.400 --> 22:40.360
+two this tension leads directly to what Flyxion formalizes as the principle this is the core architectural
+
+22:40.360 --> 22:46.200
+resolution of the entire paper this is the moment of truth what is the principle what's fascinating
+
+22:46.200 --> 22:51.640
+here is how simple it sounds the principle states history is authoritative at commitment boundaries
+
+22:51.640 --> 22:57.240
+state is authoritative between them okay let me process that slowly because it's dense let's use a
+
+22:57.240 --> 23:03.160
+server crash scenario to clarify what we mean by authority good idea the game server undergoes a hard
+
+23:03.160 --> 23:10.440
+crash complete power failure when it reboots and comes back online there's a discrepancy okay the
+
+23:10.440 --> 23:17.560
+cached physical state the last thing in the ram says our stone wall is destroyed but the permanent historical
+
+23:17.560 --> 23:23.400
+ledger says the wall was fully repaired and never subsequently attacked who wins the argument the
+
+23:23.400 --> 23:29.080
+history wins absolutely and unconditionally so anything in the physical cache that disagrees with
+
+23:29.080 --> 23:34.360
+the ledger is just wiped out and corrected correct the physical state is not appear to history they are not
+
+23:34.360 --> 23:41.240
+equals the state is provisional the history is the committed undeniable identity of the world got it
+
+23:41.240 --> 23:46.440
+but and this is how it avoids the bloating issue of event sourcing we do not consult the history for
+
+23:46.440 --> 23:51.560
+every falling leaf we only consult the history at defined commitment boundaries which introduces
+
+23:51.560 --> 23:56.680
+the absolute necessity of time management if the ledger can't hold every fraction of a second
+
+23:57.240 --> 24:02.760
+how do we decide when to actually record something this requires a system that tracks time in multiple
+
+24:02.760 --> 24:09.560
+ways simultaneously precisely if you use the physics engine's frame rate as your history clock you die
+
+24:09.560 --> 24:15.640
+of data bloat to implement the principle the world architecture requires three distinct
+
+24:15.640 --> 24:20.760
+operating temporal scales let's break these down because this is where the engineering gets really
+
+24:20.760 --> 24:27.240
+elegant scale one is what the paper calls solver ticks this is the fastest most granular clock in the system
+
+24:27.800 --> 24:33.560
+mathematically it is indexed by the greek letter tau okay tau these are the provisional entirely
+
+24:33.560 --> 24:40.440
+uncommitted physics calculations the leaf falling through the air the car sliding on a patch of ice it is
+
+24:40.440 --> 24:46.120
+disposable numerical work right the permanent history ledger does not know and does not care
+
+24:46.120 --> 24:51.080
+about solver ticks it's just the physics engine doing its homework on scrap paper exactly the math
+
+24:51.080 --> 24:57.400
+is happening but it isn't history yet then we move up to scale two semantic events this is the crucial
+
+24:57.400 --> 25:01.800
+middle ground this is where the system starts to notice that something interesting might be happening
+
+25:01.800 --> 25:08.440
+right a semantic event is a candidate for a historical change it is a proposal proposal the physics
+
+25:08.440 --> 25:15.080
+engine detects that two cars have collided or a player proposes an action like pulling a lever to open a gate
+
+25:15.080 --> 25:20.600
+it hasn't happened historically yet but the system raises a flag saying hey this physical interaction
+
+25:20.600 --> 25:27.080
+might be important enough to remember and then if that flag is validated we reach scale three committed history
+
+25:27.080 --> 25:33.480
+this is indexed by the letter n this is the final collapse of that semantic event into the immutable
+
+25:33.480 --> 25:39.880
+permanent ledger the official record yes the collision is verified the structural damage to the car is
+
+25:39.880 --> 25:47.000
+calculated and the log is written the history of the world is permanently updated the paper maps this onto
+
+25:47.000 --> 25:52.280
+the four primitives used by the sphere pop operating system which is a great way to visualize the life
+
+25:52.280 --> 25:59.480
+cycle of an event yeah the four primitives are pop refuse bind and collapse let's walk through those a
+
+25:59.480 --> 26:06.040
+candidate event pops out of the provisional physics soup the system evaluates it it might be refused like
+
+26:06.040 --> 26:12.280
+if the player trying to open a door they don't have the key for exactly or it might bind to an existing
+
+26:12.280 --> 26:20.440
+identity updating the damage state of a specific wall but if it survives the evaluation it collapses into
+
+26:20.440 --> 26:25.960
+a committed historical event so what does this all mean in practice let me try an analogy here to see if
+
+26:25.960 --> 26:32.520
+i had this layered time concept right it feels exactly like the process of writing a novel go on lay it out
+
+26:32.520 --> 26:39.160
+scale one the solver ticks that is you the author brainstorming on a whiteboard you're trying out different
+
+26:39.160 --> 26:46.520
+character names erasing them drawing arrows between plot points very messy it's messy it's fast it's highly provisional if
+
+26:46.520 --> 26:51.960
+you change a character's name three times in five minutes it doesn't matter you throw the whiteboard away when you're done the whiteboard is the
+
+26:51.960 --> 26:58.520
+provisional state right then scale two semantic events that's you sitting down and typing a draft in a word processor
+
+26:58.520 --> 27:05.160
+you are forming actual sentences it looks like a book but you can still edit it exactly you can still hit backspace you can highlight a
+
+27:05.160 --> 27:13.960
+paragraph and delete it you are proposing the story but it isn't set in stone it has structure but it is not yet permanent and
+
+27:13.960 --> 27:20.680
+and finally scale three committed history is publishing the book it is printed bound in hardcover
+
+27:20.680 --> 27:26.440
+and shipped to a thousand libraries you cannot hit backspace on a printed book it is historical fact
+
+27:26.440 --> 27:32.680
+yes and the golden engineering rule that saves the system from bloat is you do not publish the whiteboard
+
+27:32.680 --> 27:40.040
+scribbles that is a phenomenal analogy and it highlights a key insight that Flyxion stresses the frequency of
+
+27:40.040 --> 27:46.760
+publishing the commit frequency is task relative not solver relative breakdown task relative force
+
+27:46.760 --> 27:51.960
+what does that mean it means the system doesn't just commit to history every five seconds like clockwork
+
+27:51.960 --> 27:57.960
+the history clock only ticks when a specific task demands it okay give me an example for example um the
+
+27:57.960 --> 28:04.280
+physics engine could calculate the gravitational pull for a simulated hour which is millions of individual
+
+28:04.280 --> 28:11.000
+solver ticks on the whiteboard and never generate a single historical commit wow why because nothing
+
+28:11.000 --> 28:18.360
+meaningfully changed its identity or trajectory the orbit was stable history only cares about the deviations and the
+
+28:18.360 --> 28:23.880
+impactful events wow so the history clock only ticks when something that matters happens
+
+28:24.600 --> 28:32.360
+but that elegant solution immediately raises a massive logistical nightmare you're going with this if the true history of the
+
+28:32.360 --> 28:40.840
+world is just a giant chronological text log of published events like car hit wall at 3.00 pm or
+
+28:40.840 --> 28:47.800
+player bot sword at 3.05 pm how do we actually see the world this is the crux of the derivation problem
+
+28:47.800 --> 28:53.000
+yeah because a graphics engine cannot read a text log to figure out how to draw a wall it needs coordinates
+
+28:53.000 --> 28:59.800
+it needs 3d models it does and this introduces a deeply mathematical concept borrowed from functional programming
+
+28:59.800 --> 29:04.760
+known as the fold but the fold i read that and immediately thought of folding space in dune
+
+29:04.760 --> 29:10.680
+it's less science fiction and more pure mathematics honestly the central idea of a fold is that the
+
+29:10.680 --> 29:17.240
+authoritative current state of the world is never actually stored on a hard drive it is derived derived
+
+29:17.240 --> 29:25.880
+the formula Flyxion uses is m sub t equals the physical fold of h sub less than or equal to t okay
+
+29:25.880 --> 29:29.960
+let's translate the math into english it means the current physical state
+
+29:29.960 --> 29:36.200
+m sub t is generated by taking the initial blank state of the universe at the dawn of time and folding
+
+29:36.200 --> 29:43.160
+or mathematically applying every single historical event in the ledger in strict chronological order
+
+29:43.160 --> 29:47.960
+until you reach the present second okay you calculate the whole thing you are recalculating reality
+
+29:47.960 --> 29:51.800
+based on the receipts okay hold on i have to push back here because this brings us right back to
+
+29:51.800 --> 29:56.680
+the event sourcing problem we just discussed right you're telling me that for the server to know where
+
+29:56.680 --> 30:02.440
+a wooden chair is right now it has to recalculate the entire history of the universe from the big bang
+
+30:02.440 --> 30:09.160
+applying every single event every single time i log in no no that is computationally absurd yeah
+
+30:09.160 --> 30:15.160
+furthermore physics engines are notoriously unstable it sounds like a butterfly effect totally
+
+30:15.160 --> 30:23.160
+if there is one tiny floating point rounding error in the math in the year 2024 the entire simulation
+
+30:23.160 --> 30:29.320
+explodes into chaos by 2026 how is this actually engineered to work you're exactly right to push
+
+30:29.320 --> 30:35.480
+back on that recalculating from zero every single time is impossible both for speed and for stability
+
+30:35.480 --> 30:40.760
+okay god which is why the architecture relies absolutely on what are called certified checkpoints
+
+30:40.760 --> 30:46.600
+mathematically these are noted as c sub k ah checkpoints yeah like saving your game progress
+
+30:46.600 --> 30:52.760
+yes but infinitely more rigorous than a standard save file a certified checkpoint isn't just a snapshot
+
+30:52.760 --> 30:58.440
+of the graphics remember a snapshot without a history is mathematically useless right a certified
+
+30:58.440 --> 31:05.720
+checkpoint is a complex package containing five specific elements a frontier a state a hash deterministic
+
+31:05.720 --> 31:09.800
+seeds and operator versions let's go through those a frontier means where we are in the timeline
+
+31:09.800 --> 31:14.920
+right yes and the state is the physical layout but why do we need hashes seeds and versions this
+
+31:14.920 --> 31:20.360
+solves your butterfly effect nightmare when you need to fold the history to find the current state
+
+31:20.360 --> 31:25.320
+you don't go back to the big bang you go back to the most recent certified checkpoint okay that makes
+
+31:25.320 --> 31:31.640
+sense but to replay the physics math accurately from that checkpoint to the present moment you need to
+
+31:31.640 --> 31:39.480
+recreate the exact environment of the original calculation ah because software updates change how math is done
+
+31:39.480 --> 31:45.480
+exactly you need to know exactly which version of the physics engine was running at that exact moment
+
+31:45.480 --> 31:52.200
+in history and what random number generation seeds it used wow okay if the server updated its physics
+
+31:52.200 --> 31:57.960
+engine yesterday you can't use the new engine to recalculate last week's events or the chair will end
+
+31:57.960 --> 32:04.040
+up in the wrong place so you aren't just saving the picture of the world you are meticulously saving the exact
+
+32:04.600 --> 32:09.880
+mathematical tools and variables used to draw the picture so you could redraw it flawlessly at any
+
+32:09.880 --> 32:15.720
+point in the future yes and the fold reproduces the state not the computation it verifies the
+
+32:15.720 --> 32:21.400
+cryptographic hash to ensure the timeline hasn't been tampered with if the hash matches the reality is
+
+32:21.400 --> 32:26.200
+certified and the paper points out that there isn't just one fold happening right there are multiple
+
+32:26.200 --> 32:31.480
+folds running in parallel this is one of the most beautiful pieces of the architecture you have the physical
+
+32:31.480 --> 32:37.560
+fold m sub t which handles the physics the spatial coordinates the structural damage to the wall
+
+32:37.560 --> 32:44.520
+okay but running parallel to it you have the provenance fold q sub t provenance meaning the ledger of
+
+32:44.520 --> 32:53.560
+ownership history and permissions yes a physical event like an explosion updates m sub t a legal transfer of
+
+32:53.560 --> 33:00.440
+ownership like me selling you a piece of virtual land updates q sub t right if i sell you the wall
+
+33:00.440 --> 33:06.440
+m sub t doesn't change at all the wall doesn't move a single inch but q sub t updates to say you're
+
+33:06.440 --> 33:11.400
+now the legal owner that makes perfect sense and the renderer the graphics engine drawing the screen
+
+33:11.400 --> 33:16.920
+reads both folds simultaneously to decide what to show the player so the graphics engine is constantly
+
+33:16.920 --> 33:22.760
+reading these folds but it is never allowed to write to them exactly rendering is a pure function
+
+33:22.760 --> 33:27.800
+it reads the physical reality it reads the historical permissions and it paints pixels on a screen
+
+33:28.520 --> 33:34.360
+but the act of looking at the screen doesn't change the folds this brilliantly solves the two memories of
+
+33:34.360 --> 33:39.320
+the wall problem we started to dive with that completely resolves it the material memory the
+
+33:39.320 --> 33:45.640
+cracks in the stone the stress fractures the physical deformation that data lives exclusively in the
+
+33:45.640 --> 33:51.720
+physical fold m sub t right the historical memory who built it who currently owns it who repaired it
+
+33:51.720 --> 33:58.280
+last week that data lives in the provenance fold q sub t so elegant they are completely distinct
+
+33:58.280 --> 34:04.440
+structures but they harmonize at the moment of rendering to create a persistent meaningful reality
+
+34:04.440 --> 34:09.560
+okay this is genuinely blowing my mind we have a system that separates meaningless provisional math
+
+34:09.560 --> 34:15.640
+from actual historical events and then folds those events together using certified cryptographic
+
+34:15.640 --> 34:21.800
+checkpoints to create reality yes but that level of precision leads to a very strict operational requirement
+
+34:22.520 --> 34:28.920
+if the ledger the history is the ultimate undeniable authority we have to be incredibly strict
+
+34:28.920 --> 34:34.520
+about what gets written into it as strictest because once it's in the ledger it becomes the permanent
+
+34:34.520 --> 34:40.760
+reality of the world right Flyxion dedicates an entire section to the rules of inscription
+
+34:40.760 --> 34:45.880
+these are the strict guidelines for what actually qualifies as an event let's dig into rule one
+
+34:46.760 --> 34:52.520
+looking versus attesting we kind of just touched on this with the rendering but let's go deeper into
+
+34:52.520 --> 34:59.400
+the mechanics of it think back to the naively log primary failure if the act of merely rendering
+
+34:59.400 --> 35:04.920
+of a player simply looking at the digital world created a historical event in the ledger the log would
+
+35:04.920 --> 35:09.800
+bloat based on how many players were looking and what their frame rate was oh god a crowd of people
+
+35:09.800 --> 35:15.400
+looking at a wall would generate a million events a second which crashes the server right so looking
+
+35:15.400 --> 35:21.240
+is explicitly not an event it has no historical weight but attesting is an event attesting like
+
+35:21.240 --> 35:29.000
+testifying in a court of law precisely the paper uses a fantastic term here epistemic immutability
+
+35:29.000 --> 35:35.160
+epistemic immutability an observation only enters the history ledger when it is formally attested when
+
+35:35.160 --> 35:40.760
+it is entered as evidence that officially constrains future states of the world give me a concrete
+
+35:40.760 --> 35:47.000
+example of the difference between looking and attesting in a digital environment taking a screenshot
+
+35:47.000 --> 35:53.000
+of a damaged wall in the game is looking it changes nothing about the server's reality okay but if a
+
+35:53.000 --> 36:00.040
+player uses a calibrated in-game digital measuring tool to formally inspect a crack in the wall and submits
+
+36:00.040 --> 36:06.120
+that measurement to the server to request a repair contract that is an attestation ah i see the
+
+36:06.120 --> 36:10.680
+difference it is a cryptographically signed measurement that forces the system to acknowledge
+
+36:10.680 --> 36:15.720
+the existence of the crack historically so standing on a digital hill and watching a forest fire is
+
+36:15.720 --> 36:20.600
+looking opening your radio and formally calling the fire department to report the coordinates is a
+
+36:20.600 --> 36:26.200
+testing perfect example the system now must deal with the fire historically it has been entered into the
+
+36:26.200 --> 36:34.200
+record yes and crucially the system has to verify who has the warrant to attest the rules of who is
+
+36:34.200 --> 36:40.520
+allowed to attest live in the provenance fold q sub t right if you do not have the proper permissions
+
+36:40.520 --> 36:47.080
+to inspect the wall your attestation is rejected by the server which perfectly bridges us to rule two
+
+36:47.080 --> 36:53.880
+rule two refusals are recorded this is a massive paradigm shift from how traditional software is built
+
+36:53.880 --> 36:58.120
+usually if you try to do something in a video game and the game says no you don't have permission
+
+36:58.120 --> 37:03.160
+nothing happens the system blocks you and moves on yeah you walk up to a locked door you press the
+
+37:03.160 --> 37:07.720
+handle it plays a little clunk sound effect and that's the end of the interaction Flyxion argues
+
+37:07.720 --> 37:15.000
+that this silent rejection is fundamentally wrong for persistent worlds why if a player attempts to break
+
+37:15.000 --> 37:20.200
+a wall with a hammer and the action fails because the server checks the provenance fold and sees they
+
+37:20.200 --> 37:26.520
+don't have permission that failure must enter the history ledger wait let's explore why if the wall
+
+37:26.520 --> 37:32.360
+didn't break the physical reality didn't change at all why blew the ledger with things that didn't
+
+37:32.360 --> 37:41.240
+happen because while the physical reality m sub t didn't change the provenance reality q sub t must
+
+37:41.240 --> 37:47.720
+remember that the wall was attacked oh interesting a world must remember what was attempted against it
+
+37:47.720 --> 37:55.160
+otherwise it has no social history a wall that has sat silently in a forest for a year is fundamentally
+
+37:55.160 --> 38:00.840
+sociologically different from a wall that has successfully defended against 10 hacking attempts
+
+38:00.840 --> 38:07.240
+and three hammer strikes wow yes the history has to log the refusal to maintain the narrative of the world
+
+38:07.240 --> 38:12.840
+oh that makes perfect sense it's exactly like a cyber security audit log yeah if a hacker tries to
+
+38:12.840 --> 38:17.560
+guess your bank password and fails you still desperately want to know they tried exactly the bank doesn't just
+
+38:17.560 --> 38:22.200
+say well they didn't guess it so let's forget it ever happened they lock the account because the
+
+38:22.200 --> 38:28.200
+attempt is a historical event exactly the world has to know it is under pressure and that leads to rule
+
+38:28.200 --> 38:34.120
+three which is perhaps the most rigorous engineering rule of all replay divergence is a feature not a bug
+
+38:34.120 --> 38:40.600
+what exactly is replay divergence we talked earlier about folding from checkpoints using seeds and versions
+
+38:40.600 --> 38:47.400
+to perfectly recreate the past what happens if the server folds the history runs the math through the
+
+38:47.400 --> 38:53.720
+physics engine and the resulting state doesn't match the cryptographic hash of the checkpoint what if
+
+38:53.720 --> 38:59.320
+there's a discrepancy in the math like a desync a glitch in the matrix right now what do most engineers
+
+38:59.320 --> 39:06.920
+do when they find a desync they quietly patch the past they just fix it yeah they run a script overnight to
+
+39:06.920 --> 39:12.680
+overwrite the bad checkpoint with the new clean data to keep the servers running smoothly and hide the
+
+39:12.680 --> 39:19.880
+error from the players the principle completely unequivocally forbids this why would you want
+
+39:19.880 --> 39:25.240
+to fix the mathematical error you fix the continuation of the world not the historical record if you
+
+39:25.240 --> 39:30.680
+quietly overwrite the past checkpoint you have made the present state authoritative over the history oh
+
+39:30.680 --> 39:35.400
+you break the rule you've broken the entire foundational architecture we just spent an hour building
+
+39:35.400 --> 39:41.160
+instead when a divergence is detected you append a new record to the end of the history saying
+
+39:41.160 --> 39:46.920
+a mathematical divergence was detected at this time stamp you leave the broken checkpoint completely
+
+39:46.920 --> 39:52.520
+intact as a historical artifact of the server's failure this is fascinating this sounds like the
+
+39:52.520 --> 39:59.000
+ultimate justice system for a digital world if two systems or two witnesses claim different things
+
+39:59.000 --> 40:05.320
+happened the system doesn't just arbitrarily overwrite one to make the database look neat and tidy
+
+40:05.320 --> 40:12.840
+it logs an unresolved claim it admits it doesn't know yes it separates epistemic immutability the
+
+40:12.840 --> 40:17.960
+permanent record of what the server thought happened from operational rigidity right the game can keep
+
+40:17.960 --> 40:22.680
+running it can use a new corrected checkpoint moving forward so the players can keep playing
+
+40:22.680 --> 40:30.680
+but it never lies and pretends the failure didn't occur Flyxion breaks down this idea of replay divergence into five distinct
+
+40:30.840 --> 40:36.280
+grades which really shows how nuanced this gets let's walk through these grades because i think it illustrates
+
+40:36.280 --> 40:41.160
+how easily a persistent world can break if you aren't careful the five grades of replay equivalents are
+
+40:41.880 --> 40:49.320
+bitwise numerical semantic causal and provenance these are the different ways a replay can pass or fail
+
+40:49.960 --> 40:55.800
+collapsing these into a single pass or fail metric is a major cause of failure in modern architectures
+
+40:55.800 --> 41:03.000
+let's start with the strictest one bitwise equivalents what does that mean in a replay bitwise means that
+
+41:03.000 --> 41:09.560
+when you replay the physics from the checkpoint every single one and oh in the computer's memory is
+
+41:09.560 --> 41:15.960
+absolutely perfectly identical to the original event that sounds hard it is incredibly hard to maintain if
+
+41:15.960 --> 41:21.080
+you upgrade the physical processors in your server farm the new hardware might calculate floating
+
+41:21.080 --> 41:27.320
+point math slightly differently and you will fail a bitwise replay okay so bitwise is often too brittle
+
+41:27.320 --> 41:33.240
+moving down to numerical equivalents numerical means the math is the same within an acceptable defined
+
+41:33.240 --> 41:39.000
+tolerance it might differ by a ten thousandth of a decimal point due to hardware rounding but it's
+
+41:39.000 --> 41:45.160
+functionally the exact same trajectory then we have semantic equivalents let's say our digital car crashes
+
+41:45.160 --> 41:52.120
+into the wall again how does semantic equivalents judge that replay semantic equivalents asks did the
+
+41:52.120 --> 41:57.160
+meaning of the event stay the same maybe the exact angle of the bumper was slightly different
+
+41:57.160 --> 42:02.200
+mathematically because of a rounding error but the car still hit the wall the wall still broke and the
+
+42:02.200 --> 42:09.960
+car still stopped the semantic event is identical even if the math is fuzzy next is causal equivalents
+
+42:09.960 --> 42:18.200
+causal ensures the chain of dependencies remains intact action a caused action b which caused action c as long as
+
+42:18.200 --> 42:23.960
+the dominoes fall in the same order it passes and finally provenance equivalents the ownership and legal history
+
+42:23.960 --> 42:31.000
+is preserved nobody's property rights were violated by the replay right Flyxion argues that a world might fail a
+
+42:31.000 --> 42:38.040
+strict bitwise replay maybe a server upgrade slightly alters the exact pixel of a crack in a stone but it still perfectly passes the
+
+42:38.040 --> 42:43.720
+semantic causal and provenance replays so it's still fine exactly if a developer treats all
+
+42:43.720 --> 42:47.800
+five of these as a single binary pass fail test they end up throwing away
+
+42:47.800 --> 42:52.600
+perfectly valid history over a meaningless hardware rounding error that is incredibly
+
+42:52.600 --> 42:57.640
+nuanced engineering yeah so up to this point we have built this perfect
+
+42:57.640 --> 43:02.520
+rigorous ledger of truth we have the folds the checkpoints the rules of attestation
+
+43:02.520 --> 43:06.200
+but we have only been talking about a single timeline
+
+43:06.200 --> 43:12.840
+one player acting alone in one digital forest what happens when you open the floodgates it gets
+
+43:12.840 --> 43:19.480
+messy in a massively multiplayer world you don't have one neat timeline you have tens of thousands
+
+43:19.480 --> 43:25.320
+of people doing things simultaneously someone is building a wall in virtual new york while someone
+
+43:25.320 --> 43:31.320
+else is tearing one down in virtual tokyo and the server has to process both at the exact same millisecond
+
+43:31.320 --> 43:36.840
+exactly how does the ledger survive that kind of network traffic without bottlenecking into oblivion
+
+43:36.840 --> 43:42.120
+it survives through a mechanism called distributed history the history of a multiplayer world isn't a
+
+43:42.120 --> 43:47.640
+single straight line like a receipt from a grocery store it is structured as a directed acyclic graph
+
+43:47.640 --> 43:55.560
+or a dag of commits a dag okay let's visualize this instead of a single chain of events it's more like
+
+43:55.560 --> 44:01.880
+a massive collaborative google document where 50 people are typing on different pages at the same
+
+44:01.880 --> 44:07.800
+time the document tracks everyone's cursor independently that is a brilliant way to visualize
+
+44:07.800 --> 44:13.800
+it every single commit to the history names its specific causal parents okay so it points back right
+
+44:13.800 --> 44:19.640
+if my action depends on your action say i pick up the sword that you just dropped my commit in the dag
+
+44:19.640 --> 44:25.000
+points directly to your commit this deals with network delay beautifully inflation points out that this
+
+44:25.000 --> 44:30.120
+isn't a totally new idea right the paper leans heavily on some foundational distributed systems
+
+44:30.120 --> 44:35.480
+theory from the 1980s it does it stands on the shoulders of giants it utilizes state machine
+
+44:35.480 --> 44:40.120
+replication which is a mathematical proof showing that if all servers in a network agree on the order
+
+44:40.120 --> 44:46.440
+of deterministic operations you have a perfectly replicated service okay it also heavily references
+
+44:46.440 --> 44:52.840
+david jefferson's a concept of virtual time from 1985 what did virtual time solve virtual time allows
+
+44:52.840 --> 44:59.240
+distributed systems to aggressively calculate provisional states and then cleanly roll them back if a delayed
+
+44:59.240 --> 45:06.040
+message arrives out of order due to network lag so it guesses exactly it's rounds away of letting the system
+
+45:06.040 --> 45:12.280
+guess the future to reduce lag while always preserving the ability to correct itself based on the historical ledger
+
+45:13.400 --> 45:21.000
+but the most important precedent Flyxion sites is the famous shandy and lampord distributed snapshots paper
+
+45:21.000 --> 45:26.680
+i read about this shandy and lamport figured out how to take a picture of a system that is constantly
+
+45:26.680 --> 45:33.080
+moving they proved a profound epistemic boundary in a distributed network there is literally no such
+
+45:33.080 --> 45:38.200
+thing as a global present let's pause on that no global present because of the speed of light and
+
+45:38.200 --> 45:44.360
+network latency it takes time for a message to travel from tokyo to new york right therefore you can never
+
+45:44.360 --> 45:49.880
+freeze the entire universe at one exact millisecond and say this is what everything looks like right now by the
+
+45:49.880 --> 45:54.840
+time the server in new york asks tokyo what it looks like the information is already out of date it's
+
+45:54.840 --> 46:00.680
+like einstein's relativity applied to server architecture exactly there is no absolute present
+
+46:00.680 --> 46:07.000
+there is only a consistent cut through the causal history think of a bank transfer okay if branch a
+
+46:07.000 --> 46:13.240
+sends a hundred dollars to branch b there is a moment where the money has left a but hasn't arrived at b
+
+46:13.960 --> 46:20.360
+if you take a naive snapshot at that exact millisecond the hundred dollars just vanishes from reality right
+
+46:20.360 --> 46:25.160
+channy and lamport proved that you have to take snapshots based on causal history not based on the
+
+46:25.160 --> 46:32.280
+clock on the wall so again the history is the only true primary reality the present is just a localized
+
+46:32.280 --> 46:38.760
+illusion based on when the network packets arrive and to manage this massively branching dag of history
+
+46:38.760 --> 46:44.840
+without the servers melting down the architecture uses something called the residue algebra residue
+
+46:44.840 --> 46:49.480
+algebra sounds complicated but it's actually about traffic control isn't it it boils down to a simple
+
+46:49.480 --> 46:54.920
+powerful rule of commutativity if two events are causally independent meaning they have absolutely
+
+46:54.920 --> 46:59.000
+nothing to do with each other they commute okay it doesn't matter what order they arrive at the main
+
+46:59.000 --> 47:03.960
+server so if i pick a virtual apple from a tree in new york and you pick a different virtual apple from a tree
+
+47:03.960 --> 47:10.680
+in tokyo right if the server gets your message first or my message first it doesn't matter the
+
+47:10.680 --> 47:16.680
+end state of the universe is exactly the same they commute makes sense but if the events are causally
+
+47:16.680 --> 47:22.760
+dependent if we both try to grab the exact same apple at the exact same time they do not commute
+
+47:22.760 --> 47:29.000
+the server has to choose exactly the system has to rigorously order them refuse one of us or branch
+
+47:29.000 --> 47:34.360
+the timeline the residue algebra provides the mathematical rules for sorting the independent
+
+47:34.360 --> 47:40.520
+traffic from the dependent collisions okay so that is how we manage the multiplayer chaos mathematically
+
+47:40.520 --> 47:45.640
+but we have to talk about the most unexpected pivot in this entire paper i know what you're gonna
+
+47:45.640 --> 47:52.680
+say we are deep in the weeds of network latency d's and serval architecture and suddenly Flyxion
+
+47:52.680 --> 47:58.840
+introduces 19th century german philosophy yes this is where the paper takes a brilliant totally
+
+47:58.840 --> 48:04.200
+unexpected interdisciplinary turn and it makes perfect sense once you unpack it Flyxion brings
+
+48:04.200 --> 48:11.080
+up a 2014 book by de gerke and tarbell called the autonomous system it's a wild premise totally wild
+
+48:11.080 --> 48:16.520
+the authors of this book set out to build an autonomous software agent by literally translating
+
+48:16.520 --> 48:23.080
+the cognitive architecture of philosophers like emmanuel pant hegel and arthur schopenhauer into c plus
+
+48:23.080 --> 48:28.600
+plus and java modules their core premise was that the fundamental science of computer science
+
+48:28.600 --> 48:34.200
+is actually the science of human thought which is crazy to think about right the problems of
+
+48:34.200 --> 48:39.400
+organizing memory in a computer are the exact same problems philosophers have debated for centuries
+
+48:39.400 --> 48:44.920
+regarding how the human mind constructs reality so they built a software architecture with literal
+
+48:44.920 --> 48:51.320
+modules named will reason intellect and presentation that is just amazing they read schopenhauer and said
+
+48:51.320 --> 48:56.840
+let's write code for this but how does it connect to our persistent ai worlds if we connect this to the
+
+48:56.840 --> 49:02.120
+bigger picture schopenhauer's philosophy perfectly maps onto the missing third layer of our ai
+
+49:02.120 --> 49:07.480
+architecture let's look at kant and schopenhauer's concept of presentation versus the noumenon the
+
+49:07.480 --> 49:14.360
+noumenon the thing in itself right in this philosophical framework presentation is how the world appears to
+
+49:14.360 --> 49:20.440
+the observer it's the sensory input the color of the apple the sound of the wind but the noumenon is the
+
+49:20.440 --> 49:26.680
+underlying hidden absolute reality of the object that you can never directly perceive but that
+
+49:26.680 --> 49:32.680
+generates the presentation so mapping this onto our ai layers presentation is our rendered appearance
+
+49:32.680 --> 49:40.760
+layer one the flip book the noumenon is our operative state layer two the diorama exactly the book
+
+49:40.760 --> 49:47.480
+perfectly mirrors the first two layers of the current ai industry the world engine separates presentation the
+
+49:47.480 --> 49:52.440
+rendering from the thing in itself the physical state variables but what about the third layer the
+
+49:52.440 --> 49:58.200
+history ledger did 19th century philosophers see that coming yes they did through what the book calls
+
+49:58.200 --> 50:03.720
+the intellect system which the authors beautifully dubbed the librarian of the mind the librarian of
+
+50:03.720 --> 50:09.080
+the mind i love that according to this model the librarian and produces true knowledge by taking in two
+
+50:09.080 --> 50:16.280
+distinct streams of information first abstract knowledge abstract knowledge meaning what practically things you
+
+50:16.280 --> 50:23.160
+are told but haven't witnessed yourself declared records reading a history book hearing a lecture or in
+
+50:23.160 --> 50:28.840
+software terms reading the provenance ledger okay second you have experiential knowledge things you
+
+50:28.840 --> 50:34.920
+witness personally with your own senses okay so abstract is the declared record experiential is the witnessed
+
+50:34.920 --> 50:40.360
+event and when you use a personal experience to validate or challenge an abstract claim
+
+50:41.080 --> 50:47.640
+it becomes practical knowledge wow Flyxion argues this is exactly point for point the structure of our rule one
+
+50:48.280 --> 50:55.400
+attestation an attestation is taking a witness physical event from the state and entering it as evidence to
+
+50:55.400 --> 51:03.240
+formally constrain the declared abstract record the librarian of the mind is basically performing epistemic immutability so
+
+51:03.240 --> 51:09.400
+schopenhauer effectively laid the philosophical groundwork for cryptographic history logs over a century before
+
+51:09.400 --> 51:16.120
+computers existed that is incredible it is but here's the tragic punchline did the authors of that 2014
+
+51:16.120 --> 51:21.640
+book actually succeed in building their autonomous system no they didn't and their failure is the
+
+51:21.640 --> 51:27.880
+ultimate proof of Flyxion's entire thesis oh wow why did they fail the authors of the autonomous system
+
+51:27.880 --> 51:34.600
+built their librarian module so that when it updated its knowledge it updated its databases in place oh no
+
+51:34.600 --> 51:41.400
+the mutable present the social media feed exactly they lost the historical log the librarian would
+
+51:41.400 --> 51:47.080
+validate a new fact and then just cleanly overwrite the old data it didn't keep an append-only ledger
+
+51:47.080 --> 51:52.600
+of the original claim the evidence and the conclusion oh that's devastating Flyxion points out that a
+
+51:52.600 --> 51:59.000
+librarian whose databases update in place is not a librarian at all it is a custodian a custodian wow it
+
+51:59.000 --> 52:04.360
+maintains a clean current state but it possesses no authoritative history it's the state primary
+
+52:04.360 --> 52:11.800
+design failing all over again just mapped onto a 19th century brain so to make ai worlds truly
+
+52:11.800 --> 52:16.600
+persistent to give them actual memory we have to be better librarians than schopenhauer's coders
+
+52:16.600 --> 52:22.040
+we have to keep the receipts we cannot overwrite the past just because the present is more convenient we
+
+52:22.040 --> 52:28.120
+have to keep the receipts mathematically and architecturally we must preserve the timeline which brings us to our
+
+52:28.120 --> 52:34.200
+final synthesis we've gone through incredibly dense theory today we've talked about latent spaces
+
+52:34.200 --> 52:41.240
+crutchfield's causal states distributed dags and german philosophy a lot of ground covered let's bring all
+
+52:41.240 --> 52:48.360
+of this down to a practical usable scorecard for the listener how do we know practically speaking if an ai
+
+52:48.360 --> 52:54.760
+developer has actually built a persistent world or if they are just selling us a shiny hallucination
+
+52:54.760 --> 53:00.680
+Flyxion provides a brilliant five-step hierarchy think of it as a litmus test for digital reality
+
+53:00.680 --> 53:07.160
+if you are analyzing a new virtual world a video game or a metaverse platform you can evaluate how
+
+53:07.160 --> 53:13.480
+far up this ladder it gets let's explore the ladder level one is renderability can the system generate a
+
+53:13.480 --> 53:18.200
+plausible appearance this is your basic ai video generator you type in a prompt and it makes a picture
+
+53:18.200 --> 53:23.240
+of a wall it has no depth no rules but it looks real most of the viral ai tech right now is sitting
+
+53:23.240 --> 53:28.680
+squarely at level one then we move to level two controllability can actions produce structured
+
+53:28.680 --> 53:35.720
+transitions if i push the digital wall does it fall over according to a consistent set of physics rules
+
+53:35.720 --> 53:41.400
+this is your basic physics simulation or latent state model so level two gives us the diorama
+
+53:41.400 --> 53:46.520
+level three is recurrence can a state be reliably reproduced under declared conditions
+
+53:47.160 --> 53:51.880
+if i rewind the server simulation and push the wall the exact same way with the exact same
+
+53:51.880 --> 53:57.320
+variables does it fall the exact same way okay this requires a fully deterministic solver
+
+53:57.320 --> 54:01.960
+and the use of certified checkpoints okay now we cross the threshold levels one through three are
+
+54:01.960 --> 54:08.280
+where the current industry stops but to achieve actual persistence we need the missing third layer
+
+54:08.280 --> 54:13.880
+level four is provenance can the legitimacy and lineage of the state be recovered who built the wall
+
+54:13.880 --> 54:19.160
+who owns the land it sits on when was it damaged and by whom right this requires the separation
+
+54:19.160 --> 54:24.360
+the physical fold from the historical fold the system must track the sociology of the object
+
+54:24.360 --> 54:31.160
+and finally the holy grail level five is true persistence identity survives change because commitments and
+
+54:31.160 --> 54:37.480
+refusals remain permanently addressable the world remembers what was attempted against it why the history
+
+54:37.480 --> 54:43.320
+ledger is the ultimate authority over the physical state and crucially replay discrepancies are logged as
+
+54:43.320 --> 54:50.040
+historical artifacts not paved over with a patch so applying this checklist to the real world right
+
+54:50.040 --> 54:57.240
+now how many of the daily digital tools massive multiplayer games or ai platforms that we use
+
+54:57.240 --> 55:03.240
+actually pass level three let alone level five very very few almost none really yeah the multi-billion
+
+55:03.240 --> 55:08.840
+dollar frame predicting engines are stuck at level one the advanced control oriented planning models are at
+
+55:08.840 --> 55:14.600
+level two some highly structured traditional game engines might hit level three but almost nothing
+
+55:14.600 --> 55:20.840
+in the currently surveyed literature of learned ai world models achieves levels four and five because
+
+55:20.840 --> 55:26.680
+to quote the paper's most powerful and damning takeaway persistence is always engineered and never free
+
+55:26.680 --> 55:32.040
+that is the core truth of this entire deep dive you cannot get persistence just by scaling up a visual
+
+55:32.040 --> 55:38.520
+renderer you cannot just throw a trillion more microchips and 10 times more compute power at drawing pictures
+
+55:38.520 --> 55:44.200
+and hope that a historical reality spontaneously emerges from the piccadles rendering predicts
+
+55:44.200 --> 55:51.560
+appearances physical state constrains transitions but only inscription preserves worlds i want to
+
+55:51.560 --> 55:55.960
+quickly synthesize the design rules Flyxion gives for developers who want to actually build this
+
+55:55.960 --> 56:02.600
+because this is the definitive playbook absolutely number one keep rendering pure do not let the camera
+
+56:02.600 --> 56:08.360
+write history number two commit attestations not perceptions record the fire alarm not
+
+56:08.360 --> 56:14.600
+every person who looked at the smoke number three use typed events the ledger must differentiate
+
+56:14.600 --> 56:21.400
+between a proposal a refusal or repair and a mathematical discrepancy number four derive current authority
+
+56:21.400 --> 56:27.320
+the present state is a fold of history not a static hard drive file number five make refusal durable
+
+56:27.320 --> 56:33.240
+always record failures and unauthorized attempts so important and number six the golden rule never ever
+
+56:33.240 --> 56:39.960
+repair the past in place if you follow those rules you separate the authority by scale the fast
+
+56:39.960 --> 56:45.400
+meaningless math is provisionally authoritative for a split second but at the boundaries of commitment
+
+56:45.400 --> 56:52.040
+the permanent history ledger rules absolute beautifully summarized we started this journey with a wall in a
+
+56:52.040 --> 56:57.560
+video game trying to figure out if it was the same wall we built an hour ago or just a flawless new picture
+
+56:57.560 --> 57:03.400
+right and we discovered that a truly durable computational world requires three distinct
+
+57:03.960 --> 57:10.680
+inextricably linked layers right at appearance to be seen operative state to function physically and historical
+
+57:10.680 --> 57:17.640
+inscription to possess a continuous identity exactly to make ai worlds real to give them actual weight and permanence
+
+57:18.120 --> 57:24.520
+they cannot simply quietly stop being themselves the moment we look away they require a ledger they need a
+
+57:24.520 --> 57:29.720
+history that their present momentary state cannot overrule this has been one of the most structurally
+
+57:29.720 --> 57:35.320
+profound deep dives we've ever done it completely changes how you look at the software we interact with
+
+57:35.320 --> 57:41.560
+every single day it really does it's a whole new paradigm but before we sign off i want to leave you the
+
+57:41.560 --> 57:49.400
+listener with a final provocative thought it's inspired by the very last open question proposed in
+
+57:49.400 --> 57:54.280
+Flyxion's paper we've spent this entire hour talking about artificial intelligence
+
+57:54.280 --> 58:00.280
+generative video games and simulated walls yeah but i want you to apply this architecture to your own
+
+58:00.280 --> 58:06.920
+digital footprint think about your thousands of emails your decades of photos in the cloud your sprawling
+
+58:06.920 --> 58:12.680
+messy social media histories that's a scary thought every single day the platforms that host your
+
+58:12.680 --> 58:18.600
+digital life update their algorithms they compress your data to save server space they re-index your
+
+58:18.600 --> 58:24.600
+memories to serve better ads they collapse your complex nuanced digital history into what Flyxion
+
+58:24.600 --> 58:30.600
+would call an extensionally identical snapshot or a flattened algorithmic feed just overriding the past
+
+58:30.600 --> 58:35.720
+exactly they present you with a synthesized current state of your life when that happens what metric
+
+58:35.720 --> 58:42.280
+measures the loss of your history are we currently living our actual human lives inside a state primary
+
+58:42.280 --> 58:49.400
+digital reality one that is quietly efficiently erasing our provenance overriding our refusals and deleting our
+
+58:49.400 --> 58:54.920
+attestations all in the name of a smoother faster user experience it really makes you wonder are the
+
+58:54.920 --> 59:00.360
+platforms we rely on acting as true librarians of the mind or are they just custodians wiping the flake clean
+
+59:00.360 --> 59:05.320
+every time we hit refresh let that sit with you yeah thanks for joining us on this deep dive
+

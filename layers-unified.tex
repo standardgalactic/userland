@@ -1,0 +1,625 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathpazo}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+
+\newtheorem{definition}{Definition}
+\newtheorem{principle}{Principle}
+\newtheorem{invariant}{Invariant}
+\newtheorem{proposition}{Proposition}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Layers of a Persistent World}
+\fancyhead[R]{Flyxion}
+\fancyfoot[C]{\thepage}
+
+\title{\textbf{Layers of a Persistent World}\\[0.3em]
+\large Appearance, State, Provenance, and History, Unified and Graded}
+\author{Flyxion\\Independent Researcher}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent Two independent constructions of the same architecture exist: one organized around a claim-by-claim evidentiary grade (established, analogy, emerging, unsupported), the other organized around formal definitions, a graded worldhood hierarchy, discrimination tests, and narrative failure cases. This paper merges them into a single account and extends both. It keeps the four-layer separation of appearance $x_t$, operative state $M_t$, provenance state $Q_t$, and committed history $H_t$; the principle that history is authoritative at commitment boundaries while state is authoritative between them; and the discipline that every load-bearing claim recruited to support the architecture is graded rather than asserted. It adds, from the second construction, a formal recoverability definition of a persistent world, a six-level worldhood hierarchy running from renderability to persistence, three falsifiable discrimination tests for separating a compression latent from a state latent, a five-component replay profile, and five narrative failure cases. It extends both constructions with a fourth gate outcome (deferral), a coalgebraic reading of operative state, an explicit viability kernel over the joint fold $(M,Q)$, a lattice-ordering analysis of replay profiles, and a sixth failure case constructed specifically to stress the merge itself. The result is a single paper whose formal apparatus is stronger than either source and whose evidentiary discipline is applied uniformly across all of it.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+\label{sec:intro}
+
+The word \emph{world} has become unusually permissive. A game engine is a world because it stores objects and applies rules. A persistent multiplayer service is a world because many participants return to a shared environment that outlives any one session. A learned dynamics model is a world because an agent can imagine trajectories through it. An action-conditioned video generator is a world because its next frames respond to player input. A scientific simulation is a world because local rules generate global consequences that were not transparent in advance. These uses overlap, but they do not coincide.
+
+The ambiguity matters whenever persistence is treated as a consequence of rendering. A model may generate a room, leave it, and later regenerate a perceptually similar room. That does not establish that the second room is the same room, that its objects have retained their identities, that an earlier transfer of ownership remains binding, or that a prohibited action remains prohibited. Visual recurrence is evidence about appearance. It is not by itself evidence about historical identity.
+
+The reverse reduction is equally misleading. An append-only event log may preserve a complete sequence of accepted commands, yet be too expensive to scan during every render or solver step. A current snapshot may be operationally authoritative without containing the warrants by which it became authoritative. A system that conflates state and history is forced into a false choice: either the current state is the world and the past is optional metadata, or the log is the world and every present operation must reconstruct it from the beginning.
+
+This paper rejects that choice, and it does so twice over, because it is itself the product of rejecting a smaller false choice: whether to present the architecture as a set of formal definitions and tests, or as a claim-by-claim ledger of what the surrounding literature actually supports. Two earlier papers made each choice separately. The first organized the material as a graded evidentiary ledger: every claim recruited to support the four-layer model was tagged established, analogy, emerging, or unsupported, with a summary table, a worked example, and a formal appendix of proof sketches. The second organized the same underlying architecture around explicit definitions (a recoverability criterion for persistent worldhood, a replay profile as a scored tuple), a six-level hierarchy of worldhood strength, three discrimination tests for telling a compression latent from a state latent, and five narrative failure cases. Both papers converge on the same four layers, the same divided-authority principle, and largely the same evidentiary backbone (state-machine replication, Chandy--Lamport, Virtual Time, POMDPs, computational mechanics, event structures, Ceptre, and the state-centric learned-world-model literature), which is itself evidence that the architecture is not an artifact of either paper's particular framing.
+
+This paper does not merely concatenate them. It uses the claim-level grading discipline of the first as the evidentiary substrate for everything the second paper introduces, so that the definitions, hierarchy, tests, and failure cases are not simply asserted as insight but are checked, claim by claim, against what is established, what is analogy, what is emerging, and what would be unsupported if stated without qualification. It then extends the merged result in four specific respects that neither source paper contains: a fourth gate outcome (deferral, promoted from a passing mention to a fully worked case), a coalgebraic reading of $M_t$ that supplies the missing formal target computational mechanics' causal states could only gesture at, an explicit viability kernel construction over the joint fold $(M,Q)$ rather than a stated intention to build one, and an analysis of whether replay profiles form a lattice, which both source papers list as an open question and which this paper partially answers.
+
+Six questions organize the inquiry, one more than either source paper posed alone. What makes an appearance a projection rather than a state? What must operative state contain for transitions to be controllable? Which historical records are constitutive of identity rather than merely diagnostic? What does replay establish when hardware, floating-point behavior, or stochasticity prevent bitwise identity? What can an observer know when its view is partial, delayed, and interest-managed? And, the question specific to a merge of two independently graded papers: when two independently constructed accounts converge on the same architecture through different formal apparatus, what does that convergence license, and what does it still not license?
+
+\section{The Layers Problem}
+\label{sec:layers-problem}
+
+Suppose an interactive environment presents an observation $x_t$, maintains an internal configuration $s_t$, and stores a history $H_{\le t}$. A tempting formulation is
+\[
+x_t = R(s_t, H_{\le t}, \omega_t),
+\]
+where $R$ is a renderer and $\omega_t$ is an observer or camera parameter. This expression is too loose for a large persistent world. If rendering consults the full history, every frame potentially requires an unbounded scan. If $s_t$ already summarizes everything in the history, the direct dependence on $H$ is redundant. If viewing changes the history, observer count acquires causal power over the world merely by producing frames.
+
+A second temptation is to identify state with history: $s_t = H_{\le t}$. This is coherent in situation calculus, where a situation denotes an action history, and it is attractive in event-sourced systems where materialized views are projections of an event stream. Yet a numerical simulation can execute millions of solver substeps that should not each become identity-bearing historical events. The state used to resolve a collision or integrate a field is not generally identical to the record needed to justify a property transfer, preserve a repair lineage, or audit a refused command.
+
+A third temptation is snapshot primacy: let the present snapshot be authoritative and retain logs only for debugging, recovery, or analytics. This is common and often adequate. It becomes inadequate when two extensionally identical snapshots have different rights, liabilities, authorship, or repair histories. The present arrangement of bytes does not tell us whether a component is original, legitimately replaced, illicitly copied, or reconstructed after a failed replay. A snapshot can answer \emph{what is currently operative?} while remaining silent about \emph{why is this state entitled to count as the present?}
+
+The layers problem is therefore not a dispute over which representation is ``really'' the world. It is a problem of divided authority. Different representations answer different questions, and an architecture becomes unstable when one layer silently inherits authority it cannot support.
+
+\begin{definition}[Persistent world]
+\label{def:persistent-world}
+A persistent world is a system whose present operative and interpretive states are recoverably related to prior commitments, including relevant refusals and repairs, such that identity claims can survive change even when exact bitwise recurrence is unavailable.
+\end{definition}
+
+This definition is deliberately stronger than session continuity and weaker than perfect archival reconstruction. It requires an addressable relation to prior commitments, not the retention of every microstate. It also makes room for disagreement, damage, missing artifacts, and changed implementations, provided those differences are appended rather than silently erased. Definition~\ref{def:persistent-world} is graded as this paper's own construction (Section~\ref{sec:grading}, unsupported-if-asserted-without-qualification list) in the sense that no cited source states it in this form; what is established is the narrower set of mechanisms (Section~\ref{sec:established}) that a system satisfying it would need to compose.
+
+\section{A Four-Layer Architecture}
+\label{sec:architecture}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{2.3cm}p{3.0cm}p{3.0cm}p{4.5cm}}
+\toprule
+\textbf{Layer} & \textbf{Primary object} & \textbf{Authority} & \textbf{Typical failure} \\
+\midrule
+Appearance & Observer-relative projection $x_t$ & None beyond presentation & Visual continuity mistaken for world continuity \\
+Operative state & Fields, objects, variables $M_t$ & Provisional dynamics & Snapshot treated as complete identity \\
+Provenance state & Ownership, permissions, attributions $Q_t$ & Certified historical projection & Context recomputed informally or lost \\
+Committed history & Typed event DAG $H_t$ & Identity and admissibility & Past silently patched after divergence \\
+\bottomrule
+\end{tabular}
+\caption{The layers differ by function and authority; they need not use different storage systems.}
+\label{tab:layers}
+\end{table}
+
+\subsection{Appearance}
+\label{sec:appearance}
+
+Appearance is what an observer receives:
+\[
+x_t = R(M_t, Q_t, \omega_t, \rho_t),
+\]
+where $\omega_t$ represents viewpoint and observer permissions and $\rho_t$ represents disposable rendering conditions such as level of detail, stochastic sampling, display resolution, or compression. The renderer may read a certified state and an observer-specific index. It should not consult the entire event history during ordinary operation, and its production of $x_t$ should not itself commit an event.
+
+Appearance is many-valued. The same state can yield a first-person image, a map, an accessibility description, an administrative view, or a scientific instrument trace. Conversely, perceptually similar appearances can be produced by different states. This many-to-many relation defeats any straightforward identification of frames with worlds. Learned video systems intensify the problem: their outputs may maintain short-horizon visual coherence while object relations, inventories, causal dependencies, or off-screen facts drift.
+
+\begin{invariant}[Pure rendering]
+\label{inv:pure-rendering}
+For fixed certified inputs, rendering does not alter $M_t$, $Q_t$, or $H_t$. If a produced observation later becomes evidence, a distinct attestation operation must commit it.
+\end{invariant}
+
+This invariant does not forbid logging performance data, access counts, or screenshots. It requires those operations to be named as separate events with their own purposes. Merely seeing a thing is not identical to making the sight historically constraining.
+
+In a multi-observer setting the appearance is properly indexed by participant:
+\[
+x_t^{(i)} \sim O_i(\cdot \mid M_t, Q_t, a^{(i)}_{<t}),
+\]
+where $O_i$ is participant $i$'s observation function, which may itself depend on $Q_t$ through access, disclosure, and trust relations. This notation, extended from the single-observer renderer above, becomes load-bearing in Section~\ref{sec:pomdp} when private views and interest management are treated formally.
+
+\subsection{Operative state}
+\label{sec:operative-state}
+
+The operative state $M_t$ contains variables required by transition rules: positions, velocities, fields, object relations, inventories, health values, environmental resources, and other dynamically active quantities. Between commitments it may pass through provisional configurations
+\[
+\tilde{M}(t+\Delta) = F_\Delta(\tilde{M}(t); \theta, \xi),
+\]
+where $\theta$ identifies the rules and solver versions and $\xi$ records controlled stochastic input. The tilde marks a state that can be recomputed, rolled back, or refined before any identity-bearing commitment is made.
+
+An operative state is not merely a compression latent. It qualifies as state relative to a task when transition and query operations are defined over it and when distinctions relevant to those operations remain recoverable. A vector may be an excellent predictor of pixels while failing to represent persistent object identity. Another latent may omit pixels entirely while preserving sufficient statistics for control. Statehood is therefore task-relative but not arbitrary: it is tested by the operations the system must support, and Section~\ref{sec:tests} below turns this observation into three concrete tests rather than leaving it as a methodological remark.
+
+\subsection{Provenance and permission state}
+\label{sec:provenance-state}
+
+The provenance fold $Q_t$ carries historically active relations that affect interpretation or admissibility without necessarily changing immediate physics: ownership, authorship, repair lineage, access rules, warranties, sanctions, disputed claims, signed measurements, and scars understood as attributions rather than geometry. These relations often need efficient current access. Storing them only in a remote archive would force admissibility gates to rescan history, while placing them indiscriminately in the physics state would turn $M$ into an untyped warehouse.
+
+The separation is logical rather than absolute. A permission can produce a physical effect when it opens a door; a damaged surface can become a provenance-bearing scar when its origin matters. What matters is that each fold have a declared update function and that cross-layer consequences occur through typed events rather than hidden mutation.
+
+\subsection{Committed history}
+\label{sec:committed-history}
+
+The committed history $H$ is an append-only collection of typed events. Under a single authority it may be represented as a sequence. In a distributed world it is more naturally a directed acyclic graph whose edges identify causal dependence. An event should state more than a value change: it should record the proposal, the gate or procedure applied, the relevant frontier, the result, and the evidence needed to interpret that result.
+
+A minimal vocabulary includes
+\[
+\{\texttt{PROPOSED}, \texttt{ADMITTED}, \texttt{REFUSED}, \texttt{DEFERRED}, \texttt{ATTESTED}, \texttt{REPAIRED}, \texttt{CHECKPOINTED}, \texttt{REPLAY-DISCREPANT}\}.
+\]
+This vocabulary adds \texttt{DEFERRED} to the sets proposed independently by the two source papers, since Section~\ref{sec:admission} below promotes deferral from a listed gate outcome to a fully worked case. The exact ontology remains domain-specific, but an admitted-only history is insufficient. Refusals reveal boundaries and attacks. Deferrals reveal cases where the gate correctly declines to decide rather than guessing. Repairs preserve the difference between the first attempt and the corrected result. Replay discrepancies preserve the difference between what a prior checkpoint promised and what a later environment reproduced.
+
+\section{One History, Several Folds}
+\label{sec:folds}
+
+The current operative and provenance states are certified caches produced by distinct folds over the same committed history:
+\[
+M_t = \mathrm{fold}(f_{\mathrm{phys}}, M_0, H_t), \qquad Q_t = \mathrm{fold}(f_{\mathrm{prov}}, Q_0, H_t).
+\]
+Additional folds can support accounting, narrative summaries, scientific measurements, search indexes, and observer-specific views. The world is not a snapshot plus optional logs. It is an authoritative event structure together with a family of certified folds and checkpoints.
+
+The phrase \emph{history is authoritative} needs qualification. At commitment boundaries, history determines which certified folds are warranted. Between boundaries, an operative state can be authoritative for simulation even though its individual solver steps have not entered history. Thus authority alternates by question: $M$ determines the next provisional physical update; $H$ determines whether a purported $M$ is entitled to be treated as the certified continuation of a prior world.
+
+\begin{principle}[Divided authority]
+\label{prin:divided-authority}
+History is authoritative at commitment boundaries. Operative state is authoritative between them only as the provisional or certified result of admissible evolution. Appearance is never authoritative merely because it was rendered.
+\end{principle}
+
+This principle prevents two opposite pathologies. Log fundamentalism would require continuous reconstruction and infinite storage of numerical work. Snapshot fundamentalism would permit silent replacement of the warrants that make a present state legitimate. Certified folds preserve the speed of snapshots and the accountability of history.
+
+\section{Observation Is Not Attestation}
+\label{sec:attestation}
+
+Observation must not be used as a loose synonym for commitment. If every sample were a commit, history would grow with observer count and rendering would acquire unintended causal power. Merely looking is a disposable computation. An observation becomes historical only when it is registered as evidence that constrains the admissible set:
+\[
+\text{looking:} \quad R(M_t, Q_t, \omega) \to x \quad [\text{no commit}]
+\]
+\[
+\text{attesting:} \quad (x, \text{witness}, \text{rule}) \to E_{t+1} \to \text{narrower admissible set}.
+\]
+
+This distinction aligns simulation engineering with an epistemic account of evidence. Sensors may sample continually while only selected, authenticated, or threshold-crossing measurements become attestations. A screenshot need not alter a world; a signed measurement used to authorize a repair can. The decisive property is not perceptual occurrence but constraining work. An administrator opening a dashboard does not necessarily change the world; certifying an exception does.
+
+\section{Admission, Refusal, Repair, and Deferral}
+\label{sec:admission}
+
+A history containing only successful transitions is incomplete. Failed and undecided proposals disclose boundaries, attacks, conflicts, and changing expectations. Let $c$ be a candidate transition. Its disposition is determined by an admissibility gate
+\[
+A(c \mid M_t, Q_t, \phi_t, W_t) \in \{\text{admit}, \text{refuse}, \text{repair}, \text{defer}\},
+\]
+where $\phi_t$ is the causal frontier and $W_t$ is a bounded witness set drawn from history. The gate should ordinarily consult current folds. Direct historical witnesses are reserved for cases in which a current summary is insufficient: a disputed signature, the exact terms of a prior authorization, or a replay claim tied to a particular artifact.
+
+The physical fold normally ignores a refusal because no admitted physical change occurred. The provenance fold may record it because an attempted intrusion, invalid transfer, or prohibited repair can alter permissions, suspicion, audit status, or future admissibility. Repair should likewise remain visible: replacing a failed proposal with a corrected one must not erase the distinction between what was first attempted and what was finally admitted.
+
+\begin{invariant}[Refusal visibility]
+\label{inv:refusal}
+A refused candidate leaves operative state unchanged unless the refusal itself has defined physical consequences, but it can update audit and permission folds under explicit policy.
+\end{invariant}
+
+The qualifier ``designated'' matters for how this invariant is implemented. An adversary could otherwise inflate history with meaningless attempts or poison reputation merely by provoking rejections. Systems need aggregation, retention, identity, and rate policies for refusals. Durability need not mean unbounded literal retention; it means that compression itself is governed and auditable.
+
+\subsection{Deferral as a fourth outcome}
+\label{sec:deferral}
+
+Neither source paper develops deferral beyond listing it alongside admit, refuse, and repair. This is an omission worth correcting, because deferral is the outcome that most directly addresses the distributed-witness problem: a gate that cannot yet certify independence, cannot yet reach the witness set it needs, or is waiting on a concurrent candidate's resolution should not be forced into a binary admit-or-refuse choice that it is not epistemically entitled to make.
+
+A deferred candidate is appended to $H$ as $(\texttt{DEFERRED}, c, \text{reason}, \phi_t)$, where the reason names the specific insufficiency: an unresolved concurrent candidate touching the same object, a witness reference that has not yet arrived across a partition, or a checkpoint verification still in progress. Deferral differs from refusal in that it carries no negative provenance consequence by default; it differs from admission in that no fold is updated. A deferred candidate must eventually resolve to one of the other three outcomes once its blocking condition clears, and the resolution event names the original deferral as its causal parent, so that the eventual admission or refusal is traceable to the specific candidate that was held rather than appearing as a fresh proposal.
+
+This has a direct consequence for the worked example in Section~\ref{sec:worked-example} and for the partition-tolerance discussion in Section~\ref{sec:distributed}: under CAP-theorem constraints (Section~\ref{sec:established}), a partitioned region that cannot verify non-conflict with the rest of the system has exactly three honest choices — refuse outright, admit and risk a later repair, or defer until the partition heals. Making deferral a first-class, loggable outcome is what allows a system to choose the third option without that choice looking, from the log's perspective, like silence or a dropped request.
+
+\section{Checkpoints and Replay}
+\label{sec:checkpoints}
+
+Checkpoints are necessary for large worlds, but they must be treated as accelerators rather than rival authorities. A checkpoint binds a folded state to a history frontier, ruleset, solver identity, seed policy, and verification hash:
+\[
+C_k = (\phi_k, M_k, Q_k, V_k, \Xi_k, T_k, h_k),
+\]
+where $\phi_k$ is the history frontier, $V_k$ records rule, solver, model, and schema versions, $\Xi_k$ records seeds and nondeterministic inputs, $T_k$ records tolerances and equivalence policies, and $h_k$ records verification hashes. A checkpoint accelerates reconstruction. It does not replace the history that identifies what the state purports to continue.
+
+Exact bitwise replay may fail because of nondeterministic solvers, floating-point differences, hardware changes, missing dependencies, or corrupted artifacts. The policy adopted here, consistent across both source papers, is simple: do not patch the earlier checkpoint or rewrite its event. Append a replay-discrepancy event containing the expected and obtained hashes, environment description, and resulting disposition. Later repair may create a new certified checkpoint while the failed recurrence remains part of provenance. This policy separates epistemic immutability from operational rigidity: the system may improve its solver, restore service, or adopt a better reconstruction, but it may not present the improved result as though it had always been the original result.
+
+\begin{definition}[Replay profile]
+\label{def:replay-profile}
+The replay profile of an artifact is the tuple $R = (r_b, r_n, r_s, r_c, r_p)$, whose components state the verified degree of bitwise, numerical, semantic, causal, and provenance recurrence under declared conditions.
+\end{definition}
+
+Bitwise recurrence ($r_b$) requires identical output bits given identical input bits and code; it can fail from floating-point non-associativity alone under a changed instruction set, with no change to $\theta$ or $\xi$. Numerical recurrence ($r_n$) requires agreement within a stated tolerance and is the grade actually achievable across heterogeneous hardware. Semantic recurrence ($r_s$) requires only that the same committed events be derivable, regardless of intermediate solver values. Causal recurrence ($r_c$) requires only that the causal partial order of commits be reproduced, permitting different but causally-equivalent interleavings of independent events. Provenance recurrence ($r_p$) requires only that the final $Q_t$ be reachable, permitting different admitted/refused/repaired paths to the same standing relations.
+
+\begin{proposition}[Replay profile is a partial order, not always a lattice]
+\label{prop:replay-lattice}
+Define $R \preceq R'$ componentwise ($r_x \preceq r_x'$ for each $x \in \{b,n,s,c,p\}$, under each component's own natural strength ordering). This relation is a partial order on replay profiles. It is a join-semilattice, since componentwise maximum always exists and is itself a valid (if perhaps unachieved) profile, but it is not generally a meet-semilattice with a nontrivial greatest-lower-bound below the profile that fails every component: two systems whose profiles fail different components in incomparable ways ($r_b$ high but $r_p$ low in one, $r_p$ high but $r_b$ low in the other) have a well-defined join but their ``common failure floor'' carries no information beyond the trivial all-fail profile, so meets are only informative when the two profiles already agree on which components hold.
+\end{proposition}
+
+This answers, partially, an open question both source papers list without resolving: replay profiles do form a join-semilattice, which is enough structure to define ``at least as strong a recurrence claim as both of these prior claims,'' but the meet operation is degenerate except in the comparable case, which limits how much a lattice-theoretic vocabulary can add beyond the componentwise ordering already stated in Definition~\ref{def:replay-profile}. The practical upshot is that a system should report the full 5-tuple rather than trying to compress it into a single scalar strength, since a scalar collapse is exactly the kind of extensionally-identical-but-provenance-distinct collapse Section~\ref{sec:learned-models} warns against for world states themselves.
+
+\section{Continuous Fields Without Infinite History}
+\label{sec:continuous}
+
+A history-primary account need not record every timestep of a continuous field. The distinction is between numerical work and semantic commitment. Solver ticks approximate a trajectory; semantic events identify candidate changes; commits determine which changes have become identity-bearing facts:
+\[
+\text{solver ticks} \;\to\; \text{semantic candidates} \;\to\; \text{committed events}.
+\]
+
+A field-level commit can record the initial or prior certified state, boundary conditions, forcing data, solver and operator versions, stochastic seeds, tolerance policy, interval, constraint checks, and resulting checkpoint hash. Intermediate values can be retained for diagnostics or discarded. What must survive is enough information to state what was asserted, under which procedure, and with what verification result. Commit frequency is task-relative. A collision, transfer of ownership, public attestation, branching decision, or irreversible phase change may deserve a commit even when it occurs inside a much finer numerical integration.
+
+\section{Distributed Worlds and Causal History}
+\label{sec:distributed}
+
+Persistent multiplayer worlds cannot assume a single total order known everywhere at once. Interest management gives participants partial and sometimes stale projections; network delay creates concurrent proposals; rollback and reconciliation revise provisional states. Several established results bear directly on how the commit structure must be built, and it is worth stating precisely what each does and does not license before using it.
+
+The Chandy--Lamport distributed-snapshot result proves that a set of processes communicating over reliable FIFO channels can construct a consistent global snapshot: a set of local states and in-transit channel contents that could have been the joint state of the system at some instant, even though no process ever observes such an instant directly and the recorded cut need not correspond to any single moment of wall-clock time. What it establishes is that a distributed system can capture a globally consistent cut without a synchronized global clock and without halting computation. What it does not establish is anything about game engines, provenance, or attestation; those are extensions this architecture proposes, not conclusions of the 1985 result. The legitimate transfer is structural: a persistent world's committed history should be a directed acyclic graph of causally related commits rather than a single sequence stamped with wall-clock time, because concurrent, causally unrelated commits in different regions of a world have exactly the shape of Chandy--Lamport's concurrent local states.
+
+Lamport's earlier logical-clock construction, and its later vector-clock extensions, give a proved method for deriving a causal partial order (the happened-before relation) from message-passing alone, prior to and presupposed by Chandy--Lamport's own algorithm. This is the mechanism that makes ``recording a causal parent'' an operational instruction: a commit's parents can be computed directly from the vector-clock values attached to the events it causally depends on, and two commits are certified independent exactly when neither vector clock dominates the other.
+
+\[
+e_i \perp e_j \implies \mathrm{fold}(e_i \text{ then } e_j) = \mathrm{fold}(e_j \text{ then } e_i)
+\]
+
+This is the operational meaning of the residue-algebra principle that combination commutes only over causally independent commitments. Conflict-free replicated data type (CRDT) theory supplies the exact structural condition under which this holds: certain data types (grow-only sets, counters, observed-remove sets) admit merge operations that are commutative, associative, and idempotent, guaranteeing replica convergence regardless of update order, without coordination. The matching negative result is equally important: operations that are not naturally expressible as a join over a semilattice, most contested-resource transfers among them, cannot be made CRDT-commutative without changing their semantics, which is the formal reason the gate of Section~\ref{sec:admission} must refuse, defer, or serialize contested candidates rather than trying to merge them.
+
+\begin{invariant}[Causal commutation]
+\label{inv:causal-commutation}
+Events may be folded in either order only when independence is certified with respect to both operative and provenance effects.
+\end{invariant}
+
+This strengthens conventional conflict detection. Two operations may commute physically while differing in provenance: two identical replacements can yield the same geometry but different authorship. Independence is therefore fold-relative, and global independence requires commutation across every authoritative fold affected by the events.
+
+Finally, the CAP theorem (Gilbert and Lynch's formalization of Brewer's conjecture) establishes that a distributed data store cannot simultaneously guarantee strong consistency, availability, and partition tolerance; a system must trade off which two it prioritizes during a network partition. This directly constrains what ``certified fold'' can mean in a genuinely distributed, partition-tolerant persistent world: $M_t$ and $Q_t$ as read by a partitioned region may be a stale but internally consistent fold over a strict prefix of $H$, not the fold over the full current $H$, and the architecture must specify, as the checkpoint frontier does, exactly which prefix a given certified state corresponds to. It is also the theorem that makes deferral (Section~\ref{sec:deferral}) a principled rather than merely convenient option: a partitioned gate facing the CAP tradeoff can defer instead of guessing at either consistency or availability's expense.
+
+\section{Partial Observability and Private Views}
+\label{sec:pomdp}
+
+Partially observable Markov decision processes distinguish an underlying state $s_t$, an observation $o_t$, and a belief distribution updated from actions and observations. This is the established formal baseline for partial observability, with origins in optimal control of Markov processes under incomplete state information and in the operations-research treatment of partially observable processes over a finite horizon, well before the reinforcement-learning literature's adoption of the POMDP vocabulary. It clarifies that an agent's information state is not the world state and that action can change both the world and what becomes knowable.
+
+The layered account adds two qualifications to the standard POMDP picture. First, the observation emitted to an agent is an appearance, not automatically an event; only attested evidence changes authoritative history. Second, permissions and provenance can determine which observation function applies, which is exactly the observer-indexed appearance already introduced in Section~\ref{sec:appearance}:
+\[
+x_t^{(i)} \sim O_i(\cdot \mid M_t, Q_t, a^{(i)}_{<t}),
+\]
+where $Q_t$ helps determine access, disclosure, trust, and evidential status.
+
+Private views produce a distinction among physical truth, available evidence, and registered evidence. An object can exist in $M$ while remaining outside an agent's interest region. A sensor reading can enter an agent's local belief without being accepted by the shared world. A signed report can become a shared attestation even when its raw perceptual source is later unavailable. These are not merely degrees of uncertainty; they are different relations among the layers, and the distributed-snapshot caution of Section~\ref{sec:distributed} applies here directly: even a consistent global cut, if displayed to an observer as a dashboard, may be a constructed epistemic object rather than an occupied simultaneous state, and the system should record how the summary was assembled, at which causal frontier, and under which consistency criterion.
+
+\section{A Worldhood Hierarchy}
+\label{sec:hierarchy}
+
+The claims a system is entitled to make about itself can be ordered by strength, and doing so clarifies which current systems have earned which label.
+
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{Renderability.} The ability to produce an appearance $x_t$ at all.
+\item \textbf{Responsiveness.} The ability to condition appearances on actions, so that $x_t$ visibly depends on a supplied control input even absent any commitment to an explicit persistent state.
+\item \textbf{Controllability.} The ability to apply structured transitions to an explicit operative state $M_t$, so that the intervention test of Section~\ref{sec:tests} can be meaningfully applied and passed.
+\item \textbf{Recurrence.} The ability to reproduce a state under declared conditions, gradeable by the replay profile of Definition~\ref{def:replay-profile}.
+\item \textbf{Provenance.} The ability to recover the lineage and warrants of that state via a certified $Q_t$ fold.
+\item \textbf{Persistence.} The ability to preserve identity through change by keeping commitments, refusals, and repairs addressable, in the sense of Definition~\ref{def:persistent-world}.
+\end{enumerate}
+
+Each level adds an obligation the preceding level does not entail, and the levels are not merely a rhetorical ladder: each is witnessed by a specific test or definition already given above (levels 3 and 4 by Section~\ref{sec:tests}, level 4 additionally by Definition~\ref{def:replay-profile}, level 6 by Definition~\ref{def:persistent-world}), so that a claim to occupy a given level is falsifiable rather than asserted. This is a refinement, not a restatement, of the coarser four-level hierarchy (renderability, controllability, recurrence, provenance, persistence) used in an earlier presentation of this material: responsiveness is inserted between renderability and controllability specifically because action-conditioned video generators (Section~\ref{sec:learned-models}) motivate a level at which appearances already respond to input without yet committing to any explicit, queryable state, and collapsing that level into either its neighbor understates exactly the distinction those systems were built to demonstrate.
+
+This hierarchy clarifies current claims about neural game engines. They are significant demonstrations of renderability and responsiveness, and some approach controllability. They should not be credited with provenance or persistence without evidence about off-screen state, event identity, replay, and historical warrant. Conversely, conventional engines should not receive those stronger labels automatically merely because their state is explicit. A mutable database without durable, typed commitments can forget a world as thoroughly as a video model can.
+
+\section{Discrimination Tests}
+\label{sec:tests}
+
+Three tests separate a compression latent, optimized to encode or regenerate observations, from a state latent, tested by the transitions and invariants the world must maintain.
+
+\textbf{The off-screen persistence test.} An entity is removed from the current observation (moved out of view, the region unloaded, the camera turned away) and later reintroduced. The test asks whether the entity retains identity and properties across the absence, not merely whether a perceptually similar entity reappears. Passing requires an addressable identifier and property set that persisted independently of rendering, which is a direct operational check on whether $M_t$ (or whatever a candidate system calls its state) actually functions as the operative-state layer of Section~\ref{sec:operative-state} rather than as a compression latent wearing that name.
+
+\textbf{The intervention test.} A single state variable is changed and the consequence is inspected. The test asks whether the change produces a localized, law-governed consequence, as an update to $F_\Delta$ in Section~\ref{sec:operative-state} would, rather than triggering a wholesale visual resampling in which unrelated parts of the scene also change because the whole appearance was regenerated from a compressed representation that does not factor along the intervened variable.
+
+\textbf{The recurrence test.} A declared checkpoint (Definition~\ref{def:replay-profile}-worthy, meaning its claimed replay profile is stated) and an event suffix are supplied, and the test asks whether the same semantic and provenance commitments are regenerated, not merely a perceptually similar continuation. This is the test that most directly operationalizes Definition~\ref{def:persistent-world}: passing it at the semantic and provenance components of the replay profile, even while failing at the bitwise component, is sufficient for the persistence level of Section~\ref{sec:hierarchy}, while passing only at the bitwise or numerical components without the semantic and provenance components is not.
+
+Passing the first two tests supports a claim to controllability (level 3 of the hierarchy). Passing the third supports a claim to recurrence and, combined with a certified $Q_t$ fold, to provenance and persistence.
+
+\section{Learned World Models and Neural Game Engines}
+\label{sec:learned-models}
+
+The learned world-model literature contains a well-established state-centric lineage. World Models, PlaNet, Dreamer, and MuZero learn representations and transition mechanisms that support prediction, planning, value estimation, or policy learning. Their internal states are not required to reconstruct every visual detail; they are useful because an agent can iterate them to evaluate possible futures. This is strong evidence for distinguishing an operative state from rendered content, and it is squarely established (Section~\ref{sec:established}).
+
+Action-conditioned generative environments occupy a different position on the hierarchy of Section~\ref{sec:hierarchy}. Systems demonstrated to produce interactive visual continuations from frames and actions, including recent diffusion-based real-time game engines and the Genie line of generative interactive environments, show that a high-dimensional renderer can absorb part of what a conventional engine separates into simulation and rendering. Yet action responsiveness and short-horizon visual consistency establish responsiveness (level 2), not controllability, recurrence, provenance, or persistence. Off-screen entities, inventories, causal commitments, or ownership relations may have no stable addressable representation, which is precisely what the off-screen persistence test of Section~\ref{sec:tests} would expose.
+
+The important distinction is not symbolic versus neural. A neural state can be operative if it supports stable queries, counterfactual transitions, object relations, and recurrence. A symbolic engine can fail to be historically persistent if it silently overwrites its state and discards the events that warranted it. Recent memory-augmented generative systems that retain frames, poses, timestamps, geometry, or compressed context to extend coherence represent an engineering convergence toward explicit persistence mechanisms, not evidence that pixels alone were sufficient; this is graded emerging (Section~\ref{sec:emerging}) precisely because the mechanisms are heterogeneous and rarely expose an event boundary or identity criterion, meaning the ledger may have been relocated into weights or recurrent activations rather than eliminated.
+
+For any renderer that maps multiple historically distinct states to the same appearance, equality of rendered outputs is insufficient to establish equality of persistent worlds: if $(M, Q, H) \neq (M', Q', H')$ but $R(M, Q, \omega) = R(M', Q', \omega)$, appearance cannot decide which history or provenance relation obtains. This is commonplace; two visually identical objects can have different owners, repairs, or causal origins.
+
+\subsection{A coalgebraic reading of operative state}
+\label{sec:coalgebra}
+
+Neither source paper supplies a formal target for $M_t$ beyond the computational-mechanics analogy (a causal state as an equivalence class of histories with identical predictive futures). That analogy is graded A rather than E in Section~\ref{sec:analogies} precisely because no cited work constructs causal states for an event-sourced world history. Universal coalgebra offers a complementary, and in one respect more directly applicable, formal target: a system with hidden state and observable behavior can be modeled as a coalgebra for a suitable functor, where the coalgebra structure map assigns to each state both an observation and a next-state-per-input, and the largest bisimulation relation on such coalgebras characterizes exactly which states are behaviorally indistinguishable under all possible sequences of observations and inputs.
+
+This is a better fit than causal-state equivalence for one specific purpose: $F_\Delta$ in Section~\ref{sec:operative-state} is already stated as a state-transition map parameterized by rule and solver identity $\theta$, which is exactly the shape of a coalgebra structure map, whereas causal states are defined relative to a fixed stochastic process rather than relative to an explicitly parameterized, versioned transition function. Reading $M_t$ coalgebraically makes precise what the intervention test of Section~\ref{sec:tests} is actually checking: two states are intervention-distinguishable exactly when they are not coalgebraically bisimilar under the observation functor induced by $R$, and a compression latent that fails the intervention test is, in this vocabulary, one whose bisimulation quotient collapses distinctions the world's own admissibility gate needs to keep separate. This reading is graded as an extension proposed by the present merge (Section~\ref{sec:grading}), not as an established result about persistent-world architectures specifically; universal coalgebra itself is established mathematics, but its application here, like the causal-state application beside it, is analogy until a specific coalgebraic model of an event-sourced $M_t$ is actually constructed and tested.
+
+\section{Grading the Evidence}
+\label{sec:grading}
+
+Every claim used to support the architecture above is graded into one of four classes, applied at the level of individual claims rather than whole literatures, following the methodology of the first source paper and extended here to cover the definitions, hierarchy, tests, and coalgebraic reading introduced from the second.
+
+\begin{description}[leftmargin=1.8cm, style=nextline]
+\item[\textbf{Established (E).}] A formally proved result or a widely replicated empirical finding, usable as a load-bearing premise.
+\item[\textbf{Analogy (A).}] A structural correspondence between a result in one domain and a claim in another, useful for intuition and design but not itself evidence that the target domain behaves as the source domain does.
+\item[\textbf{Emerging (M).}] An active research area with real results but unsettled scope, contested benchmarks, or a small number of demonstration systems rather than a mature theory.
+\item[\textbf{Unsupported (U).}] A connection that sounds plausible, and that this paper's own argument might tempt a reader to accept, but that no cited work actually demonstrates.
+\end{description}
+
+The grading methodology itself follows three questions, applied in order. First, is there a proof or a widely replicated, quantitatively reported empirical result behind the claim, as opposed to a plausible mechanism or a single demonstration? If yes, and the claim does not extend the result beyond what was proved or measured, the grade is established. Second, if the claim extends a result to a new domain by structural resemblance, does the resemblance survive treating the source result's actual technical content, rather than its everyday connotations, as the thing being transferred? If so, the grade is analogy. Third, if the claim concerns an active research area with real systems and reported results but no settled theory of the specific property needed, the grade is emerging. Any claim that fails all three tests but that the paper's own narrative momentum would tempt a reader to accept is listed under unsupported rather than left unstated.
+
+\subsection{Established results}
+\label{sec:established}
+
+\textbf{State-machine replication (E).} Deterministic operations applied in the same order at every replica produce identical replica states, given agreement on the order. This is the foundational justification for treating $M_t$ and $Q_t$ as deterministic folds over $H_t$.
+
+\textbf{Virtual Time and optimistic distributed simulation (E).} Jefferson's Time Warp mechanism shows that a distributed simulation can proceed speculatively, using rollback and antimessages to correct causality violations discovered after the fact, with fossil collection reclaiming state that can no longer be rolled back to. This is an established mechanism for the operational problem Section~\ref{sec:checkpoints} names, but it operates on a different side of the commitment boundary than the replay-discrepancy policy: Time Warp's antimessages retract a provisional computation before it is ever treated as committed, whereas this paper's discrepancy events concern computations already treated as certified that later fail to reproduce.
+
+\textbf{Chandy--Lamport distributed snapshots (E).} As detailed in Section~\ref{sec:distributed}, the algorithm is a proved result about consistent global cuts under FIFO channels and no failures.
+
+\textbf{Logical and vector clocks (E).} Lamport's original result deriving a causal partial order from message-passing alone, prior to and presupposed by Chandy--Lamport.
+
+\textbf{Conflict-free replicated data types (E).} CRDT theory proves exactly which merge operations guarantee convergence without coordination, and supplies the matching negative result used in Section~\ref{sec:distributed} to justify the gate's refusal or deferral of non-mergeable contested candidates.
+
+\textbf{The CAP theorem (E).} Gilbert and Lynch's proof that strong consistency, availability, and partition tolerance cannot all be guaranteed simultaneously.
+
+\textbf{Structural operational semantics (E).} Defining a transition relation by inference rules over syntactic configurations, so that admissible transitions are exactly those derivable from the rules; this is the model for the gate $A$ of Section~\ref{sec:admission}, extended here (not established) to a four-way rather than binary outcome.
+
+\textbf{POMDPs (E).} Partially observable Markov decision processes formalize state-dependent action sets, belief states over hidden state, and noninvertible observation kernels, with origins in optimal control under incomplete information and finite-horizon partially observable process theory predating the term ``POMDP'' itself.
+
+\textbf{Computational mechanics (E).} Causal states, defined as equivalence classes of histories that induce the same conditional distribution over futures, are a rigorously developed formal object with proven minimality and uniqueness properties. The application of this object to $M_t$ specifically is analogy (Section~\ref{sec:analogies}), not established.
+
+\textbf{Universal coalgebra (E).} Coalgebraic models of state-based systems, and the bisimulation relations they support, are established mathematics in their home field. Their application to $M_t$, as sketched in Section~\ref{sec:coalgebra}, is this paper's own extension and is graded analogy.
+
+\textbf{Viability and reachability theory (E).} Established mathematical theories with worked machinery (viability kernels, capture basins). Their extension to a combined $(M,Q)$ state space is developed in Section~\ref{sec:viability-extension} below and is graded there as an extension, not restated as established.
+
+\textbf{Event structures (E).} Winskel-style event structures formalize configurations that grow monotonically while conflict relations permanently exclude alternative continuations, the nearest existing formal skeleton for $H$.
+
+\subsection{Legitimate analogies}
+\label{sec:analogies}
+
+\textbf{Ceptre (A).} Ceptre models world state as a multiset of linear-logic resources with a separate marking for permanent facts and causal-dependency-structured traces, the single closest existing formal system to the four-layer architecture, though designed for authored narrative generation rather than distributed multiplayer persistence.
+
+\textbf{Chandy--Lamport applied to game-world commits (A).} The transfer from consistent cuts over communicating sequential processes to consistent cuts over causally related world-state commits is structurally tight but is this paper's analogy, not a theorem proved about game engines.
+
+\textbf{Computational mechanics' causal states as a model for $M_t$ (A).} An appealing target because it would give $M_t$ a provably minimal and canonical form; no cited work constructs this for an event-sourced world history.
+
+\textbf{Universal coalgebra as a model for $M_t$ (A).} As developed in Section~\ref{sec:coalgebra}, a complementary formal target to causal states, better matched to $F_\Delta$'s explicit parameterization, equally unconstructed for this specific domain.
+
+\textbf{Artificial life and social simulation as epistemic instruments (A).} Systems such as Schelling's segregation model, Sugarscape, Tierra, and Avida demonstrate that local rules generate persistent global organization and support simulation as a discovery instrument, but are largely orthogonal to the provenance/refusal machinery this paper adds.
+
+\textbf{Quantum and categorical formalisms as comparative structural language (A).} Generalized probabilistic theories, quantum instruments, categorical quantum mechanics, and Markov categories are rigorous languages for states, transformations, and composition. No credible literature connects quantum-state geometry to persistent-world engineering; the defensible bridge is methodological and classical (Markov categories, information geometry), and treating this as a quantum theory of virtual worlds would overstate the evidence. This qualification is repeated because it is the claim most likely to be over-read.
+
+\textbf{Event sourcing (A).} The application architecture pattern of an append-only domain-event sequence with current state recovered by replay is close enough to Section~\ref{sec:folds} to border on direct precedent for the single-writer case, but lacks a distinguished, historically significant refusal event type and any attestation/observation distinction.
+
+\textbf{Version control systems (A).} Git's commit graph, a DAG of immutable snapshots with explicit parents and mergeable divergent branches, is structurally close to the causal-frontier bookkeeping of Section~\ref{sec:distributed}, but delegates merge resolution to a human or heuristic rather than to a first-class, auditable gate.
+
+\textbf{Blockchains and distributed ledgers (A, with a specific disanalogy).} The append-only, tamper-evident, causally-ordered-block structure resembles the desired $H$, but nothing in this architecture requires the costly consensus machinery (proof-of-work, proof-of-stake) blockchains use to solve the harder, different problem of agreement among mutually distrusting, permissionless participants.
+
+\subsection{Emerging research}
+\label{sec:emerging}
+
+\textbf{Learned latent-dynamics models (M).} World Models, PlaNet, Dreamer, and MuZero are genuine, reproducible results, but none maintains an explicit, append-only, auditable event history of the kind Section~\ref{sec:folds} requires; whether a causal-state- or coalgebra-like object can be extracted from such a latent without retraining around an explicit history remains open.
+
+\textbf{Action-conditioned video generation and persistence mechanisms (M).} Diffusion-based real-time game engines and the Genie line of generative interactive environments demonstrate responsiveness (hierarchy level 2) convincingly; recent memory mechanisms addressing location-revisit inconsistency confirm, independently, this paper's claim that persistence must be engineered rather than expected to emerge from rendering quality, but the mechanisms remain heterogeneous and generally unaudited against the typed-event vocabulary of Section~\ref{sec:committed-history}.
+
+\textbf{MMO and large-scale persistence engineering (M).} Practitioner literature, including foundational treatments of virtual-world design, distinguishes live state management from durable persistence and documents that different consistency classes impose different logging and replay obligations. This is real engineering knowledge, graded emerging rather than established because it is largely proprietary, heterogeneous, and reported through practitioner accounts rather than a unified, peer-reviewed theory comparable to state-machine replication or Chandy--Lamport.
+
+\subsection{Unsupported connections}
+\label{sec:unsupported}
+
+\textbf{``Persistent worlds are quantum systems'' (U).} Nothing in the cited quantum-formalism literature establishes, models, or predicts anything about game engines, multiplayer servers, or learned world models.
+
+\textbf{``The four-layer synthesis, its hierarchy, its tests, and its definitions are already established in the literature'' (U).} The individual components (Section~\ref{sec:established}) are established; their combination into this specific architecture, including Definition~\ref{def:persistent-world}, the six-level hierarchy, and the three discrimination tests, is this paper's own construction across two prior drafts and the present merge, and should be read as a proposal to be tested.
+
+\textbf{``Time Warp rollback and the replay-discrepancy policy are the same mechanism'' (U).} They operate on different sides of the commitment boundary, as noted in Section~\ref{sec:established}.
+
+\textbf{``A learned world model's latent state already satisfies the causal-state, coalgebraic, or provenance requirements of this architecture'' (U).} Section~\ref{sec:emerging} notes this is unsettled; no cited system has been shown to maintain a latent that is simultaneously a minimal sufficient statistic (or coalgebraic bisimulation quotient) in the relevant technical sense \emph{and} an auditable record satisfying the admit/refuse/repair/defer vocabulary.
+
+\textbf{``The merge of two independently constructed papers is itself evidence that the architecture is correct'' (U).} Convergence of two independently written accounts on the same four layers and the same evidentiary backbone is worth noting as a fact about how the architecture was arrived at (Section~\ref{sec:method}), but convergence of two accounts written by the same author, working from overlapping source material, is a much weaker form of independent confirmation than convergence across genuinely unrelated research groups, and should not be reported as though it were the latter.
+
+\section{Extending the Grading: A Viability Kernel over $(M,Q)$}
+\label{sec:viability-extension}
+
+Both source papers state, without constructing, the idea that a viability kernel should be defined over the joint fold rather than over $M$ alone. This section constructs it, and grades the construction honestly as an extension rather than an established result.
+
+Let $K \subseteq M \times Q$ be a constraint set representing the conjunction of physical and institutional requirements a world must continue to satisfy: physical constraints (an object's structural integrity, a resource's non-negativity) intersected with provenance constraints (a license remaining valid, a sanction not being in effect, a repair lineage not exceeding a dispute threshold). The joint viability kernel is
+\[
+\mathrm{Viab}(K) = \{(m,q) \in K : \exists \text{ an admissible control sequence keeping } (M_t, Q_t) \in K \text{ for all } t' \ge t\},
+\]
+where ``admissible control'' means a sequence of candidates each of which the gate $A$ of Section~\ref{sec:admission} would admit, not an arbitrary physical control as in classical viability theory. This is the specific extension: classical viability theory's controls are exogenous inputs to a dynamical system, while here the relevant control is itself gated by $Q_t$, so $\mathrm{Viab}(K)$ is not simply the product or projection of separate physical and provenance viability kernels.
+
+\begin{proposition}[Joint viability kernel is not a product]
+\label{prop:viability-not-product}
+In general, $\mathrm{Viab}(K) \neq \mathrm{Viab}_M(K_M) \times \mathrm{Viab}_Q(K_Q)$, where $\mathrm{Viab}_M$ and $\mathrm{Viab}_Q$ are the viability kernels computed treating each fold's constraints in isolation.
+\end{proposition}
+
+\emph{Sketch.} A pair $(m,q)$ can be physically viable in isolation (there exists a physical control sequence keeping $M$ within its own constraints from $m$) and provenance-viable in isolation (there exists a sequence of admissible-looking provenance transitions keeping $Q$ within its own constraints from $q$) while failing joint viability, because the specific physical control sequence that keeps $M$ viable might require candidates the gate would refuse given $q$'s standing constraints (for instance, a repair that is physically the only way to keep a structure within tolerance but that the provenance fold would refuse because the repairing party lacks certification under $q$). Conversely, a pair can be jointly viable via a control sequence that would not be selected by either fold's own myopic viability-maximizing policy, if that sequence trades a small provenance cost for a physical benefit that keeps the pair in $K$ overall. The kernel must therefore be computed over the product space directly rather than composed from marginal kernels, which is the formal content of the open question both source papers list without resolving. $\square$
+
+This proposition, and the kernel construction it concerns, is graded as an extension proposed by the present merge, built on established viability theory (Section~\ref{sec:established}) but not itself established or even tested against an implemented system; it belongs in Section~\ref{sec:unsupported}'s adjacent category of ``open construction'' rather than in either the established or analogy grades, and is listed again, more concretely than before, in the open questions of Section~\ref{sec:questions}.
+
+\section{Precedents and How This Architecture Differs From Them}
+\label{sec:precedents}
+
+Section~\ref{sec:analogies} already grades event sourcing, Git, and blockchains as analogies. It is worth stating the practical design guidance that follows from each disanalogy explicitly, since a reader building a real system is more likely to reach for one of these three patterns than for a bespoke design.
+
+An implementer starting from event sourcing should add, deliberately, a first-class refused-event type persisted with the same durability as admitted events (ordinary event-sourcing frameworks typically simply do not persist rejected commands), and should add the causal-DAG structure of Section~\ref{sec:distributed} if the system will ever have more than one writer. An implementer starting from Git's model should replace human or heuristic merge resolution with the auditable gate $A$, particularly for provenance-relevant merges where a human reviewer's undocumented judgment call is exactly the kind of unaudited authority Principle~\ref{prin:divided-authority} forbids. An implementer attracted to blockchain terminology for its tamper-evidence and causal ordering should adopt the append-only, hash-chained structure while explicitly declining the consensus machinery, unless the deployment genuinely has mutually distrusting, permissionless participants, which most persistent-world deployments (even large commercial multiplayer services) do not.
+
+\section{A Worked Example}
+\label{sec:worked-example}
+
+Consider transferring ownership of an object $o$ between two players $p_1$ and $p_2$ whose regions are handled by different simulation authorities and who are not, at the moment of transfer, causally synchronized.
+
+Player $p_1$ proposes $c = (\texttt{transfer\_request}, o, p_1, p_2, \mathrm{vc}(p_1))$, where $\mathrm{vc}(p_1)$ is $p_1$'s vector clock, attached so the causal frontier of the request is recoverable regardless of when it is processed. The gate evaluates $A(c \mid M_t, Q_t, \phi_t, W_t)$.
+
+\emph{Admit.} If $M_t$ shows $p_1$ possessing $o$, $Q_t$ shows no encumbrance, and no causally concurrent conflicting candidate exists, the transfer is admitted, appended as $E_{t+1}$, and both folds update.
+
+\emph{Refuse.} If $Q_t$ shows an encumbrance, the gate refuses; the refusal is appended even though $M$ is untouched, because a pattern of refused attempts is itself provenance-relevant.
+
+\emph{Repair.} If a causally concurrent conflicting candidate $c'$ for the same $o$ arrives from a different region, the CRDT result of Section~\ref{sec:distributed} is directly limiting: exclusive possession transfer is not a semilattice-mergeable operation, so the two candidates cannot both be admitted or silently merged. The gate serializes by a deterministic tie-break, admits one, and appends a \texttt{repaired} event referencing the other's identifier.
+
+\emph{Defer.} If the partition between the two regions has not yet healed enough for the gate at $p_1$'s region to verify whether a conflicting candidate exists on $p_2$'s side, and the CAP tradeoff of Section~\ref{sec:distributed} means the gate cannot simultaneously guarantee consistency and availability here, the honest move is to defer: append $(\texttt{DEFERRED}, c, \text{``partition: cannot verify conflict with } p_2\text{'s region''}, \phi_t)$, leave both folds untouched, and revisit once the partition heals or a bounded timeout converts the deferral into a refusal under an explicit liveness policy. This is the case neither source paper worked through concretely, and it is the case in which the four-outcome gate of Section~\ref{sec:admission} earns its keep over the three-outcome version: without deferral, this scenario would have to be misrepresented as either an unjustified refusal or a risky admission that a later repair might have to unwind.
+
+\section{Failure Cases}
+\label{sec:failures}
+
+The architecture becomes clearer when applied to failures.
+
+\textbf{The beautiful reset.} A neural renderer regenerates a village after a server restart. Buildings, weather, and characters look convincing, but a repaired bridge has reverted to its pre-repair structure and the model cannot recover who performed the work. Appearance recurred; operative and provenance state did not.
+
+\textbf{The authoritative screenshot.} An administrator treats a dashboard image as proof of a distributed world's exact global state. The image was assembled from a consistent but temporally distributed cut (Section~\ref{sec:distributed}); it may support a stable-property claim, but not the assertion that every displayed value coexisted at one physical instant.
+
+\textbf{The invisible refusal.} An unauthorized transfer is rejected and discarded. Repeated attempts later succeed because no rate, audit, or suspicion state changed. The physical reducer behaved correctly at each step, yet the world failed to preserve a boundary-relevant history; refusal needed to affect a provenance fold, per Invariant~\ref{inv:refusal}.
+
+\textbf{The repaired-past failure.} A replay on new hardware diverges numerically. Operators replace the old checkpoint with a newly generated one and retain only the latest hash. Service resumes, but the system can no longer distinguish original recurrence from reconstruction; operational recovery erased epistemic history.
+
+\textbf{The poisoned ledger.} An adversary submits millions of invalid proposals to inflate the append-only history. The solution is not to erase refusals conceptually but to apply typed aggregation, rate policies, content addressing, and retention commitments; a durable summary can remain an auditable fold if its compression rule and frontier are recorded.
+
+\textbf{The silently swallowed partition (new to this merge).} A system without a deferral outcome faces the exact partition scenario of Section~\ref{sec:worked-example}'s fourth case, but its gate is only three-valued. Under load, an engineer implements the missing case as a silent timeout that neither admits, refuses, nor logs anything, on the reasoning that ``the request will just be retried.'' Months later, an audit trying to reconstruct why a particular transfer took an unusually long time to complete finds nothing in $H$ for the period during which the request was, in fact, correctly waiting on the partition to heal; the absence looks identical, from the log, to a dropped request or a client-side failure that never reached the server at all. This failure is specific to the three-outcome gate the two source papers inherited from earlier drafts; it did not appear as a named failure case in either source paper, and it is included here specifically because merging Section~\ref{sec:deferral}'s extension into the failure-case format from the second source paper is the kind of test the merge itself should be subjected to: an extension that does not generate at least one new failure case it prevents is a weaker extension than one that does.
+
+\section{Method and Source Discipline}
+\label{sec:method}
+
+This paper is now a third-generation synthesis, and the discipline that governed the second generation's construction governs this one as well, extended to cover the merge step itself.
+
+The first-generation material began from a broad literature-discovery pass covering persistent-world engineering, learned dynamics, game benchmarks, artificial life, formal transition systems, causal modeling, and quantum geometry; its breadth made it valuable as a discovery instrument but unsuitable as a finished evidential argument, since results at very different levels of verification appeared side by side. A second-generation architecture paper imposed a cleaner structure but cited a narrower, more selective backbone. Two independent third-generation papers then each restructured that architecture on its own terms: one around claim-level grading, a summary table, a worked example, and a formal appendix; the other around explicit definitions, a worldhood hierarchy, discrimination tests, and narrative failure cases. This paper is the fourth generation, merging the two third-generation papers and extending both.
+
+The merge criterion was retention by contribution, applied to structural elements rather than only to citations: an element from either source paper was kept if it clarified at least one of the architecture's focal distinctions (appearance versus state, state versus history, provisional execution versus commitment, exact replay versus graded recurrence, shared state versus partial observation) or if it supplied a genuinely new, testable construction (a definition, a test, a failure case, a proof sketch) not present in the other source. Elements present in both sources in substantially the same form (the four layers themselves, the divided-authority principle, the observation/attestation boundary, the core distributed-systems results) were merged into a single statement rather than presented twice. The extension criterion, applied after the merge, required that any new material either resolve an open question explicitly listed by one of the source papers (the replay-profile lattice question, the joint viability kernel construction) or supply a missing case that the merge itself made visible (the fourth gate outcome's own failure case).
+
+The word \emph{established} is used narrowly throughout, exactly as in the second-generation and third-generation papers: it marks a result recognized within its home field, not a claim that transferring the result into this architecture has already been validated. \emph{Analogy} marks a structural resemblance that can discipline formulation but cannot carry an empirical conclusion. \emph{Emerging} marks systems supported principally by recent conference papers, preprints, or originating-group documentation. \emph{Unsupported} marks a claim the paper's own momentum might smuggle in without evidence. This grading also governs the merge's own claims about itself: Section~\ref{sec:unsupported}'s final entry explicitly refuses to let the fact of convergence between two same-author papers count as strong independent confirmation, which is the specific epistemic risk unique to a merge document that a synthesis of genuinely separate sources would not face in the same way.
+
+\section{Implications for Implementers and Reviewers}
+\label{sec:implications}
+
+An implementer can treat the established-grade claims of Section~\ref{sec:established} as load-bearing: a system that violates state-machine determinism, ignores the CRDT commutativity boundary, or assumes a single global total order across a genuinely partitioned deployment is reproducing a known failure mode with a known fix. The analogy-grade claims should inform design intuition and naming without being treated as a source of correctness guarantees a specific merge operation can cite in place of its own CRDT analysis. The emerging-grade claims should be read as an invitation to prototype cautiously. The extensions specific to this merge (deferral, the coalgebraic reading, the joint viability kernel, the replay-profile semilattice result) sit one notch below even the analogy grade in confidence, since they have not yet been independently proposed by anyone outside this paper's own line of drafts; an implementer adopting them should treat them as hypotheses with a stated construction, not as settled design guidance.
+
+A reviewer's job is narrower: checking whether Section~\ref{sec:unsupported}'s list is actually complete, meaning whether there are further places where established results or legitimate analogies have been extended past what they were shown to support. This paper's own answer to that check is necessarily incomplete, since a paper cannot fully audit its own blind spots, and the risk is compounded rather than reduced by this being a merge of the author's own prior work, per the final unsupported entry above.
+
+\section{Research Program}
+\label{sec:research-program}
+
+The central empirical question is whether the proposed separation yields measurable advantages over snapshot-primary and frame-history systems. A minimal testbed should contain a small persistent environment with hidden objects, ownership changes, repairs, refused and deferred actions, concurrent proposals, stochastic physics, and observer-specific views, implementing a conventional snapshot baseline, an admitted-event-only log, and the full four-outcome multi-fold architecture.
+
+Five experiments follow directly from the architecture. The first tests off-screen identity using the discrimination test of Section~\ref{sec:tests}: agents leave and revisit objects after long generative intervals, and success requires stable identifiers and provenance, not merely perceptual similarity. The second tests replay profiles (Definition~\ref{def:replay-profile}) across hardware and solver versions, reporting which components of the 5-tuple survive and whether discrepancies remain addressable. The third tests distributed concurrency by generating commuting and noncommuting event pairs and checking whether fold-relative independence (Invariant~\ref{inv:causal-commutation}) is correctly certified, including whether the gate correctly defers rather than guesses under partition. The fourth tests observation versus attestation by comparing storage growth, audit quality, and causal side effects between a design that commits every observation and one that commits only attestations. The fifth tests adversarial refusal load, evaluating bounded aggregation policies without losing security-relevant lineage.
+
+A sixth experiment, specific to this merge, would test the joint viability kernel construction of Section~\ref{sec:viability-extension} directly: given a small $(M,Q)$ system with a stated constraint set $K$, compute $\mathrm{Viab}(K)$ both jointly and as the product of marginal kernels, and verify computationally that Proposition~\ref{prop:viability-not-product}'s claimed divergence between the two actually occurs on a concrete instance rather than only in the abstract argument given for it.
+
+\section{Open Questions}
+\label{sec:questions}
+
+\begin{enumerate}
+\item What is the smallest event vocabulary sufficient to reconstruct both operative and provenance folds without making every solver step historical, now that \texttt{DEFERRED} has been added to the minimal vocabulary of Section~\ref{sec:committed-history}?
+\item Which admissibility predicates must be evaluated against current folds, and which require direct reference to a historical witness?
+\item Under what conditions does commutation in one fold imply commutation in all authoritative folds, given Invariant~\ref{inv:causal-commutation}'s requirement that independence be certified jointly?
+\item Can the joint viability kernel of Section~\ref{sec:viability-extension} be computed efficiently enough to guide institutional as well as physical action, and does Proposition~\ref{prop:viability-not-product}'s non-product result hold generically or only for pathological constraint sets?
+\item Can a learned representation expose stable, queryable identity, in either the causal-state or the coalgebraic sense of Sections~\ref{sec:established} and~\ref{sec:coalgebra}, without an explicit ledger, or does apparent persistence merely relocate the ledger into opaque memory?
+\item How should refusal and deferral both affect future permissions without allowing adversarial attempts to inflate or poison the authoritative history?
+\item Beyond the join-semilattice result of Proposition~\ref{prop:replay-lattice}, is there a coarser but still informative scalar summary of a replay profile that avoids the extensional-collapse problem it is meant to solve?
+\item Which information metric best measures the loss incurred when a historically distinct world is collapsed into an extensionally identical snapshot, and can that metric be made task-relative in the sense Section~\ref{sec:tests}'s discrimination tests already are?
+\end{enumerate}
+
+\section{Discussion}
+\label{sec:discussion}
+
+The layered account makes a stronger claim than ``keep logs.'' It argues that persistence is a relation among present operation, historical warrant, and future admissibility. A log that cannot certify current folds is archival but not operative. A state that cannot expose its lineage is operative but not historically accountable. A renderer that creates coherent frames is presentational but not thereby world-preserving.
+
+There is no claim that the proposed layers are ontologically fundamental. They are functional distinctions determined by what a system promises to preserve. A temporary arcade game may need only appearance and operative state. A collaborative scientific world may require signed attestations, replay profiles, and provenance-preserving checkpoints. A legal or economic world may treat permission and ownership folds as coequal with physics. Worldhood comes in strengths, ordered by the hierarchy of Section~\ref{sec:hierarchy} and tested by the discriminations of Section~\ref{sec:tests}.
+
+Merging two independently structured accounts of the same architecture is itself a small instance of the paper's own subject matter. Each source paper is a committed artifact; this paper is not a silent replacement of either but an appended synthesis that names what it kept, what it added, and what remains a proposal rather than a result, exactly as Invariant~\ref{inv:pure-rendering}'s discipline (never overwrite; append and mark the relation) would require of any other repair to a historical record.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The layers question is resolved by assigning different kinds of authority to different representations. Appearance is a disposable, observer-relative projection. Operative state governs dynamics between commitment boundaries. Provenance and permission state summarize historically active relations. Committed history governs identity, auditability, and the legitimacy of recurrence. One causal history can support many efficient folds, so historical authority need not entail an unbounded log scan or the retention of every numerical step.
+
+This merged and extended account keeps that architecture, keeps the claim-by-claim grading discipline that stress-tests it, and adds a formal recoverability definition, a six-level worldhood hierarchy, three falsifiable discrimination tests, a five-component replay profile with a proved join-semilattice structure, six failure cases including one generated specifically by the merge's own extension, a fourth gate outcome and its worked partition scenario, a coalgebraic reading of operative state, and a joint viability kernel construction with a proof that it does not decompose into a product of its marginals. Fourteen results are established, nine correspondences are flagged as analogies, three research programs are acknowledged as active but unsettled, and five specific claims the argument's own momentum might otherwise smuggle in, including a claim about the merge process itself, are named and rejected.
+
+A world persists, on this account, not because it can show the same scene again, but because it can say what was committed, what was refused, what was deferred, how the present was derived, and under which standard it is entitled to count as a continuation of its past. A paper about that architecture, doubly so when it is itself the appended continuation of two earlier drafts, earns its own credibility the same way: by stating plainly which of its claims are owed to prior results, which are owed to structural resemblance, which are still unsettled, and which it is proposing for the first time.
+
+\begin{thebibliography}{99}
+
+\bibitem{astrom1965} \AA{}str\"om, K. J. (1965). Optimal control of Markov processes with incomplete state information. \textit{Journal of Mathematical Analysis and Applications}, 10, 174--205.
+
+\bibitem{aubin1991} Aubin, J.-P. (1991). \textit{Viability Theory}. Birkh\"auser.
+
+\bibitem{barrett2007} Barrett, J. (2007). Information processing in generalized probabilistic theories. \textit{Physical Review A}, 75, 032304.
+
+\bibitem{bartle2003} Bartle, R. A. (2003). \textit{Designing Virtual Worlds}. New Riders.
+
+\bibitem{bruce2024} Bruce, J., et al. (2024). Genie: Generative interactive environments. \textit{Proceedings of ICML}.
+
+\bibitem{chandylamport1985} Chandy, K. M., \& Lamport, L. (1985). Distributed snapshots: Determining global states of distributed systems. \textit{ACM Transactions on Computer Systems}, 3(1), 63--75.
+
+\bibitem{coeckekissinger2017} Coecke, B., \& Kissinger, A. (2017). \textit{Picturing Quantum Processes}. Cambridge University Press.
+
+\bibitem{crutchfieldyoung1989} Crutchfield, J. P., \& Young, K. (1989). Inferring statistical complexity. \textit{Physical Review Letters}, 63, 105--108.
+
+\bibitem{epstein1999} Epstein, J. M. (1999). Agent-based computational models and generative social science. \textit{Complexity}, 4(5), 41--60.
+
+\bibitem{fritz2020} Fritz, T. (2020). A synthetic approach to Markov kernels, conditional independence and theorems on sufficient statistics. \textit{Advances in Mathematics}, 370, 107239.
+
+\bibitem{gilbertlynch2002} Gilbert, S., \& Lynch, N. (2002). Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services. \textit{ACM SIGACT News}, 33(2), 51--59.
+
+\bibitem{hasschmidhuber2018} Ha, D., \& Schmidhuber, J. (2018). World Models. \textit{arXiv:1803.10122}.
+
+\bibitem{hafner2019} Hafner, D., et al. (2019). Learning latent dynamics for planning from pixels. \textit{Proceedings of ICML}. arXiv:1811.04551.
+
+\bibitem{hafner2020} Hafner, D., et al. (2020). Dream to Control: Learning behaviors by latent imagination. \textit{Proceedings of ICLR}. arXiv:1912.01603.
+
+\bibitem{jefferson1985} Jefferson, D. R. (1985). Virtual time. \textit{ACM Transactions on Programming Languages and Systems}, 7(3), 404--425.
+
+\bibitem{kaelbling1998} Kaelbling, L. P., Littman, M. L., \& Cassandra, A. R. (1998). Planning and acting in partially observable stochastic domains. \textit{Artificial Intelligence}, 101(1--2), 99--134.
+
+\bibitem{lamport1978} Lamport, L. (1978). Time, clocks, and the ordering of events in a distributed system. \textit{Communications of the ACM}, 21(7), 558--565.
+
+\bibitem{martens2015} Martens, C. (2015). Ceptre: A language for modeling generative interactive systems. \textit{Proceedings of AIIDE}.
+
+\bibitem{plotkin2004} Plotkin, G. D. (2004). A structural approach to operational semantics. \textit{Journal of Logic and Algebraic Programming}, 60--61, 17--139.
+
+\bibitem{rutten2000} Rutten, J. J. M. M. (2000). Universal coalgebra: A theory of systems. \textit{Theoretical Computer Science}, 249(1), 3--80.
+
+\bibitem{schneider1990} Schneider, F. B. (1990). Implementing fault-tolerant services using the state machine approach. \textit{ACM Computing Surveys}, 22(4), 299--319.
+
+\bibitem{schrittwieser2020} Schrittwieser, J., et al. (2020). Mastering Atari, Go, chess and shogi by planning with a learned model. \textit{Nature}, 588, 604--609.
+
+\bibitem{shalizicrutchfield2001} Shalizi, C. R., \& Crutchfield, J. P. (2001). Computational mechanics: Pattern and prediction, structure and simplicity. \textit{Journal of Statistical Physics}, 104, 817--879.
+
+\bibitem{shapiro2011} Shapiro, M., Preguica, N., Baquero, C., \& Zawirski, M. (2011). Conflict-free replicated data types. \textit{Proceedings of SSS 2011}, 386--400.
+
+\bibitem{smallwoodsondik1973} Smallwood, R. D., \& Sondik, E. J. (1973). The optimal control of partially observable Markov processes over a finite horizon. \textit{Operations Research}, 21(5), 1071--1088.
+
+\bibitem{valevski2024} Valevski, D., et al. (2024). Diffusion models are real-time game engines. \textit{arXiv:2408.14837}.
+
+\bibitem{winsberg2010} Winsberg, E. (2010). \textit{Science in the Age of Computer Simulation}. University of Chicago Press.
+
+\bibitem{winskel1987} Winskel, G. (1987). Event structures. In \textit{Petri Nets: Applications and Relationships to Other Models of Concurrency}, LNCS 255, 325--392.
+
+\end{thebibliography}
+
+\appendix
+
+\section{Formal Sketches}
+\label{app:formal}
+
+\subsection{Determinism of folds}
+
+\textbf{Claim.} If $\mathrm{fold}(f_{\mathrm{phys}}, \cdot, \cdot)$ is deterministic and every replica applies it to the same ordered prefix of $H$, all replicas compute the same $M_t$.
+
+\textbf{Sketch.} Induction on prefix length, identical to Schneider's state-machine-replication argument, restated for the fold notation of Section~\ref{sec:folds}.
+
+\subsection{Independence and commutativity}
+
+\textbf{Claim.} If $e_i, e_j$ are causally concurrent and the fold's action restricted to the state each touches is a join-semilattice update, $\mathrm{fold}(e_i \text{ then } e_j) = \mathrm{fold}(e_j \text{ then } e_i)$.
+
+\textbf{Sketch.} This is the CRDT convergence theorem. The object-transfer example of Section~\ref{sec:worked-example} shows the antecedent failing for exclusive possession, which is why the gate serializes, refuses, or defers rather than merging.
+
+\subsection{Non-monotonicity of refusal in $M$, monotonicity in $H$}
+
+$H_{t+1} \supsetneq H_t$ always, but $M_{t+1}$ need not differ from $M_t$ when the appended event is a refusal or a deferral, since both are, by construction, in the kernel of $f_{\mathrm{phys}}$ while not generally in the kernel of $f_{\mathrm{prov}}$. No additional axiom is needed; this follows from $f_{\mathrm{phys}}$ and $f_{\mathrm{prov}}$ being allowed to be different functions of the same event.
+
+\subsection{Proof sketch for Proposition~\ref{prop:replay-lattice}}
+
+Componentwise maximum of two profiles $(r_b, r_n, r_s, r_c, r_p)$ and $(r_b', r_n', r_s', r_c', r_p')$ is itself a valid profile description (a statement of the strongest verified degree of recurrence in each component achieved by \emph{either} artifact is a coherent, if perhaps not simultaneously achieved by one artifact, upper bound), giving a join. A meet would require a componentwise minimum, which is always defined, but a componentwise minimum of two profiles that disagree in which components are high is uninformative beyond stating that neither component is guaranteed, which is exactly the trivial floor noted in the proposition; the meet operation is technically well-defined but semantically degenerate outside the comparable case.
+
+\subsection{Proof sketch for Proposition~\ref{prop:viability-not-product}}
+
+Construct $K = K_M \times K_Q$ with $K_M$ a physical tolerance band and $K_Q$ a certification-standing constraint. Let $m_0$ require, for continued physical viability, a repair action $r$ available only under solver version $\theta_1$; let $q_0$ certify only repairers operating under solver version $\theta_2 \ne \theta_1$ as within the provenance constraint. Then $(m_0, q_0) \in \mathrm{Viab}_M(K_M) \times \mathrm{Viab}_Q(K_Q)$ (each is separately viable, taken in isolation from the other's constraint) but $(m_0,q_0) \notin \mathrm{Viab}(K)$, since the only physically viable repair is gated out by the provenance constraint, and no admissible control sequence keeps the joint pair in $K$. This is a constructed rather than empirically observed instance; Section~\ref{sec:research-program}'s sixth experiment proposes testing whether such divergence arises in practice rather than only by construction.
+
+\subsection{Coalgebraic bisimulation and the intervention test}
+
+Model $M_t$ as carrying a coalgebra structure map $\langle \mathrm{obs}, \mathrm{next} \rangle : M \to X \times M^{A}$ for observation set $X$ (matching the range of $R$) and action set $A$. Two states $m, m'$ are bisimilar exactly when there is a relation containing $(m,m')$ closed under matching observations and matching next-states for every action. The intervention test of Section~\ref{sec:tests} fails exactly when the system's implemented state space has already been quotiented (deliberately or as an artifact of compression) by a relation coarser than this bisimulation, so that an intervention distinguishing $m$ from $m'$ in the intended semantics produces no observable difference because $m$ and $m'$ were merged upstream of $R$.
+
+\end{document}

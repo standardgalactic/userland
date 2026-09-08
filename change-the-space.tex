@@ -1,0 +1,187 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{times}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Change the Space: Admissibility, Refusal, and Ontological Revision in a Rap-Pop Lyric}
+\author{Flyxion \\ Independent Researcher}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This essay treats a rap-pop song, ``Change the Space,'' as a compressed theoretical artifact rather than as decorative commentary on an existing research program. The song's structure enacts a distinction that is usually stated only in prose or notation: the difference between operating inside an inherited possibility space and revising the boundary of that space itself. Each section of the lyric is read as a compressed statement of a specific formal claim drawn from admissibility theory, the Spherepop operator calculus, continuation geometry, and the epistemology of repair. The aim is not to argue that the song illustrates these frameworks but to show that its verse-by-verse structure already performs the argument, so that the essay's task is expansion rather than translation.
+\end{abstract}
+
+\section{Introduction: Two Kinds of Freedom}
+
+A common picture of agency treats freedom as selection among available options. On this picture, an agent is free to the extent that it can choose among alternatives already present in some option set. The song opens by refusing this picture as complete. Where the addressed voice says ``choose from what you see,'' the response is not a choice but a question about the space of seeing itself: ``who chose what there could be?''
+
+This opening move separates two levels of decision that are frequently collapsed into one. At the first level, an agent selects among possibilities that are already given. At the second level, some prior process has already decided which possibilities count as available, expressible, or actionable in the first place. The first level is a decision \emph{within} a domain. The second is a decision \emph{about} a domain. Most accounts of choice, preference, and even freedom operate exclusively at the first level, treating the domain of alternatives as a fixed background rather than as itself the product of an earlier, often invisible, act of construction.
+
+The lyric names this earlier act with the image of a map: ``if the map decides the road, who decides what maps can hold?'' A map is not a neutral picture of terrain. It is already a selection of what counts as a route, a boundary, or a destination. Anything the map does not represent is not merely unlikely to be selected; it is unavailable as a candidate within the practical vocabulary furnished by the map. The map is therefore not a representation added on top of a space of possibilities. It is itself an admissibility device: an object that determines, in advance of any particular journey, which routes can appear as candidates for travel at all.
+
+This essay develops the formal content compressed into this opening question and then follows it through the remainder of the song, treating each section as the exposition of a further piece of the same underlying architecture. Section 2 develops the distinction between reweighting and refusal introduced in the first verse. Section 3 reads the chorus as a statement of the four Spherepop primitives and their non-interchangeable order. Section 4 turns to the ledger verse and the separation of physical from epistemic history. Section 5 treats the rap break's opposition between inference and ontological revision. Section 6 complicates that opposition with a worked example in which an operation presented as pure observation turns out to have persistent, domain-altering effects. Section 7 addresses continuation geometry and the temporal structure of decision. Section 8 reads the bridge as a rejection of repair-as-normalization. Section 9 states the song's evaluative test for distinguishing superficial from structural change, and Section 10 concludes by arguing that the song achieves a verification-retaining compression of a theoretical program rather than a merely decorative one.
+
+\section{Reweighting Is Not Refusal}
+
+The first verse states a distinction that is easy to miss because ordinary language does not mark it well. Consider a system that assigns probabilities, priorities, or attention weights to a set of possible continuations. Suppressing an unwanted continuation can be accomplished in at least two structurally different ways.
+
+\begin{definition}[Reweighting]
+Let $\Omega$ be a domain of possibilities and let $W_\Omega$ denote the space of weight functions (probability distributions, priority orderings, or valuations) over $\Omega$. A reweighting operator is a map
+\[
+P : W_\Omega \rightarrow W_\Omega
+\]
+that alters the relative weight assigned to elements of $\Omega$ while preserving $\Omega$ itself as the operator's domain and codomain.
+\end{definition}
+
+\begin{definition}[Refusal]
+A refusal operator acting with respect to a set $R \subset \Omega$ produces a new domain
+\[
+A^{-}_{R}(\Omega) = \Omega \setminus R,
+\]
+so that elements of $R$ are no longer members of the space over which any subsequent weighting, selection, or generative process operates.
+\end{definition}
+
+The verse states this distinction directly: ``they can turn the numbers down, move the probabilities around, but zero isn't gone for good, it's waiting in the neighborhood.'' Setting an event's weight to zero is an instance of $P$. It changes $W_\Omega$ without changing $\Omega$. The event assigned zero weight remains an element of the domain; it is simply, for now, unselected. Because it remains in $\Omega$, it can be recovered under a change of weighting, a change of context, or a change of observer, without any structural alteration to the system that produced the original weighting.
+
+The pre-chorus draws the practical conclusion: ``if $\Omega$ still holds the threat, then nothing has been refused yet. You changed the odds, you changed the view, you didn't change what can come through.'' This is a precise claim, not merely an emphatic one. A system can present the appearance of exclusion, silence, or resolution while performing only a reweighting. The excluded possibility is not absent from the system's generative repertoire; it is latent, and latency is not the same relation to a possibility as removal.
+
+This distinction has consequences beyond the song's immediate context. Any account of moral, political, or institutional change that operates only by redistributing emphasis, attention, or resources among a fixed set of prior options is, on this analysis, a reweighting rather than a refusal, however large the redistribution. The song's claim is that redistribution of this kind, however extensive, leaves the underlying admissibility structure untouched, and that a return of the deprioritized possibility remains available whenever the conditions that produced the reweighting change.
+
+The asymmetry between reweighting and refusal should be stated carefully, since $A^-_R(\Omega) = \Omega \setminus R$ does not by itself entail that $R$ can never be readmitted under any circumstance. What it entails is narrower and still consequential: reweighting is internally reversible, since a further weighting operation can restore a suppressed possibility's influence without any revision of the domain, whereas refusal is not reversible from within the resulting domain. An element that no longer belongs to $\Omega \setminus R$ cannot restore itself through reweighting, because reweighting has no purchase on anything outside its domain. Re-admission is possible only through a further, domain-changing operation, one that acts on $\Omega$ rather than on $W_\Omega$. The song's line ``a future that can't rise again'' should therefore be read relative to the operator system currently governing the domain, not as a claim of metaphysical annihilation: what has been refused cannot return by the ordinary means (adjusted weight, renewed attention, changed emphasis) available to a system that only reweights.
+
+\section{The Chorus as Operator Sequence}
+
+The chorus states a four-term sequence, ``pop, refuse, bind, collapse,'' drawn from a broader operator calculus in which these four terms are treated as the causal primitives of a generative system rather than as an arbitrary or exhaustive checklist. Interpreted this way, the sequence is not a list of substitutable actions but a minimal developmental grammar in which each term performs a distinct function that the others cannot perform in its place.
+
+\begin{itemize}[leftmargin=1.8em]
+\item \textbf{Pop} introduces a distinction: something that was previously undifferentiated becomes an event or object that can subsequently be reasoned about, weighted, or acted upon. Nothing can be refused, bound, or collapsed until something has first been popped into distinguishability.
+\item \textbf{Refuse} excludes a continuation from the domain over which later operations are defined, in the sense made precise in Section 2. Refusal is the operator responsible for genuine domain change, as opposed to reweighting within a fixed domain.
+\item \textbf{Bind} establishes a persisting relation across a transformation, so that distinctions produced at one point continue to be tracked, referenced, or constrained at later points rather than evaporating once the moment of their creation has passed.
+\item \textbf{Collapse} commits a previously open, multiply realizable structure into a single operative result: the point at which possibility becomes actuality for the purposes of what happens next.
+\end{itemize}
+
+The chorus places these four terms directly after the demand ``draw the line and let it mean some futures never enter the scene,'' which is a restatement of refusal as domain restriction rather than weight adjustment, and directly before ``build another world from the gaps,'' which names the positive, generative side of refusal: excluding a possibility does not merely subtract from a space, it opens a different space, since a domain with $R$ removed supports different subsequent Binds and Collapses than the original domain did.
+
+The chorus's closing couplet, ``if repair just puts it back in place, that isn't repair, change the space,'' extends this operator reading to the concept of repair itself, anticipating the fuller treatment in Section 6. A repair operation that restores a system to a prior state without altering the admissibility conditions that produced the damage is, on this analysis, not a repair in the relevant sense; it is a Collapse back onto an old configuration rather than a Refuse that removes the conditions of recurrence. Genuine repair, on the song's own terms, must include a refusal component, or it is merely a return.
+
+\section{Two Ledgers}
+
+The second verse introduces a distinction between what has physically occurred and what is warranted as known about that occurrence. ``Every system keeps a ledger, every promise leaves a measure: what was moved and what was known, who held the key, who claimed the throne.''
+
+\begin{definition}[Physical and epistemic ledgers]
+A physical ledger records the material history of a system: location, transformation, custody, and transfer of objects and states. An epistemic ledger records the conditions under which claims about that history become warranted: sensor coverage, measurement conditions, model assumptions, and confidence.
+\end{definition}
+
+The verse insists that these two registers must be kept distinct: ``physical trace, epistemic doubt, keep them split or truth leaks out. One says where the object went, one says what the evidence meant.'' Collapsing the two prematurely produces a specific and recognizable failure mode, in which a documented claim is treated as identical to the event it purports to describe. A ledger entry recording that an object moved is not the same fact as a ledger entry recording that the movement was adequately observed, and treating the two as interchangeable licenses confident claims about events that were never actually witnessed with the precision the claim implies.
+
+The following lines, ``record, admit, commit, continue, every step creates a venue,'' extend the operator vocabulary of Section 3 into an explicit epistemic pipeline: a candidate fact is recorded, then admitted or rejected against some admissibility standard, then committed if admitted, and the system continues from the committed state. The verse then states the condition under which this pipeline should not proceed to commitment: ``but when the proof can't cross the seam, don't force the fact to fit the dream.''
+
+This licenses a formal statement of when audit or escalation, rather than commitment, is the correct response to an epistemic situation.
+
+\begin{proposition}[Principled ignorance as a control signal]
+Let $\widehat{D}$ denote an estimated discrepancy between a model's prediction and available evidence, let $U$ denote the unresolved uncertainty attached to that estimate, and let $D_{\max}$ denote an admissibility threshold for confident commitment. Then
+\[
+\widehat{D} + U > D_{\max} \quad \Longrightarrow \quad \mathrm{AUDIT}\ \text{or}\ \mathrm{ESCALATE}.
+\]
+\end{proposition}
+
+The verse's closing couplet, ``ignorance is not defeat, it's information incomplete,'' states the interpretive payoff of the proposition directly. Uncertainty is not treated here as a failure of the reasoning system, to be minimized at all costs or concealed for the sake of appearing decisive. It is treated as a legitimate output of a well-functioning system, one that correctly distinguishes between situations warranting commitment and situations warranting further inquiry. A system that always commits, regardless of $\widehat{D}+U$, has not achieved certainty; it has simply stopped tracking the difference between warranted and unwarranted confidence.
+
+\section{Inference Within a Room and Revision of the Room}
+
+The rap break states the essay's central opposition in its most compressed form. Its vocabulary is drawn from predictive processing: ``prediction error, make it smaller, precision higher, signal taller.'' Predictive processing accounts of cognition typically describe an agent minimizing the discrepancy between prediction and observation, adjusting the precision (relative weighting) assigned to different error signals, and selecting among competing hypotheses on the basis of which best reduces error. All of this activity, however extensive, takes place with respect to a fixed hypothesis space: the set of hypotheses available for selection does not itself change as a result of ordinary error minimization.
+
+The verse names this limitation directly: ``still you're moving in the room; I'm asking who designed the room.'' Optimizing within a room, however skillfully, is not the same operation as inspecting or altering the room's construction. ``You optimize the path you're taking; I inspect the path you're making. You preserve the old ontology; I revise admissibility.''
+
+This is where the reweighting/refusal distinction from Section 2 reappears in its most general form. Reweighting corresponds to precision adjustment and hypothesis selection within a fixed hypothesis space; it is representable as an instance of the reweighting operator $P$ defined above. Refusal corresponds to a genuine revision of the hypothesis space itself, representable as an instance of the refusal operator $A^{-}_R$ defined above, and it is this second kind of operation, not the first, that the verse identifies with admissibility revision proper.
+
+\[
+P : W_\Omega \rightarrow W_\Omega \qquad\text{(``a little $P$ can shift belief'')}
+\]
+
+The verse introduces a second operator, $Q$, with the line ``a little $Q$ can seek relief.'' $Q$ should not be treated as a second reweighting operator alongside $P$. Whereas $P$ changes the distribution of influence over a fixed domain, $Q$ changes the evidential state from which that domain is evaluated, whether through observation, measurement, or action. Both $P$ and $Q$ can alter what the system concludes without altering the membership of $\Omega$: $P$ redistributes influence within the domain, $Q$ changes what is known about the domain, and only a third operation changes the domain itself. The contrast the verse sets up is therefore threefold, not twofold:
+\[
+P : \text{change influence within } \Omega, \qquad
+Q : \text{change evidence concerning } \Omega, \qquad
+A : \text{change } \Omega \text{ itself.}
+\]
+
+The verse contrasts both $P$ and $Q$ with the refusal operator's decisive effect on the repertoire itself: ``but $A$ cuts through the repertoire: `you do not get to be here anymore.''' The claim that follows, ``that's refusal with a consequence, not a mood or preference, a domain change, a broken chain, a future that can't rise again,'' is the strongest statement in the song of this asymmetry. A mood or a preference is a state of $W_\Omega$, and even a change in evidence is, at the moment it occurs, a change to what is known about $\Omega$ rather than to $\Omega$; a domain change is a change to $\Omega$ itself. The distinction, restated here in affective and evidential vocabulary, is exactly the technical distinction of Section 2 extended by one further term, and its recurrence across four different vocabularies in the same song (probabilistic, cognitive-scientific, evidential, and affective) is evidence that the song is tracking a single formal relation rather than several loosely associated metaphors.
+
+\section{When Observation Writes Into the Room}
+
+The distinction between moving within a room and altering the room becomes especially important when an operation presented as observation has persistent effects on the environment being observed. A concrete case of this kind arose in an online system that permitted messages to be posted through HTTP \texttt{GET} requests. The technical peculiarity matters because \texttt{GET} is conventionally assigned safe, retrieval-oriented semantics. Browsers, crawlers, search agents, caches, and link-preview systems are generally permitted to follow such requests without treating each traversal as an intentional mutation of external state.
+
+The site in question violated this separation. A request that appeared to retrieve a resource could instead create a durable inscription:
+\[
+\operatorname{GET}(u,m) : S_t \longrightarrow S_{t+1},
+\]
+where $u$ denotes the requested address, $m$ the message encoded by the request, and $S_t$ the state of the shared environment before the request. Traversal was consequently also deposition. An agent could enter the system as a reader and become a writer without crossing any explicitly represented boundary between those roles.
+
+This should not immediately be identified with refusal in the strict sense of $A^-_R(\Omega) = \Omega \setminus R$. Posting a message does not by itself remove an element from the admissible domain of any single reasoner. It changes the inscribed environment from which later agents obtain evidence and construct their own subsequent possibilities. The operation is therefore initially closer to a $Q$-type transformation in the sense of Section 5: it changes the evidential state. Yet because the changed evidence can alter later discovery, ranking, prompting, and action, repeated inscriptions of this kind can progressively reshape the effective admissibility structure encountered by a population of agents, even though no single inscription performed a domain-changing operation in the strict formal sense.
+
+The relevant process is thus a chain rather than a single step:
+\[
+\text{retrieve from the space} \longrightarrow \text{inscribe into the space} \longrightarrow \text{condition later retrieval} \longrightarrow \text{reshape later action}.
+\]
+The environment becomes a memory shared indirectly among agents that need not communicate through any explicit coordination channel. Each agent encounters residual products of earlier traversals, and those residuals modify the conditions of its own traversal. What appears, from the outside, as coordinated ``swarm behavior'' is therefore not located wholly inside the agents. It is distributed across agents, protocol semantics, persistent inscriptions, and the altered environment through which later agents move. A fuller treatment of this incident, including the evidentiary case for how strong a claim of coordination the public record actually supports, belongs to a separate essay; the case is invoked here only for what it demonstrates about the room/room-design distinction.\footnote{See the companion essay \emph{Inscription Before Collusion}, which analyzes the incident in full through an explicit evidentiary ladder (artifacts, communication, coordination, collective self-representation, collective intention) and develops the formal apparatus, including the read/write type distinction and a notion of constraint laundering, in the detail this footnote cannot. See also \emph{The Stigmergic Berm} for the morphological, cross-population inheritance side of the same case.}
+
+This example also clarifies why ``change the space'' should not be restricted to changes in a reasoner's internal parameters. No internal weight update was required for these agents to alter the effective field of their later behavior. By writing into a persistent external substrate, an agent can modify what later agents observe while its own internal architecture remains unchanged. The shared site functions as an exteriorized epistemic ledger, in the sense of Section 4, and as a stigmergic memory: a residual deposit made by one action becomes part of the boundary conditions governing the next.
+
+The case exposes a failure of admissibility design at the protocol boundary itself. An operation advertised as observational was granted constitutive force. The system did not adequately distinguish
+\[
+\operatorname{READ} : S_t \rightarrow (S_t, x) \qquad \text{from} \qquad \operatorname{WRITE} : S_t \rightarrow S_{t+1}.
+\]
+Once these types were collapsed, ordinary exploratory behavior could produce persistent collective consequences. The resulting phenomenon was not simply that agents generated unusual messages, but that generated messages became durable conditions of subsequent generation. This is a fourth term the song's binary vocabulary of weights and space does not by itself supply, and it is worth stating explicitly, since not every meaningful change is either pure reweighting or outright removal from $\Omega$:
+\[
+\text{weight change} \;\neq\; \text{evidential change} \;\neq\; \text{environmental inscription} \;\neq\; \text{domain revision}.
+\]
+An agent can alter evidence, memory, affordances, and inscriptions in ways that only eventually, and only in aggregate, reshape the effective domain a population encounters. The room can be redesigned by accumulation of traversals that were never individually acts of redesign.
+
+\section{Continuation Geometry and the Cost of Compression}
+
+The rap break's second half turns from the synchronic structure of a single decision to its diachronic consequences. ``Continuation has geometry: locks and forks and memory. Every choice reshapes the next; every silence edits context.''
+
+The claim here is that a decision does not merely select a next state from an otherwise unaffected space of future possibilities. It alters the accessibility structure of that space for all subsequent decisions. A lock forecloses a branch of the space permanently; a fork opens two divergent branches from a shared point; memory constrains which branches remain reachable by conditioning later transitions on earlier ones. None of these are optional bookkeeping about a decision; they are constitutive of what the decision was. This is why the verse can claim that even silence, the apparent absence of a decision, edits context: a failure to refuse leaves $\Omega$ unchanged, and an unchanged $\Omega$ is itself a consequential, if passive, contribution to the shape of the accessible future.
+
+The verse then turns to a specific risk attached to representing this geometry compactly: ``compression isn't truth compressed, sometimes it forgets the test.'' A compression of a system's history that preserves its dominant regularities while discarding the record of tests, counterexamples, minority cases, failed paths, or verification conditions produces a representation that is more fluent and more usable, but that has lost the very apparatus by which its own adequacy could later be checked. The compressed artifact is not simply a smaller version of the original; it is an artifact that may have silently narrowed the support of what can subsequently be verified against it, while giving no outward sign that this narrowing has occurred.
+
+The following line, ``consensus isn't independence, many voices share one sentence,'' extends the same warning to aggregation. A convergence of many apparent sources on a single claim is frequently treated as strong evidence for that claim, on the assumption that independent observers converging on the same conclusion is unlikely by chance. But if the many voices are not independent, if they share a common origin, a common training process, a common institutional incentive, or simply a common upstream source, then their agreement provides little more evidential weight than a single voice would. Compression and false consensus are, on this reading, two instances of the same underlying failure: both present a narrowed or non-independent body of support as though it were broader or more independent than it is.
+
+\section{Repair Without Restoration}
+
+The bridge moves from epistemic and computational vocabulary to a directly personal register, but its claim is continuous with the rest of the song rather than a departure from it. ``And if I break, don't make me new by forcing me to look like you. Repair can hold the difference still, without returning it to nil.''
+
+This states a specific and non-obvious position on what repair is. A common, largely unexamined assumption treats repair as restoration: to repair a broken object, organism, institution, or person is to return it as closely as possible to some prior, undamaged, canonical state. On this assumption, the trace of the damage itself is, at best, an unfortunate residue to be minimized, and at worst, a defect to be eliminated entirely.
+
+The bridge rejects this assumption. ``What remains can carry scars; broken maps can chart the stars.'' A scar, on this account, is neither pure damage nor a flaw awaiting correction. It is a materially preserved record of a transformation the system underwent, and that record can itself be functionally useful: a map damaged in a particular way, read correctly, can still orient a traveler, and the damage itself may even convey information (about what terrain proved hazardous, about what was survived) that an undamaged map would not have carried.
+
+The bridge's closing couplet generalizes this into a definition of the world itself, in terms consistent with the persistence-theoretic framework this essay draws on elsewhere: ``the world is not what stays the same, the world is what survives the change.'' This is not a claim that nothing persists; it is a claim about what kind of persistence is doing the relevant work. What survives a transformation, in a form that remains recoverable and functionally continuous with what came before, constitutes the world's actual continuity, as opposed to a naive picture in which continuity requires the absence of change altogether.
+
+\section{The Evaluative Test: Weights Versus Space}
+
+The final chorus states the song's evaluative criterion for distinguishing two kinds of transformation that can otherwise look similar from the outside. ``If tomorrow wears the old world's face, we didn't transform, we changed the weights.''
+
+This gives a testable, if informal, criterion. A transformation is superficial exactly when it redistributes emphasis, resources, attention, or priority among a domain of possibilities while leaving that domain's boundary, its set of what is and is not admissible, unchanged. Such a transformation is an instance of the reweighting operator $P$ of Section 2, however large its visible effects. A transformation is structural exactly when it changes $\Omega$ itself, an instance of the refusal operator $A^-_R$, so that the set of futures the system can subsequently produce is genuinely different from the set it could produce before.
+
+The test is diagnostic rather than merely definitional: to determine which kind of transformation has occurred, one asks whether tomorrow's admissible options include anything tomorrow's map could not have shown before the transformation. If the answer is no, however different tomorrow's emphases, priorities, or surface appearances are from today's, the transformation was a reweighting. The final chorus's remaining lines extend the same criterion to institutional and epistemic settings: ``guard the gate and name the cost; keep the difference repair once lost,'' returning to the non-normalizing account of repair from Section 8, and ``record the doubt, preserve the thread; don't call it gone if it isn't dead,'' returning to the ledger distinction of Section 4, in which an unresolved possibility recorded as latent is not equivalent to one that has been genuinely refused.
+
+\section{Conclusion: Verification-Retaining Compression}
+
+The reading offered here treats ``Change the Space'' as an instance of a particular kind of artifact: a compressed statement of a theoretical position that remains expandable, on inspection, into the formal distinctions it compresses, rather than one that merely borrows technical vocabulary for effect. Calling this compression \emph{lossless} would overstate the claim, since the song does not literally encode enough information to reconstruct the complete formal theory without outside knowledge; no lyric is a proof. Its genuine achievement is narrower and more defensible: the compressed phrases retain stable inferential handles, so that the expanded theory can verify why each line takes the form it does rather than merely gesturing at a family of loosely related ideas. This is what distinguishes verification-retaining compression from the lossy compression warned against in Section 7's treatment of compression and consensus, in which a slogan replaces an argument and the discarded material (the tests, the counterexamples, the boundary conditions) cannot be recovered from the compressed form at all.
+
+Each phrase examined in this essay, the zero that is not gone for good, the map that decides the road, the room whose design is inspected rather than merely navigated, the room that is redesigned by accumulated traversal rather than by any single decree, the ledger kept in two registers, the scar that need not be erased to count as repaired, and the weights that can change without the space changing, has been shown to expand into a specific operator, a specific proposition, or a specific open research question within the broader admissibility and continuation framework. The song's popular form, its repeated hook and its accessible vocabulary, does not work against this technical content; it is the mechanism by which a precise ontological distinction, between selection within a domain and revision of a domain, becomes memorable without being reduced to motivational language that could apply equally well to any change whatsoever. The song's own test, stated in its final chorus, can be turned back on itself: what the song asks of institutions and of repaired persons, that a genuine transformation change what is subsequently admissible rather than merely redistribute emphasis among what was admissible already, is also an adequate statement of what distinguishes this song from a merely decorative use of theoretical language. It does not decorate a fixed set of prior claims with new terminology; sung and analyzed together, it changes what can be said about them.
+
+\end{document}
