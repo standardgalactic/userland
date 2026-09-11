@@ -11,9 +11,13 @@
 
 [Inscription Before Collusion](https://standardgalactic.github.io/userland/inscription-before-collusion.pdf)
 
+[Prejudice Before Agency](https://standardgalactic.github.io/userland/prejudice-before-agency.pdf)
+
 [Userland](https://standardgalactic.github.io/userland) — *Interactive Fiction*
 
 ![](continuity-infographic.png)
+
+[Orbit Lab](https://standardgalactic.github.io/userland/orbit-lab.html) — *Space Simulator*
 
 [Change the Space](https://standardgalactic.github.io/userland/change-the-space-visualizer.html) — *Audio Visualizer*
 

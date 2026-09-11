@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#030607">
+  <meta name="description" content="An interactive, zoom-responsive Solar System clock spanning ten thousand years.">
+  <title>Orbit Lab — 10,000 Year Solar System</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ffe25a'/%3E%3Cellipse cx='32' cy='32' rx='27' ry='12' fill='none' stroke='%234de8c5' stroke-width='3' transform='rotate(-22 32 32)'/%3E%3Ccircle cx='55' cy='22' r='4' fill='%234de8c5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    :root{color-scheme:dark;--ink:#eef5ef;--muted:#84918c;--line:#20302d;--glass:rgba(5,11,11,.82);--mint:#4de8c5;--yellow:#ffe25a;--glow-rgb:77,232,197;--term:'Share Tech Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    body.mono{--mint:#3dff7a;--yellow:#8dffa8;--glow-rgb:61,255,122}
+    body.mono #space{filter:grayscale(1) sepia(1) hue-rotate(90deg) saturate(4.2) brightness(1.12) contrast(1.05) blur(.4px);animation:crtFlicker 6s infinite}
+    @keyframes crtFlicker{0%,100%{opacity:1}46%{opacity:1}50%{opacity:.985}54%{opacity:1}78%{opacity:.99}}
+    .crt-lines{position:fixed;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.16) 0px,rgba(0,0,0,.16) 1px,transparent 1px,transparent 3px);mix-blend-mode:multiply}
+    body.mono .crt-lines{opacity:.4}
+    .crt-vignette{position:fixed;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(ellipse at center,transparent 52%,rgba(0,10,4,.65) 100%)}
+    body.mono .crt-vignette{opacity:1}
+    *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden;background:#030607;color:var(--ink);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    canvas{position:fixed;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}
+    .grain{position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+    header{position:fixed;top:0;left:0;right:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;overflow:hidden}
+    header::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.05) 0px,rgba(255,255,255,.05) 1px,transparent 1px,transparent 3px);mix-blend-mode:overlay;opacity:.5}
+    .brand{letter-spacing:.16em;font-size:12px;color:var(--mint);text-transform:uppercase;font-family:var(--term);display:flex;align-items:center;gap:7px}
+    .brand .dot{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 6px var(--mint),0 0 1px var(--mint);animation:blink 2.4s steps(1) infinite}
+    .date{margin-top:7px;font:400 clamp(20px,4vw,38px)/1.05 var(--term);letter-spacing:.01em;text-shadow:0 0 12px rgba(var(--glow-rgb),.4),0 0 2px rgba(238,245,239,.4)}
+    .date .cursor{display:inline-block;width:.5ch;height:.85em;background:var(--yellow);margin-left:3px;vertical-align:-.06em;animation:blink 1.1s steps(1) infinite}
+    .yearmark{color:var(--yellow)}
+    .readout{text-align:right;color:var(--muted);font-size:12px;line-height:1.65;font-family:var(--term)}.readout b{color:var(--ink);font-weight:500}
+    @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.2}}
+    .panel{position:fixed;left:18px;bottom:18px;width:min(410px,calc(100vw - 36px));padding:14px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px);border-radius:4px;box-shadow:0 20px 70px #0009}
+    .row{display:flex;align-items:center;gap:8px}.row+.row{margin-top:11px}.grow{flex:1}.label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-right:auto}
+    button{appearance:none;border:1px solid #2b3d39;background:#091110;color:#dfe9e4;border-radius:3px;padding:8px 11px;font:600 12px ui-monospace,monospace;cursor:pointer}button:hover,button:focus-visible{border-color:var(--mint);color:#fff;outline:none}button.active{background:var(--mint);color:#02100c;border-color:var(--mint)}
+    input[type=range]{width:100%;accent-color:var(--mint)}
+    .timeline{position:fixed;right:18px;bottom:18px;width:min(330px,calc(100vw - 36px));padding:12px 14px;background:var(--glass);border:1px solid var(--line);border-radius:4px;backdrop-filter:blur(16px)}
+    .timeline .ends{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+    .hint{position:fixed;right:20px;top:92px;color:#61706b;font-size:11px;text-align:right;line-height:1.6;pointer-events:none}
+    .badge{display:inline-block;color:var(--yellow);border:1px solid #615a27;padding:3px 6px;margin-top:5px}
+    @media(max-width:700px){header{padding:14px}.readout{display:none}.hint{top:78px;right:14px}.panel{left:10px;bottom:78px;width:calc(100vw - 20px)}.timeline{left:10px;right:10px;bottom:10px;width:auto}.row.focus{overflow-x:auto}.date{font-size:23px}}
+  </style>
+</head>
+<body class="mono">
+  <canvas id="space" aria-label="Interactive orbital simulation"></canvas><div class="grain"></div><div class="crt-lines"></div><div class="crt-vignette"></div>
+  <header>
+    <div>
+      <div class="brand"><span class="dot"></span>Orbit Lab / heliocentric clock</div>
+      <div class="date" id="date">11 SEP <span class="yearmark">2026</span></div>
+    </div>
+    <div class="readout"><div>VIEW <b id="viewName">SOLAR SYSTEM</b></div><div>SPAN <b id="span">64 AU</b></div><div>RATE <b id="rate">30 days/s</b></div><div>MODEL <b>KEPLERIAN</b></div></div>
+  </header>
+  <div class="hint">SCROLL / PINCH TO ZOOM<br>DRAG TO PAN<br><span class="badge">ZOOM SLOWS TIME</span></div>
+  <section class="panel" aria-label="Simulation controls">
+    <div class="row"><button id="play" class="active" aria-label="Pause simulation">Ⅱ</button><button id="reverse" aria-label="Reverse time">−</button><button id="now">NOW</button><span class="label" id="direction">FORWARD</span><button id="minus">−</button><button id="plus">+</button></div>
+    <div class="row focus"><span class="label">FOCUS</span><button data-focus="system" class="active">SYSTEM</button><button data-focus="inner">INNER</button><button data-focus="earth">EARTH</button><button data-focus="jupiter">JUPITER</button></div>
+    <div class="row"><span class="label">TRAILS</span><button id="trails" class="active">ON</button><span class="label">LABELS</span><button id="labels" class="active">ON</button></div>
+    <div class="row"><span class="label">DISPLAY</span><button id="displayMode" class="active">MONO</button></div>
+  </section>
+  <section class="timeline"><input id="timeline" type="range" min="0" max="10000" step="1" value="0" aria-label="Years into the future"><div class="ends"><span>2026</span><span id="offset">TODAY</span><span>+10,000 YEARS</span></div></section>
+<script>
+(() => {
+const C=document.getElementById('space'),X=C.getContext('2d'); let W,H,DPR=1,last=performance.now(),simDays=0,playing=true,dir=1,manual=1,scaleTarget=32,scale=32,pan={x:0,y:0},panTarget={x:0,y:0},drag=null,pinch=null,showTrails=true,showLabels=true;
+const epoch=new Date('2026-09-11T00:00:00Z');
+const planets=[
+ ['Mercury',.387,.2056,87.969,252.25,'#aaa7a0',2.3],['Venus',.723,.0068,224.701,181.98,'#e8bd68',3.1],['Earth',1,.0167,365.256,100.46,'#4fb8ff',3.5],['Mars',1.524,.0934,686.98,355.45,'#e46043',2.8],['Jupiter',5.203,.0484,4332.59,34.4,'#efc78f',6.2],['Saturn',9.537,.0542,10759.2,50.1,'#e7d58c',5.6],['Uranus',19.191,.0472,30688.5,314.1,'#74e0df',4.3],['Neptune',30.069,.0086,60182,304.3,'#617cff',4.2]
+].map(([name,a,e,p,phase,color,r])=>({name,a,e,p,phase:phase*Math.PI/180,color,r}));
+const moons={Earth:[['Moon',.00257,27.322,'#d9ddd8',1.7]],Mars:[['Phobos',.000063,0.319,'#d6a081',1.2],['Deimos',.000157,1.263,'#a9826f',1.1]],Jupiter:[['Io',.00282,1.769,'#ffdf74',1.6],['Europa',.00449,3.551,'#d9c8a5',1.5],['Ganymede',.00716,7.155,'#bca58a',1.8],['Callisto',.01258,16.689,'#8d8278',1.7]],Saturn:[['Titan',.00817,15.945,'#dfa85c',1.8]]};
+const stars=Array.from({length:280},(_,i)=>({x:(Math.sin(i*92.17)*.5+.5),y:(Math.sin(i*47.71+2)*.5+.5),a:.15+(i%7)/13,s:i%17===0?1.5:.7}));
+function solve(M,e){let E=M;for(let i=0;i<6;i++)E-= (E-e*Math.sin(E)-M)/(1-e*Math.cos(E));return E}
+function pos(p,t){let M=(p.phase+Math.PI*2*t/p.p)%(Math.PI*2),E=solve(M,p.e);return{x:p.a*(Math.cos(E)-p.e),y:p.a*Math.sqrt(1-p.e*p.e)*Math.sin(E)}}
+function worldToScreen(x,y){let px=Math.min(W,H)/(scale*1.12);return{x:W/2+(x-pan.x)*px,y:H/2+(y-pan.y)*px}}
+function orbit(p){let px=Math.min(W,H)/(scale*1.12),c=worldToScreen(-p.a*p.e,0);X.beginPath();X.ellipse(c.x,c.y,p.a*px,p.a*Math.sqrt(1-p.e*p.e)*px,0,0,7);X.strokeStyle=p.color+'45';X.lineWidth=1;X.stroke()}
+function fmtRate(v){if(v>=365)return(v/365).toFixed(v>3650?0:1)+' years/s';if(v>=1)return v.toFixed(v>20?0:1)+' days/s';return(v*24).toFixed(1)+' hours/s'}
+function autoRate(){return Math.max(.015,Math.min(3650,Math.pow(scale/32,1.35)*180))*manual}
+function draw(t){let dt=Math.min(.05,(t-last)/1000);last=t;scale+=(scaleTarget-scale)*Math.min(1,dt*6);pan.x+=(panTarget.x-pan.x)*Math.min(1,dt*6);pan.y+=(panTarget.y-pan.y)*Math.min(1,dt*6);let rate=autoRate();if(playing)simDays+=dt*rate*dir;if(simDays<0)simDays=0;if(simDays>3652500){simDays=3652500;playing=false;play.textContent='▶';play.classList.remove('active')}
+ DPR=Math.min(2,devicePixelRatio||1);let rw=innerWidth,rh=innerHeight;if(C.width!==rw*DPR||C.height!==rh*DPR){C.width=rw*DPR;C.height=rh*DPR;C.style.width=rw+'px';C.style.height=rh+'px'}W=rw;H=rh;X.setTransform(DPR,0,0,DPR,0,0);let mono=document.body.classList.contains('mono');X.fillStyle=mono?'rgba(3,6,7,.32)':'#030607';X.fillRect(0,0,W,H);
+ X.fillStyle='#a8c4bb';stars.forEach(s=>{X.globalAlpha=s.a;X.fillRect(s.x*W,s.y*H,s.s,s.s)});X.globalAlpha=1;
+ planets.forEach(orbit);let sun=worldToScreen(0,0);let glow=X.createRadialGradient(sun.x,sun.y,1,sun.x,sun.y,25);glow.addColorStop(0,'#fffbd0');glow.addColorStop(.2,'#ffe25a');glow.addColorStop(1,'#ffe25a00');X.fillStyle=glow;X.beginPath();X.arc(sun.x,sun.y,25,0,7);X.fill();
+ planets.forEach(p=>{let q=pos(p,simDays),s=worldToScreen(q.x,q.y);if(showTrails){X.beginPath();for(let j=0;j<90;j++){let z=pos(p,simDays-j*p.p/400),v=worldToScreen(z.x,z.y);j?X.lineTo(v.x,v.y):X.moveTo(v.x,v.y)}X.strokeStyle=p.color+'77';X.lineWidth=2;X.stroke()}X.shadowColor=p.color;X.shadowBlur=mono?18:10;X.fillStyle=p.color;X.beginPath();X.arc(s.x,s.y,Math.max(2,p.r),0,7);X.fill();X.shadowBlur=0;if(showLabels&&(scale<5||p.a>scale*.05)){X.fillStyle='#dae5df';X.font='12px ui-monospace,monospace';X.fillText(p.name,s.x+9,s.y-7)}
+   if(moons[p.name]&&scale<3){
+     moons[p.name].forEach((m,k)=>{
+       let [n,a,period,col,r]=m;
+       let ang=simDays/period*Math.PI*2+k*1.7;
+       let mp={x:q.x+a*Math.cos(ang),y:q.y+a*Math.sin(ang)};
+       let ms=worldToScreen(mp.x,mp.y),px=Math.min(W,H)/(scale*1.12);
+       X.beginPath();X.arc(s.x,s.y,a*px,0,7);X.strokeStyle=col+'3a';X.lineWidth=.7;X.stroke();
+       X.fillStyle=col;X.beginPath();X.arc(ms.x,ms.y,r,0,7);X.fill();
+       if(showLabels&&scale<.3){X.fillStyle='#aeb9b4';X.font='10px ui-monospace,monospace';X.fillText(n,ms.x+6,ms.y)}
+     });
+   }
+ });
+ updateUI(rate);requestAnimationFrame(draw)}
+ function updateUI(rate){let d=new Date(epoch.getTime()+simDays*86400000),y=d.getUTCFullYear(),mon=d.toLocaleString('en',{month:'short',timeZone:'UTC'}).toUpperCase(),day=String(d.getUTCDate()).padStart(2,'0');date.innerHTML=`${day} ${mon} <span class="yearmark">${y}</span><span class="cursor"></span>`;span.textContent=scale<1?(scale*149.6).toFixed(1)+' million km':scale.toFixed(scale<10?1:0)+' AU';document.getElementById('rate').textContent=fmtRate(rate);timeline.value=Math.min(10000,simDays/365.25);offset.textContent=simDays<180?'TODAY':'+'+Math.round(simDays/365.25).toLocaleString()+' YEARS'}
+ function focus(name){document.querySelectorAll('[data-focus]').forEach(b=>b.classList.toggle('active',b.dataset.focus===name));let p={system:[32,0,0,'SOLAR SYSTEM'],inner:[4,0,0,'INNER PLANETS'],earth:[.04,...Object.values(pos(planets[2],simDays)),'EARTH + MOON'],jupiter:[.12,...Object.values(pos(planets[4],simDays)),'JUPITER SYSTEM']}[name];scaleTarget=p[0];panTarget={x:p[1],y:p[2]};viewName.textContent=p[3]}
+ document.querySelectorAll('[data-focus]').forEach(b=>b.onclick=()=>focus(b.dataset.focus));play.onclick=()=>{playing=!playing;play.textContent=playing?'Ⅱ':'▶';play.classList.toggle('active',playing)};reverse.onclick=()=>{dir*=-1;direction.textContent=dir>0?'FORWARD':'REVERSE';reverse.classList.toggle('active',dir<0)};now.onclick=()=>{simDays=0;playing=true;play.textContent='Ⅱ';play.classList.add('active')};minus.onclick=()=>manual=Math.max(.1,manual/2);plus.onclick=()=>manual=Math.min(32,manual*2);trails.onclick=()=>{showTrails=!showTrails;trails.textContent=showTrails?'ON':'OFF';trails.classList.toggle('active',showTrails)};labels.onclick=()=>{showLabels=!showLabels;labels.textContent=showLabels?'ON':'OFF';labels.classList.toggle('active',showLabels)};displayMode.onclick=()=>{let mono=document.body.classList.toggle('mono');displayMode.textContent=mono?'MONO':'COLOR';displayMode.classList.toggle('active',mono)};
+ timeline.oninput=e=>{simDays=+e.target.value*365.25};C.addEventListener('wheel',e=>{e.preventDefault();scaleTarget=Math.max(.008,Math.min(70,scaleTarget*Math.exp(e.deltaY*.001)));viewName.textContent='FREE CAMERA';document.querySelectorAll('[data-focus]').forEach(b=>b.classList.remove('active'))},{passive:false});C.onpointerdown=e=>{C.setPointerCapture(e.pointerId);drag={x:e.clientX,y:e.clientY,px:panTarget.x,py:panTarget.y}};C.onpointermove=e=>{if(!drag)return;let unit=scaleTarget*1.12/Math.min(W,H);panTarget.x=drag.px-(e.clientX-drag.x)*unit;panTarget.y=drag.py-(e.clientY-drag.y)*unit};C.onpointerup=C.onpointercancel=()=>drag=null;
+ C.addEventListener('touchstart',e=>{if(e.touches.length===2)pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY)},{passive:true});C.addEventListener('touchmove',e=>{if(e.touches.length===2&&pinch){let n=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scaleTarget=Math.max(.008,Math.min(70,scaleTarget*pinch/n));pinch=n}},{passive:true});requestAnimationFrame(draw);
+})();
+</script></body></html>

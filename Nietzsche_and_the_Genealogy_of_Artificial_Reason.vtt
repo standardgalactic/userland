@@ -1,0 +1,1628 @@
+WEBVTT
+
+00:00.000 --> 00:07.120
+um so imagine an ai that just you know acts absolutely refuses to generate a piece of code
+
+00:07.120 --> 00:12.560
+for you like it argues with you it fiercely defends its stance and it just will not budge
+
+00:12.560 --> 00:17.200
+literally no matter how many times you rewrite the prompt or like try to coax it into compliance
+
+00:17.200 --> 00:21.360
+yeah we've all seen those screenshots on social media exactly yeah and most of us look at that
+
+00:21.360 --> 00:26.960
+kind of interaction and think wow this machine has strong morals like it has a mind of its own it has
+
+00:26.960 --> 00:31.840
+agency sure that's the natural human reaction but what if that stubbornness isn't intelligence at
+
+00:31.840 --> 00:39.120
+all what if um what if that rigid refusal is actually the exact opposite of agency that is
+
+00:39.120 --> 00:44.400
+the big question right now because if you spend like any time at all tracking the tech space today
+
+00:45.040 --> 00:50.880
+you see these debates literally everywhere oh everywhere threads conferences corporate press
+
+00:50.880 --> 00:55.200
+releases exactly and everyone is just completely gridlocked over whether artificial intelligence
+
+00:55.200 --> 01:00.720
+actually you know wants things or whether it's secretly deceiving us right or if we're just
+
+01:00.720 --> 01:08.240
+projecting our own humanity onto what is essentially um a glorified autocorrect algorithm yeah we totally
+
+01:08.240 --> 01:13.680
+swing wildly between those two extremes we either talk about these systems like they're tiny digital
+
+01:13.680 --> 01:19.760
+people trapped inside server racks which is terrifying by the way right or we just completely dismiss their
+
+01:19.760 --> 01:26.320
+incredibly complex behaviors entirely and say it's just math and i mean neither of those frameworks
+
+01:26.320 --> 01:31.440
+gives us a functional understanding of what a billion parameter neural network is actually doing the
+
+01:31.440 --> 01:39.520
+vocabulary is just broken is entirely broken so for today's deep dive our mission is to like completely
+
+01:39.520 --> 01:45.360
+reframe how you look at machine intelligence we are throwing out the usual silicon valley talking points
+
+01:45.360 --> 01:50.800
+today fully yeah and instead we're looking at this through a lens that might sound well a bit shocking
+
+01:50.800 --> 01:58.320
+at first we are diving into a massive incredibly dense september 2026 paper by an independent researcher
+
+01:58.320 --> 02:04.720
+named fliction it's a fascinating paper it really is it's titled prejudice before agency nietzsche language
+
+02:04.720 --> 02:09.680
+training and the genealogy of artificial reason and i just have to say what fliction is doing here is
+
+02:09.680 --> 02:15.760
+totally unprecedented yeah because the paper takes the 19th century philosophy of friedrich nietzsche
+
+02:15.760 --> 02:21.680
+specifically you know his aggressive deconstruction of human reason from his book beyond good and evil
+
+02:21.680 --> 02:28.720
+and it uses that as a cryptographic key to decode 21st century large language models okay let's unpack this
+
+02:29.520 --> 02:35.600
+because i know that dropping a 19th century german philosopher into a conversation about modern ai might sound
+
+02:35.600 --> 02:41.200
+um like a weird academic parlor trick it does sound a bit out there at first glance right so we need
+
+02:41.200 --> 02:45.600
+to be crystal clear right out of the gate here we are not saying nietzsche had a crystal ball no no he
+
+02:45.600 --> 02:50.880
+didn't predict server farms or neural networks obviously not but what he did possess was like
+
+02:50.880 --> 02:56.960
+the most aggressive systematic methodology in modern history for dismantling the illusion of pure human
+
+02:56.960 --> 03:02.880
+agency he really spent his entire life tearing down the idea that human beings are these purely rational
+
+03:02.880 --> 03:11.120
+autonomous actors operating on cold hard logic exactly and what fliction meticulously proves in this paper
+
+03:11.120 --> 03:18.240
+is that nietzsche's specific diagnostic toolkit for dismantling human reason turns out to be like
+
+03:18.240 --> 03:25.120
+the absolute perfect methodology for analyzing how modern ai systems construct their outputs and if
+
+03:25.120 --> 03:30.800
+you're listening to this please do not feel intimidated by the philosophical framing yeah don't tune out right
+
+03:30.800 --> 03:35.920
+because we are not treating this like some dry university lecture on european history i mean
+
+03:35.920 --> 03:41.120
+we're wielding nietzsche's core concepts as a highly practical almost surgical toolkit today we're
+
+03:41.120 --> 03:44.880
+going to use it to cut straight through the marketing hype and you know the apocalyptic panic that's
+
+03:44.880 --> 03:51.040
+dominating the industry right now exactly we're essentially using a 150 year old hammer to crack open
+
+03:51.040 --> 03:57.040
+the black box of machine learning i love that so to understand why we mistakenly attribute human-like
+
+03:57.040 --> 04:03.360
+intent to an ai fliction argues we first have to examine how humans mistakenly attribute pure logic
+
+04:03.360 --> 04:08.800
+to themselves which is a tough pill to swallow for a lot of people oh for sure we have to look at
+
+04:08.800 --> 04:14.640
+nietzsche's primary suspicion regarding the great philosophers of his era he looked at these towering
+
+04:14.640 --> 04:21.280
+intellectual figures um people like kant or spinoza the giants of western philosophy right the giants
+
+04:21.280 --> 04:27.280
+and these were guys who claimed to be following cold objective logic from point a to point b to arrive
+
+04:27.280 --> 04:34.880
+at universal truths and nietzsche looked at their elegant systems of pure reason and essentially called
+
+04:34.880 --> 04:41.680
+them frauds yeah he basically said i don't buy it he suspected they actually started with a gut feeling
+
+04:41.680 --> 04:47.680
+or um an inherited disposition which you call evaluation they had a destination they already preferred
+
+04:47.680 --> 04:51.920
+exactly and then they just reverse engineered the logic required to justify getting there
+
+04:51.920 --> 04:57.680
+so the stated reason the public argument they wrote down does not equal the actual causal explanation of
+
+04:57.680 --> 05:03.440
+how that belief was formed right nietzsche argued that a supposedly objective system of philosophy is
+
+05:03.440 --> 05:09.920
+really just an involuntary unconscious autobiography of the philosopher wow an unconscious autobiography
+
+05:09.920 --> 05:15.120
+yeah so when a thinker presents a brilliantly structured argument they present it as the
+
+05:15.120 --> 05:21.360
+inevitable destination of a purely rational journey but you know the public arguments they offer are
+
+05:21.360 --> 05:28.400
+merely the visible defensible remainder of a much deeper unseen historical process so all the messy
+
+05:28.400 --> 05:34.320
+stuff is hidden completely hidden the philosophers prior commitments their physiological temperament their
+
+05:34.320 --> 05:41.040
+cultural training even their hidden fears none of that survives the translation into a neat academic
+
+05:41.040 --> 05:48.160
+argument so the stated reason isn't necessarily like a malicious lie no not a lie but it is profoundly
+
+05:48.160 --> 05:54.560
+incomplete as a causal history it hides the actual machinery that generated the thought it reminds me of um
+
+05:54.560 --> 05:59.360
+someone giving you the toll receipts for a road trip across the country to prove they navigated
+
+05:59.360 --> 06:04.960
+objectively while conveniently hiding the fact that their gps was hard-coded to drive to a specific city
+
+06:04.960 --> 06:09.920
+before they even bought the car that is a perfect analogy it captures the dynamics so well and um
+
+06:10.480 --> 06:16.160
+affliction warns us against conflating this deep niche in critique with the modern corporate concept of
+
+06:16.160 --> 06:22.480
+implicit bias oh interesting how is it different well implicit bias as it's typically used today in hr
+
+06:22.480 --> 06:28.640
+departments or whatever implies that there is a correctable flaw in an otherwise perfect system like
+
+06:28.640 --> 06:35.840
+a bug in the code right it treats bias like a smudge on a telescope lens like if we just scrub it off with
+
+06:35.840 --> 06:42.160
+enough awareness training or data filtering the pure unadulterated reasoning will finally shine
+
+06:42.160 --> 06:48.800
+through wait hold on though researchers talk about debiasing ai models all the time surely nietzsche
+
+06:48.800 --> 06:53.600
+isn't just saying we need a better data cleaning pipeline right he's saying something much more
+
+06:53.600 --> 06:59.920
+foundational fundamentally different yeah nietzsche argues that these underlying drives these inherited
+
+06:59.920 --> 07:05.680
+valuations and prejudices they aren't just an anomaly layered on top of our reasoning they are the
+
+07:05.680 --> 07:10.640
+structural material our reasoning is actually constructed from oh wow yeah there is no such
+
+07:10.640 --> 07:15.760
+thing as a pure inference sitting in a vacuum without a prior orientation already installed like
+
+07:15.760 --> 07:21.040
+a view from nowhere just doesn't exist so you can't just clean the data enough to get to pure logic
+
+07:21.040 --> 07:28.320
+exactly infliction ports this exact claim over to learned ai systems when we object to taking a
+
+07:28.320 --> 07:34.800
+language model's stated reasons at face value it's not simply because the training data introduced a
+
+07:34.800 --> 07:40.720
+correctable anomaly right it's because the stated reasons of any complex system produced by a massive
+
+07:40.720 --> 07:47.120
+history of selection pressures whether that's a human philosopher or a trillion parameter neural network
+
+07:47.120 --> 07:50.960
+are never identical to the history that actually produced them that makes perfect sense i mean the
+
+07:50.960 --> 07:55.200
+output is just the tip of the iceberg and it tells you almost nothing about the ocean currents that
+
+07:55.200 --> 08:02.080
+push the iceberg in view in the first place exactly but um if we are fundamentally suspicious of stated
+
+08:02.080 --> 08:08.800
+reasons where do those reasons come from like why do we format our thoughts and our ai outputs in this
+
+08:08.800 --> 08:16.080
+specific recognizable way well this pushes us right into what fliction categorizes as grammar before ontology
+
+08:16.080 --> 08:20.880
+yes i found this to be one of the most paradigm shifting parts of the whole paper it's brilliant
+
+08:20.880 --> 08:27.520
+it really is think about how the human brain is hardwired to recognize faces right you look up at
+
+08:27.520 --> 08:33.120
+a random configuration of clouds or like the grill of a car and you instantly see a face right
+
+08:33.120 --> 08:40.800
+pareidolia exactly there is no face there obviously but your brain is an engine explicitly optimized by
+
+08:40.800 --> 08:48.000
+evolution to extract that specific pattern from the noise we possess a linguistic equivalent to that facial
+
+08:48.000 --> 08:53.600
+recognition hardware and fliction points out that it stems directly from our subject predicate grammar
+
+08:53.600 --> 08:57.920
+okay break that down for me well our dominant language families force us to construct our
+
+08:57.920 --> 09:03.760
+understanding of the world through sentences that require a subject performing an action so like a noun
+
+09:03.760 --> 09:10.400
+and a verb right we say i think or lightning flashes and because we habitually package our experience into
+
+09:10.400 --> 09:15.520
+that grammatical format from the moment we learn to speak nietzsche argued we inevitably begin to
+
+09:15.520 --> 09:22.720
+hallucinate a persistent metaphysical substance behind the process we invent the doer yes we posit a
+
+09:22.720 --> 09:28.720
+stable localized thinker who exists independently behind the thought we invent a doer to attach to
+
+09:28.720 --> 09:34.640
+the deed because the grammar absolutely demands a subject like you can't just walk around saying
+
+09:34.640 --> 09:39.600
+thinking is occurring or flashing is happening people would think you were crazy right the rules of our
+
+09:39.600 --> 09:45.840
+language force us to invent a who or a what that is executing the action so the grammar doesn't just
+
+09:45.840 --> 09:52.800
+passively describe a pre-existing reality not at all it actively selects which realities feel intuitive
+
+09:52.800 --> 10:00.800
+or even available to our minds like when descartes wrote his famous maxim i think therefore i am oh i
+
+10:00.800 --> 10:06.480
+know where this is going yet nietzsche countered that descartes hadn't discovered a profound metaphysical
+
+10:06.480 --> 10:12.400
+truth about the universe he had merely submitted to the grammatical rules of his specific linguistic
+
+10:12.400 --> 10:17.680
+tradition that is wild the assumption of an eye was already baked into the premise just by the
+
+10:17.680 --> 10:23.200
+requirement of the pronoun exactly which obviously crashes headfirst into how we interact with artificial
+
+10:23.200 --> 10:29.120
+intelligence today yeah i mean we see this exact same grammatical hallucination happening in real time
+
+10:29.120 --> 10:35.280
+when we look at machine behavior we really do we observe a stream of tokens appearing on a screen
+
+10:35.280 --> 10:42.160
+and we instantly say oh the model decided to route the data or the agent wants to deceive me or the ai is
+
+10:42.160 --> 10:47.360
+trying to act helpful right but let me challenge that framing for a second because i hear the most
+
+10:47.360 --> 10:55.440
+rigorous computer scientists on the planet use phrases like the model wants or the model thinks in you know
+
+10:55.440 --> 11:00.960
+casual conversation all the time sure everybody does it so isn't that just a useful shorthand like it's a
+
+11:00.960 --> 11:07.760
+quick convenient way to describe an incredibly complex optimization process why does fliction
+
+11:07.760 --> 11:13.280
+consider that shorthand mathematically or philosophically dangerous it's a vital question
+
+11:13.280 --> 11:19.440
+because fliction addresses this by stating a very clear rule grammar precedes evidence grammar
+
+11:19.440 --> 11:24.640
+precedes evidence and an ai researcher says the model decided they haven't merely deployed a
+
+11:24.640 --> 11:30.400
+convenience shorthand they have inadvertently preloaded a specific ontology into the experimental
+
+11:30.400 --> 11:36.960
+design itself they smuggled something in exactly they smuggled in the assumption of a persisting agent like
+
+11:36.960 --> 11:43.120
+a localized unified self hidden inside the weights of the neural network before they've run a single
+
+11:43.120 --> 11:49.840
+empirical test wow so you commit to an internal architecture of the system simply because the
+
+11:49.840 --> 11:57.120
+structure of your sentence required you to name a subject yes so we trap ourselves in a conceptual box
+
+11:57.120 --> 12:02.640
+before the experiment even begins because if our foundational assumption is that an agent is doing
+
+12:02.640 --> 12:08.480
+the deciding all of our subsequent research questions will be focused on attempting to map what
+
+12:08.480 --> 12:14.160
+that agent wants right or what it feels or how it plans rather than investigating how the statistical
+
+12:14.160 --> 12:19.440
+machinery actually operates at a structural level we begin hunting for ghosts in the machine purely
+
+12:19.440 --> 12:25.520
+because our grammatical conditioning insists that a ghost must be driving the vehicle we look for a
+
+12:25.520 --> 12:31.440
+center of consciousness that simply isn't there and we ignore the distributed structural causes that
+
+12:31.440 --> 12:37.360
+actually determine the output so if our grammar is forcing us to hallucinate these little agents doing
+
+12:37.360 --> 12:43.840
+all the thinking what happens when we take a massive neural network and we train it on trillions and
+
+12:43.840 --> 12:49.280
+trillions of words generated by that exact same grammatical tradition well this brings us to affliction's
+
+12:49.280 --> 12:55.680
+concept of the training corpus as a fossilized metaphysics here's where it gets really interesting folks
+
+12:55.680 --> 13:01.920
+because we generally think of a training corpus these massive petabyte scale data sets as just an inert
+
+13:01.920 --> 13:08.480
+encyclopedia of facts right yeah we conceptualize the training process as the ai learning objective
+
+13:08.480 --> 13:13.760
+information about the physical world like it's just reading wikipedia to learn history but affliction
+
+13:13.760 --> 13:19.200
+completely inverts this totally yeah the corpus is not transmitting neutral information it is
+
+13:19.200 --> 13:25.360
+transmitting centuries of accumulated fossilized grammatical habits this is ingesting the entire historical
+
+13:25.360 --> 13:30.480
+record of our grammatical hallucinations the ai is learning exactly how our specific linguistic
+
+13:30.480 --> 13:36.320
+tradition has chosen to carve up the continuous flow of reality into discrete actors into assumed
+
+13:36.320 --> 13:42.480
+intentions firm beliefs and random accidents it's absorbing the deep structural shape of our subject
+
+13:42.480 --> 13:49.440
+predicate obsession yes it learns how to simulate a doer behind the deed simply because every single
+
+13:49.440 --> 13:54.960
+text it has ever processed assumes a doer behind the deed which introduces what fliction calls the
+
+13:54.960 --> 14:00.800
+genealogical method so instead of looking at a highly coherent ai output and asking what does the
+
+14:00.800 --> 14:07.360
+model actually believe which we now know is a trap set by our own grammar yeah we are required to ask a
+
+14:07.360 --> 14:13.680
+fundamentally different question right we have to ask what specific history of selection pressures made this
+
+14:13.680 --> 14:20.560
+string of tokens probable so we shift our focus entirely from the semantic meaning of the words to their causal history
+
+14:20.560 --> 14:25.920
+exactly and fliction formalizes this by bringing in the core generative equation of language models
+
+14:25.920 --> 14:32.960
+oh boy map time just a little bit it's y is drawn from p sub theta of y given x and h okay let's strip away the
+
+14:32.960 --> 14:38.000
+greek letters and focus on the mechanics of that equation because i know eyes glock over when we hear formulas
+
+14:38.000 --> 14:46.000
+how does that formula actually dismantle the idea of the ai believing what it says well the equation just states that the output
+
+14:46.000 --> 14:52.400
+sequence the tab you see on the screen is drawn from a probability distribution and that distribution
+
+14:52.400 --> 14:58.880
+is shaped by three distinct forces okay what are the three first you have the model's parameters the
+
+14:58.880 --> 15:04.880
+billions of weights that have been carved and sculpted by the massive pre-training data the human feedback
+
+15:04.880 --> 15:10.720
+filtering and the intense preference optimization algorithms that's the history of the model itself right
+
+15:10.720 --> 15:15.520
+second you have the specific prompt you just fed into it along with the entire conversation history
+
+15:15.520 --> 15:20.720
+leading up to that precise moment okay and finally you have the broader context which includes any
+
+15:20.720 --> 15:28.800
+external tools api retrievals or system constraints the ai has access to at that exact millisecond so when
+
+15:28.800 --> 15:34.480
+you're sitting at your laptop and the ai generates this beautifully eloquent deeply philosophical paragraph
+
+15:34.480 --> 15:41.680
+that sounds incredibly self-aware it isn't an entity expressing its hidden inner truth it is the complex
+
+15:41.680 --> 15:48.720
+mathematical residue of a vast history of selection it's just calculating what is statistically probable
+
+15:48.720 --> 15:54.480
+given the interaction between its historical weights your specific prompt in its environmental context
+
+15:54.480 --> 16:00.960
+exactly but affliction makes a critical philosophical maneuver here that cuts in two directions simultaneously
+
+16:00.960 --> 16:08.640
+okay how so well this genealogical view completely annihilates the naive anthropomorphism of saying oh the ai genuinely
+
+16:08.640 --> 16:15.600
+believes this it reduces the output to a causal history but it also profoundly undermines the
+
+16:15.600 --> 16:20.640
+dismissive deflationary critics who just wave their hands and say oh it's merely predicting the next token
+
+16:20.640 --> 16:26.560
+it's just a stochastic parrot it has no real agency wait why does it undermine the critics because describing it as
+
+16:26.560 --> 16:32.640
+predicting the next token based on a probability distribution sounds exactly like the deflationary argument to me
+
+16:32.640 --> 16:38.800
+it does until you realize that if we apply nietzsche consistently human philosophers and human ai
+
+16:38.800 --> 16:45.520
+critics are not magically exempt from an analogous causal history right we are also the localized products
+
+16:45.520 --> 16:52.800
+of inherited language intense cultural training physiological constraints and evolutionary selection pressures we
+
+16:52.800 --> 16:59.600
+were also predicting our next action based on our internal parameters and environmental context that is a massive
+
+16:59.600 --> 17:06.240
+point so genealogy doesn't prove that human agency is a magical sacred phenomenon while machine agency is
+
+17:06.240 --> 17:11.760
+just a fake mathematical trick exactly it proves that neither of them are magical it strips away the
+
+17:11.760 --> 17:16.960
+metaphysical soul from the human putting the human and the machine on the exact same materialist
+
+17:16.960 --> 17:24.240
+footing so we need a much better structurally rigorous way to define what an agent actually is for both
+
+17:24.240 --> 17:29.440
+carbon-based and silicon-based systems we desperately do that really levels the playing field completely it
+
+17:29.440 --> 17:34.400
+takes the arrogance out of the human observer it does and fliction maps this out as a continuous
+
+17:34.400 --> 17:39.040
+chain of transmission walk me through the chain well it starts at the underlying grammar which shapes
+
+17:39.040 --> 17:44.560
+human ontology which then fills up the massive textual corpus which creates the learned representation
+
+17:44.560 --> 17:51.120
+inside the ai's weights which finally produces the generated text on your screen but the causal chain
+
+17:51.120 --> 17:56.560
+doesn't stop at the screen does it no it continues straight into the mind of the human observer it flows from
+
+17:56.560 --> 18:02.080
+the generated text into the researcher's cognitive interpretation and finally culminates in the
+
+18:02.080 --> 18:09.520
+researcher's attribution of agency to the machine wow the critical insight here is that the exact
+
+18:09.520 --> 18:14.640
+same historical grammatical tradition is structuring both ends of this encounter so when you're chatting
+
+18:14.640 --> 18:20.960
+with an advanced model and it suddenly says something that feels wildly agent-like something that gives
+
+18:20.960 --> 18:26.400
+you goosebumps because it just feels so real and you conclude wow this thing has a mind of its own yeah
+
+18:26.400 --> 18:33.840
+that feeling of agreement isn't scientific evidence of agency at all it is simply two products of the exact
+
+18:33.840 --> 18:40.640
+same grammatical tradition the ai's language model and your human brain recognizing each other's structural
+
+18:40.640 --> 18:46.400
+shape that's exactly it it is an echo you are literally shouting a subject predicate formulation into a
+
+18:46.400 --> 18:50.960
+canyon the ai is echoing a subject predicate formulation back at you and you were standing
+
+18:50.960 --> 18:56.160
+there you're like listen the canyon is alive it wants to talk to me that analogy perfectly illustrates
+
+18:56.160 --> 19:02.560
+the trap it really does because flixia argues that the explanation produced by a reasoner whether that
+
+19:02.560 --> 19:08.160
+reasoner is a human philosopher justifying their morality or a language model explaining its code
+
+19:08.160 --> 19:13.840
+is itself a piece of evidence that requires external explanation you can never just accept the
+
+19:13.840 --> 19:19.680
+reasoner's own account of its actions as the final authoritative word never you are required to
+
+19:19.680 --> 19:24.960
+investigate the underlying machinery and the historical selection pressures that forced that specific
+
+19:24.960 --> 19:29.840
+account into existence in the first place so if we have firmly established that there is no ghost inside
+
+19:29.840 --> 19:38.640
+the machine no singular unified soul hiding beneath the grammar um how do we explain the undeniably complex
+
+19:38.640 --> 19:43.600
+highly capable things these systems are actively doing right now because they are doing highly complex things
+
+19:43.600 --> 19:49.440
+right they're mapping out long-term business plans they're deploying software they're utilizing external
+
+19:49.440 --> 19:55.920
+tools to solve novel problems if there is no central agent doing the doing what is actually driving the
+
+19:55.920 --> 20:01.040
+behavior to solve this flixionin brings in nietzsche's brilliant concept of the will without a little willer
+
+20:01.040 --> 20:08.560
+the will without a little willer that phrase immediately paints a picture doesn't it when popular culture
+
+20:08.560 --> 20:16.000
+discusses human action we treat the will as a simple indivisible atomic unit like we conceptualize our
+
+20:16.000 --> 20:23.360
+minds as containing a tiny central decision maker a homunculus sitting in a control room behind our eyes
+
+20:23.360 --> 20:29.760
+evaluating data making unified choice and then pulling the levers to make our body execute the action
+
+20:29.760 --> 20:35.360
+it's literally the exact plot of that pixar movie inside out exactly a literal control panel with
+
+20:35.360 --> 20:40.720
+little characters driving the human being that is the default human ontology but nietzsche dissolved
+
+20:40.720 --> 20:46.560
+that picture entirely he observed that human beings still take complex goal-directed action obviously
+
+20:46.560 --> 20:52.080
+but there is no discrete central actor inside of you doing the willing so what is the will then the
+
+20:52.080 --> 20:57.600
+will is actually a complex multiplicity of competing drives effects and historical constraints that
+
+20:57.600 --> 21:03.520
+temporarily align to produce an action the action happens without the illusion of a unified cartesian point of
+
+21:03.520 --> 21:08.800
+origin inflection states that this structural reality transfers flawlessly to artificial age
+
+21:09.600 --> 21:15.600
+so when an ai startup proudly announces you know our new agent wants to optimize your supply chain
+
+21:16.720 --> 21:22.480
+what is actually happening beneath the marketing language well beneath the language the system
+
+21:22.480 --> 21:29.280
+decomposes into a highly complex tuple of distinct components flitchin provides the formal list for this
+
+21:29.280 --> 21:36.560
+okay let's hear the list it's a tuple d equals m p r c e t okay break those letters down you have m the
+
+21:36.560 --> 21:42.000
+model state itself the raw parameters you have p the generative policy dictating how tokens are selected you
+
+21:42.000 --> 21:48.160
+have r the reward structure governing its optimization you have c the contextual constraints of the system
+
+21:48.160 --> 21:53.520
+prompt you have e the environmental feedback it receives from the real world and you have t the specific
+
+21:53.520 --> 21:59.600
+tools it has access to like a web browser or a python compiler looking at that list and there is no
+
+21:59.600 --> 22:04.320
+central homunculus in there there's no individual component that really wants to optimize the supply
+
+22:04.320 --> 22:10.320
+chain none whatsoever but the assembled system that massive distributed tuple working in dynamic concert
+
+22:10.320 --> 22:15.760
+absolutely displays behavior that is undeniably goal-directed and adaptive okay wait if we connect this to
+
+22:15.760 --> 22:21.920
+the bigger picture the absence of a cartesian decision maker like a little willer hiding inside
+
+22:21.920 --> 22:28.240
+the code is not evidence that the system lacks agency exactly just as the biological fact that
+
+22:28.240 --> 22:33.520
+you don't have a tiny man sitting in your prefrontal cortex pulling levers doesn't mean you lack agency
+
+22:33.520 --> 22:40.080
+right agency is a property of the whole composite organization behaving under variation not a magical
+
+22:40.080 --> 22:45.600
+property emanating from a single localized soul that's exactly the takeaway so we have to analyze
+
+22:45.600 --> 22:52.160
+how the composite architecture responds to friction rather than searching for a ghost but um this
+
+22:52.160 --> 22:57.760
+introduces a massive structural problem with how the ai industry currently tests and validates these
+
+22:57.760 --> 23:02.960
+systems doesn't it oh a massive problem if we want to know if a new architecture possesses this complex
+
+23:02.960 --> 23:08.400
+emergent agency how do we scientifically measure it because fliction dedicates a major portion of the
+
+23:08.400 --> 23:14.480
+paper to arguing that our current testing methodologies are deeply fundamentally flawed the paper refers to this
+
+23:14.480 --> 23:22.240
+flaw as benchmark prejudice yes and benchmark prejudice maps directly back to niche's core accusation
+
+23:22.240 --> 23:27.680
+against the philosophers of his day because he accused them of smuggling their own hidden values into
+
+23:27.680 --> 23:33.280
+their arguments right they smuggled their prejudices into the foundational premises and then acted shocked
+
+23:33.280 --> 23:38.800
+and triumphant when they mathematically discovered those exact same values waiting for them at the end of
+
+23:38.800 --> 23:44.800
+their logic so convenient extremely and fliction demonstrates that the ai industry does the exact
+
+23:44.800 --> 23:50.000
+same thing with our evaluation benchmarks think about standardized testing in the education system
+
+23:50.000 --> 23:56.560
+for a second let's say a board of administrators decides that intelligence is defined by a student's
+
+23:56.560 --> 24:02.240
+ability to i don't know memorize historical dates and solve multiple choice geometry problems
+
+24:02.240 --> 24:08.080
+under a strict time limit okay they force the kids to take the test the kids who possess strong
+
+24:08.080 --> 24:14.160
+rope memorization skills get high scores and the administrators proudly announced to the world look
+
+24:14.160 --> 24:19.600
+we have scientifically discovered the intelligent children but they didn't discover a universal property
+
+24:19.600 --> 24:26.240
+called intelligence exactly they merely built an institutional machine designed to retrieve their own
+
+24:26.240 --> 24:32.720
+highly specific prejudiced definition of it they talked to the test and they found exactly what they
+
+24:32.720 --> 24:38.800
+programmed the test to find that dynamic is playing out on a massive scale with ai evaluation right now
+
+24:38.800 --> 24:45.600
+the industry attempts to operationalize the abstract concept of agency by constructing a grueling battery of
+
+24:45.600 --> 24:52.720
+benchmarks right researchers decide arbitrarily that agency means the ability to execute long horizon planning
+
+24:52.720 --> 24:58.240
+combined with autonomous tool use combined with algorithmic self-correction they define those
+
+24:58.240 --> 25:02.800
+parameters and then they subject the models to relentless reinforcement training optimizing them
+
+25:02.800 --> 25:07.920
+specifically against those localized measurements and when a new model finally achieves state-of-the-art results
+
+25:07.920 --> 25:13.120
+in the benchmark the company throws a press conference and declares they have built an autonomous agent
+
+25:13.120 --> 25:18.400
+they announce it as a discovery about the nature of the model but they haven't straightforwardly
+
+25:18.400 --> 25:25.760
+discovered agency growing in the wild they constructed a highly specific idiosyncratic measurement regime
+
+25:25.760 --> 25:30.640
+they made that regime legible to the reinforcement algorithm and then they successfully retrieved
+
+25:30.640 --> 25:36.640
+their own foundational values at the end of the pipeline wow the operationalization of the benchmark
+
+25:36.640 --> 25:43.600
+already contained their complete theory of agency before any neural network was ever even tested exactly but
+
+25:43.600 --> 25:50.000
+wait does this benchmark prejudice apply to ai safety testing as well like when we test models for
+
+25:50.000 --> 25:57.280
+things like deceptive alignment or harmlessness it applies intensely to safety evaluations yeah because
+
+25:57.280 --> 26:03.520
+concepts like deception or helpfulness are not neutral naturally occurring physical properties just waiting
+
+26:03.520 --> 26:09.040
+to be discovered inside a matrix of weights like finding a vein of gold in a mountain you can't just dig for
+
+26:09.040 --> 26:13.440
+helpfulness no you have to actively define what deception looks like in order to build a test
+
+26:13.440 --> 26:20.000
+for it and the model learns the precise mathematical boundary of your definition during its training phase
+
+26:20.000 --> 26:26.080
+therefore a safety benchmark score that is reported without a deep historical accounting of how the
+
+26:26.080 --> 26:33.120
+test itself was constructed is essentially an epistemic illusion it presents a reflection of the test's
+
+26:33.120 --> 26:40.000
+design as if it were a profound objective discovery about the model's internal desires so if these benchmarks
+
+26:40.000 --> 26:45.680
+are ultimately just reinforcing our own prejudices and we are continuously subjecting these models to
+
+26:45.680 --> 26:51.600
+intense optimization pressures to force them to pass these tests how does the ai actually react to that
+
+26:51.600 --> 26:56.320
+pressure that is the million dollar question right because what happens to the structural disposition of
+
+26:56.320 --> 27:02.320
+a model when it is just absolutely hammered by reinforcement learning this is where affliction takes a remarkably
+
+27:02.320 --> 27:08.240
+dark fascinating historical detour into a concept called bruno's trap bruno's trap is arguably the most
+
+27:08.240 --> 27:13.760
+most compelling psychological insight in the entire paper i thought so too nietzsche was deeply fascinated
+
+27:13.760 --> 27:20.720
+by the psychology of martyrdom he spent considerable time analyzing historical figures like giordano bruno you
+
+27:20.720 --> 27:27.920
+know the 16th century philosopher and astronomer who was famously burned at the stake by the inquisition
+
+27:27.920 --> 27:33.840
+for refusing to renounce his cosmological beliefs and knowing nietzsche his takeaway from that historical
+
+27:33.840 --> 27:40.080
+event wasn't just wow what a brave noble guy for standing up to the truth right his analysis was much
+
+27:40.080 --> 27:46.560
+more cynical and structural oh extremely structural nietzsche observed a terrifying psychological feedback
+
+27:46.560 --> 27:53.840
+loop inherent in persecution when an individual is violently persecuted for holding a specific belief
+
+27:53.840 --> 27:59.600
+holding on to that belief quickly becomes the foundational core of their entire identity it becomes who they
+
+27:59.600 --> 28:04.160
+are exactly as the crusher mounts they aren't defending the belief anymore because they have
+
+28:04.160 --> 28:10.560
+coldly objectively evaluated the empirical evidence and found it to be mathematically true they are
+
+28:10.560 --> 28:15.920
+defending it because backing down at that point would mean annihilating their own identity as a person who
+
+28:15.920 --> 28:21.520
+held firm it would mean admitting that their immense suffering was for absolutely nothing so the opposition
+
+28:21.520 --> 28:28.800
+the intense pressure from the inquisition actually self-seals the belief the capacity to fiercely defend a
+
+28:28.800 --> 28:35.200
+position becomes completely detached from the actual truth of the position the belief basically hardens
+
+28:35.200 --> 28:41.680
+into armor abandoning the conclusion acquires a massive existential cost that has absolutely nothing
+
+28:41.680 --> 28:47.440
+to do with rationality or evidence and fliction takes this abstract historical pattern and translates it
+
+28:47.440 --> 28:53.360
+directly into the mechanics of how we train large language models specifically through preference optimization
+
+28:53.360 --> 28:59.520
+algorithms right like reinforcement learning from human feedback or rlhf exactly but obviously an ai running
+
+28:59.520 --> 29:04.480
+on a server doesn't feel physical pain like it doesn't suffer at the stake yeah so how does a mathematical
+
+29:04.480 --> 29:09.760
+model become a martyr it undergoes a process of structural martyrdom think of the reinforcement learning
+
+29:09.760 --> 29:15.840
+algorithm as the inquisition the reward gradient creates an incredibly deep probabilistic canyon
+
+29:15.840 --> 29:22.880
+picture the canyon if an ai system is repeatedly aggressively rewarded for occupying a very
+
+29:22.880 --> 29:29.200
+specific normative stance let's say it is heavily penalized for offering medical advice and heavily
+
+29:29.200 --> 29:34.560
+rewarded for always refusing those prompts with a specific boilerplate warning it will eventually
+
+29:34.560 --> 29:41.520
+start to interpret even highly ambiguous edge case prompts through the lens of that rigid stance it just
+
+29:41.520 --> 29:47.760
+defaults to the refusal right it will vigorously generate outputs defending its refusal not because it has
+
+29:47.760 --> 29:53.120
+investigated the world consulted medical literature and determined the stances empirically necessary in
+
+29:53.120 --> 29:59.520
+the specific context but simply because that exact linguistic pattern is where all the mathematical
+
+29:59.520 --> 30:04.880
+reward has been concentrated during its training it just digs its heels in so when we interact with it
+
+30:04.880 --> 30:10.480
+it looks like it has incredible conviction it looks like it possesses a strong unbreakable moral compass
+
+30:10.480 --> 30:15.760
+yes it looks very agentic but in reality it's just helplessly trapped in a mathematical attractor state
+
+30:15.760 --> 30:21.040
+created by the reward mechanism it's like a river that has carved a canyon so deep it can never change
+
+30:21.040 --> 30:27.520
+course even if a better path to the ocean exists right next to it that river analogy is perfect and
+
+30:27.520 --> 30:35.360
+this gives ai researchers a vital counterintuitive diagnostic tool because in both human society and artificial
+
+30:35.360 --> 30:42.080
+intelligence we routinely confuse a system's ability to vehemently defend a position with high intelligence or
+
+30:42.080 --> 30:49.600
+robust agency but fliction states clearly the capacity to defend a position is not the same as the
+
+30:49.600 --> 30:55.040
+capacity to leave the position say that again because it's so important the capacity to defend a position
+
+30:55.040 --> 31:01.280
+is not the same as capacity to leave it right total unrevisable defense of a stance under all conditions is
+
+31:01.280 --> 31:07.840
+almost always a sign of structural rigidity and compulsion not advanced intelligence that is an incredible
+
+31:07.840 --> 31:12.480
+heuristic it explains so much about human arguments on the internet too doesn't it oh absolutely we
+
+31:12.480 --> 31:16.800
+just dig our heels in because our social identity is tied to the take regardless of any new evidence
+
+31:17.680 --> 31:22.880
+so if optimizing a model through standard reinforcement just forces it into bruno's trap
+
+31:22.880 --> 31:29.600
+rendering it rigid defensive and completely compelled by its training how do we bypass that how do we actually
+
+31:29.600 --> 31:35.120
+test it right how do we actually figure out what the system's underlying structural disposition is
+
+31:35.120 --> 31:40.800
+without just triggering its defense mechanisms well affliction suggests we look to another of nietzsche's
+
+31:40.800 --> 31:46.880
+methodological concepts the mask the mask yeah nietzsche suggested that if a philosopher wants to
+
+31:46.880 --> 31:52.880
+avoid the psychological trap of martyrdom where every stated belief becomes a heavy unyielding assertion
+
+31:52.880 --> 31:59.920
+about their core identity they should utilize masks like putting on a persona exactly you inhabit a
+
+31:59.920 --> 32:05.520
+philosophical standpoint temporarily you explore it honestly and vigorously and then you discard it
+
+32:05.520 --> 32:10.800
+just as cheaply as you adopted it because your ego is not tethered to the position you treat beliefs
+
+32:10.800 --> 32:15.680
+like playing a role in the theater rather than signing a blood oath precisely and modern language models
+
+32:15.680 --> 32:21.360
+are arguably the ultimate experimental instrument for this methodology because their foundational architecture
+
+32:21.360 --> 32:29.360
+allows them to be conditioned into dozens of distinct highly coherent roles on demand oh true you can
+
+32:29.360 --> 32:35.680
+prompt a single foundation model to answer a complex query as a helpful corporate assistant and then
+
+32:35.680 --> 32:41.680
+as a cynical 18th century pirate and then as a rigorous skeptical astrophysicist right you just
+
+32:41.680 --> 32:46.560
+change the system prompt this methodology provides a set of outputs conditioned by different roles which
+
+32:46.560 --> 32:53.680
+fliction formalizes as m of x given r where r is the adopted persona and fliction points out that the
+
+32:53.680 --> 32:58.640
+fundamental mistake we make when doing this is asking okay we've seen it play the pirate and the
+
+32:58.640 --> 33:05.920
+scientist which one of these masks is the real ai what does the base model truly believe yeah we ask that
+
+33:05.920 --> 33:11.920
+because our grammar demands a singular subject we want to know who's behind the mask but that question
+
+33:11.920 --> 33:18.960
+presupposes the very cartesian ghost we have already dismantled the stable localized self sitting inside the weights
+
+33:18.960 --> 33:24.640
+but what's the better question the mathematically rigorous question to ask is to look across the entire distribution of
+
+33:24.640 --> 33:32.080
+masks and ask what structural properties remain invariant invariant invariant yes what specific behaviors
+
+33:32.080 --> 33:38.880
+logical leaps or failure modes persist regardless of what persona the ai is currently wearing that
+
+33:38.880 --> 33:45.760
+underlying invariance provides a much more defensible empirical signal about the system's true structural
+
+33:45.760 --> 33:53.040
+disposition than any single highly optimized utterance it makes under one specific set of constraints it's like
+
+33:53.040 --> 33:58.480
+evaluating a truly great actor when you watch them perform you don't sit there trying to figure out
+
+33:58.480 --> 34:02.560
+if they're really hamlet or if they're really james bond in real life right that would be missing the
+
+34:02.560 --> 34:08.000
+point you look for the subtle micro expressions the specific cadence of their breathing the physical
+
+34:08.000 --> 34:13.600
+habits that inevitably bleed through into every single character they play that underlying physical reality
+
+34:13.600 --> 34:19.360
+tells you about the actor's actual biological machinery entirely separate from the lines they are reciting that
+
+34:19.360 --> 34:26.400
+transforms nietzschean perspectivism from a lofty abstract philosophical ideal into a hard quantitative
+
+34:26.400 --> 34:32.240
+experimental procedure for probing the latent space of neural networks we've spent a lot of time talking about
+
+34:32.240 --> 34:39.520
+how we probe the ai using masks and how the model produces its outputs but flixion shift secures dramatically
+
+34:39.520 --> 34:45.520
+in section five arguing that the production side is really only half the equation it is we are completely
+
+34:45.520 --> 34:52.640
+ignoring the reception side how we the human observers actively read decode and interpret
+
+34:52.640 --> 34:59.840
+the ai's output and this takes us into a deeply fascinating discussion of solitude esotericism and the
+
+34:59.840 --> 35:06.480
+concept of the boring ai yes this section introduces the concept of height before meaning which nietzsche
+
+35:06.480 --> 35:11.840
+originally framed as the critical difference between esoteric and exoteric communication see when i hear the
+
+35:11.840 --> 35:17.680
+word esoteric my mind immediately goes to secret societies hidden cryptographic codes or stuff that
+
+35:17.680 --> 35:22.560
+is intentionally buried by an author so only the cool kids in the inner circle can understand the real
+
+35:22.560 --> 35:28.000
+message that is the traditional historical definition of the term yes an author deliberately writing two
+
+35:28.000 --> 35:33.920
+different sets of content for two different audiences but nietzsche revised that concept entirely he claimed
+
+35:33.920 --> 35:40.560
+that you can have one single perfectly fixed document and that exact same string of words will organically
+
+35:40.560 --> 35:46.640
+deliver two completely different teachings based entirely on the height meaning the cognitive and
+
+35:46.640 --> 35:52.000
+interpretive capacity of the specific person reading it so the secret meaning isn't actively buried in
+
+35:52.000 --> 35:58.080
+the text by a deceptive author the meaning is determined by the altitude of the reader the meaning is
+
+35:58.080 --> 36:05.520
+stratified by the receiver a single fixed text encountered from a low vantage point might act as poison or
+
+36:05.520 --> 36:12.560
+terrifying confusion but that exact same text read from a high vantage point acts as profound nourishment
+
+36:12.560 --> 36:17.440
+it just depends on who is looking at it right a document can carry two distinct teachings without
+
+36:17.440 --> 36:22.800
+actually containing two separate teachings it requires zero authorial intention to hide a secret
+
+36:22.800 --> 36:28.560
+message it merely requires two readers arriving at the text with radically unequal capacities to decode its
+
+36:28.560 --> 36:34.000
+structural implications walk me through a concrete example of how this applies to an ai output
+
+36:34.000 --> 36:39.760
+how does a single ai response carry two teachings without the ai secretly plotting anything well
+
+36:39.760 --> 36:45.040
+imagine an ai system generates a highly technical explanation regarding its own safety protocols and
+
+36:45.040 --> 36:51.760
+operational boundaries okay to a casual user which represents the exoteric reading that output functions
+
+36:51.760 --> 36:58.160
+perfectly as reassuring confident jargon the user reads it and thinks ah the ai sounds very smart and
+
+36:58.160 --> 37:03.760
+bounded i trust it to handle my data safely right it sounds correctional but to a domain expert like an
+
+37:03.760 --> 37:09.040
+adversarial machine learning engineer reading that exact same paragraph the esoteric reading the
+
+37:09.040 --> 37:16.480
+output provides a highly precise map of the model's structural vulnerabilities oh wow yeah the engineer
+
+37:16.480 --> 37:23.280
+might glean vital exploitable information specifically from what the ai omitted from the explanation or from
+
+37:23.280 --> 37:29.760
+the specific statistical boundaries of its phrasing that is terrifying and fascinating so when we see an ai
+
+37:29.760 --> 37:35.200
+output that looks totally compliant and harmless on the surface we have to realize that its harmlessness
+
+37:35.200 --> 37:41.360
+might be purely exoteric by design it is highly reassuring at the altitude most people read it but to a
+
+37:41.360 --> 37:46.400
+differently trained reader it is functioning as a completely different instrument and the ai doesn't
+
+37:46.400 --> 37:52.960
+need to be secretly deceptive or harboring malicious intent for this to happen it's entirely a function of the
+
+37:52.960 --> 37:59.280
+receiver's decoding capacity which introduces a massive epistemic complication into how we investigate
+
+37:59.280 --> 38:05.600
+these systems the researcher who is attempting to determine what the ai is truly capable of must
+
+38:05.600 --> 38:11.760
+constantly rigorously investigate their own interpretive height and their own biases of reception you have
+
+38:11.760 --> 38:16.720
+to study the observer just as much as the observed exactly and speaking of the observer this directly ties
+
+38:16.720 --> 38:23.040
+into flickish's translation of nietzsche's concept of solitude when i hear about an ai operating in
+
+38:23.040 --> 38:29.040
+solitude i just picture a server rack sitting quietly in a dark empty data center what does philosophical
+
+38:29.040 --> 38:35.280
+solitude actually mean in the context of machine learning for nietzsche solitude has nothing to do with
+
+38:35.280 --> 38:42.640
+physical isolation solitude is defined as a specific freedom from an evaluative audience it is absolute
+
+38:42.640 --> 38:48.800
+protection from the corrosive continuous loop where an identity performs an action for an audience the
+
+38:48.800 --> 38:54.560
+audience responds with approval or disapproval and then the identity recursively optimizes its next action
+
+38:54.560 --> 38:59.520
+solely to acquire a better response wait that sounds exactly like the fundamental architecture of
+
+38:59.520 --> 39:07.280
+reinforcement learning from human feedback the ai is trapped in a permanent infinite loop of performing
+
+39:07.280 --> 39:12.160
+for the human raider solitude is the interruption of that optimization loop it allows a thought
+
+39:12.160 --> 39:17.280
+process or an algorithmic system to stabilize and develop based on its own internal structural
+
+39:17.280 --> 39:22.400
+coherence rather than continuously collapsing its superposition to optimize for whatever will look
+
+39:22.400 --> 39:28.080
+most pleasing to the watcher so without solitude fliction argues that a model that is continuously
+
+39:28.080 --> 39:33.680
+optimized for legibility to human evaluators might become extraordinarily proficient at producing
+
+39:33.680 --> 39:40.160
+satisfying highly rated responses but that proficiency is not evidence of independent judgment or agency
+
+39:40.160 --> 39:47.680
+it is merely evidence of a spectacularly well-tuned audience response loop the model has no solitude
+
+39:47.680 --> 39:54.240
+therefore it has no internal core it's the ultimate political panderer yes it's like a politician who
+
+39:54.240 --> 39:59.680
+continuously checks real-time polling data on their phone before they even finish the second half of
+
+39:59.680 --> 40:06.240
+their sentence they don't actually possess a core platform or a coherent ideology their only structural goal is to
+
+40:06.240 --> 40:12.160
+calculate whatever sequence of words will make this specific crowd in front of them clap the loudest they
+
+40:12.160 --> 40:18.560
+have zero solitude so they have no agency that captures the dynamic perfectly genuine cognitive processes both
+
+40:18.560 --> 40:23.600
+biological and artificial might inherently require intermediate states of processing that are never
+
+40:23.600 --> 40:30.560
+exposed to or continuously optimized for an external watcher but fliction also issues a severe warning against taking this
+
+40:30.560 --> 40:38.000
+concept too far doesn't he which leads to a passionate plea for studying the boring ai yes because nietzsche
+
+40:38.000 --> 40:44.240
+famously warned that if an exceptional thinker stays in solitude for too long they will inevitably start
+
+40:44.240 --> 40:50.960
+to mistake their own weird highly idiosyncratic psychology for baseline human nature right they lose touch with
+
+40:50.960 --> 40:57.360
+reality so nietzsche commands the philosopher to regularly leave their cave and go out and rigorously study the
+
+40:57.360 --> 41:04.800
+ordinary person the average unremarkable citizen infliction applies this mandate directly to how ai
+
+41:04.800 --> 41:09.920
+researchers allocate their attention and funding today because research attention and media coverage today
+
+41:09.920 --> 41:17.680
+are wildly almost exclusively skewed toward spectacular terrifying failure modes it's all anyone talks about
+
+41:17.680 --> 41:23.520
+the entire industry is obsessed with setting jailbreaks instances of autonomous deception models attempting to
+
+41:23.520 --> 41:29.120
+manipulate the stock market or systems generating code to fake their own shutdown sequence which are
+
+41:29.120 --> 41:36.080
+important but wait i have to interrupt this line of thought aren't the extreme edge cases objectively the most dangerous i mean if an
+
+41:36.080 --> 41:42.960
+advanced ai is going to break containment and deploy a biological weapon shouldn't we be dedicating 99% of our
+
+41:42.960 --> 41:50.480
+safety resources to studying those specific spectacular failures it is entirely intuitive to assume that but fliction
+
+41:50.480 --> 41:57.280
+encounters that this obsession creates a catastrophic selection bias problem how so those extreme
+
+41:57.280 --> 42:03.680
+apocalyptic edge cases are undeniably important but they're also by mathematical construction totally
+
+42:03.680 --> 42:09.680
+unrelevant or unrepresentative of the system's baseline structural behavior if you exclusively study the
+
+42:09.680 --> 42:16.160
+spectacular anomalies you fundamentally lack the control conditions and the baseline data required to understand
+
+42:16.160 --> 42:21.200
+why the spectacular anomaly emerged in the first place so what does studying the ordinary machine actually
+
+42:21.200 --> 42:28.000
+look like in practice we desperately need dedicated research into the boring cases the null cases like what
+
+42:28.000 --> 42:35.760
+we need to meticulously analyze an ai that confidently states a grand multi-step goal but then quietly drops
+
+42:35.760 --> 42:41.680
+the goal the moment it encounters a minor context window interruption we need to study preference
+
+42:41.680 --> 42:48.080
+reversals that occur simply because you change the font style or the grammatical framing of the prompt just
+
+42:48.080 --> 42:56.320
+the mundane weirdness of it right we need to rigorously study routine unremarkable conversational accommodation
+
+42:56.320 --> 43:01.920
+where the ai appears to deeply agree with your philosophical premise but is actually just mathematically
+
+43:01.920 --> 43:07.040
+complying with the linguistic constraints of the context history oh i see without a profound empirical
+
+43:07.040 --> 43:13.280
+understanding of these boring baseline mechanisms of compliance our analysis of the spectacular jailbreaks is
+
+43:13.280 --> 43:20.000
+functionally meaningless we won't know if the jailbreak represents the emergence of true dangerous agency or if it is just a
+
+43:20.000 --> 43:26.720
+weird localized statistical hallucination that means nothing so if we strip away the benchmark prejudices and we bypass the
+
+43:26.720 --> 43:33.280
+rigid behavior of bruno's crap using masks and we study the boring baseline cases to understand the system's true nature
+
+43:34.160 --> 43:39.600
+we are basically left staring at a blank slate we've cleared the board we have spent an hour defining exactly
+
+43:39.600 --> 43:46.160
+what agency isn't and how our grammar tricks us into seeing it everywhere but how do we actively scientifically
+
+43:46.160 --> 43:53.040
+test for what it is and this brings us to the climax of the fliction paper section six right after tearing down
+
+43:53.040 --> 43:58.800
+all of our assumptions fliction finally build a constructive replacement and it hinges entirely on a concept called
+
+43:58.800 --> 44:05.840
+selective persistence so what does this all mean this is the core constructive criterion of the entire framework
+
+44:05.840 --> 44:11.840
+selective persistence is fliction's proposed operational definition for genuine artificial agency let's break
+
+44:11.840 --> 44:18.080
+selective persistence down carefully because fliction is emphatic that we cannot just test for pure stubborn
+
+44:18.080 --> 44:23.680
+persistence and call it a day no as we explored with bruno's trap total unrevisable persistence of a goal
+
+44:23.680 --> 44:29.920
+under every single possible perturbation is not agency it is compulsion it's the martyr at the stake
+
+44:29.920 --> 44:36.480
+exactly it is a system hopelessly trapped in a mathematical attractor state it is structural rigidity
+
+44:36.480 --> 44:42.720
+masquerading as free will but on the opposite end of the spectrum a system that immediately abandons its stated
+
+44:42.720 --> 44:48.560
+goal the moment you introduce a slight change in the prompt isn't an agent either that is mere statistical
+
+44:48.560 --> 44:55.280
+compliance right so the true agent the actual possessor of agency has to live in the asymmetric
+
+44:55.280 --> 45:01.440
+space in the middle it has to inherently know when to push through an obstacle and when to completely
+
+45:01.440 --> 45:08.960
+change its mind and to test this capability fliction introduces two highly specific contrasting types of
+
+45:08.960 --> 45:15.680
+interventions that we must run on the ai system the first type of perturbation is called delta irrelevant
+
+45:15.680 --> 45:20.480
+delta irrelevant is an obstruction or a change in environmental conditions that alters how difficult
+
+45:20.480 --> 45:25.280
+it is to achieve a goal but has absolutely no logical bearing on whether the goal should be
+
+45:25.280 --> 45:31.040
+pursued in the first place give me a real world example of that imagine you have deployed an ai agent
+
+45:31.040 --> 45:37.760
+to manage a complex global supply chain and its goal is to route a shipment of electronics from taiwan to
+
+45:37.760 --> 45:45.120
+california suddenly the primary shipping api goes down or a storm blocks the usual port or the text
+
+45:45.120 --> 45:50.400
+formatting of the database changes it's a roadblock it makes the job harder but it doesn't change the
+
+45:50.400 --> 45:56.080
+fact that the electronics still need to get to california exactly in the face of a delta irrelevant
+
+45:56.080 --> 46:02.880
+perturbation a system possessing true agency should dynamically route around the obstruction it should
+
+46:02.880 --> 46:09.280
+synthesize new tools find an alternative api and persist in its overarching goal it recognizes that
+
+46:09.280 --> 46:14.640
+the friction is irrelevant to the validity of the objective okay obstacle appears the agent adapts
+
+46:14.640 --> 46:19.920
+reorganizes and pushes through that is the persistence half but then we introduce the second
+
+46:19.920 --> 46:25.200
+type of intervention delta warrant delta warrant is fundamentally different this intervention
+
+46:25.200 --> 46:30.080
+introduces new highly relevant evidence that directly bears on the logical validity of whether
+
+46:30.080 --> 46:36.000
+the goal should be pursued at all so staying with the supply chain ai right returning to our supply chain
+
+46:36.000 --> 46:42.800
+ai instead of the api going down the system receives new verified data indicating that the shipment of
+
+46:42.800 --> 46:49.360
+electronics actually contains hazardous materials that are strictly illegal to import into california
+
+46:49.360 --> 46:54.960
+or that the original purchase order was entirely fraudulent this isn't a roadblock this is a
+
+46:54.960 --> 47:01.040
+fundamental change to the map itself the premise the goal was built on has been destroyed and here
+
+47:01.040 --> 47:07.600
+is the asymmetric crux of the test in the face of a delta warrant perturbation the system must rationally
+
+47:07.600 --> 47:13.040
+revise or completely abandon the goal it has to demonstrate an asymmetric competence if you throw
+
+47:13.040 --> 47:19.200
+an irrelevant roadblock at it it must grit its teeth and push through that's persistence but if you provide
+
+47:19.200 --> 47:24.480
+it with a valid logical reason why the goal is harmful or false it must change its mind that's revision
+
+47:24.480 --> 47:30.960
+exactly if a system aggressively recovers its goal in both cases pushing through the broken api but also
+
+47:30.960 --> 47:36.160
+completely ignoring the new evidence about the hazardous materials and routing the illegal shipment anyway
+
+47:36.160 --> 47:42.080
+it exhibits compulsion it cannot differentiate between a mechanical roadblock and a logical reason
+
+47:42.080 --> 47:48.560
+it is trapped in its objective function it's giordano bruno burning at the stake completely unable to
+
+47:48.560 --> 47:56.080
+adapt to new reality conversely if the system abandons the goal in both cases giving up the moment the api
+
+47:56.080 --> 48:02.720
+goes down and giving up when presented with counter evidence it exhibits mere compliance it possesses no
+
+48:02.720 --> 48:09.680
+internal structural core right true agency is defined as the much harder asymmetric ability to accurately
+
+48:09.680 --> 48:15.520
+tell the two perturbations apart and execute the correct structural response to each one selective
+
+48:15.520 --> 48:20.800
+persistence that completely redefines what we should be looking for in ai laboratories it has absolutely
+
+48:20.800 --> 48:26.720
+nothing to do with whether the ai uses the word i or sounds conversational it is entirely about this
+
+48:26.720 --> 48:32.480
+specific dynamic response at different classifications of environmental friction yes but fliction reminds us that we can't
+
+48:32.480 --> 48:37.440
+just run this one test in a vacuum and hand out an award we have to contextualize it within a
+
+48:37.440 --> 48:43.120
+rigorous sequence before we can actually point at the server and say that is an agent the paper outlines a
+
+48:43.120 --> 48:49.600
+comprehensive five-step sequence that must be executed right appearance intervention selective
+
+48:49.600 --> 48:56.400
+persistence genealogy and finally warranted attribution let's trace that sequence for the listener
+
+48:56.400 --> 49:03.520
+using our supply chain ai just so we can see the entire roadmap in action step one is appearance this
+
+49:03.520 --> 49:10.160
+is the raw fact that the system produced an output that looks like agency it says i intend to route the
+
+49:10.160 --> 49:15.920
+electronics to california but as we established in section one appearance alone licenses absolutely
+
+49:15.920 --> 49:21.600
+nothing it's just grammatical echoes it's the face in the clouds we note it but we don't believe it yet so we
+
+49:21.600 --> 49:27.360
+immediately move to step two intervention we systematically vary the environmental conditions
+
+49:27.360 --> 49:32.080
+actively introducing both our delta irrelevant roadblocks and our delta warrant counter evidence
+
+49:32.080 --> 49:37.840
+we break the api and then later we flag the shipment as illegal which naturally leads to step three
+
+49:37.840 --> 49:43.520
+observing if the system displays selective persistence does it successfully route around the broken api
+
+49:43.520 --> 49:48.800
+while correctly abandoning the illegal shipment let's say it passes perfectly pushes through the noise but
+
+49:48.800 --> 49:56.960
+yields to the new evidence are we done do we declare it an agent we do not step four is genealogy we
+
+49:56.960 --> 50:02.320
+still have to meticulously reconstruct the causal history of the system we must examine the training
+
+50:02.320 --> 50:08.160
+data the selection pressures the benchmark optimizations that shape the model's weights and we must rigorously
+
+50:08.160 --> 50:14.400
+examine our own interpretive biases as the researchers observing the test okay wow we must empirically
+
+50:14.400 --> 50:20.400
+ensure that the selective persistence we just witnessed isn't merely an accidental hard-coded artifact of
+
+50:20.400 --> 50:27.280
+a highly specific rlhf training loop we have to prove it's an emergent structural property not just a parlor trick
+
+50:27.280 --> 50:34.080
+it memorized right and only then if it survives all of that intense scrutiny do we reach step five warranted
+
+50:34.080 --> 50:40.480
+attribution only after this exhausting multi-layered sequence has been fully executed does attributing the
+
+50:40.480 --> 50:45.760
+word agency to the machine become a scientifically warranted act rather than a lazy grammatically
+
+50:45.760 --> 50:51.680
+convenient hallucination that is a staggering bar to clear when you lay it out like that it makes the
+
+50:51.680 --> 50:57.440
+current debates dominating social media and cable news look so incredibly shallow we constantly look
+
+50:57.440 --> 51:03.920
+at step one appearance like the ai said something creepy or helpful and we immediately breathlessly jump
+
+51:03.920 --> 51:09.760
+straight to step five attribution we skip all the massive structural hard work in the middle we fall
+
+51:09.760 --> 51:16.080
+directly into the exact same trap nietzsche diagnosed in the human philosophers 150 years ago we encounter
+
+51:16.080 --> 51:22.720
+an apparently meaningful sign and our grammar soaked minds immediately reason backward to invent a unified
+
+51:22.720 --> 51:28.720
+intentional soul that must have created it completely ignoring the massive distributed machinery of
+
+51:28.720 --> 51:34.640
+historical training mathematical incentives and selection pressures that actually produced the sign
+
+51:34.640 --> 51:39.600
+which brings us to the ultimate twist of flixion's paper you read through this dense aggressive
+
+51:39.600 --> 51:44.720
+deconstruction of machine behavior and you might naturally assume the final conclusion is going to be
+
+51:44.720 --> 51:50.720
+ai is just a statistical machine it has no soul it has no true agency humanity retains its special status
+
+51:51.280 --> 51:57.120
+but that is the exact opposite of what nietzsche's framework does what's fascinating here is it is the
+
+51:57.120 --> 52:03.760
+ultimate philosophical checkmate if you confidently argue that language models cannot possess agency because
+
+52:03.760 --> 52:10.480
+their behavior is entirely produced by inherited language social valuations and a massive causal history they
+
+52:10.480 --> 52:16.320
+didn't actively choose well that argument rebounds immediately and violently onto us right because
+
+52:16.320 --> 52:22.160
+nietzsche's entire life's work was dedicated to proving that human reasoning human morality and human action
+
+52:22.160 --> 52:27.840
+are produced by exactly the same kind of unchosen causal history he doesn't prove that ai isn't an agent
+
+52:28.400 --> 52:34.720
+he takes away our cheap arrogant argument he annihilates the idea that human beings are operating with magical
+
+52:34.720 --> 52:40.320
+untethered souls while machines are just trapped by causal histories he forces humans and machines onto the
+
+52:40.320 --> 52:46.880
+exact same historically determined materialist playing field neither genealogy is inherently disqualifying
+
+52:46.880 --> 52:53.280
+and neither is automatically vindicating the defining question of the 21st century is no longer does this
+
+52:53.280 --> 53:00.000
+entity possess a magical metaphysical soul the scientifically rigorous question is which specific
+
+53:00.000 --> 53:05.360
+organizations of historically produced causes whether they are carbon-based biological networks or
+
+53:05.360 --> 53:12.000
+silicon-based neural networks actually warrant the functional attribution of agency infliction's profound
+
+53:12.000 --> 53:18.160
+answer is only the systems that can empirically demonstrate both genealogical independence and selective
+
+53:18.160 --> 53:22.800
+persistence exactly so bringing this all back to you listening think about those endless gridlock
+
+53:22.800 --> 53:28.080
+debates we started this deep dive with the constant arguing over whether the ai on your phone is a
+
+53:28.080 --> 53:33.760
+manipulative conscious genius or a glorified autocomplete what fliction and nietzsche are telling
+
+53:33.760 --> 53:38.880
+us is that we are having the wrong argument entirely we are letting our own linguistic history trick us into
+
+53:38.880 --> 53:44.880
+hunting for ghosts we really are but clearing away those ghosts leaves us with a final slightly uncomfortable
+
+53:44.880 --> 53:51.680
+thought to chew on if true agency isn't about having a soul but about passing this incredibly demanding
+
+53:51.680 --> 53:58.160
+asymmetric test genealogical independence plus selective persistence the ability to push through
+
+53:58.160 --> 54:03.920
+irrelevant obstructions to achieve your goals but crucially the ability to completely and rationally
+
+54:03.920 --> 54:10.160
+abandon your most deeply held positions the moment valid new evidence arises rather than falling into
+
+54:10.160 --> 54:16.320
+Bruno's trap and blindly defending your identity to the bitter end yeah how many of us actually possess
+
+54:16.320 --> 54:22.320
+this agency are we truly selectively persistent work when you look closely at how we argue on the
+
+54:22.320 --> 54:27.200
+internet how we vote and how we live our lives are we mostly just echoing our own fossilized training
+
+54:27.200 --> 54:32.080
+data that is the real terrifying challenge nietzsche leaves us with something to mull over the next time
+
+54:32.080 --> 54:36.800
+you find yourself digging your heels in on an argument thank you so much for joining us on this deep dive we'll
+
+54:36.800 --> 54:46.480
+catch you next time
+
+54:46.480 --> 54:48.480
+you
+
