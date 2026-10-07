@@ -1,0 +1,9098 @@
+WEBVTT
+
+00:00.000 --> 00:07.560
+You know, usually when we talk about a system working perfectly, there is this, like, expectation of total control.
+
+00:07.860 --> 00:08.420
+Oh, absolutely.
+
+00:08.980 --> 00:11.380
+Think about the feeling of driving a highly responsive car.
+
+00:11.960 --> 00:16.160
+Like, you slide into the driver's seat, you grip the steering wheel, you press the accelerator,
+
+00:16.160 --> 00:21.300
+and the vehicle just executes your physical commands flawlessly.
+
+00:21.980 --> 00:23.340
+Right. It does exactly what you want.
+
+00:23.480 --> 00:27.020
+Yeah. It turns exactly when you want it to turn.
+
+00:27.380 --> 00:29.500
+It stops exactly when you want it to stop.
+
+00:29.500 --> 00:33.460
+It is a profoundly satisfying feeling, that kind of responsiveness.
+
+00:34.020 --> 00:39.120
+I mean, it creates this seamless feedback loop between your intention and the machine's action.
+
+00:39.360 --> 00:39.660
+Yeah.
+
+00:40.060 --> 00:43.220
+And that immediate obedience gives you a deep sense of mastery.
+
+00:43.220 --> 00:48.940
+You feel quite literally in the driver's seat, like you are the absolute author of the journey.
+
+00:49.140 --> 00:53.280
+But I want you to imagine a slightly different scenario.
+
+00:53.760 --> 00:54.120
+Okay.
+
+00:54.120 --> 01:00.060
+Imagine you're in that exact same car, and you are driving down a complex, winding highway.
+
+01:00.240 --> 01:04.340
+You're navigating traffic with, you know, absolute, flawless precision.
+
+01:04.740 --> 01:05.520
+So you're doing great.
+
+01:05.660 --> 01:05.860
+Right.
+
+01:06.260 --> 01:07.740
+Your reaction times are perfect.
+
+01:08.200 --> 01:13.860
+You are merging smoothly, hitting the brakes at just the right moment, accelerating into the open lanes.
+
+01:13.900 --> 01:15.200
+You're doing an incredible job.
+
+01:15.540 --> 01:15.820
+Uh-huh.
+
+01:15.820 --> 01:21.820
+But then, an hour into the drive, a terrifying realization washes over you.
+
+01:22.640 --> 01:25.180
+You never actually entered a destination into the GPS.
+
+01:26.440 --> 01:26.980
+Oh, wow.
+
+01:27.460 --> 01:28.800
+Yeah, you didn't pick where you're going.
+
+01:29.320 --> 01:34.920
+And worse, as you look at the dashboard and the locked doors, you realize you can't find a way to pull over.
+
+01:35.280 --> 01:36.320
+You're just stuck driving.
+
+01:36.760 --> 01:37.140
+Exactly.
+
+01:37.660 --> 01:39.780
+You are flawlessly executing a journey.
+
+01:39.780 --> 01:42.640
+You're hitting every single metric for safe, efficient driving.
+
+01:42.800 --> 01:46.560
+But you have entirely lost control over the actual purpose of the trip.
+
+01:47.180 --> 01:52.060
+The car is like using your reflexes to get somewhere, but it's not somewhere you chose.
+
+01:52.640 --> 01:59.300
+That image, that flawless driver trapped in a destinationless, or rather an externally determined journey.
+
+01:59.480 --> 02:02.480
+That is the absolute definition of a captured delegation.
+
+02:02.840 --> 02:03.780
+It's spooky, right?
+
+02:03.980 --> 02:05.160
+It is deeply unsettling.
+
+02:05.380 --> 02:05.500
+Yeah.
+
+02:06.320 --> 02:09.680
+But it is precisely the structural reality we are looking at today.
+
+02:10.280 --> 02:15.800
+It describes the hidden architecture of a vast number of our modern professional, civic, and even personal lives.
+
+02:16.140 --> 02:18.440
+So, welcome everyone to this deep dive.
+
+02:18.840 --> 02:21.320
+Today, we are taking you on a very specific mission.
+
+02:21.500 --> 02:21.840
+Yes, we are.
+
+02:22.100 --> 02:25.420
+Our goal is to understand the mechanics of that exact trap.
+
+02:25.720 --> 02:32.580
+Like, how is it entirely possible for you to perfectly execute your tasks, hit all of your key performance indicators,
+
+02:32.580 --> 02:40.580
+generate incredible economic or social benefits, and yet somehow completely lose control over the ultimate purpose of your work?
+
+02:40.680 --> 02:40.920
+Right.
+
+02:40.960 --> 02:41.580
+How does that happen?
+
+02:41.580 --> 02:51.180
+We really want to unpack how human agency, our actual ability to choose our own ends, gets quietly captured by the very systems we believe we are running.
+
+02:51.180 --> 02:57.140
+And to crack this wide open, we have an incredibly dense, rewarding piece of source material to guide us today.
+
+02:57.460 --> 02:58.000
+Oh, definitely.
+
+02:58.000 --> 03:04.380
+We are examining an October 2026 paper by an independent researcher who publishes under the name Fleixion.
+
+03:05.060 --> 03:09.740
+The paper is titled, Nietzsche, Delegated Agency, and the Admissibility of Ends.
+
+03:09.740 --> 03:14.020
+Now, I have to admit, when I first saw that title, I braced myself a little bit.
+
+03:14.200 --> 03:14.900
+I mean, fair enough.
+
+03:15.020 --> 03:26.380
+Yeah, because seeing the name Nietzsche parked next to phrases like admissibility of ends usually signals a plunge into very dry, very abstract, philosophical navel gazing.
+
+03:26.600 --> 03:27.580
+It sounds like a tough read.
+
+03:27.580 --> 03:32.580
+But, having spent time with this research, I can promise you, it is anything but that.
+
+03:32.980 --> 03:41.140
+This paper is a rigorous, mathematical, and structural breakdown of how traps are built around human choices.
+
+03:41.360 --> 03:42.620
+Yeah, it's incredibly grounded.
+
+03:43.100 --> 03:43.340
+Right.
+
+03:43.440 --> 03:50.580
+It actually uses graph theory, formal logic, and econometrics to literally map out the exact geometry of how we lose our autonomy.
+
+03:51.140 --> 03:55.640
+And what is genuinely fascinating about this paper is its central premise.
+
+03:56.060 --> 03:56.300
+Okay.
+
+03:56.300 --> 03:57.380
+Let's get into that.
+
+03:57.580 --> 04:05.120
+Fleixion takes a set of concepts that we normally almost automatically kind of fuse together in our minds and just kind of brutally separates them.
+
+04:05.600 --> 04:05.840
+Like what?
+
+04:06.420 --> 04:19.460
+Well, in our everyday lives, we tend to assume that if a system works smoothly, if the people operating it are highly competent, and if it produces a lot of tangible benefits, then the overarching goals of that system must be legitimate.
+
+04:19.720 --> 04:19.920
+Right.
+
+04:19.980 --> 04:20.800
+We just assume that.
+
+04:21.000 --> 04:21.360
+Exactly.
+
+04:21.760 --> 04:25.060
+We treat operational competence as evidence of underlying consent.
+
+04:25.060 --> 04:33.140
+But this paper proves, using actual mathematical theorems, that this assumption is one of the most dangerous traps in modern society.
+
+04:33.140 --> 04:38.860
+Okay, so let's start pulling this apart, because I think we need to look at exactly how we conflate those ideas.
+
+04:39.420 --> 04:42.120
+I was actually thinking about this in the context of building a house.
+
+04:42.360 --> 04:42.600
+Okay.
+
+04:42.780 --> 04:43.020
+Yeah.
+
+04:43.020 --> 04:49.800
+So let's say you hire a master carpenter, they get the blueprints, and they execute the build flawlessly.
+
+04:50.180 --> 04:51.440
+Perfect joints, everything.
+
+04:51.440 --> 04:52.100
+Exactly.
+
+04:52.280 --> 04:56.320
+The joints are perfectly flushed, the foundation is solid, the framing is immaculate.
+
+04:57.020 --> 05:03.340
+The carpenter didn't decide if the building should be a family home, a commercial bakery, or a massive corporate warehouse.
+
+05:03.480 --> 05:05.260
+They just executed the plans they were handed.
+
+05:05.520 --> 05:05.720
+Right.
+
+05:06.240 --> 05:10.180
+Now, in a normal, healthy division of labor, that is completely fine.
+
+05:10.580 --> 05:13.560
+The client chose the purpose, and the carpenter supplied the execution.
+
+05:14.060 --> 05:16.280
+We need that to function as a society.
+
+05:16.280 --> 05:17.740
+We do.
+
+05:18.060 --> 05:26.560
+I mean, if every single worker had to philosophically re-derive and authorize the ultimate purpose of every single task they performed, the world would just grind to a halt.
+
+05:26.680 --> 05:26.800
+Right.
+
+05:26.880 --> 05:27.560
+Nothing would get done.
+
+05:27.840 --> 05:28.140
+Exactly.
+
+05:28.560 --> 05:32.740
+The air traffic controller doesn't need to debate the existential validity of a passenger's vacation.
+
+05:33.060 --> 05:34.520
+They just need to land the plane safely.
+
+05:35.420 --> 05:37.680
+Division of labor inherently depends on delegation.
+
+05:39.000 --> 05:40.760
+Flyxion acknowledges this right up front.
+
+05:41.120 --> 05:45.180
+There is nothing inherently malicious about executing an end chosen by someone else.
+
+05:45.180 --> 05:45.680
+Right.
+
+05:46.280 --> 05:47.780
+So where does the trap actually spring?
+
+05:48.020 --> 05:51.160
+If the carpenter building the house is fine, when does it become a problem?
+
+05:51.580 --> 05:58.260
+The difficulty begins when we start making a very specific, incredibly common, but logically flawed inference.
+
+05:59.000 --> 05:59.520
+Which is?
+
+05:59.520 --> 06:10.660
+We look at the highly skilled executor, like your master carpenter, or maybe a brilliant algorithmic software engineer, or a highly efficient human resources manager, and we observe the outcome.
+
+06:11.340 --> 06:11.600
+Uh-huh.
+
+06:11.600 --> 06:14.680
+We say, wow, this arrangement works really well.
+
+06:14.980 --> 06:15.780
+It's efficient.
+
+06:16.140 --> 06:16.880
+It's profitable.
+
+06:17.680 --> 06:21.160
+Then without realizing it, we take a massive logical leap.
+
+06:21.480 --> 06:26.840
+We say, because this arrangement works so well, its foundational purposes must be sound.
+
+06:27.340 --> 06:28.000
+Oh, I see.
+
+06:28.000 --> 06:31.160
+And then we take the final fatal step.
+
+06:31.740 --> 06:39.740
+Because the purposes are sound, questioning them is unnecessary, and eventually questioning them becomes improper.
+
+06:39.740 --> 06:42.400
+Or even a fireable offense.
+
+06:42.400 --> 06:49.580
+So we let the sheer skill of the carpenter act as retroactive proof that the building should have been built in the first place.
+
+06:49.980 --> 06:50.400
+Exactly.
+
+06:50.400 --> 07:03.880
+Or, to bring it to the modern workplace, we let the fact that an algorithm is incredibly good at keeping teenagers glued to a screen serve as proof that keeping teenagers glued to a screen is a fundamentally good and authorized goal.
+
+07:04.420 --> 07:04.960
+Precisely.
+
+07:05.540 --> 07:10.820
+Each step in that logical chain is illicitly borrowing credit from a completely different achievement.
+
+07:10.820 --> 07:20.360
+And that is why Flicendian spends the opening of the paper separating out four distinct achievements that society constantly, dangerously runs together.
+
+07:21.060 --> 07:24.700
+We have to look at these four categories to understand how the trap works.
+
+07:25.380 --> 07:26.320
+Okay, let's lay them out.
+
+07:26.560 --> 07:29.320
+If we are constantly mixing these up, we need to define the boundaries.
+
+07:29.840 --> 07:33.620
+The first achievement the paper identifies is reliable execution.
+
+07:33.620 --> 07:36.300
+This is exactly what it sounds like.
+
+07:36.900 --> 07:43.300
+It is simply the ability of an agent or a system to carry out a specified purpose with a very low error rate.
+
+07:43.480 --> 07:44.120
+Like the pilot.
+
+07:44.660 --> 07:46.380
+Right, the pilot landing the plane in bad weather.
+
+07:46.940 --> 07:49.620
+The surgeon performing a complex bypass.
+
+07:50.320 --> 07:52.600
+It is purely about competence in action.
+
+07:52.720 --> 07:53.520
+It is the how.
+
+07:53.900 --> 07:54.220
+Okay.
+
+07:54.700 --> 07:56.100
+Execution is the how.
+
+07:57.100 --> 07:59.620
+The second achievement is beneficial consequence.
+
+07:59.960 --> 08:01.720
+I imagine this is the scoreboard?
+
+08:02.160 --> 08:02.680
+Exactly.
+
+08:02.680 --> 08:08.940
+This is the degree to which the outcomes of the execution are considered good by some stated measure.
+
+08:09.700 --> 08:11.040
+Does the system produce wealth?
+
+08:11.480 --> 08:12.380
+Does it cure disease?
+
+08:13.020 --> 08:15.420
+Does it maximize a specific utility function?
+
+08:15.820 --> 08:19.540
+It is the measurable output, the points on the board.
+
+08:19.900 --> 08:20.020
+Right.
+
+08:20.960 --> 08:23.620
+And the third achievement is organizational endurance.
+
+08:24.240 --> 08:27.240
+This one is vital and often overlooked.
+
+08:28.040 --> 08:30.660
+Endurance is simply the persistence of an arrangement over time.
+
+08:30.660 --> 08:32.340
+Does the system survive?
+
+08:32.680 --> 08:36.000
+Can it reproduce the conditions necessary for its own existence?
+
+08:36.400 --> 08:38.020
+And longevity doesn't mean it's good.
+
+08:38.600 --> 08:39.020
+Exactly.
+
+08:39.740 --> 08:41.040
+Here is the kicker.
+
+08:41.040 --> 08:50.640
+A highly toxic, damaging bureaucracy might have incredible organizational endurance simply because it has successfully made it impossible for anyone to dismantle it.
+
+08:50.640 --> 08:51.640
+Survival does not equal morality.
+
+08:51.640 --> 08:53.260
+Survival does not equal morality.
+
+08:53.820 --> 08:55.680
+And endurance does not equal legitimacy.
+
+08:55.680 --> 08:57.080
+That makes a lot of sense.
+
+08:57.460 --> 09:01.700
+Like, just because a bad corporate policy has been around for 20 years doesn't mean it's good.
+
+09:01.820 --> 09:03.660
+It just means it's heavily defended.
+
+09:03.940 --> 09:04.040
+Right.
+
+09:04.440 --> 09:09.100
+Which brings us to the fourth achievement, the one that the paper argues is the most critical.
+
+09:09.860 --> 09:11.520
+Legitimate purpose setting.
+
+09:11.520 --> 09:13.660
+This is the core of human agency.
+
+09:14.380 --> 09:25.020
+Legitimate purpose setting is the standing, the recognized, authorized authority of a particular party or process to actually select the ends that the arrangement serves.
+
+09:25.480 --> 09:27.200
+Who actually gets to choose.
+
+09:27.200 --> 09:27.680
+Exactly.
+
+09:28.220 --> 09:38.600
+And crucially, Flyxion insists that this achievement must include the continuing ability of the affected parties to examine, contest, and revise that selection over time.
+
+09:38.720 --> 09:40.160
+It's not just a one-time vote.
+
+09:40.380 --> 09:42.620
+It's an ongoing capacity for revision.
+
+09:42.620 --> 09:50.840
+Okay, so we have reliable execution, beneficial consequence, organizational endurance, and legitimate purpose setting.
+
+09:51.220 --> 09:57.840
+And the central thesis here is that you can have the first three in absolute spades while completely lacking the fourth.
+
+09:58.000 --> 09:59.600
+That is the terrifying reality.
+
+10:00.160 --> 10:06.400
+You can find yourself inside a system that executes flawlessly, generates massive, record-breaking benefits,
+
+10:06.400 --> 10:13.400
+and has endured for decades, all while operating under a purpose that absolutely nobody legitimately agreed to.
+
+10:14.340 --> 10:16.880
+And with no mechanism for anyone to ever change it.
+
+10:17.000 --> 10:17.160
+Right.
+
+10:17.620 --> 10:21.420
+And the illusion is that the presence of the first three silently supplies the fourth.
+
+10:22.140 --> 10:28.660
+We assume that because the system is surviving and profiting, someone somewhere must have legitimately authorized it.
+
+10:29.080 --> 10:34.680
+Which introduces what I think is the most striking, memorable piece of terminology in this entire paper.
+
+10:34.680 --> 10:37.540
+The concept of the reverse centaur.
+
+10:37.860 --> 10:40.700
+Let's dig into this because this image really stayed with me.
+
+10:41.140 --> 10:46.180
+To fully grasp the reverse centaur, we first have to understand the original centaur concept.
+
+10:46.800 --> 10:52.400
+This term gained popularity in the world of advanced chess, particularly in the late 1990s,
+
+10:52.700 --> 10:56.400
+after Garry Kasparov famously lost to IBM's Deep Blue supercomputer.
+
+10:56.840 --> 10:57.220
+Right.
+
+10:57.460 --> 10:58.420
+That was a huge moment.
+
+10:58.620 --> 10:58.980
+It was.
+
+10:58.980 --> 11:04.940
+So after that defeat, the chess world experimented with a new format called Advanced Chess,
+
+11:05.200 --> 11:09.300
+where a human player competes while using computer assistants.
+
+11:09.580 --> 11:11.460
+So it's not human versus machine.
+
+11:11.580 --> 11:12.440
+It's a hybrid team.
+
+11:12.660 --> 11:12.880
+Right.
+
+11:13.540 --> 11:16.700
+In this setup, the machine does what it does best.
+
+11:17.040 --> 11:19.400
+It calculates millions of possible moves,
+
+11:19.880 --> 11:21.160
+checks tactical combinations,
+
+11:21.160 --> 11:23.480
+and ensures there are no immediate blunders.
+
+11:23.480 --> 11:27.240
+But the human being sets the overarching strategy,
+
+11:27.820 --> 11:29.300
+determines the style of play,
+
+11:29.800 --> 11:31.860
+and dictates the ultimate purpose of the game.
+
+11:32.480 --> 11:33.560
+So the human is in charge.
+
+11:33.880 --> 11:34.260
+Exactly.
+
+11:34.900 --> 11:36.860
+The human is augmented by the machine.
+
+11:37.400 --> 11:38.400
+The human is the head,
+
+11:38.740 --> 11:40.620
+and the machine is the powerful body.
+
+11:41.060 --> 11:42.080
+That is a centaur.
+
+11:42.300 --> 11:44.060
+The human is still in charge of the destination.
+
+11:44.280 --> 11:47.180
+They just have a much faster, stronger engine to get there.
+
+11:47.300 --> 11:50.760
+But a reverse centaur flips that entire dynamic on its head.
+
+11:50.760 --> 11:52.960
+It is the exact opposite role structure.
+
+11:53.940 --> 11:55.160
+In a reverse centaur arrangement,
+
+11:55.360 --> 11:57.780
+the human being is reduced to a mere actuator.
+
+11:58.080 --> 11:58.900
+Like a part of the machine.
+
+11:59.220 --> 11:59.580
+Exactly.
+
+12:00.380 --> 12:02.320
+The human serves the pace, the metrics,
+
+12:02.520 --> 12:05.760
+and the overarching goals of an external controller.
+
+12:06.360 --> 12:09.600
+The machine, or the bureaucratic system, is the head.
+
+12:10.180 --> 12:12.820
+It determines what needs to be done and how fast.
+
+12:13.540 --> 12:16.200
+The human is just the physical hands carrying out the work,
+
+12:16.680 --> 12:20.080
+often because it's still cheaper or more dexterous to use human hands
+
+12:20.080 --> 12:21.680
+than to build a fully autonomous robot.
+
+12:22.140 --> 12:24.600
+I see this everywhere now.
+
+12:25.160 --> 12:27.400
+Think about warehouse workers who wear headsets
+
+12:27.400 --> 12:29.720
+that literally count down the seconds they have
+
+12:29.720 --> 12:31.120
+to walk to a specific shelf,
+
+12:31.580 --> 12:32.640
+pick up a specific item,
+
+12:32.760 --> 12:33.760
+and place it in a bin.
+
+12:34.040 --> 12:34.260
+Yes.
+
+12:34.260 --> 12:36.580
+The algorithm calculated the optimal path.
+
+12:36.960 --> 12:39.260
+The algorithm determined the priority of the package.
+
+12:39.840 --> 12:42.840
+And the human being is simply the biological forklift
+
+12:42.840 --> 12:43.940
+executing the move.
+
+12:44.360 --> 12:46.180
+You are doing the physical labor.
+
+12:46.620 --> 12:47.880
+You are in the loop.
+
+12:47.880 --> 12:50.420
+You might even be making tiny micro decisions
+
+12:50.420 --> 12:51.880
+about how to grip the box.
+
+12:52.060 --> 12:54.080
+But you have exactly zero control
+
+12:54.080 --> 12:55.840
+over the ultimate purpose you are serving.
+
+12:56.280 --> 12:59.740
+That is a perfect, visceral example of a reverse centaur.
+
+13:00.520 --> 13:02.080
+But Flyxion takes it a step further.
+
+13:02.740 --> 13:05.320
+It is crucial to understand that the external controller
+
+13:05.320 --> 13:07.900
+doesn't have to be a computer algorithm or a piece of software.
+
+13:08.400 --> 13:09.120
+What else could it be?
+
+13:09.380 --> 13:11.280
+It could be a sprawling corporate bureaucracy.
+
+13:11.960 --> 13:14.360
+It could be a rigid set of key performance indicators
+
+13:14.360 --> 13:16.140
+that dictate every hour of your workday.
+
+13:16.800 --> 13:17.580
+It could even be,
+
+13:18.180 --> 13:20.120
+and this is where it gets really philosophical,
+
+13:20.920 --> 13:22.560
+an authoritative moral doctrine.
+
+13:23.360 --> 13:23.780
+Hold on.
+
+13:24.760 --> 13:25.900
+A moral doctrine.
+
+13:26.060 --> 13:29.060
+I mean, I understand being a reverse centaur
+
+13:29.060 --> 13:30.760
+to an Amazon algorithm,
+
+13:30.900 --> 13:32.580
+but how can you be a reverse centaur
+
+13:32.580 --> 13:33.740
+to a moral concept?
+
+13:34.420 --> 13:35.440
+Think about it structurally.
+
+13:35.440 --> 13:37.500
+You can have human beings sitting
+
+13:37.500 --> 13:39.060
+in every single node of an arrangement.
+
+13:39.780 --> 13:41.420
+Humans are making all the physical moves.
+
+13:41.740 --> 13:42.940
+Humans are having the conversations.
+
+13:43.540 --> 13:44.580
+Humans are doing all the labor.
+
+13:45.140 --> 13:46.860
+But they are doing it in strict obedience
+
+13:46.860 --> 13:49.260
+to a doctrine that they have no power to alter.
+
+13:50.000 --> 13:51.640
+So the doctrine is the boss.
+
+13:52.060 --> 13:52.280
+Yes.
+
+13:52.640 --> 13:54.280
+They are simply servicing the doctrine.
+
+13:54.860 --> 13:55.760
+They are its hands.
+
+13:56.360 --> 13:57.980
+You can have a fully human system
+
+13:57.980 --> 13:58.960
+without a single human
+
+13:58.960 --> 14:00.900
+actually authoring the system's ends.
+
+14:00.900 --> 14:03.640
+That is a wild,
+
+14:03.820 --> 14:05.460
+almost disturbing thing to think about
+
+14:05.460 --> 14:07.920
+because when you are in that position,
+
+14:08.100 --> 14:10.600
+you probably feel incredibly engaged in your work.
+
+14:10.740 --> 14:11.280
+You're busy.
+
+14:11.500 --> 14:13.200
+You feel necessary to the operation.
+
+14:14.040 --> 14:16.740
+And you might completely mistake
+
+14:16.740 --> 14:18.320
+that intense feeling of involvement
+
+14:18.320 --> 14:20.300
+for actual authority.
+
+14:20.800 --> 14:20.920
+Right.
+
+14:21.080 --> 14:21.980
+You think you're in charge.
+
+14:22.280 --> 14:23.240
+You think you're driving the car
+
+14:23.240 --> 14:24.360
+because your hands are on the wheel,
+
+14:24.540 --> 14:26.340
+but you're really just the engine block.
+
+14:26.700 --> 14:27.040
+Exactly.
+
+14:27.460 --> 14:29.020
+And there is a fascinating parallel
+
+14:29.020 --> 14:31.380
+in the human factors engineering literature
+
+14:31.380 --> 14:32.760
+that Flyoxian points out.
+
+14:33.180 --> 14:35.680
+They call it a moral crumple zone.
+
+14:36.120 --> 14:37.100
+Moral crumple zone.
+
+14:37.280 --> 14:37.460
+Yeah.
+
+14:37.580 --> 14:38.740
+It's a neighboring pattern
+
+14:38.740 --> 14:40.200
+where human operators
+
+14:40.200 --> 14:42.380
+of highly complex automated systems
+
+14:42.380 --> 14:44.360
+retain all the moral
+
+14:44.360 --> 14:45.480
+and legal responsibility
+
+14:45.480 --> 14:46.320
+for a system
+
+14:46.320 --> 14:48.580
+that they can no longer meaningfully control.
+
+14:49.580 --> 14:50.760
+If the autopilot fails,
+
+14:51.000 --> 14:52.380
+the human pilot takes the blame.
+
+14:53.040 --> 14:54.060
+You get all the liability
+
+14:54.060 --> 14:55.260
+if the execution fails,
+
+14:55.760 --> 14:57.720
+but you had absolutely no say
+
+14:57.720 --> 14:59.280
+in the purpose you were executing.
+
+15:00.060 --> 15:01.320
+The human absorbs the impact.
+
+15:02.120 --> 15:03.060
+Man, that's heavy.
+
+15:03.820 --> 15:05.860
+Okay, so if we can become reverse centaurs,
+
+15:06.040 --> 15:07.040
+not just to technology,
+
+15:07.220 --> 15:08.580
+but to abstract concepts
+
+15:08.580 --> 15:09.680
+like corporate metrics
+
+15:09.680 --> 15:11.020
+or moral doctrines,
+
+15:11.580 --> 15:12.320
+we need to ask,
+
+15:12.440 --> 15:13.860
+how does that actually happen?
+
+15:14.520 --> 15:15.800
+People generally don't wake up
+
+15:15.800 --> 15:16.500
+in the morning and say,
+
+15:16.600 --> 15:17.840
+I'd love to be a mindless
+
+15:17.840 --> 15:19.080
+biological actuator
+
+15:19.080 --> 15:20.400
+for a system I don't control.
+
+15:20.860 --> 15:21.980
+How do we drift into this?
+
+15:22.660 --> 15:23.900
+To explain the mechanics
+
+15:23.900 --> 15:25.180
+of how a person becomes
+
+15:25.180 --> 15:26.280
+a flawless instrument
+
+15:26.280 --> 15:27.560
+for an unchosen purpose,
+
+15:27.560 --> 15:29.800
+the paper takes a very interesting
+
+15:29.800 --> 15:31.460
+genealogical point of departure.
+
+15:32.160 --> 15:34.240
+It goes back to the 19th century philosopher
+
+15:34.240 --> 15:35.420
+Friedrich Nietzsche.
+
+15:36.140 --> 15:36.720
+Ah, Nietzsche.
+
+15:37.280 --> 15:37.820
+Specifically,
+
+15:38.280 --> 15:39.400
+Phlyoxian examines
+
+15:39.400 --> 15:40.680
+structural observations
+
+15:40.680 --> 15:41.980
+found in Nietzsche's notes,
+
+15:42.460 --> 15:44.020
+compiled in The Will to Power,
+
+15:44.640 --> 15:46.960
+specifically passages 354,
+
+15:47.180 --> 15:48.660
+356, and 358,
+
+15:49.120 --> 15:50.100
+as well as passages
+
+15:50.100 --> 15:52.080
+from The Genealogy of Morals
+
+15:52.080 --> 15:53.860
+and Twilight of the Idols.
+
+15:53.860 --> 15:55.520
+Now, I want to pause right here
+
+15:55.520 --> 15:57.180
+and offer a very clear caveat
+
+15:57.180 --> 15:58.300
+for you listening.
+
+15:59.240 --> 16:00.460
+Whenever Nietzsche is brought up,
+
+16:00.560 --> 16:02.600
+he brings a massive amount
+
+16:02.600 --> 16:04.380
+of historical and political baggage
+
+16:04.380 --> 16:05.000
+into the room.
+
+16:05.520 --> 16:07.360
+He held some highly hierarchical,
+
+16:07.660 --> 16:07.960
+aggressive,
+
+16:08.180 --> 16:08.680
+and frankly,
+
+16:08.880 --> 16:09.760
+very controversial
+
+16:09.760 --> 16:11.120
+political prescriptions.
+
+16:11.540 --> 16:12.080
+Very much so.
+
+16:12.380 --> 16:13.260
+But the paper makes
+
+16:13.260 --> 16:14.740
+a strict, explicit point
+
+16:14.740 --> 16:16.540
+of scholarly impartiality here.
+
+16:16.760 --> 16:17.860
+We are not looking
+
+16:17.860 --> 16:18.900
+at Nietzsche's politics.
+
+16:19.280 --> 16:20.240
+We are strictly looking
+
+16:20.240 --> 16:21.740
+at his structural diagnosis
+
+16:21.740 --> 16:23.780
+of how morality functions.
+
+16:24.220 --> 16:24.940
+It's like looking at
+
+16:24.940 --> 16:26.260
+a controversial architect's
+
+16:26.260 --> 16:27.220
+blueprint for a bridge,
+
+16:27.280 --> 16:27.520
+you know?
+
+16:27.640 --> 16:28.560
+We are just examining
+
+16:28.560 --> 16:29.700
+the load-bearing math
+
+16:29.700 --> 16:30.480
+of the arches,
+
+16:30.740 --> 16:31.660
+not endorsing
+
+16:31.660 --> 16:32.640
+the architect's worldview.
+
+16:33.400 --> 16:34.340
+Yes, that distinction
+
+16:34.340 --> 16:35.360
+is absolutely vital.
+
+16:35.820 --> 16:36.560
+We are extracting
+
+16:36.560 --> 16:37.840
+a mechanical observation.
+
+16:38.440 --> 16:39.160
+In those passages
+
+16:39.160 --> 16:40.200
+of The Will to Power,
+
+16:40.720 --> 16:41.400
+Nietzsche describes
+
+16:41.400 --> 16:43.680
+how a particular moral ideal
+
+16:43.680 --> 16:44.860
+can functionally
+
+16:44.860 --> 16:45.940
+take over a person.
+
+16:46.520 --> 16:47.320
+He points out that
+
+16:47.320 --> 16:47.960
+virtues,
+
+16:48.220 --> 16:49.360
+things we universally
+
+16:49.360 --> 16:50.900
+consider inherently good,
+
+16:50.900 --> 16:52.400
+like being industrious,
+
+16:52.820 --> 16:53.580
+being benevolent,
+
+16:53.960 --> 16:54.600
+being temperate,
+
+16:54.640 --> 16:55.940
+or being a hard worker.
+
+16:56.500 --> 16:57.580
+They can actually function
+
+16:57.580 --> 16:58.940
+as the exact mechanisms
+
+16:58.940 --> 17:00.140
+that make a person
+
+17:00.140 --> 17:01.660
+highly useful to ends
+
+17:01.660 --> 17:03.020
+that they cannot establish
+
+17:03.020 --> 17:03.660
+for themselves.
+
+17:04.420 --> 17:05.500
+I really want to push back
+
+17:05.500 --> 17:06.420
+on this because it feels
+
+17:06.420 --> 17:07.860
+completely counterintuitive.
+
+17:08.420 --> 17:09.120
+Are you saying that
+
+17:09.120 --> 17:10.060
+being a hard worker,
+
+17:10.460 --> 17:11.180
+being industrious,
+
+17:11.260 --> 17:13.100
+which literally every parent
+
+17:13.100 --> 17:14.320
+teaches their child to be,
+
+17:14.680 --> 17:16.460
+can actually be the exact trait
+
+17:16.460 --> 17:17.960
+that springs the trap?
+
+17:18.280 --> 17:19.360
+Isn't being industrious
+
+17:19.360 --> 17:21.180
+just objectively good?
+
+17:21.180 --> 17:23.360
+It is good for execution,
+
+17:23.880 --> 17:24.500
+but structurally,
+
+17:24.860 --> 17:26.980
+if you are incredibly industrious,
+
+17:27.360 --> 17:28.940
+you are a fantastic,
+
+17:29.200 --> 17:30.280
+highly efficient tool
+
+17:30.280 --> 17:31.740
+for someone else's purpose.
+
+17:32.660 --> 17:34.040
+Nietzsche's structural observation
+
+17:34.040 --> 17:35.240
+is that the language
+
+17:35.240 --> 17:35.980
+of morality
+
+17:35.980 --> 17:37.860
+can render this subordination
+
+17:37.860 --> 17:39.380
+entirely self-justifying.
+
+17:40.140 --> 17:40.560
+How so?
+
+17:41.120 --> 17:42.920
+The person executes perfectly,
+
+17:43.280 --> 17:43.460
+right?
+
+17:43.840 --> 17:45.260
+They are a perfectly virtuous,
+
+17:45.400 --> 17:46.000
+hardworking,
+
+17:46.200 --> 17:47.260
+uncomplaining instrument.
+
+17:47.260 --> 17:49.260
+But the authority over
+
+17:49.260 --> 17:50.240
+what that hard work
+
+17:50.240 --> 17:51.180
+actually achieves
+
+17:51.180 --> 17:53.060
+resides entirely elsewhere.
+
+17:53.840 --> 17:55.200
+They retain all the physical
+
+17:55.200 --> 17:56.260
+and mental capacities
+
+17:56.260 --> 17:57.220
+needed to execute,
+
+17:57.760 --> 17:59.020
+but zero authority
+
+17:59.020 --> 17:59.780
+over the direction.
+
+18:00.580 --> 18:01.440
+So it's like being
+
+18:01.440 --> 18:03.260
+the ultimate reverse centaur,
+
+18:03.480 --> 18:04.540
+but instead of a warehouse
+
+18:04.540 --> 18:05.880
+headset barking orders,
+
+18:06.560 --> 18:07.600
+the controller is your own
+
+18:07.600 --> 18:09.260
+internalized moral ideal
+
+18:09.260 --> 18:09.880
+that says,
+
+18:10.440 --> 18:11.900
+a good, virtuous person
+
+18:11.900 --> 18:12.860
+puts their head down
+
+18:12.860 --> 18:13.520
+and works hard
+
+18:13.520 --> 18:14.240
+without complaining.
+
+18:14.780 --> 18:15.680
+The virtue itself
+
+18:15.680 --> 18:16.540
+is the leash.
+
+18:16.540 --> 18:19.160
+The language of morality
+
+18:19.160 --> 18:20.820
+masks the structural reality
+
+18:20.820 --> 18:22.180
+that you have become
+
+18:22.180 --> 18:22.900
+an actuator.
+
+18:23.520 --> 18:24.320
+You don't feel like
+
+18:24.320 --> 18:25.220
+a slave to a machine.
+
+18:25.540 --> 18:26.620
+You feel like you are
+
+18:26.620 --> 18:27.760
+fulfilling a noble virtue.
+
+18:28.280 --> 18:30.020
+That is the Nietzschean trap.
+
+18:30.480 --> 18:31.800
+Okay, if we are getting
+
+18:31.800 --> 18:33.000
+captured by these purposes
+
+18:33.000 --> 18:34.380
+through our own virtues,
+
+18:34.380 --> 18:35.300
+we need to look at
+
+18:35.300 --> 18:35.900
+how a purpose
+
+18:35.900 --> 18:37.180
+actually gets locked in.
+
+18:37.540 --> 18:38.300
+Like, how do we,
+
+18:38.520 --> 18:39.280
+structurally speaking,
+
+18:39.400 --> 18:40.180
+commit to a purpose?
+
+18:40.700 --> 18:42.000
+The paper outlines
+
+18:42.000 --> 18:42.940
+something called
+
+18:42.940 --> 18:44.400
+the grammar of commitment.
+
+18:44.400 --> 18:46.280
+It's a five-step process,
+
+18:46.400 --> 18:46.580
+right?
+
+18:46.820 --> 18:47.000
+Yes.
+
+18:47.360 --> 18:48.220
+Palaytian argues
+
+18:48.220 --> 18:48.740
+that commitment
+
+18:48.740 --> 18:49.380
+to a purpose
+
+18:49.380 --> 18:50.340
+isn't just one
+
+18:50.340 --> 18:51.100
+spontaneous,
+
+18:51.500 --> 18:52.320
+monolithic choice.
+
+18:52.420 --> 18:53.240
+It's not a light switch.
+
+18:53.860 --> 18:54.960
+It proceeds through
+
+18:54.960 --> 18:56.140
+a sequence of five
+
+18:56.140 --> 18:57.620
+distinct operations.
+
+18:57.900 --> 18:58.940
+Let's trace these steps
+
+18:58.940 --> 19:00.260
+using a real-world example.
+
+19:00.480 --> 19:00.960
+Let's imagine
+
+19:00.960 --> 19:01.820
+a city council
+
+19:01.820 --> 19:02.720
+deciding to build
+
+19:02.720 --> 19:04.080
+a new public transit system.
+
+19:04.520 --> 19:05.480
+What is step one?
+
+19:05.880 --> 19:06.800
+The first operation
+
+19:06.800 --> 19:07.980
+is distinguish.
+
+19:08.760 --> 19:09.360
+This is simply
+
+19:09.360 --> 19:10.120
+the act of making
+
+19:10.120 --> 19:11.180
+a proposed purpose
+
+19:11.180 --> 19:11.800
+available
+
+19:11.800 --> 19:12.840
+as a candidate
+
+19:12.840 --> 19:13.440
+for action.
+
+19:14.240 --> 19:15.020
+Someone stands up
+
+19:15.020 --> 19:15.660
+at the council meeting
+
+19:15.660 --> 19:16.020
+and says,
+
+19:16.620 --> 19:16.960
+we could build
+
+19:16.960 --> 19:17.840
+a light rail system
+
+19:17.840 --> 19:18.820
+to connect the suburbs
+
+19:18.820 --> 19:19.520
+to downtown.
+
+19:20.280 --> 19:21.000
+You have distinguished
+
+19:21.000 --> 19:21.960
+a possibility
+
+19:21.960 --> 19:23.040
+from the void.
+
+19:23.620 --> 19:23.840
+Okay.
+
+19:24.100 --> 19:25.260
+The idea is on the table.
+
+19:25.720 --> 19:26.100
+Step two?
+
+19:26.460 --> 19:27.640
+The second operation
+
+19:27.640 --> 19:28.840
+is refuse.
+
+19:29.580 --> 19:30.340
+This is a critical
+
+19:30.340 --> 19:31.340
+filtering stage.
+
+19:31.620 --> 19:32.120
+You have to remove
+
+19:32.120 --> 19:33.040
+candidates that fail
+
+19:33.040 --> 19:33.800
+to meet applicable
+
+19:33.800 --> 19:35.060
+constraints or obligations.
+
+19:35.820 --> 19:37.080
+So, the council says,
+
+19:37.640 --> 19:38.160
+we can't build
+
+19:38.160 --> 19:38.680
+the light rail
+
+19:38.680 --> 19:39.860
+using highly toxic
+
+19:39.860 --> 19:40.800
+materials that will
+
+19:40.800 --> 19:41.520
+poison the groundwater.
+
+19:41.800 --> 19:42.780
+And we can't seize
+
+19:42.780 --> 19:43.400
+people's homes
+
+19:43.400 --> 19:44.340
+without due process.
+
+19:44.580 --> 19:45.520
+You filter out
+
+19:45.520 --> 19:46.100
+the variations
+
+19:46.100 --> 19:46.900
+that violate
+
+19:46.900 --> 19:47.560
+your boundaries.
+
+19:48.500 --> 19:49.260
+So, we have the idea
+
+19:49.260 --> 19:50.540
+and we've removed
+
+19:50.540 --> 19:51.420
+the illegal
+
+19:51.420 --> 19:52.580
+or unethical versions
+
+19:52.580 --> 19:52.900
+of it.
+
+19:53.200 --> 19:53.920
+What is step three?
+
+19:54.280 --> 19:55.340
+The third operation
+
+19:55.340 --> 19:56.380
+is bind.
+
+19:56.780 --> 19:57.280
+This is where
+
+19:57.280 --> 19:58.180
+the abstract idea
+
+19:58.180 --> 19:59.160
+starts hitting reality.
+
+19:59.900 --> 20:00.700
+You take the
+
+20:00.700 --> 20:01.580
+surviving proposal
+
+20:01.580 --> 20:03.140
+and you relate it
+
+20:03.140 --> 20:04.300
+to specific agents,
+
+20:04.680 --> 20:05.320
+to resources,
+
+20:05.520 --> 20:06.220
+and to obligations.
+
+20:06.920 --> 20:07.260
+You say,
+
+20:07.460 --> 20:08.340
+the Department of
+
+20:08.340 --> 20:08.720
+Transportation
+
+20:08.720 --> 20:09.280
+will spend
+
+20:09.280 --> 20:10.020
+$500 million
+
+20:10.020 --> 20:10.840
+over the next
+
+20:10.840 --> 20:11.340
+10 years.
+
+20:11.340 --> 20:12.360
+under these
+
+20:12.360 --> 20:13.420
+specific oversight
+
+20:13.420 --> 20:14.760
+rules to achieve
+
+20:14.760 --> 20:16.260
+this light rail network.
+
+20:16.660 --> 20:17.260
+You are binding
+
+20:17.260 --> 20:18.060
+the purpose
+
+20:18.060 --> 20:19.300
+to the real world.
+
+20:20.000 --> 20:20.640
+Distinguish,
+
+20:20.860 --> 20:21.360
+refuse,
+
+20:21.760 --> 20:22.080
+bind.
+
+20:22.560 --> 20:24.180
+What is the fourth step?
+
+20:24.700 --> 20:25.540
+The fourth operation
+
+20:25.540 --> 20:26.160
+is verify.
+
+20:26.880 --> 20:27.660
+This is the ultimate
+
+20:27.660 --> 20:28.660
+test of legitimacy.
+
+20:29.660 --> 20:30.560
+Before you break ground,
+
+20:30.760 --> 20:31.480
+you have to check
+
+20:31.480 --> 20:32.440
+whether the commitment
+
+20:32.440 --> 20:33.580
+you've just structured
+
+20:33.580 --> 20:34.920
+is actually warranted.
+
+20:35.260 --> 20:36.320
+Did the city council
+
+20:36.320 --> 20:37.000
+follow the right
+
+20:37.000 --> 20:37.920
+authorization rules?
+
+20:38.120 --> 20:38.660
+Do they hold
+
+20:38.660 --> 20:39.260
+public hearings?
+
+20:39.260 --> 20:40.520
+Do they actually
+
+20:40.520 --> 20:41.160
+have the legal
+
+20:41.160 --> 20:41.960
+standing and the
+
+20:41.960 --> 20:42.900
+consent of the governed
+
+20:42.900 --> 20:44.140
+to spend this money
+
+20:44.140 --> 20:44.780
+in this way?
+
+20:45.120 --> 20:45.920
+You are verifying
+
+20:45.920 --> 20:46.980
+the authority
+
+20:46.980 --> 20:48.160
+behind the binding.
+
+20:48.820 --> 20:49.480
+And if it passes
+
+20:49.480 --> 20:50.080
+verification,
+
+20:50.460 --> 20:51.460
+we hit the final step?
+
+20:51.860 --> 20:52.200
+Yes.
+
+20:52.360 --> 20:53.760
+The fifth operation
+
+20:53.760 --> 20:54.700
+is collapse.
+
+20:55.440 --> 20:56.320
+This is the point
+
+20:56.320 --> 20:56.900
+of no return.
+
+20:57.580 --> 20:58.700
+You collapse the field
+
+20:58.700 --> 20:59.880
+of all other possibilities
+
+20:59.880 --> 21:01.480
+into one definitive
+
+21:01.480 --> 21:02.040
+continuation.
+
+21:02.040 --> 21:03.880
+You sign the contracts,
+
+21:04.380 --> 21:04.940
+the bulldozers
+
+21:04.940 --> 21:05.500
+start moving,
+
+21:05.940 --> 21:06.740
+and that choice
+
+21:06.740 --> 21:08.140
+enters the historical record.
+
+21:08.800 --> 21:09.280
+Distinguish,
+
+21:09.500 --> 21:09.880
+refuse,
+
+21:10.320 --> 21:10.700
+bind,
+
+21:11.280 --> 21:11.620
+verify,
+
+21:12.360 --> 21:12.820
+collapse.
+
+21:13.040 --> 21:13.640
+I mean,
+
+21:13.680 --> 21:14.300
+it seems like
+
+21:14.300 --> 21:15.460
+a very logical,
+
+21:16.160 --> 21:17.160
+safe flow.
+
+21:17.700 --> 21:18.520
+If we follow
+
+21:18.520 --> 21:19.120
+this grammar,
+
+21:19.300 --> 21:20.600
+how do we get trapped?
+
+21:20.960 --> 21:21.540
+The paper notes
+
+21:21.540 --> 21:22.120
+that failures
+
+21:22.120 --> 21:22.900
+can be located
+
+21:22.900 --> 21:23.960
+at specific stages
+
+21:23.960 --> 21:24.700
+in this grammar.
+
+21:24.860 --> 21:25.260
+For example,
+
+21:25.780 --> 21:27.040
+a premature collapse
+
+21:27.040 --> 21:28.320
+is when you sign
+
+21:28.320 --> 21:28.920
+the contracts
+
+21:28.920 --> 21:29.940
+and start the bulldozers
+
+21:29.940 --> 21:31.120
+before you've actually
+
+21:31.120 --> 21:32.640
+finished the verification phase.
+
+21:33.680 --> 21:34.240
+That sounds bad.
+
+21:34.680 --> 21:35.440
+It is.
+
+21:36.400 --> 21:37.640
+But the massive failure point,
+
+21:37.700 --> 21:38.500
+the one most relevant
+
+21:38.500 --> 21:39.920
+to creating a reverse centaur,
+
+21:40.120 --> 21:41.340
+is a profound error
+
+21:41.340 --> 21:42.860
+in the bind stage.
+
+21:43.140 --> 21:43.800
+The paper calls it
+
+21:43.800 --> 21:45.660
+binding beyond scope.
+
+21:46.440 --> 21:47.800
+Binding beyond scope.
+
+21:48.260 --> 21:49.360
+Let's break that down.
+
+21:49.400 --> 21:50.140
+What does that actually
+
+21:50.140 --> 21:51.120
+look like in practice?
+
+21:51.760 --> 21:52.320
+This happens
+
+21:52.320 --> 21:52.960
+when a purpose
+
+21:52.960 --> 21:54.280
+or a specific way
+
+21:54.280 --> 21:55.080
+of valuing things
+
+21:55.080 --> 21:56.380
+is attached to a domain
+
+21:56.380 --> 21:57.040
+of obligations
+
+21:57.040 --> 21:57.860
+that its original
+
+21:57.860 --> 21:59.160
+authorization never covered.
+
+21:59.440 --> 22:00.420
+Let's shift away
+
+22:00.420 --> 22:01.100
+from the city council
+
+22:01.100 --> 22:02.060
+and look at a hospital.
+
+22:02.380 --> 22:02.660
+Okay.
+
+22:03.660 --> 22:05.180
+Imagine a hospital administrator
+
+22:05.180 --> 22:06.280
+develops a highly
+
+22:06.280 --> 22:06.980
+effective metric
+
+22:06.980 --> 22:07.540
+for measuring
+
+22:07.540 --> 22:08.160
+the efficiency
+
+22:08.160 --> 22:09.780
+of the hospital's
+
+22:09.780 --> 22:10.500
+laundry service.
+
+22:10.960 --> 22:11.520
+It measures
+
+22:11.520 --> 22:12.400
+the turnaround time
+
+22:12.400 --> 22:13.100
+of clean sheets
+
+22:13.100 --> 22:13.940
+per dollar spent.
+
+22:14.880 --> 22:15.680
+For the laundry room,
+
+22:15.740 --> 22:16.860
+it's a perfectly verified
+
+22:16.860 --> 22:17.640
+useful metric.
+
+22:18.160 --> 22:18.440
+Okay.
+
+22:18.440 --> 22:19.360
+It's a good metric
+
+22:19.360 --> 22:20.800
+for washing sheets.
+
+22:21.220 --> 22:21.540
+But then,
+
+22:22.140 --> 22:23.180
+binding beyond scope
+
+22:23.180 --> 22:24.000
+happens when that
+
+22:24.000 --> 22:24.840
+same administrator
+
+22:24.840 --> 22:25.780
+takes that exact
+
+22:25.780 --> 22:26.940
+same efficiency metric,
+
+22:27.360 --> 22:28.440
+turnaround time per dollar,
+
+22:28.660 --> 22:29.360
+and applies it
+
+22:29.360 --> 22:30.440
+to evaluate the performance
+
+22:30.440 --> 22:31.740
+of the psychiatric
+
+22:31.740 --> 22:32.720
+nursing staff
+
+22:32.720 --> 22:34.060
+or the palliative
+
+22:34.060 --> 22:34.760
+care doctors.
+
+22:35.140 --> 22:35.820
+Oh, wow.
+
+22:36.100 --> 22:36.760
+They take a metric
+
+22:36.760 --> 22:37.660
+designed for linen
+
+22:37.660 --> 22:39.040
+and use it to measure
+
+22:39.040 --> 22:39.740
+human empathy.
+
+22:40.200 --> 22:40.640
+Exactly.
+
+22:40.640 --> 22:41.640
+The valuation
+
+22:41.640 --> 22:42.980
+expands its jurisdiction
+
+22:42.980 --> 22:44.040
+into a zone
+
+22:44.040 --> 22:44.840
+where it was never
+
+22:44.840 --> 22:45.740
+verified to belong.
+
+22:46.320 --> 22:47.380
+It has bound itself
+
+22:47.380 --> 22:48.300
+beyond its scope.
+
+22:48.300 --> 22:50.160
+Now, if rival purposes
+
+22:50.160 --> 22:51.600
+like a nurse
+
+22:51.600 --> 22:52.580
+wanting to sit
+
+22:52.580 --> 22:53.340
+and hold the hand
+
+22:53.340 --> 22:54.120
+of a dying patient
+
+22:54.120 --> 22:54.660
+for an hour
+
+22:54.660 --> 22:56.420
+are formally excluded
+
+22:56.420 --> 22:57.600
+simply because they
+
+22:57.600 --> 22:58.500
+failed to maximize
+
+22:58.500 --> 22:59.520
+the turnaround
+
+22:59.520 --> 23:00.520
+efficiency metric,
+
+23:01.000 --> 23:01.960
+then the hospital's
+
+23:01.960 --> 23:03.480
+entire refusal stage
+
+23:03.480 --> 23:04.860
+is operating under
+
+23:04.860 --> 23:05.720
+an illegitimate,
+
+23:06.060 --> 23:07.020
+unverified authority.
+
+23:07.220 --> 23:08.360
+The nurse is told
+
+23:08.360 --> 23:09.260
+they are failing
+
+23:09.260 --> 23:09.880
+at their job,
+
+23:09.960 --> 23:10.680
+not because they are
+
+23:10.680 --> 23:11.280
+a bad nurse,
+
+23:11.360 --> 23:13.400
+but because a laundry metric
+
+23:13.400 --> 23:14.720
+has hijacked the system.
+
+23:15.240 --> 23:16.320
+And the terrifying part
+
+23:16.320 --> 23:17.560
+is that the collapse stage,
+
+23:17.560 --> 23:18.860
+the actual daily work
+
+23:18.860 --> 23:19.900
+being done in the hospital,
+
+23:20.360 --> 23:21.180
+might look highly
+
+23:21.180 --> 23:22.020
+efficient on paper.
+
+23:22.600 --> 23:23.280
+The beds are turned
+
+23:23.280 --> 23:23.880
+over fast,
+
+23:24.320 --> 23:26.080
+but the entire operation
+
+23:26.080 --> 23:27.220
+remains completely
+
+23:27.220 --> 23:28.200
+inadmissible
+
+23:28.200 --> 23:29.640
+because the foundation
+
+23:29.640 --> 23:30.440
+is flawed.
+
+23:31.040 --> 23:32.060
+That is exactly it.
+
+23:32.560 --> 23:33.680
+And this is the formal,
+
+23:33.880 --> 23:34.660
+structural counterpart
+
+23:34.660 --> 23:35.560
+to Nietzsche's warning.
+
+23:36.180 --> 23:37.460
+The means of preserving
+
+23:37.460 --> 23:38.600
+one very specific
+
+23:38.600 --> 23:39.340
+kind of life
+
+23:39.340 --> 23:40.220
+or organization,
+
+23:40.760 --> 23:41.680
+like an efficient
+
+23:41.680 --> 23:42.440
+laundry room,
+
+23:42.920 --> 23:44.140
+becomes a universal,
+
+23:44.400 --> 23:45.360
+tyrannical standard
+
+23:45.360 --> 23:46.520
+imposed on every
+
+23:46.520 --> 23:47.540
+other kind of life.
+
+23:47.560 --> 23:48.320
+But I want to play
+
+23:48.320 --> 23:49.280
+devil's advocate here
+
+23:49.280 --> 23:49.800
+for a second.
+
+23:49.900 --> 23:50.240
+Go for it.
+
+23:50.360 --> 23:51.180
+Because we are talking
+
+23:51.180 --> 23:52.080
+about delegation
+
+23:52.080 --> 23:53.440
+and automatic behavior
+
+23:53.440 --> 23:54.180
+as if they are
+
+23:54.180 --> 23:55.400
+inherently dangerous.
+
+23:56.020 --> 23:57.300
+But isn't delegation
+
+23:57.300 --> 24:00.280
+strictly neurologically necessary?
+
+24:00.620 --> 24:00.840
+I mean,
+
+24:00.920 --> 24:02.480
+we relegate complex tasks
+
+24:02.480 --> 24:03.400
+to automatic habit
+
+24:03.400 --> 24:03.840
+all the time.
+
+24:04.140 --> 24:05.040
+Think about when you first
+
+24:05.040 --> 24:05.860
+learned to drive a car.
+
+24:06.220 --> 24:07.600
+You were hyper aware
+
+24:07.600 --> 24:08.680
+of every single mirror,
+
+24:08.940 --> 24:10.120
+the pressure on the gas pedal,
+
+24:10.200 --> 24:11.380
+the angle of the steering wheel.
+
+24:11.460 --> 24:12.560
+You were explicitly
+
+24:12.560 --> 24:13.760
+deliberating every
+
+24:13.760 --> 24:14.780
+micro movement.
+
+24:14.900 --> 24:15.880
+It was exhausting.
+
+24:16.160 --> 24:16.960
+Oh yeah, terrifying.
+
+24:16.960 --> 24:18.320
+But after 10 years,
+
+24:18.640 --> 24:19.740
+you drive 30 miles
+
+24:19.740 --> 24:21.400
+to work on absolute autopilot.
+
+24:21.540 --> 24:22.780
+You aren't authorizing
+
+24:22.780 --> 24:23.640
+every single turn
+
+24:23.640 --> 24:24.080
+of the wheel.
+
+24:24.300 --> 24:25.860
+You are just executing.
+
+24:26.280 --> 24:27.480
+That kind of automatic
+
+24:27.480 --> 24:29.040
+delegation is a good thing,
+
+24:29.080 --> 24:29.500
+isn't it?
+
+24:30.040 --> 24:32.260
+Floxian entirely agrees
+
+24:32.260 --> 24:32.600
+with you
+
+24:32.600 --> 24:33.740
+and addresses this
+
+24:33.740 --> 24:35.100
+explicitly using a framework
+
+24:35.100 --> 24:37.160
+called aspect relegation theory.
+
+24:38.000 --> 24:38.920
+Moving explicit
+
+24:38.920 --> 24:40.160
+conscious deliberation
+
+24:40.160 --> 24:42.020
+into automatic relegated skill
+
+24:42.020 --> 24:43.600
+is absolutely necessary.
+
+24:44.020 --> 24:44.820
+It is an efficiency,
+
+24:44.820 --> 24:46.260
+not a lapse in morality.
+
+24:47.340 --> 24:48.860
+The fact that successful repetition
+
+24:48.860 --> 24:50.380
+allows you to move execution
+
+24:50.380 --> 24:51.440
+into automatic control
+
+24:51.440 --> 24:52.580
+is a feature
+
+24:52.580 --> 24:53.740
+of human cognition,
+
+24:54.060 --> 24:54.620
+not a bug.
+
+24:55.300 --> 24:56.240
+Okay, so if driving
+
+24:56.240 --> 24:57.840
+on autopilot is fine,
+
+24:58.120 --> 24:59.760
+where is the structural trap?
+
+25:00.380 --> 25:01.580
+The problem is never
+
+25:01.580 --> 25:03.360
+the automatic execution itself.
+
+25:04.020 --> 25:05.240
+The problem is the assumption
+
+25:05.240 --> 25:07.140
+that flawless automatic execution
+
+25:07.140 --> 25:08.720
+somehow retroactively
+
+25:08.720 --> 25:10.180
+handles the authorization.
+
+25:10.180 --> 25:12.580
+The paper formalizes this
+
+25:12.580 --> 25:13.380
+in its very first
+
+25:13.380 --> 25:14.280
+mathematical proof,
+
+25:14.460 --> 25:15.040
+Theorem 1,
+
+25:15.420 --> 25:16.020
+the independence
+
+25:16.020 --> 25:16.860
+of execution
+
+25:16.860 --> 25:17.760
+and authorization.
+
+25:18.140 --> 25:18.820
+I love this part.
+
+25:19.180 --> 25:20.620
+Let's walk through Theorem 1.
+
+25:21.000 --> 25:21.980
+How does the math
+
+25:21.980 --> 25:22.920
+actually prove
+
+25:22.920 --> 25:23.620
+that execution
+
+25:23.620 --> 25:24.360
+and authorization
+
+25:24.360 --> 25:25.140
+are independent?
+
+25:25.800 --> 25:26.960
+The theorem asks us
+
+25:26.960 --> 25:27.500
+to imagine
+
+25:27.500 --> 25:28.840
+a mathematical model
+
+25:28.840 --> 25:29.660
+with two different
+
+25:29.660 --> 25:30.400
+states of the world.
+
+25:30.880 --> 25:31.500
+Let's use your
+
+25:31.500 --> 25:32.460
+house building example.
+
+25:32.880 --> 25:33.200
+Perfect.
+
+25:33.660 --> 25:34.340
+In State 1,
+
+25:34.740 --> 25:35.620
+a master carpenter
+
+25:35.620 --> 25:36.540
+pursues the purpose
+
+25:36.540 --> 25:37.440
+of building a house,
+
+25:37.440 --> 25:38.660
+and they have
+
+25:38.660 --> 25:39.240
+the legitimate
+
+25:39.240 --> 25:40.180
+authorized standing
+
+25:40.180 --> 25:40.780
+to do so.
+
+25:41.160 --> 25:42.180
+The client hired them,
+
+25:42.540 --> 25:43.440
+the permits are signed.
+
+25:44.220 --> 25:45.360
+The authorization record
+
+25:45.360 --> 25:46.340
+for State 1 says
+
+25:46.340 --> 25:47.700
+1 for true.
+
+25:48.740 --> 25:49.420
+Okay, State 1
+
+25:49.420 --> 25:51.020
+is fully authorized 1.
+
+25:51.380 --> 25:52.960
+Now, in State 2,
+
+25:53.480 --> 25:54.780
+that exact same carpenter
+
+25:54.780 --> 25:56.400
+pursues the exact same purpose
+
+25:56.400 --> 25:57.420
+of building the house,
+
+25:57.980 --> 25:58.980
+but they have absolutely
+
+25:58.980 --> 26:00.460
+no authorization to do so.
+
+26:01.060 --> 26:02.240
+They just drove onto
+
+26:02.240 --> 26:03.380
+a stranger's empty lot
+
+26:03.380 --> 26:04.060
+and started building.
+
+26:04.840 --> 26:06.140
+The authorization record
+
+26:06.140 --> 26:07.080
+for State 2 says
+
+26:07.080 --> 26:08.760
+0 for false.
+
+26:09.460 --> 26:09.960
+Two states,
+
+26:10.460 --> 26:11.240
+one authorized,
+
+26:11.460 --> 26:12.140
+one trespassing.
+
+26:12.620 --> 26:13.840
+Now, here is the key.
+
+26:14.720 --> 26:15.660
+In both states,
+
+26:16.140 --> 26:17.220
+the carpenter executes
+
+26:17.220 --> 26:18.580
+the task flawlessly.
+
+26:19.260 --> 26:20.640
+The physical execution record,
+
+26:21.360 --> 26:22.500
+the speed of the hammering,
+
+26:22.580 --> 26:23.620
+the accuracy of the cuts,
+
+26:23.860 --> 26:24.720
+the physical movements
+
+26:24.720 --> 26:25.280
+of the worker,
+
+26:25.680 --> 26:26.660
+it is completely
+
+26:26.660 --> 26:28.000
+mathematically identical
+
+26:28.000 --> 26:28.920
+in both State 1
+
+26:28.920 --> 26:29.780
+and State 2.
+
+26:30.240 --> 26:31.260
+The house looks
+
+26:31.260 --> 26:32.220
+exactly the same.
+
+26:32.620 --> 26:33.600
+The joints are perfect
+
+26:33.600 --> 26:34.520
+in both scenarios.
+
+26:34.940 --> 26:35.280
+Exactly.
+
+26:35.740 --> 26:35.960
+Now,
+
+26:35.960 --> 26:37.160
+if you try to create
+
+26:37.160 --> 26:38.240
+a mathematical function,
+
+26:38.640 --> 26:39.260
+a predicate,
+
+26:39.620 --> 26:40.700
+that only looks
+
+26:40.700 --> 26:42.080
+at the execution record,
+
+26:42.340 --> 26:43.500
+it is going to output
+
+26:43.500 --> 26:44.580
+the exact same value
+
+26:44.580 --> 26:45.280
+in both states.
+
+26:46.120 --> 26:47.280
+Because the execution
+
+26:47.280 --> 26:48.160
+date is identical,
+
+26:48.700 --> 26:49.640
+the function will say,
+
+26:50.140 --> 26:51.660
+execution is perfect.
+
+26:52.340 --> 26:53.180
+The inspector looks
+
+26:53.180 --> 26:54.060
+at the joints and says,
+
+26:54.140 --> 26:54.260
+yep,
+
+26:54.340 --> 26:55.380
+100% execution.
+
+26:55.380 --> 26:57.180
+But the true authorization
+
+26:57.180 --> 26:58.600
+status is a 1
+
+26:58.600 --> 26:59.340
+in the first state
+
+26:59.340 --> 27:01.020
+and is 0 in the second.
+
+27:02.380 --> 27:03.500
+A single output value
+
+27:03.500 --> 27:04.100
+derived solely
+
+27:04.100 --> 27:05.200
+from the execution record
+
+27:05.200 --> 27:06.360
+cannot possibly equal
+
+27:06.360 --> 27:09.060
+both 1 and 0 simultaneously.
+
+27:09.940 --> 27:10.280
+Therefore,
+
+27:11.360 --> 27:12.320
+the theorem mathematically
+
+27:12.320 --> 27:13.500
+proves that no amount
+
+27:13.500 --> 27:14.420
+of execution data,
+
+27:14.720 --> 27:15.580
+no matter how flawless,
+
+27:16.040 --> 27:16.920
+no matter how efficient,
+
+27:17.580 --> 27:18.860
+can ever retroactively
+
+27:18.860 --> 27:20.000
+determine if the authorization
+
+27:20.000 --> 27:21.820
+was valid in the first place.
+
+27:21.820 --> 27:24.420
+Execution cannot determine
+
+27:24.420 --> 27:25.080
+authorization.
+
+27:25.760 --> 27:27.220
+You can't just point
+
+27:27.220 --> 27:27.960
+to how smoothly
+
+27:27.960 --> 27:28.820
+a system is running
+
+27:28.820 --> 27:29.100
+and say,
+
+27:29.340 --> 27:29.540
+see,
+
+27:29.680 --> 27:30.280
+it's fine.
+
+27:30.820 --> 27:31.860
+The fact that you are
+
+27:31.860 --> 27:32.940
+a highly efficient,
+
+27:33.100 --> 27:34.180
+perfectly greased gear
+
+27:34.180 --> 27:34.880
+in the machine
+
+27:34.880 --> 27:35.860
+does not prove
+
+27:35.860 --> 27:36.380
+that the machine
+
+27:36.380 --> 27:37.860
+actually belongs there.
+
+27:37.860 --> 27:40.620
+And this mathematical reality
+
+27:40.620 --> 27:41.420
+is exactly how
+
+27:41.420 --> 27:42.680
+the reverse centaur transition
+
+27:42.680 --> 27:43.560
+sneaks up on us.
+
+27:44.400 --> 27:45.600
+Success at a relegated,
+
+27:45.960 --> 27:47.020
+automatic task
+
+27:47.020 --> 27:48.560
+is used as an excuse
+
+27:48.560 --> 27:49.360
+by the system
+
+27:49.360 --> 27:51.100
+and by ourselves
+
+27:51.100 --> 27:52.740
+to stop examining
+
+27:52.740 --> 27:54.120
+the ends of that task.
+
+27:55.260 --> 27:56.960
+Authority slips away quietly
+
+27:56.960 --> 27:58.340
+through convenience,
+
+27:58.840 --> 28:00.020
+through accumulated dependence,
+
+28:00.580 --> 28:01.700
+and simply because
+
+28:01.700 --> 28:03.140
+it becomes too cognitively
+
+28:03.140 --> 28:04.380
+or politically costly
+
+28:04.380 --> 28:06.280
+to return to explicit judgment.
+
+28:06.280 --> 28:07.960
+We just keep driving the car
+
+28:07.960 --> 28:09.260
+because we are so good
+
+28:09.260 --> 28:09.760
+at driving
+
+28:09.760 --> 28:11.040
+and we forget to ask
+
+28:11.040 --> 28:11.860
+if we want to go
+
+28:11.860 --> 28:12.760
+to the destination.
+
+28:13.560 --> 28:13.800
+So,
+
+28:14.440 --> 28:15.860
+if we want to delegate safely,
+
+28:16.080 --> 28:17.700
+if we want to use habits
+
+28:17.700 --> 28:18.420
+and algorithms
+
+28:18.420 --> 28:20.020
+without being captured by them,
+
+28:20.360 --> 28:21.320
+what is the rule?
+
+28:21.760 --> 28:23.080
+We can't just hand off a task
+
+28:23.080 --> 28:23.960
+and walk away forever.
+
+28:24.440 --> 28:25.780
+Flyaction concludes this section
+
+28:25.780 --> 28:26.480
+by stating that
+
+28:26.480 --> 28:27.720
+an admissible delegation
+
+28:27.720 --> 28:29.620
+must have strictly defined
+
+28:29.620 --> 28:30.780
+return conditions.
+
+28:31.280 --> 28:32.580
+When you relegate a task
+
+28:32.580 --> 28:33.760
+to automatic execution,
+
+28:34.160 --> 28:34.900
+you have to specify
+
+28:34.900 --> 28:37.040
+exactly when that automatic execution
+
+28:37.040 --> 28:37.780
+must stop
+
+28:37.780 --> 28:39.640
+and explicit human judgment
+
+28:39.640 --> 28:40.780
+must reactivate.
+
+28:40.980 --> 28:41.720
+Give me an example
+
+28:41.720 --> 28:42.680
+of a return condition.
+
+28:43.240 --> 28:44.040
+A return condition
+
+28:44.040 --> 28:45.380
+is a tripwire.
+
+28:45.880 --> 28:46.860
+It could be triggered
+
+28:46.860 --> 28:48.120
+when underlying assumptions
+
+28:48.120 --> 28:49.180
+change in the environment.
+
+28:49.760 --> 28:50.480
+It could be triggered
+
+28:50.480 --> 28:52.160
+when two fundamental obligations
+
+28:52.160 --> 28:53.020
+suddenly conflict
+
+28:53.020 --> 28:53.600
+with each other.
+
+28:53.980 --> 28:55.020
+Or it could be triggered
+
+28:55.020 --> 28:55.680
+when the controller
+
+28:55.680 --> 28:56.540
+starts exceeding
+
+28:56.540 --> 28:57.400
+its original scope,
+
+28:57.480 --> 28:59.020
+like the hospital administrator
+
+28:59.020 --> 29:00.540
+trying to use laundry metrics
+
+29:00.540 --> 29:01.340
+on the nursing staff.
+
+29:01.900 --> 29:02.940
+When that happens,
+
+29:02.940 --> 29:04.860
+the system must force a return
+
+29:04.860 --> 29:05.620
+to explicit,
+
+29:06.020 --> 29:07.040
+conscious authorization.
+
+29:07.540 --> 29:08.680
+That makes perfect sense.
+
+29:08.960 --> 29:09.980
+But I can hear people
+
+29:09.980 --> 29:10.740
+listening to this
+
+29:10.740 --> 29:11.220
+and saying,
+
+29:11.520 --> 29:12.000
+okay, sure,
+
+29:12.600 --> 29:14.020
+execution doesn't prove authorization,
+
+29:14.360 --> 29:15.380
+but let's be real.
+
+29:15.620 --> 29:16.520
+What about the results?
+
+29:16.920 --> 29:17.560
+If a system,
+
+29:17.740 --> 29:18.080
+let's say,
+
+29:18.440 --> 29:20.080
+a sweeping economic policy
+
+29:20.080 --> 29:21.280
+or a corporate algorithm,
+
+29:21.820 --> 29:22.900
+generates massive,
+
+29:23.200 --> 29:24.420
+undeniable benefits,
+
+29:24.520 --> 29:25.520
+like record profits,
+
+29:25.720 --> 29:26.580
+higher crop yields,
+
+29:26.720 --> 29:28.120
+a massive increase in GDP,
+
+29:28.780 --> 29:30.480
+doesn't that high score
+
+29:30.480 --> 29:32.660
+essentially justify its existence?
+
+29:33.140 --> 29:34.100
+In our society,
+
+29:34.200 --> 29:35.420
+if it works and makes money,
+
+29:35.600 --> 29:36.860
+we usually give it a pass.
+
+29:37.020 --> 29:37.600
+We do, yeah.
+
+29:37.920 --> 29:39.580
+But the paper vehemently disagrees,
+
+29:39.780 --> 29:40.400
+which brings us
+
+29:40.400 --> 29:42.080
+to the core of optimization
+
+29:42.080 --> 29:44.460
+and the danger of the scoreboard.
+
+29:44.620 --> 29:45.800
+This takes us into theorems
+
+29:45.800 --> 29:46.660
+two and three,
+
+29:47.020 --> 29:47.820
+which deal directly
+
+29:47.820 --> 29:48.920
+with benefit optimization.
+
+29:49.780 --> 29:51.280
+And you hit the nail on the head.
+
+29:51.400 --> 29:51.860
+In our culture,
+
+29:51.940 --> 29:53.980
+a high score is often treated
+
+29:53.980 --> 29:55.540
+as the ultimate permission slip.
+
+29:55.740 --> 29:57.100
+If you maximize the benefit,
+
+29:57.500 --> 29:58.680
+you are considered untouchable.
+
+29:58.800 --> 29:59.340
+You are the winner.
+
+29:59.340 --> 30:01.080
+It makes me think of a dynamic
+
+30:01.080 --> 30:02.740
+you see in complex video games,
+
+30:02.900 --> 30:05.040
+particularly in speedrunning communities.
+
+30:05.220 --> 30:05.500
+Oh, yeah.
+
+30:06.200 --> 30:07.780
+Imagine you are playing a game
+
+30:07.780 --> 30:09.620
+and your ultimate stated goal
+
+30:09.620 --> 30:10.660
+is to maximize your score
+
+30:10.660 --> 30:11.480
+as fast as possible.
+
+30:11.820 --> 30:12.940
+You play for a while
+
+30:12.940 --> 30:14.560
+and then you discover a glitch
+
+30:14.560 --> 30:15.920
+in the game's underlying code.
+
+30:16.520 --> 30:18.340
+Maybe if you wedge your character
+
+30:18.340 --> 30:20.380
+against a specific corner of a wall
+
+30:20.380 --> 30:21.460
+and jump repeatedly,
+
+30:21.960 --> 30:23.220
+the physics engine breaks
+
+30:23.220 --> 30:25.460
+and your score just ticks up to infinity,
+
+30:26.180 --> 30:27.420
+you have maximized your score
+
+30:27.420 --> 30:29.060
+faster and more efficiently
+
+30:29.060 --> 30:30.020
+than anyone else
+
+30:30.020 --> 30:31.040
+who is playing the game normally.
+
+30:31.540 --> 30:33.420
+You are at the top of the leaderboard,
+
+30:33.640 --> 30:34.940
+but you got there
+
+30:34.940 --> 30:36.080
+by exploiting a glitch
+
+30:36.080 --> 30:37.720
+that breaks the actual rules
+
+30:37.720 --> 30:38.580
+of the game universe.
+
+30:39.280 --> 30:40.380
+Your high score doesn't mean
+
+30:40.380 --> 30:41.520
+you are the most skilled player.
+
+30:41.960 --> 30:43.240
+It just means you stepped outside
+
+30:43.240 --> 30:44.640
+the legitimate bounds of the game
+
+30:44.640 --> 30:45.780
+to manipulate the output.
+
+30:46.040 --> 30:47.960
+That is a phenomenal analogy
+
+30:47.960 --> 30:49.240
+for what theorem two
+
+30:49.240 --> 30:50.320
+is mathematically proving.
+
+30:51.380 --> 30:52.900
+Theorem two is explicitly titled
+
+30:52.900 --> 30:55.160
+benefit maximization is insufficient.
+
+30:55.160 --> 30:57.640
+It proves that just because
+
+30:57.640 --> 30:58.980
+an action maximizes
+
+30:58.980 --> 31:00.180
+an estimated benefit,
+
+31:00.600 --> 31:02.420
+that fact alone does not make
+
+31:02.420 --> 31:03.640
+the action what the paper
+
+31:03.640 --> 31:04.700
+calls admissible.
+
+31:05.540 --> 31:06.020
+Admissible.
+
+31:06.340 --> 31:07.940
+We've used that word a few times.
+
+31:08.220 --> 31:09.960
+What exactly does admissibility
+
+31:09.960 --> 31:11.500
+mean in this structural context?
+
+31:11.960 --> 31:13.860
+Admissibility is a comprehensive check
+
+31:13.860 --> 31:15.240
+on the entire provenance
+
+31:15.240 --> 31:15.760
+of an action.
+
+31:16.360 --> 31:17.240
+It doesn't just look
+
+31:17.240 --> 31:17.880
+at the final score.
+
+31:18.680 --> 31:19.900
+It asks a series
+
+31:19.900 --> 31:21.240
+of structural questions.
+
+31:22.000 --> 31:23.380
+Are the initial objectives
+
+31:23.380 --> 31:24.280
+actually valid?
+
+31:25.280 --> 31:25.940
+Are the estimates
+
+31:25.940 --> 31:26.940
+of the benefits fair
+
+31:26.940 --> 31:27.700
+and unbiased?
+
+31:28.400 --> 31:29.840
+Were any required
+
+31:29.840 --> 31:31.020
+hidden costs
+
+31:31.020 --> 31:32.820
+externalized onto someone else?
+
+31:33.520 --> 31:34.280
+And most importantly,
+
+31:34.500 --> 31:36.040
+does this action violate
+
+31:36.040 --> 31:36.900
+any applicable
+
+31:36.900 --> 31:38.520
+fundamental obligations?
+
+31:39.140 --> 31:40.580
+Like the fundamental
+
+31:40.580 --> 31:41.660
+side constraints
+
+31:41.660 --> 31:42.260
+on the game.
+
+31:42.340 --> 31:42.920
+You can't break
+
+31:42.920 --> 31:44.300
+the physics engine to win.
+
+31:44.620 --> 31:44.900
+Yes.
+
+31:45.820 --> 31:46.720
+Theorem two sets up
+
+31:46.720 --> 31:48.840
+a very clear mathematical scenario
+
+31:48.840 --> 31:49.560
+to prove this.
+
+31:50.360 --> 31:52.360
+Imagine you are an organization
+
+31:52.360 --> 31:54.180
+faced with two possible actions.
+
+31:54.820 --> 31:55.260
+Action A
+
+31:55.260 --> 31:56.280
+and Action B.
+
+31:56.900 --> 31:57.820
+You run the projections.
+
+31:58.820 --> 31:59.420
+Action A
+
+31:59.420 --> 32:00.720
+generates a massive,
+
+32:01.180 --> 32:02.740
+towering benefit score.
+
+32:03.420 --> 32:04.180
+It is the clear,
+
+32:04.620 --> 32:05.580
+unambiguous winner
+
+32:05.580 --> 32:06.320
+on the scoreboard.
+
+32:07.180 --> 32:07.900
+Action B
+
+32:07.900 --> 32:08.980
+generates a much,
+
+32:09.060 --> 32:09.940
+much lower score.
+
+32:10.500 --> 32:11.380
+It looks inefficient
+
+32:11.380 --> 32:12.080
+by comparison.
+
+32:12.780 --> 32:13.140
+However,
+
+32:13.640 --> 32:14.820
+there is an applicable
+
+32:14.820 --> 32:15.540
+obligation,
+
+32:16.180 --> 32:16.740
+a fundamental,
+
+32:16.960 --> 32:17.200
+ethical,
+
+32:17.200 --> 32:18.520
+or legal rule
+
+32:18.520 --> 32:19.960
+that says a specific
+
+32:19.960 --> 32:21.840
+condition must be met
+
+32:21.840 --> 32:22.400
+for an action
+
+32:22.400 --> 32:23.180
+to be admissible.
+
+32:24.140 --> 32:24.840
+Action B
+
+32:24.840 --> 32:26.600
+meets this fundamental condition.
+
+32:27.540 --> 32:28.200
+Action A,
+
+32:28.520 --> 32:29.020
+in its pursuit
+
+32:29.020 --> 32:29.800
+of the high score,
+
+32:30.400 --> 32:31.020
+violates it.
+
+32:31.840 --> 32:32.480
+So Action A
+
+32:32.480 --> 32:33.300
+breaks the rule
+
+32:33.300 --> 32:34.420
+but gets all the points.
+
+32:34.700 --> 32:35.060
+Exactly.
+
+32:35.880 --> 32:36.740
+The theorem proves
+
+32:36.740 --> 32:37.840
+that because Action A
+
+32:37.840 --> 32:39.520
+violates a necessary condition,
+
+32:40.240 --> 32:41.700
+its admissibility value
+
+32:41.700 --> 32:43.200
+is mathematically zero.
+
+32:43.920 --> 32:44.600
+It does not matter
+
+32:44.600 --> 32:45.860
+if its estimated benefit score
+
+32:45.860 --> 32:46.840
+is a million times
+
+32:46.840 --> 32:47.780
+higher than Action B.
+
+32:48.580 --> 32:49.860
+The unique maximizer
+
+32:49.860 --> 32:51.020
+of the estimated benefit
+
+32:51.020 --> 32:53.040
+is completely inadmissible.
+
+32:53.560 --> 32:54.540
+So a high score cannot,
+
+32:54.860 --> 32:56.740
+under any mathematical circumstance,
+
+32:57.180 --> 32:59.000
+override a fundamental obligation.
+
+32:59.340 --> 32:59.560
+Right.
+
+32:59.880 --> 33:01.840
+And to ground this in philosophy,
+
+33:02.380 --> 33:03.460
+the paper mentions thinkers
+
+33:03.460 --> 33:04.300
+like John Rawls
+
+33:04.300 --> 33:05.080
+and Robert Nozick.
+
+33:05.600 --> 33:06.680
+They championed
+
+33:06.680 --> 33:07.720
+this exact concept,
+
+33:08.180 --> 33:09.320
+often referred to as
+
+33:09.320 --> 33:10.560
+side constraints
+
+33:10.560 --> 33:12.440
+or the separateness
+
+33:12.440 --> 33:13.240
+of persons.
+
+33:13.880 --> 33:14.860
+The core idea
+
+33:14.860 --> 33:16.080
+is that fundamental
+
+33:16.080 --> 33:17.060
+ethical obligations
+
+33:17.060 --> 33:18.660
+like basic human rights
+
+33:18.660 --> 33:20.060
+or individual dignity
+
+33:20.060 --> 33:21.780
+or strict legal boundaries
+
+33:21.780 --> 33:23.280
+act as hard,
+
+33:23.740 --> 33:24.940
+impassable walls
+
+33:24.940 --> 33:26.160
+that constrain
+
+33:26.160 --> 33:26.980
+the maximization
+
+33:26.980 --> 33:27.640
+of a good.
+
+33:28.540 --> 33:29.260
+They are not just
+
+33:29.260 --> 33:30.180
+another variable
+
+33:30.180 --> 33:31.420
+in the math equation
+
+33:31.420 --> 33:32.780
+that you can trade away
+
+33:32.780 --> 33:33.440
+to get a higher
+
+33:33.440 --> 33:34.180
+overall score.
+
+33:34.440 --> 33:35.460
+You can't say,
+
+33:35.820 --> 33:36.560
+well, yes,
+
+33:36.680 --> 33:38.320
+we violated the labor rights
+
+33:38.320 --> 33:39.740
+of 10 warehouse workers
+
+33:39.740 --> 33:40.860
+and they suffered terribly,
+
+33:41.080 --> 33:42.520
+but we increased
+
+33:42.520 --> 33:43.260
+shareholder value
+
+33:43.260 --> 33:44.060
+by 200%,
+
+33:44.060 --> 33:44.660
+so the math
+
+33:44.660 --> 33:45.680
+that's out in our favor.
+
+33:45.920 --> 33:46.280
+Exactly.
+
+33:47.140 --> 33:48.020
+The rights of the workers
+
+33:48.020 --> 33:49.520
+are a side constraint,
+
+33:49.920 --> 33:50.980
+not a tradable commodity.
+
+33:51.600 --> 33:52.380
+A system that just
+
+33:52.380 --> 33:54.180
+blindly optimizes a metric
+
+33:54.180 --> 33:55.360
+without acknowledging
+
+33:55.360 --> 33:56.480
+those side constraints
+
+33:56.480 --> 33:57.720
+has to answer
+
+33:57.720 --> 33:59.940
+a severe structural question.
+
+34:00.640 --> 34:01.220
+Who decided
+
+34:01.220 --> 34:02.780
+that this specific metric,
+
+34:03.160 --> 34:04.480
+like shareholder value
+
+34:04.480 --> 34:05.680
+or click-through rate,
+
+34:05.980 --> 34:06.900
+is the ultimate
+
+34:06.900 --> 34:09.020
+universally authoritative good?
+
+34:09.340 --> 34:10.840
+And whose hidden purposes
+
+34:10.840 --> 34:12.500
+suddenly became authoritative
+
+34:12.500 --> 34:13.660
+when that definition
+
+34:13.660 --> 34:14.420
+was accepted?
+
+34:15.100 --> 34:15.700
+It's the binding
+
+34:15.700 --> 34:17.100
+beyond scope error again,
+
+34:17.260 --> 34:18.540
+but on a massive
+
+34:18.540 --> 34:19.520
+societal scale.
+
+34:19.920 --> 34:20.140
+Yes.
+
+34:20.580 --> 34:21.520
+And I want to ensure
+
+34:21.520 --> 34:22.280
+we frame this
+
+34:22.280 --> 34:23.860
+carefully and impartially,
+
+34:24.000 --> 34:25.100
+just as the paper does.
+
+34:25.520 --> 34:26.480
+The text points out
+
+34:26.480 --> 34:28.140
+that this structural question
+
+34:28.140 --> 34:29.680
+applies universally
+
+34:29.680 --> 34:31.320
+across all ideologies.
+
+34:31.740 --> 34:32.800
+It applies to a rigid
+
+34:32.800 --> 34:33.960
+corporate profit metric.
+
+34:34.580 --> 34:35.760
+It applies to a sweeping
+
+34:35.760 --> 34:37.360
+government utilitarian program.
+
+34:37.820 --> 34:39.460
+It applies to a religious mission.
+
+34:40.000 --> 34:41.420
+The paper even explicitly
+
+34:41.420 --> 34:43.020
+references the effective
+
+34:43.020 --> 34:44.080
+altruism movement
+
+34:44.080 --> 34:45.980
+as a scholarly application
+
+34:45.980 --> 34:46.680
+of this problem.
+
+34:47.340 --> 34:47.360
+Right.
+
+34:47.480 --> 34:49.200
+And just to be absolutely clear
+
+34:49.200 --> 34:49.960
+for you listening,
+
+34:50.200 --> 34:51.680
+we are looking at this structurally.
+
+34:51.920 --> 34:53.380
+We are not taking a political
+
+34:53.380 --> 34:54.380
+or moral side
+
+34:54.380 --> 34:55.160
+on the effective
+
+34:55.160 --> 34:56.860
+altruism movement itself.
+
+34:57.080 --> 34:58.300
+The paper is simply
+
+34:58.300 --> 35:00.160
+emphasizing the structural reality
+
+35:00.160 --> 35:02.060
+that even highly altruistic,
+
+35:02.260 --> 35:03.940
+incredibly benevolent purposes,
+
+35:04.440 --> 35:05.160
+like trying to save
+
+35:05.160 --> 35:06.160
+the maximum number
+
+35:06.160 --> 35:06.900
+of human lives
+
+35:06.900 --> 35:08.360
+possible per dollar spent,
+
+35:08.360 --> 35:10.180
+must still be adopted
+
+35:10.180 --> 35:11.880
+through an admissible process.
+
+35:12.660 --> 35:13.520
+A benevolent purpose
+
+35:13.520 --> 35:14.880
+isn't magically exempt
+
+35:14.880 --> 35:16.720
+from needing legitimate authorization
+
+35:16.720 --> 35:18.660
+and respecting side constraints.
+
+35:18.960 --> 35:20.280
+That is precisely
+
+35:20.280 --> 35:21.140
+Flaxen's point.
+
+35:21.680 --> 35:22.760
+A benevolent purpose
+
+35:22.760 --> 35:23.500
+that is adopted
+
+35:23.500 --> 35:25.000
+through an admissible process
+
+35:25.000 --> 35:26.380
+is fantastic.
+
+35:27.040 --> 35:28.580
+But the sheer benevolence
+
+35:28.580 --> 35:29.220
+of the goal
+
+35:29.220 --> 35:30.300
+doesn't grant you
+
+35:30.300 --> 35:30.920
+a free pass
+
+35:30.920 --> 35:31.920
+to ignore authorization
+
+35:31.920 --> 35:33.420
+and steamroll
+
+35:33.420 --> 35:35.000
+over ethical side constraints.
+
+35:35.560 --> 35:36.000
+The ends
+
+35:36.000 --> 35:37.420
+do not retroactively
+
+35:37.420 --> 35:38.480
+authorize the means.
+
+35:39.020 --> 35:40.060
+Okay, I think
+
+35:40.060 --> 35:41.480
+we have solidly established
+
+35:41.480 --> 35:42.560
+that the highest score
+
+35:42.560 --> 35:43.600
+isn't necessarily
+
+35:43.600 --> 35:44.760
+the right action.
+
+35:45.380 --> 35:46.300
+But if that is true,
+
+35:46.580 --> 35:48.020
+why is it so incredibly easy
+
+35:48.020 --> 35:49.000
+for us to get fooled
+
+35:49.000 --> 35:49.700
+by the score?
+
+35:50.280 --> 35:51.580
+Why do entire corporations,
+
+35:52.080 --> 35:52.400
+governments,
+
+35:52.800 --> 35:53.580
+and individuals
+
+35:53.580 --> 35:54.680
+constantly stare
+
+35:54.680 --> 35:55.540
+at the scoreboard
+
+35:55.540 --> 35:56.740
+and completely forget
+
+35:56.740 --> 35:57.820
+to check the rules?
+
+35:58.280 --> 35:58.880
+That vulnerability
+
+35:58.880 --> 36:00.380
+brings us to theorem four,
+
+36:00.860 --> 36:01.600
+which deals with
+
+36:01.600 --> 36:02.960
+the representation criterion.
+
+36:03.460 --> 36:04.960
+It explains the mathematical,
+
+36:05.340 --> 36:06.120
+cognitive danger
+
+36:06.120 --> 36:07.760
+of relying on scalar numbers.
+
+36:08.080 --> 36:09.140
+A scalar number
+
+36:09.140 --> 36:10.280
+being just a single,
+
+36:10.620 --> 36:11.720
+one-dimensional quantity,
+
+36:12.000 --> 36:13.360
+like a profit margin
+
+36:13.360 --> 36:15.020
+or a body mass index
+
+36:15.020 --> 36:16.240
+or a GDP figure.
+
+36:16.660 --> 36:17.020
+Yes.
+
+36:17.540 --> 36:19.040
+As humans trying to navigate
+
+36:19.040 --> 36:20.620
+a wildly complex world,
+
+36:20.720 --> 36:21.820
+we rely on representations
+
+36:21.820 --> 36:24.360
+to compress complex realities
+
+36:24.360 --> 36:24.940
+into something
+
+36:24.940 --> 36:26.100
+our brains can manage.
+
+36:26.820 --> 36:27.580
+A benefit score
+
+36:27.580 --> 36:28.360
+is a representation
+
+36:28.360 --> 36:29.780
+of an action's value.
+
+36:29.780 --> 36:31.760
+But theorem four
+
+36:31.760 --> 36:33.500
+asks a very strict question.
+
+36:34.140 --> 36:35.740
+Under what mathematical conditions
+
+36:35.740 --> 36:36.960
+does a representation
+
+36:36.960 --> 36:38.220
+actually preserve
+
+36:38.220 --> 36:39.180
+the admissibility
+
+36:39.180 --> 36:39.740
+of the thing
+
+36:39.740 --> 36:40.560
+it is measuring?
+
+36:41.400 --> 36:42.060
+When can we actually
+
+36:42.060 --> 36:42.860
+trust the score
+
+36:42.860 --> 36:43.740
+to tell us the truth
+
+36:43.740 --> 36:44.680
+about whether an action
+
+36:44.680 --> 36:45.280
+was allowed?
+
+36:45.740 --> 36:46.660
+The proof shows
+
+36:46.660 --> 36:47.200
+that a function
+
+36:47.200 --> 36:47.780
+of the score
+
+36:47.780 --> 36:49.180
+can only truly represent
+
+36:49.180 --> 36:49.880
+admissibility
+
+36:49.880 --> 36:50.840
+if admissibility
+
+36:50.840 --> 36:51.780
+is constant
+
+36:51.780 --> 36:53.340
+across all actions
+
+36:53.340 --> 36:54.500
+that get the same score.
+
+36:55.080 --> 36:56.060
+The mathematical term
+
+36:56.060 --> 36:56.460
+for this
+
+36:56.460 --> 36:57.920
+is being constant
+
+36:57.920 --> 36:58.900
+on its fibers.
+
+36:59.740 --> 36:59.980
+Okay.
+
+37:00.280 --> 37:02.240
+Constant on its fibers.
+
+37:02.700 --> 37:03.520
+That sounds like
+
+37:03.520 --> 37:04.240
+advanced geometry.
+
+37:04.480 --> 37:05.320
+Let's ground that.
+
+37:05.400 --> 37:05.880
+Walk me through
+
+37:05.880 --> 37:06.760
+exactly what that means.
+
+37:07.180 --> 37:07.860
+Let's use a very
+
+37:07.860 --> 37:08.840
+concrete example.
+
+37:09.280 --> 37:10.360
+Imagine two completely
+
+37:10.360 --> 37:11.620
+different corporate actions
+
+37:11.620 --> 37:12.900
+that both result
+
+37:12.900 --> 37:13.480
+in generating
+
+37:13.480 --> 37:14.720
+exactly $10,000
+
+37:14.720 --> 37:15.420
+in profit.
+
+37:16.180 --> 37:16.940
+The representation
+
+37:16.940 --> 37:17.940
+of both actions,
+
+37:18.300 --> 37:18.960
+their score
+
+37:18.960 --> 37:19.560
+on the spreadsheet,
+
+37:20.000 --> 37:20.680
+is identical,
+
+37:21.180 --> 37:22.460
+a positive $10,000.
+
+37:22.460 --> 37:24.580
+Now, suppose
+
+37:24.580 --> 37:25.260
+action one
+
+37:25.260 --> 37:25.880
+was achieved
+
+37:25.880 --> 37:26.440
+legitimately.
+
+37:27.120 --> 37:28.060
+The company innovated,
+
+37:28.280 --> 37:28.880
+they built a great
+
+37:28.880 --> 37:29.340
+new product,
+
+37:29.460 --> 37:30.140
+people loved it,
+
+37:30.360 --> 37:31.380
+and they made $10,000.
+
+37:32.040 --> 37:32.600
+Okay.
+
+37:33.000 --> 37:33.440
+Action one
+
+37:33.440 --> 37:34.580
+is clearly admissible.
+
+37:35.040 --> 37:36.060
+But action two
+
+37:36.060 --> 37:36.600
+was achieved
+
+37:36.600 --> 37:38.060
+by a factory manager
+
+37:38.060 --> 37:39.600
+deciding to illegally
+
+37:39.600 --> 37:40.700
+dump toxic waste
+
+37:40.700 --> 37:41.660
+into a local river
+
+37:41.660 --> 37:42.440
+in order to cut
+
+37:42.440 --> 37:43.460
+disposal costs.
+
+37:44.100 --> 37:45.560
+That cost-cutting measure
+
+37:45.560 --> 37:46.720
+saved the company
+
+37:46.720 --> 37:47.820
+exactly $10,000.
+
+37:48.460 --> 37:48.880
+Wow.
+
+37:49.060 --> 37:49.300
+Okay.
+
+37:50.000 --> 37:50.740
+So action two
+
+37:50.740 --> 37:52.160
+is wildly inadmissible.
+
+37:52.460 --> 37:53.640
+It violates basic
+
+37:53.640 --> 37:54.740
+legal and moral
+
+37:54.740 --> 37:55.520
+side constraints.
+
+37:55.920 --> 37:56.640
+But look at
+
+37:56.640 --> 37:57.440
+the scalar number.
+
+37:58.060 --> 37:59.580
+The $10,000 profit figure
+
+37:59.580 --> 38:00.760
+is completely
+
+38:00.760 --> 38:02.100
+mathematically identical
+
+38:02.100 --> 38:02.920
+for both actions.
+
+38:03.460 --> 38:04.520
+The representation
+
+38:04.520 --> 38:05.420
+has compressed
+
+38:05.420 --> 38:06.020
+the reality
+
+38:06.020 --> 38:06.900
+so severely
+
+38:06.900 --> 38:08.680
+that it has squashed
+
+38:08.680 --> 38:10.140
+and utterly destroyed
+
+38:10.140 --> 38:11.060
+the vital distinction
+
+38:11.060 --> 38:11.900
+between the
+
+38:11.900 --> 38:12.880
+authorized action
+
+38:12.880 --> 38:14.320
+and the horrific
+
+38:14.320 --> 38:15.320
+unauthorized one.
+
+38:15.900 --> 38:16.800
+Because an admissible
+
+38:16.800 --> 38:17.860
+action and an
+
+38:17.860 --> 38:18.760
+inadmissible action
+
+38:18.760 --> 38:19.440
+can both result
+
+38:19.440 --> 38:20.620
+in the exact same score,
+
+38:21.360 --> 38:22.000
+admissibility
+
+38:22.000 --> 38:23.140
+is not constant
+
+38:23.140 --> 38:24.000
+on the fiber
+
+38:24.000 --> 38:24.520
+of the score
+
+38:24.520 --> 38:25.140
+$10,000.
+
+38:25.740 --> 38:26.300
+Therefore,
+
+38:26.500 --> 38:27.280
+the score itself
+
+38:27.280 --> 38:28.120
+is structurally
+
+38:28.120 --> 38:29.360
+incapable of telling
+
+38:29.360 --> 38:30.280
+you if the action
+
+38:30.280 --> 38:31.020
+was admissible.
+
+38:31.680 --> 38:32.660
+You cannot look
+
+38:32.660 --> 38:33.200
+at a spreadsheet
+
+38:33.200 --> 38:34.160
+and know if you
+
+38:34.160 --> 38:35.080
+are doing the right thing.
+
+38:35.520 --> 38:35.920
+Exactly.
+
+38:36.600 --> 38:37.300
+The single number
+
+38:37.300 --> 38:38.120
+hides the history
+
+38:38.120 --> 38:38.880
+of how the number
+
+38:38.880 --> 38:39.540
+was achieved.
+
+38:40.000 --> 38:40.460
+The score
+
+38:40.460 --> 38:42.100
+squashes the context.
+
+38:43.220 --> 38:44.520
+An overly simple metric
+
+38:44.520 --> 38:45.940
+doesn't just measure reality.
+
+38:46.340 --> 38:47.640
+It acts as a camouflage
+
+38:47.640 --> 38:49.160
+for unauthorized purposes.
+
+38:49.660 --> 38:50.380
+That is chilling.
+
+38:50.980 --> 38:52.580
+We build our entire world
+
+38:52.580 --> 38:53.580
+around maximizing
+
+38:53.580 --> 38:54.460
+these squashed
+
+38:54.460 --> 38:55.780
+out-of-context metrics.
+
+38:56.320 --> 38:57.180
+So we know
+
+38:57.180 --> 38:58.160
+a high score
+
+38:58.160 --> 38:58.680
+can mask
+
+38:58.680 --> 38:59.760
+an unauthorized purpose.
+
+39:00.240 --> 39:01.000
+We know execution
+
+39:01.000 --> 39:02.220
+doesn't prove authorization.
+
+39:02.900 --> 39:03.740
+What happens
+
+39:03.740 --> 39:04.700
+when the illusion breaks?
+
+39:05.380 --> 39:05.860
+What happens
+
+39:05.860 --> 39:06.400
+when you finally
+
+39:06.400 --> 39:07.020
+look around,
+
+39:07.500 --> 39:08.100
+you realize
+
+39:08.100 --> 39:08.600
+the context
+
+39:08.600 --> 39:09.420
+has been squashed,
+
+39:09.480 --> 39:09.980
+and you realize
+
+39:09.980 --> 39:11.580
+you are a reverse centaur
+
+39:11.580 --> 39:12.640
+serving a metric
+
+39:12.640 --> 39:13.440
+you never chose?
+
+39:13.920 --> 39:14.900
+You want out.
+
+39:14.900 --> 39:15.960
+But what does
+
+39:15.960 --> 39:16.780
+trying to escape
+
+39:16.780 --> 39:17.780
+actually look like
+
+39:17.780 --> 39:18.440
+structurally?
+
+39:19.140 --> 39:19.800
+This takes us
+
+39:19.800 --> 39:20.460
+to the geometry
+
+39:20.460 --> 39:21.100
+of choices
+
+39:21.100 --> 39:22.240
+and the concept
+
+39:22.240 --> 39:23.440
+of corrective reachability
+
+39:23.440 --> 39:24.820
+and excluded cuts.
+
+39:25.300 --> 39:26.140
+To explain how we get
+
+39:26.140 --> 39:27.080
+physically, legally,
+
+39:27.180 --> 39:28.720
+or organizationally trapped,
+
+39:29.380 --> 39:30.160
+Flagson shifts
+
+39:30.160 --> 39:30.820
+the methodology
+
+39:30.820 --> 39:32.160
+from epistemology
+
+39:32.160 --> 39:33.700
+into graph theory.
+
+39:34.440 --> 39:35.040
+This is where
+
+39:35.040 --> 39:36.040
+we literally map out
+
+39:36.040 --> 39:36.640
+the geometry
+
+39:36.640 --> 39:37.440
+of the trap.
+
+39:38.040 --> 39:38.620
+We are looking
+
+39:38.620 --> 39:39.160
+at the layout
+
+39:39.160 --> 39:39.860
+of our choices
+
+39:39.860 --> 39:40.720
+as a network
+
+39:40.720 --> 39:42.040
+of nodes and pathways.
+
+39:42.580 --> 39:43.140
+I want to make sure
+
+39:43.140 --> 39:44.240
+I can visualize this.
+
+39:44.240 --> 39:45.280
+How should I picture
+
+39:45.280 --> 39:45.820
+this graph?
+
+39:46.560 --> 39:48.520
+Imagine a massive whiteboard.
+
+39:49.060 --> 39:50.140
+Every possible state
+
+39:50.140 --> 39:51.160
+of your organization
+
+39:51.160 --> 39:52.700
+or your career
+
+39:52.700 --> 39:54.500
+or your life
+
+39:54.500 --> 39:55.860
+is a single dot
+
+39:55.860 --> 39:56.600
+on that whiteboard.
+
+39:57.020 --> 39:58.000
+These dots are called
+
+39:58.000 --> 39:59.760
+vertices in graph theory.
+
+40:00.420 --> 40:01.900
+Now, draw lines
+
+40:01.900 --> 40:03.380
+connecting those dots
+
+40:03.380 --> 40:04.600
+wherever it is
+
+40:04.600 --> 40:05.640
+operationally
+
+40:05.640 --> 40:06.840
+or physically feasible
+
+40:06.840 --> 40:07.560
+to move from
+
+40:07.560 --> 40:08.640
+one state to another.
+
+40:09.180 --> 40:10.740
+This entire tangled
+
+40:10.740 --> 40:11.700
+web of lines
+
+40:11.700 --> 40:12.080
+is called
+
+40:12.080 --> 40:13.620
+the feasible graph.
+
+40:13.620 --> 40:14.700
+It represents
+
+40:14.700 --> 40:15.760
+everything you can
+
+40:15.760 --> 40:16.540
+physically do
+
+40:16.540 --> 40:17.580
+in the universe.
+
+40:17.900 --> 40:19.360
+Okay, so I am
+
+40:19.360 --> 40:20.120
+at the dot labeled
+
+40:20.120 --> 40:20.880
+current job.
+
+40:21.180 --> 40:22.320
+I can draw a line
+
+40:22.320 --> 40:23.140
+to the dot labeled
+
+40:23.140 --> 40:24.080
+stay at my job.
+
+40:24.400 --> 40:25.260
+I can draw a line
+
+40:25.260 --> 40:26.460
+to quit my job.
+
+40:26.860 --> 40:28.040
+I can also draw a line
+
+40:28.040 --> 40:29.160
+to steal all
+
+40:29.160 --> 40:30.020
+the office computers
+
+40:30.020 --> 40:30.500
+and sell them
+
+40:30.500 --> 40:31.220
+on the black market
+
+40:31.220 --> 40:32.200
+or set the building
+
+40:32.200 --> 40:32.640
+on fire.
+
+40:32.900 --> 40:33.800
+Those are all
+
+40:33.800 --> 40:34.880
+physically feasible
+
+40:34.880 --> 40:35.920
+moves I could make today.
+
+40:36.440 --> 40:36.560
+Right.
+
+40:37.000 --> 40:38.000
+But obviously
+
+40:38.000 --> 40:39.400
+you can't just do
+
+40:39.400 --> 40:40.120
+anything that is
+
+40:40.120 --> 40:41.000
+physically possible.
+
+40:41.000 --> 40:42.340
+the controller
+
+40:42.340 --> 40:42.960
+of the system
+
+40:42.960 --> 40:43.920
+your boss
+
+40:43.920 --> 40:45.500
+the software constraints
+
+40:45.500 --> 40:46.140
+of your computer
+
+40:46.140 --> 40:47.200
+the local police force
+
+40:47.200 --> 40:48.540
+they place limits
+
+40:48.540 --> 40:48.920
+on you.
+
+40:49.480 --> 40:50.240
+They take an eraser
+
+40:50.240 --> 40:50.960
+to the whiteboard
+
+40:50.960 --> 40:51.580
+and they erase
+
+40:51.580 --> 40:52.780
+a bunch of those lines.
+
+40:53.220 --> 40:54.400
+What is left over
+
+40:54.400 --> 40:55.200
+is called
+
+40:55.200 --> 40:56.260
+the permitted graph.
+
+40:56.940 --> 40:57.700
+These are the moves
+
+40:57.700 --> 40:58.180
+the controller
+
+40:58.180 --> 40:59.200
+actually allows you
+
+40:59.200 --> 40:59.620
+to make
+
+40:59.620 --> 41:00.680
+without triggering
+
+41:00.680 --> 41:01.800
+a massive penalty
+
+41:01.800 --> 41:03.700
+or physical intervention.
+
+41:04.460 --> 41:05.240
+Okay, so the path
+
+41:05.240 --> 41:06.680
+to steal all the computers
+
+41:06.680 --> 41:07.920
+is heavily erased.
+
+41:08.140 --> 41:08.900
+It's feasible
+
+41:08.900 --> 41:09.980
+but definitely
+
+41:09.980 --> 41:10.660
+not permitted.
+
+41:11.120 --> 41:12.060
+Then we have a third
+
+41:12.060 --> 41:13.760
+even more restricted graph.
+
+41:14.200 --> 41:14.860
+This is the
+
+41:14.860 --> 41:16.600
+obligation preserving graph.
+
+41:17.280 --> 41:17.940
+This takes
+
+41:17.940 --> 41:18.820
+the permitted graph
+
+41:18.820 --> 41:20.180
+and further erases
+
+41:20.180 --> 41:21.120
+any lines that
+
+41:21.120 --> 41:22.020
+while allowed
+
+41:22.020 --> 41:22.820
+by the controller
+
+41:22.820 --> 41:24.080
+would cause you
+
+41:24.080 --> 41:24.500
+to violate
+
+41:24.500 --> 41:25.060
+your own
+
+41:25.060 --> 41:26.120
+fundamental ethical
+
+41:26.120 --> 41:26.640
+legal
+
+41:26.640 --> 41:28.260
+or professional obligations.
+
+41:29.000 --> 41:29.880
+Ah, I see.
+
+41:30.360 --> 41:31.320
+So if I am
+
+41:31.320 --> 41:32.160
+a surgeon
+
+41:32.160 --> 41:33.480
+and I am in the middle
+
+41:33.480 --> 41:34.700
+of a complex operation
+
+41:34.700 --> 41:36.120
+the physical path
+
+41:36.120 --> 41:37.100
+to quit my job
+
+41:37.100 --> 41:37.900
+and walk out the door
+
+41:37.900 --> 41:38.380
+right now
+
+41:38.380 --> 41:39.580
+might be feasible
+
+41:39.580 --> 41:41.040
+and it might not be
+
+41:41.040 --> 41:41.920
+strictly illegal
+
+41:41.920 --> 41:43.400
+in a right-to-work state
+
+41:43.400 --> 41:45.000
+but it is erased
+
+41:45.000 --> 41:45.840
+from the obligation
+
+41:45.840 --> 41:46.880
+preserving graph
+
+41:46.880 --> 41:48.280
+because walking out
+
+41:48.280 --> 41:48.680
+would mean
+
+41:48.680 --> 41:49.560
+abandoning a patient
+
+41:49.560 --> 41:50.440
+and violating
+
+41:50.440 --> 41:51.060
+my fundamental
+
+41:51.060 --> 41:51.960
+medical oath.
+
+41:52.340 --> 41:52.780
+Exactly.
+
+41:53.600 --> 41:54.380
+So we have
+
+41:54.380 --> 41:55.560
+these nested layers
+
+41:55.560 --> 41:56.240
+of reality.
+
+41:56.800 --> 41:58.100
+What is physically feasible
+
+41:58.100 --> 41:59.920
+what the system permits
+
+41:59.920 --> 42:01.160
+and what actually
+
+42:01.160 --> 42:02.420
+preserves your obligations.
+
+42:03.200 --> 42:04.020
+Now for a system
+
+42:04.020 --> 42:04.740
+to be considered
+
+42:04.740 --> 42:05.980
+structurally legitimate
+
+42:05.980 --> 42:07.400
+it must preserve
+
+42:07.400 --> 42:08.500
+at least one pathway
+
+42:08.500 --> 42:09.720
+in that final graph
+
+42:09.720 --> 42:10.860
+that leads to
+
+42:10.860 --> 42:11.860
+what Flyxion calls
+
+42:11.860 --> 42:12.900
+a corrective state.
+
+42:13.740 --> 42:14.620
+A corrective state
+
+42:14.620 --> 42:15.560
+is a safe harbor.
+
+42:16.220 --> 42:17.000
+It is a place
+
+42:17.000 --> 42:17.820
+where you can revise
+
+42:17.820 --> 42:18.620
+contest
+
+42:18.620 --> 42:19.480
+or terminate
+
+42:19.480 --> 42:20.280
+a bad purpose
+
+42:20.280 --> 42:21.840
+while still successfully
+
+42:21.840 --> 42:22.440
+discharging
+
+42:22.440 --> 42:23.220
+all your obligations.
+
+42:23.660 --> 42:25.340
+It's the emergency exit
+
+42:25.340 --> 42:25.880
+that lets you
+
+42:25.880 --> 42:26.600
+leave the building
+
+42:26.600 --> 42:27.740
+without burning it down
+
+42:27.740 --> 42:28.960
+or leaving anyone behind.
+
+42:29.420 --> 42:29.680
+Yes.
+
+42:30.000 --> 42:31.120
+And this brings us
+
+42:31.120 --> 42:31.960
+to theorem 5
+
+42:31.960 --> 42:33.000
+the theorem
+
+42:33.000 --> 42:34.240
+of the excluded cut
+
+42:34.240 --> 42:35.280
+which defines
+
+42:35.280 --> 42:36.480
+exactly mathematically
+
+42:36.480 --> 42:37.460
+what it means
+
+42:37.460 --> 42:38.040
+to be trapped.
+
+42:38.560 --> 42:39.520
+If you were standing
+
+42:39.520 --> 42:40.540
+at a particular state
+
+42:40.540 --> 42:41.280
+on the whiteboard
+
+42:41.280 --> 42:42.300
+and there is
+
+42:42.300 --> 42:43.320
+absolutely no
+
+42:43.320 --> 42:44.440
+continuous path
+
+42:44.440 --> 42:45.900
+in the permitted graph
+
+42:45.900 --> 42:46.400
+that leads
+
+42:46.400 --> 42:47.400
+to a corrective state
+
+42:47.400 --> 42:49.040
+the theorem proves
+
+42:49.040 --> 42:49.500
+there must be
+
+42:49.500 --> 42:50.000
+a boundary
+
+42:50.000 --> 42:51.000
+a cut
+
+42:51.000 --> 42:52.720
+completely surrounding you.
+
+42:53.340 --> 42:53.700
+A cut
+
+42:53.700 --> 42:54.620
+in the graph.
+
+42:55.020 --> 42:55.220
+Yes.
+
+42:55.600 --> 42:56.500
+There is a perimeter
+
+42:56.500 --> 42:57.280
+drawn around
+
+42:57.280 --> 42:58.120
+your current state
+
+42:58.120 --> 42:59.440
+where every single line
+
+42:59.440 --> 43:00.180
+that leads outward
+
+43:00.180 --> 43:00.980
+towards correction
+
+43:00.980 --> 43:02.400
+has been explicitly
+
+43:02.400 --> 43:03.160
+identified
+
+43:03.160 --> 43:04.340
+and severed
+
+43:04.340 --> 43:05.060
+by the controller.
+
+43:05.760 --> 43:07.060
+It is a mathematical quarantine.
+
+43:07.740 --> 43:09.440
+It is a structural certificate
+
+43:09.440 --> 43:10.720
+that you are trapped.
+
+43:11.460 --> 43:12.200
+You are not trapped
+
+43:12.200 --> 43:13.300
+because you lack skill
+
+43:13.300 --> 43:14.820
+or because you've failed
+
+43:14.820 --> 43:15.460
+at execution
+
+43:15.460 --> 43:17.020
+but because the controller
+
+43:17.020 --> 43:18.620
+has methodically anticipated
+
+43:18.620 --> 43:19.600
+and destroyed
+
+43:19.600 --> 43:20.760
+every single exit path.
+
+43:21.360 --> 43:22.260
+But let me challenge this.
+
+43:22.980 --> 43:23.840
+What if the system
+
+43:23.840 --> 43:24.880
+has a built-in exit?
+
+43:25.380 --> 43:26.380
+Think about a driver
+
+43:26.380 --> 43:27.780
+for a gig economy app
+
+43:27.780 --> 43:28.900
+or even just a standard
+
+43:28.900 --> 43:29.380
+employment.
+
+43:29.440 --> 43:31.200
+There is literally
+
+43:31.200 --> 43:32.300
+a button on the app
+
+43:32.300 --> 43:32.820
+that says
+
+43:32.820 --> 43:34.020
+deactivate account.
+
+43:34.800 --> 43:35.840
+There is a formal process
+
+43:35.840 --> 43:36.420
+to hand in your
+
+43:36.420 --> 43:37.160
+two weeks notice.
+
+43:37.760 --> 43:38.480
+Doesn't the existence
+
+43:38.480 --> 43:39.340
+of that button
+
+43:39.340 --> 43:40.980
+prove that I have a path?
+
+43:41.540 --> 43:42.120
+Doesn't that prove
+
+43:42.120 --> 43:42.900
+I am not trapped
+
+43:42.900 --> 43:44.120
+behind an excluded cut?
+
+43:44.720 --> 43:45.940
+That is the exact illusion
+
+43:45.940 --> 43:46.480
+that keeps
+
+43:46.480 --> 43:47.800
+these systems functioning
+
+43:47.800 --> 43:49.020
+and it is what
+
+43:49.020 --> 43:49.820
+theorem six
+
+43:49.820 --> 43:51.300
+meticulously dismantles.
+
+43:52.100 --> 43:52.600
+Theorem six
+
+43:52.600 --> 43:53.600
+is about the profound
+
+43:53.600 --> 43:55.520
+danger of the nominal exit.
+
+43:56.200 --> 43:56.980
+Nominal meaning
+
+43:56.980 --> 43:58.600
+an exit in name only.
+
+43:58.600 --> 43:59.340
+Exactly.
+
+43:59.740 --> 44:00.480
+The theorem asks
+
+44:00.480 --> 44:01.540
+a rigorous question.
+
+44:02.360 --> 44:03.660
+Does the mere existence
+
+44:03.660 --> 44:05.260
+of an exit transition
+
+44:05.260 --> 44:06.680
+in the permitted graph
+
+44:06.680 --> 44:08.600
+automatically guarantee
+
+44:08.600 --> 44:09.320
+that you can reach
+
+44:09.320 --> 44:10.460
+a corrective state
+
+44:10.460 --> 44:11.860
+in the obligation
+
+44:11.860 --> 44:12.920
+preserving graph?
+
+44:13.640 --> 44:15.000
+The mathematical proof
+
+44:15.000 --> 44:15.800
+shows that it
+
+44:15.800 --> 44:17.200
+emphatically does not.
+
+44:17.200 --> 44:17.960
+Why not?
+
+44:18.180 --> 44:18.580
+Why not?
+
+44:19.080 --> 44:20.140
+If the door is open
+
+44:20.140 --> 44:20.820
+why can't I walk
+
+44:20.820 --> 44:21.260
+through it?
+
+44:21.760 --> 44:22.340
+Because taking
+
+44:22.340 --> 44:23.280
+that permitted exit
+
+44:23.280 --> 44:24.640
+might force you
+
+44:24.640 --> 44:25.580
+to destroy your own
+
+44:25.580 --> 44:26.220
+life to do it.
+
+44:26.960 --> 44:28.380
+Imagine the Gig Economy
+
+44:28.380 --> 44:29.280
+app gives you
+
+44:29.280 --> 44:30.560
+a permitted exit line
+
+44:30.560 --> 44:32.260
+the deactivate button.
+
+44:32.940 --> 44:33.940
+You can technically
+
+44:33.940 --> 44:34.420
+press it
+
+44:34.420 --> 44:35.440
+but what if the way
+
+44:35.440 --> 44:36.600
+the system is designed
+
+44:36.600 --> 44:37.920
+means that pressing
+
+44:37.920 --> 44:38.420
+that button
+
+44:38.420 --> 44:39.980
+instantly forfeits
+
+44:39.980 --> 44:40.480
+the money you've
+
+44:40.480 --> 44:41.420
+already earned that month.
+
+44:41.820 --> 44:43.200
+Money you desperately
+
+44:43.200 --> 44:43.960
+need to pay rent
+
+44:43.960 --> 44:44.660
+and feed your family.
+
+44:44.660 --> 44:47.360
+Or what if you are
+
+44:47.360 --> 44:48.260
+an engineer
+
+44:48.260 --> 44:49.240
+at a tech company
+
+44:49.240 --> 44:50.160
+and you realize
+
+44:50.160 --> 44:51.020
+the product you were
+
+44:51.020 --> 44:51.920
+building is deeply
+
+44:51.920 --> 44:52.760
+unethical.
+
+44:53.220 --> 44:54.120
+You want to blow
+
+44:54.120 --> 44:54.500
+the whistle
+
+44:54.500 --> 44:56.040
+but your employment
+
+44:56.040 --> 44:56.960
+contract includes
+
+44:56.960 --> 44:58.280
+an incredibly aggressive
+
+44:58.280 --> 44:59.360
+non-disclosure agreement
+
+44:59.360 --> 45:00.760
+and a non-compete clause.
+
+45:01.580 --> 45:02.840
+The permitted exit
+
+45:02.840 --> 45:03.680
+quitting
+
+45:03.680 --> 45:05.120
+means you will be
+
+45:05.120 --> 45:06.000
+sued into bankruptcy
+
+45:06.000 --> 45:06.800
+and banned from
+
+45:06.800 --> 45:07.620
+working in your industry
+
+45:07.620 --> 45:08.320
+for two years.
+
+45:09.040 --> 45:09.500
+In those cases
+
+45:09.500 --> 45:10.440
+the nominal exit
+
+45:10.440 --> 45:11.580
+is physically permitted
+
+45:11.580 --> 45:11.980
+yes
+
+45:11.980 --> 45:13.700
+but it does not exist
+
+45:13.700 --> 45:14.760
+in the obligation
+
+45:14.760 --> 45:15.720
+preserving graph
+
+45:15.720 --> 45:17.280
+because taking it
+
+45:17.280 --> 45:18.380
+means violating
+
+45:18.380 --> 45:19.120
+your obligation
+
+45:19.120 --> 45:20.140
+to feed your children
+
+45:20.140 --> 45:21.220
+or destroying
+
+45:21.220 --> 45:21.840
+your career.
+
+45:22.660 --> 45:23.520
+So it's a fake exit.
+
+45:24.080 --> 45:24.800
+It's a trap door.
+
+45:25.580 --> 45:26.280
+It is a completely
+
+45:26.280 --> 45:27.060
+fake exit.
+
+45:27.380 --> 45:27.940
+It forces you
+
+45:27.940 --> 45:28.740
+to choose between
+
+45:28.740 --> 45:30.120
+remaining a compliant
+
+45:30.120 --> 45:31.160
+reverse centaur
+
+45:31.160 --> 45:32.320
+or triggering
+
+45:32.320 --> 45:33.680
+a catastrophic breach
+
+45:33.680 --> 45:34.480
+of your duties
+
+45:34.480 --> 45:35.180
+and livelihood.
+
+45:36.100 --> 45:37.300
+That is not a true
+
+45:37.300 --> 45:37.960
+corrective path.
+
+45:38.220 --> 45:39.500
+A genuine corrective state
+
+45:39.500 --> 45:40.440
+must include
+
+45:40.440 --> 45:41.460
+a feasible way
+
+45:41.460 --> 45:43.000
+to safely wind down
+
+45:43.000 --> 45:43.660
+your commitments.
+
+45:44.420 --> 45:45.340
+If the only way out
+
+45:45.340 --> 45:46.100
+is mutually assured
+
+45:46.100 --> 45:46.620
+destruction
+
+45:46.620 --> 45:48.820
+you are still trapped
+
+45:48.820 --> 45:50.040
+behind the excluded cut.
+
+45:50.520 --> 45:52.300
+That is incredibly insidious
+
+45:52.300 --> 45:53.160
+because the system
+
+45:53.160 --> 45:54.320
+can point to the
+
+45:54.320 --> 45:55.620
+deactivate button
+
+45:55.620 --> 45:56.080
+and say
+
+45:56.080 --> 45:56.680
+look
+
+45:56.680 --> 45:57.660
+you're free to leave
+
+45:57.660 --> 45:58.360
+at any time
+
+45:58.360 --> 45:59.860
+you're choosing to stay.
+
+46:00.120 --> 46:01.640
+It uses the illusion
+
+46:01.640 --> 46:03.000
+of the nominal exit
+
+46:03.000 --> 46:04.380
+to mask the reality
+
+46:04.380 --> 46:05.540
+of the excluded cut.
+
+46:06.200 --> 46:07.100
+And this doesn't
+
+46:07.100 --> 46:07.620
+usually happen
+
+46:07.620 --> 46:08.440
+all at once, right?
+
+46:08.740 --> 46:09.740
+The paper details
+
+46:09.740 --> 46:10.440
+how this loss
+
+46:10.440 --> 46:11.460
+of agency happens
+
+46:11.460 --> 46:12.360
+gradually.
+
+46:13.060 --> 46:14.200
+Yes, Flyxion explores
+
+46:14.200 --> 46:15.820
+this slow suffocation
+
+46:15.820 --> 46:18.020
+in theorems 8, 9, and 10
+
+46:18.020 --> 46:19.160
+which detail
+
+46:19.160 --> 46:19.780
+what they call
+
+46:19.780 --> 46:20.860
+the regenerative
+
+46:20.860 --> 46:21.940
+account of decline.
+
+46:23.000 --> 46:24.380
+Decline in a complex system
+
+46:24.380 --> 46:25.460
+rarely looks like
+
+46:25.460 --> 46:26.880
+a dramatic sudden explosion.
+
+46:27.660 --> 46:28.120
+It is usually
+
+46:28.120 --> 46:29.680
+a slow, subtle,
+
+46:29.900 --> 46:31.180
+bureaucratic contraction
+
+46:31.180 --> 46:33.080
+of your possible futures.
+
+46:33.780 --> 46:34.460
+How does the math
+
+46:34.460 --> 46:35.300
+actually map out
+
+46:35.300 --> 46:35.880
+that decline?
+
+46:36.220 --> 46:36.960
+Theorem 8 looks
+
+46:36.960 --> 46:37.520
+at the mechanics
+
+46:37.520 --> 46:38.360
+of what happens
+
+46:38.360 --> 46:39.140
+when a controller
+
+46:39.140 --> 46:40.360
+slowly adds more
+
+46:40.360 --> 46:41.760
+and more exclusions
+
+46:41.760 --> 46:42.420
+to the graph
+
+46:42.420 --> 46:42.980
+over time.
+
+46:43.800 --> 46:44.340
+The proof shows
+
+46:44.340 --> 46:45.440
+that adding exclusions
+
+46:45.440 --> 46:46.920
+strictly and irreversibly
+
+46:46.920 --> 46:47.700
+shrinks the set
+
+46:47.700 --> 46:48.780
+of corrective options
+
+46:48.780 --> 46:49.620
+available to you.
+
+46:50.040 --> 46:50.680
+Every time a new
+
+46:50.680 --> 46:51.580
+corporate policy
+
+46:51.580 --> 46:52.080
+is introduced
+
+46:52.080 --> 46:52.560
+that says
+
+46:52.560 --> 46:53.680
+you can't do this
+
+46:53.680 --> 46:54.520
+without three levels
+
+46:54.520 --> 46:55.100
+of approval
+
+46:55.100 --> 46:56.240
+or every time
+
+46:56.240 --> 46:57.180
+a new software update
+
+46:57.180 --> 46:58.180
+removes a manual
+
+46:58.180 --> 46:59.080
+override button
+
+46:59.080 --> 47:01.180
+a line is quietly
+
+47:01.180 --> 47:02.560
+erased from your graph.
+
+47:03.500 --> 47:04.400
+Your world of choices
+
+47:04.400 --> 47:05.160
+is shrinking
+
+47:05.160 --> 47:06.380
+one memo
+
+47:06.380 --> 47:07.140
+at a time.
+
+47:07.140 --> 47:08.460
+And theorems 9
+
+47:08.460 --> 47:09.000
+and 10
+
+47:09.000 --> 47:09.980
+turn this process
+
+47:09.980 --> 47:10.840
+into a mathematically
+
+47:10.840 --> 47:11.540
+measurable
+
+47:11.540 --> 47:12.740
+depletion horizon.
+
+47:13.500 --> 47:13.900
+They apply
+
+47:13.900 --> 47:14.820
+continuous measures
+
+47:14.820 --> 47:15.580
+like calculus
+
+47:15.580 --> 47:17.080
+and discrete counting
+
+47:17.080 --> 47:18.460
+to show a terrifying
+
+47:18.460 --> 47:19.020
+reality.
+
+47:19.800 --> 47:20.200
+If the rate
+
+47:20.200 --> 47:21.040
+at which your capacity
+
+47:21.040 --> 47:22.380
+to revise your purposes
+
+47:22.380 --> 47:23.520
+is being destroyed
+
+47:23.520 --> 47:25.440
+is consistently greater
+
+47:25.440 --> 47:25.940
+than the rate
+
+47:25.940 --> 47:26.440
+at which you are
+
+47:26.440 --> 47:27.460
+building new capacities
+
+47:27.460 --> 47:28.980
+you will inevitably
+
+47:28.980 --> 47:29.600
+hit zero.
+
+47:30.300 --> 47:30.740
+A finite
+
+47:30.740 --> 47:31.720
+depletion horizon.
+
+47:32.180 --> 47:32.700
+Your agency
+
+47:32.700 --> 47:34.180
+literally runs out
+
+47:34.180 --> 47:34.760
+like sand
+
+47:34.760 --> 47:35.600
+in an hourglass.
+
+47:35.600 --> 47:36.820
+It's strict
+
+47:36.820 --> 47:38.000
+mathematical bookkeeping.
+
+47:38.420 --> 47:39.100
+If the net rate
+
+47:39.100 --> 47:40.200
+of your revision capacity
+
+47:40.200 --> 47:41.040
+is negative
+
+47:41.040 --> 47:42.080
+for long enough
+
+47:42.080 --> 47:43.200
+you will eventually
+
+47:43.200 --> 47:43.720
+find yourself
+
+47:43.720 --> 47:44.180
+in a state
+
+47:44.180 --> 47:45.900
+where no corrective task
+
+47:45.900 --> 47:47.440
+is geometrically possible.
+
+47:48.060 --> 47:48.760
+You are fully
+
+47:48.760 --> 47:50.320
+completely captured.
+
+47:50.800 --> 47:51.520
+And this is the most
+
+47:51.520 --> 47:52.120
+crucial point.
+
+47:52.620 --> 47:53.880
+Increasing your task output
+
+47:53.880 --> 47:55.120
+getting more efficient
+
+47:55.120 --> 47:56.260
+working harder
+
+47:56.260 --> 47:57.740
+getting a higher score
+
+47:57.740 --> 47:58.340
+on the metrics
+
+47:58.340 --> 47:59.480
+does absolutely nothing
+
+47:59.480 --> 48:00.580
+to stop this depletion.
+
+48:00.960 --> 48:02.060
+Because task output
+
+48:02.060 --> 48:03.220
+and revision capacity
+
+48:03.220 --> 48:04.980
+are two totally separate
+
+48:04.980 --> 48:06.480
+mathematically distinct
+
+48:06.480 --> 48:06.900
+variables.
+
+48:07.680 --> 48:08.180
+You can be working
+
+48:08.180 --> 48:09.320
+faster and faster
+
+48:09.320 --> 48:10.240
+you can be breaking
+
+48:10.240 --> 48:11.160
+company records
+
+48:11.160 --> 48:12.580
+completely unaware
+
+48:12.580 --> 48:13.640
+that the walls
+
+48:13.640 --> 48:14.660
+are closing in on you.
+
+48:15.000 --> 48:15.860
+Which brings us
+
+48:15.860 --> 48:16.620
+to a part of the paper
+
+48:16.620 --> 48:17.200
+that genuinely
+
+48:17.200 --> 48:17.980
+kept me awake.
+
+48:18.480 --> 48:19.420
+We have talked about
+
+48:19.420 --> 48:19.860
+the physical
+
+48:19.860 --> 48:20.780
+and legal traps
+
+48:20.780 --> 48:21.960
+but what if you are
+
+48:21.960 --> 48:22.580
+trapped in this
+
+48:22.580 --> 48:23.400
+depleted state
+
+48:23.400 --> 48:24.960
+behind an excluded cut
+
+48:24.960 --> 48:26.880
+serving an unverified purpose
+
+48:26.880 --> 48:27.960
+but you feel
+
+48:27.960 --> 48:28.980
+completely free.
+
+48:29.300 --> 48:29.900
+This is where
+
+48:29.900 --> 48:30.700
+Flaxen executes
+
+48:30.700 --> 48:31.980
+a brilliant pivot.
+
+48:31.980 --> 48:33.460
+We move from
+
+48:33.460 --> 48:33.960
+the physical
+
+48:33.960 --> 48:35.140
+geometry of choices
+
+48:35.140 --> 48:36.680
+into the psychology
+
+48:36.680 --> 48:38.200
+and epistemology
+
+48:38.200 --> 48:38.800
+of agency.
+
+48:39.700 --> 48:40.500
+The paper attacks
+
+48:40.500 --> 48:41.060
+the core
+
+48:41.060 --> 48:42.220
+fundamental assumption
+
+48:42.220 --> 48:42.980
+that almost every
+
+48:42.980 --> 48:43.760
+single human being
+
+48:43.760 --> 48:44.540
+makes about themselves.
+
+48:45.260 --> 48:46.060
+If I sincerely
+
+48:46.060 --> 48:47.160
+want this goal
+
+48:47.160 --> 48:48.520
+if I endorse it
+
+48:48.520 --> 48:49.360
+in my own mind
+
+48:49.360 --> 48:50.620
+if it feels
+
+48:50.620 --> 48:51.540
+right to me
+
+48:51.540 --> 48:52.820
+then it must be
+
+48:52.820 --> 48:54.200
+my own authentic choice.
+
+48:54.600 --> 48:54.720
+Right.
+
+48:55.360 --> 48:56.680
+If I look inside myself
+
+48:56.680 --> 48:58.040
+if I reflect on my career
+
+48:58.040 --> 48:58.460
+and say
+
+48:58.460 --> 48:59.700
+I love hitting
+
+48:59.700 --> 49:00.240
+these metrics
+
+49:00.240 --> 49:01.340
+I am passionate
+
+49:01.340 --> 49:02.380
+about this corporate mission
+
+49:02.380 --> 49:03.480
+how could I possibly
+
+49:03.480 --> 49:04.060
+be trapped?
+
+49:04.400 --> 49:04.920
+My feelings
+
+49:04.920 --> 49:05.540
+are my own.
+
+49:06.060 --> 49:07.400
+Flaxen uses a concept
+
+49:07.400 --> 49:08.940
+from econometrics
+
+49:08.940 --> 49:09.740
+in Theorem 11
+
+49:09.740 --> 49:10.820
+called historical
+
+49:10.820 --> 49:12.220
+underdetermination
+
+49:12.220 --> 49:13.480
+to completely
+
+49:13.480 --> 49:14.500
+dismantle that assumption.
+
+49:15.340 --> 49:15.780
+It proves that
+
+49:15.780 --> 49:16.420
+our present day
+
+49:16.420 --> 49:17.760
+feelings of compliance
+
+49:17.760 --> 49:19.140
+our inner sense
+
+49:19.140 --> 49:19.860
+of satisfaction
+
+49:19.860 --> 49:21.000
+are merely
+
+49:21.000 --> 49:21.820
+a rendering
+
+49:21.820 --> 49:23.000
+of the system.
+
+49:23.460 --> 49:24.140
+They are not
+
+49:24.140 --> 49:24.680
+a complete
+
+49:24.680 --> 49:26.040
+or reliable account
+
+49:26.040 --> 49:26.860
+of how the system
+
+49:26.860 --> 49:27.860
+actually arose.
+
+49:27.860 --> 49:28.840
+A rendering
+
+49:28.840 --> 49:30.260
+like an image
+
+49:30.260 --> 49:30.740
+generated
+
+49:30.740 --> 49:31.880
+on a computer screen.
+
+49:32.100 --> 49:32.480
+Exactly.
+
+49:33.160 --> 49:33.860
+It's a snapshot
+
+49:33.860 --> 49:34.800
+of the present moment.
+
+49:36.180 --> 49:36.720
+Theorem 11
+
+49:36.720 --> 49:38.020
+asks us to conduct
+
+49:38.020 --> 49:39.120
+another thought experiment.
+
+49:39.960 --> 49:40.280
+Imagine
+
+49:40.280 --> 49:41.600
+two entirely
+
+49:41.600 --> 49:42.700
+different historical
+
+49:42.700 --> 49:43.260
+timelines
+
+49:43.260 --> 49:44.040
+that lead
+
+49:44.040 --> 49:44.620
+to the exact
+
+49:44.620 --> 49:45.200
+same moment.
+
+49:46.000 --> 49:46.420
+Okay.
+
+49:46.860 --> 49:47.560
+I'm picturing it.
+
+49:48.060 --> 49:49.020
+In History 1
+
+49:49.020 --> 49:50.160
+you were presented
+
+49:50.160 --> 49:51.020
+with a wide array
+
+49:51.020 --> 49:51.520
+of options.
+
+49:51.960 --> 49:53.040
+You deliberated freely
+
+49:53.040 --> 49:53.880
+you weighed
+
+49:53.880 --> 49:54.680
+the pros and cons
+
+49:54.680 --> 49:55.280
+and you chose
+
+49:55.280 --> 49:55.680
+a purpose
+
+49:55.680 --> 49:56.500
+based on your own
+
+49:56.500 --> 49:57.420
+unauthorized standing
+
+49:57.420 --> 49:58.700
+and your own values.
+
+49:59.100 --> 49:59.620
+Free choice.
+
+50:00.060 --> 50:00.960
+In History 2
+
+50:00.960 --> 50:02.260
+you were heavily
+
+50:02.260 --> 50:02.860
+manipulated.
+
+50:03.540 --> 50:04.400
+Viable alternatives
+
+50:04.400 --> 50:05.260
+were systematically
+
+50:05.260 --> 50:06.060
+hidden from you.
+
+50:06.440 --> 50:07.120
+You were subjected
+
+50:07.120 --> 50:07.780
+to subtle
+
+50:07.780 --> 50:08.840
+coercive pressures
+
+50:08.840 --> 50:09.800
+and a purpose
+
+50:09.800 --> 50:10.680
+was artificially
+
+50:10.680 --> 50:11.680
+implanted in you
+
+50:11.680 --> 50:12.960
+through accumulated
+
+50:12.960 --> 50:13.620
+dependence
+
+50:13.620 --> 50:14.420
+and propaganda.
+
+50:14.980 --> 50:15.760
+Total manipulation.
+
+50:16.520 --> 50:16.780
+Now,
+
+50:17.320 --> 50:17.760
+fast forward
+
+50:17.760 --> 50:18.500
+to the present day.
+
+50:19.040 --> 50:20.020
+In both timelines
+
+50:20.020 --> 50:21.140
+you are flawlessly
+
+50:21.140 --> 50:22.300
+executing the task.
+
+50:22.780 --> 50:23.560
+You are compliant.
+
+50:24.020 --> 50:25.100
+You smile at work.
+
+50:25.100 --> 50:27.020
+The observable
+
+50:27.020 --> 50:27.440
+rendering
+
+50:27.440 --> 50:28.260
+of your behavior
+
+50:28.260 --> 50:29.300
+and even your
+
+50:29.300 --> 50:30.100
+internal feeling
+
+50:30.100 --> 50:30.900
+of going along
+
+50:30.900 --> 50:31.360
+with it
+
+50:31.360 --> 50:32.320
+is absolutely
+
+50:32.320 --> 50:32.860
+identical.
+
+50:33.660 --> 50:34.340
+The theorem
+
+50:34.340 --> 50:35.080
+proves that
+
+50:35.080 --> 50:35.700
+if those two
+
+50:35.700 --> 50:36.580
+radically different
+
+50:36.580 --> 50:36.920
+histories
+
+50:36.920 --> 50:37.440
+can produce
+
+50:37.440 --> 50:38.160
+the exact same
+
+50:38.160 --> 50:38.660
+present day
+
+50:38.660 --> 50:39.120
+rendering
+
+50:39.120 --> 50:40.300
+then no
+
+50:40.300 --> 50:41.280
+mathematical function
+
+50:41.280 --> 50:42.360
+or diagnostic tool
+
+50:42.360 --> 50:43.380
+that only looks
+
+50:43.380 --> 50:43.920
+at the present
+
+50:43.920 --> 50:44.280
+rendering
+
+50:44.280 --> 50:45.360
+can possibly
+
+50:45.360 --> 50:45.780
+tell you
+
+50:45.780 --> 50:46.420
+which history
+
+50:46.420 --> 50:47.380
+actually happened.
+
+50:47.860 --> 50:48.340
+Just looking at
+
+50:48.340 --> 50:49.000
+how happy
+
+50:49.000 --> 50:49.560
+and compliant
+
+50:49.560 --> 50:50.340
+I am right now
+
+50:50.340 --> 50:50.720
+gives me
+
+50:50.720 --> 50:51.780
+absolutely zero
+
+50:51.780 --> 50:52.580
+information about
+
+50:52.580 --> 50:53.080
+whether I
+
+50:53.080 --> 50:54.260
+freely chose
+
+50:54.260 --> 50:54.860
+this life
+
+50:54.860 --> 50:55.360
+or if I was
+
+50:55.360 --> 50:55.720
+engineered
+
+50:55.720 --> 50:56.560
+to accept it.
+
+50:57.100 --> 50:57.380
+The math
+
+50:57.380 --> 50:57.900
+says it
+
+50:57.900 --> 50:58.480
+explicitly
+
+50:58.480 --> 50:59.620
+excludes
+
+50:59.620 --> 51:00.600
+unique determination.
+
+51:01.260 --> 51:01.600
+It's like
+
+51:01.600 --> 51:02.700
+finding a footprint
+
+51:02.700 --> 51:03.220
+in the sand
+
+51:03.220 --> 51:03.720
+on a beach.
+
+51:04.160 --> 51:04.540
+You look at
+
+51:04.540 --> 51:04.980
+the footprint
+
+51:04.980 --> 51:05.960
+and you know
+
+51:05.960 --> 51:06.820
+a foot was there
+
+51:06.820 --> 51:07.600
+but looking
+
+51:07.600 --> 51:08.440
+at the indentation
+
+51:08.440 --> 51:08.780
+alone
+
+51:08.780 --> 51:09.500
+cannot tell you
+
+51:09.500 --> 51:09.940
+if the person
+
+51:09.940 --> 51:10.480
+was walking
+
+51:10.480 --> 51:10.900
+freely
+
+51:10.900 --> 51:11.880
+or if they
+
+51:11.880 --> 51:12.200
+were being
+
+51:12.200 --> 51:12.720
+dragged by
+
+51:12.720 --> 51:13.300
+their arms.
+
+51:13.760 --> 51:14.240
+The present
+
+51:14.240 --> 51:15.540
+state severely
+
+51:15.540 --> 51:16.740
+under-determines
+
+51:16.740 --> 51:17.300
+the history.
+
+51:18.080 --> 51:18.420
+And the paper
+
+51:18.420 --> 51:19.000
+backs this
+
+51:19.000 --> 51:20.000
+mathematical proof
+
+51:20.000 --> 51:20.960
+up with
+
+51:20.960 --> 51:21.720
+actual cognitive
+
+51:21.720 --> 51:22.480
+science right
+
+51:22.480 --> 51:23.400
+because as
+
+51:23.400 --> 51:24.020
+humans we
+
+51:24.020 --> 51:24.420
+don't just
+
+51:24.420 --> 51:25.240
+act compliant
+
+51:25.240 --> 51:26.300
+we actively
+
+51:26.300 --> 51:27.800
+creatively invent
+
+51:27.800 --> 51:28.580
+reasons to
+
+51:28.580 --> 51:29.140
+justify our
+
+51:29.140 --> 51:29.680
+compliance to
+
+51:29.680 --> 51:30.180
+ourselves.
+
+51:30.700 --> 51:31.600
+Yes Flyxion
+
+51:31.600 --> 51:32.800
+cites foundational
+
+51:32.800 --> 51:33.760
+empirical work
+
+51:33.760 --> 51:34.260
+in cognitive
+
+51:34.260 --> 51:34.860
+science to
+
+51:34.860 --> 51:35.400
+prove that our
+
+51:35.400 --> 51:36.660
+introspection is
+
+51:36.660 --> 51:37.900
+deeply flawed.
+
+51:38.440 --> 51:39.080
+Specifically they
+
+51:39.080 --> 51:39.880
+point to Nisbet
+
+51:39.880 --> 51:40.560
+and Wilson's
+
+51:40.560 --> 51:41.240
+famous research
+
+51:41.240 --> 51:42.180
+on verbal
+
+51:42.180 --> 51:43.400
+reports and
+
+51:43.400 --> 51:43.760
+the stunning
+
+51:43.760 --> 51:44.420
+choice blindness
+
+51:44.420 --> 51:45.420
+experiments conducted
+
+51:45.420 --> 51:45.980
+by Petter
+
+51:45.980 --> 51:46.620
+Johansson and
+
+51:46.620 --> 51:47.240
+his colleagues.
+
+51:47.980 --> 51:48.400
+Oh I have
+
+51:48.400 --> 51:48.920
+read about the
+
+51:48.920 --> 51:49.480
+choice blindness
+
+51:49.480 --> 51:50.020
+experiments.
+
+51:50.280 --> 51:50.660
+They are
+
+51:50.660 --> 51:51.480
+incredible.
+
+51:51.720 --> 51:52.340
+For the
+
+51:52.340 --> 51:52.800
+listeners who
+
+51:52.800 --> 51:53.140
+don't know
+
+51:53.140 --> 51:54.020
+researchers would
+
+51:54.020 --> 51:54.320
+show a
+
+51:54.320 --> 51:55.060
+participant two
+
+51:55.060 --> 51:55.500
+pictures of
+
+51:55.500 --> 51:56.580
+faces and
+
+51:56.580 --> 51:57.160
+ask them to
+
+51:57.160 --> 51:57.600
+point to the
+
+51:57.600 --> 51:58.120
+one they find
+
+51:58.120 --> 51:58.680
+more attractive.
+
+51:59.480 --> 51:59.920
+The participant
+
+51:59.920 --> 52:00.520
+points to
+
+52:00.520 --> 52:01.000
+face A.
+
+52:01.660 --> 52:02.420
+Then the
+
+52:02.420 --> 52:03.160
+researcher uses
+
+52:03.160 --> 52:04.000
+sleight of hand
+
+52:04.000 --> 52:04.660
+like a magic
+
+52:04.660 --> 52:05.760
+trick to hand
+
+52:05.760 --> 52:06.340
+the participant
+
+52:06.340 --> 52:07.080
+the picture of
+
+52:07.080 --> 52:08.300
+face B the
+
+52:08.300 --> 52:08.820
+one they didn't
+
+52:08.820 --> 52:09.100
+choose.
+
+52:09.500 --> 52:10.120
+The researcher
+
+52:10.120 --> 52:11.180
+then asks why
+
+52:11.180 --> 52:11.640
+did you choose
+
+52:11.640 --> 52:12.100
+this face?
+
+52:12.960 --> 52:13.520
+And a
+
+52:13.520 --> 52:15.120
+massive percentage
+
+52:15.120 --> 52:15.840
+of people will
+
+52:15.840 --> 52:16.640
+confidently stare
+
+52:16.640 --> 52:18.000
+at face B the
+
+52:18.000 --> 52:18.820
+face they literally
+
+52:18.820 --> 52:19.680
+rejected two
+
+52:19.680 --> 52:21.040
+seconds ago and
+
+52:21.040 --> 52:22.200
+invent elaborate
+
+52:22.200 --> 52:24.380
+sincere passionate
+
+52:24.380 --> 52:25.360
+reasons for why
+
+52:25.360 --> 52:25.960
+they chose it.
+
+52:26.260 --> 52:26.940
+They completely
+
+52:26.940 --> 52:27.800
+fail to notice
+
+52:27.800 --> 52:28.220
+the swap.
+
+52:29.000 --> 52:29.940
+It is a stunning
+
+52:29.940 --> 52:30.960
+demonstration of
+
+52:30.960 --> 52:31.660
+human psychology.
+
+52:32.160 --> 52:32.700
+People will say
+
+52:32.700 --> 52:33.400
+things like I
+
+52:33.400 --> 52:34.020
+chose this one
+
+52:34.020 --> 52:34.640
+because I prefer
+
+52:34.640 --> 52:36.020
+her hair color even
+
+52:36.020 --> 52:36.320
+though they
+
+52:36.320 --> 52:37.260
+originally chose the
+
+52:37.260 --> 52:37.700
+person with
+
+52:37.700 --> 52:38.420
+different hair.
+
+52:39.080 --> 52:39.760
+We routinely
+
+52:39.760 --> 52:40.620
+fail to detect
+
+52:40.620 --> 52:41.840
+blatant mismatches
+
+52:41.840 --> 52:42.640
+between our actual
+
+52:42.640 --> 52:43.660
+choices and the
+
+52:43.660 --> 52:44.420
+outcomes presented
+
+52:44.420 --> 52:44.820
+to us.
+
+52:45.640 --> 52:46.420
+More importantly
+
+52:46.420 --> 52:47.820
+we will sincerely
+
+52:47.820 --> 52:48.820
+endorse a choice
+
+52:48.820 --> 52:49.740
+we never made.
+
+52:51.040 --> 52:51.600
+Introspective
+
+52:51.600 --> 52:52.640
+report, what you
+
+52:52.640 --> 52:53.200
+see when you
+
+52:53.200 --> 52:53.840
+look inside your
+
+52:53.840 --> 52:54.920
+own mind and
+
+52:54.920 --> 52:55.620
+ask yourself why
+
+52:55.620 --> 52:56.380
+you did something
+
+52:56.380 --> 52:57.840
+can radically
+
+52:57.840 --> 52:59.460
+wildly diverge
+
+52:59.460 --> 53:00.240
+from the actual
+
+53:00.240 --> 53:00.980
+causes of your
+
+53:00.980 --> 53:01.380
+behavior.
+
+53:02.180 --> 53:02.780
+So if we apply
+
+53:02.780 --> 53:03.760
+this back to
+
+53:03.760 --> 53:04.380
+the reverse
+
+53:04.380 --> 53:05.820
+centaur, it
+
+53:05.820 --> 53:06.280
+means that a
+
+53:06.280 --> 53:07.260
+person's sincere
+
+53:07.260 --> 53:08.760
+heartfelt endorsement
+
+53:08.760 --> 53:09.300
+of a corporate
+
+53:09.300 --> 53:10.440
+metric or a
+
+53:10.440 --> 53:11.300
+systemic purpose
+
+53:11.300 --> 53:12.040
+does not
+
+53:12.040 --> 53:12.620
+automatically
+
+53:12.620 --> 53:13.340
+establish that
+
+53:13.340 --> 53:13.980
+the purpose is
+
+53:13.980 --> 53:15.380
+authorized or
+
+53:15.380 --> 53:16.020
+truly their
+
+53:16.020 --> 53:16.300
+own.
+
+53:17.240 --> 53:17.640
+Flaccione
+
+53:17.640 --> 53:18.600
+formalizes this
+
+53:18.600 --> 53:19.380
+terrifying reality
+
+53:19.380 --> 53:20.340
+in theorems 12
+
+53:20.340 --> 53:21.820
+and 14 which
+
+53:21.820 --> 53:22.900
+explore the limits
+
+53:22.900 --> 53:23.820
+of introspection.
+
+53:24.620 --> 53:25.020
+Let's look at
+
+53:25.020 --> 53:25.700
+theorem 14.
+
+53:26.020 --> 53:26.580
+This is about
+
+53:26.580 --> 53:27.300
+reflection without
+
+53:27.300 --> 53:28.080
+new information,
+
+53:28.280 --> 53:28.460
+right?
+
+53:28.980 --> 53:29.440
+Yes.
+
+53:30.120 --> 53:31.180
+The theorem is a
+
+53:31.180 --> 53:32.140
+deterministic analog
+
+53:32.140 --> 53:32.800
+of something called
+
+53:32.800 --> 53:34.040
+the data processing
+
+53:34.040 --> 53:35.100
+inequality from
+
+53:35.100 --> 53:35.840
+information theory.
+
+53:36.540 --> 53:37.280
+In layman's terms
+
+53:37.280 --> 53:38.600
+it says that if you
+
+53:38.600 --> 53:39.320
+take a flawed,
+
+53:39.560 --> 53:40.240
+corrupted, or
+
+53:40.240 --> 53:41.200
+incomplete set of
+
+53:41.200 --> 53:42.360
+data and you just
+
+53:42.360 --> 53:43.440
+apply more internal
+
+53:43.440 --> 53:44.360
+processing to it,
+
+53:44.360 --> 53:45.360
+if you run it
+
+53:45.360 --> 53:45.720
+through more
+
+53:45.720 --> 53:47.100
+algorithms or in
+
+53:47.100 --> 53:47.600
+this case if you
+
+53:47.600 --> 53:48.220
+just sit in a room
+
+53:48.220 --> 53:48.860
+and think harder
+
+53:48.860 --> 53:49.460
+and harder about
+
+53:49.460 --> 53:50.140
+your own thoughts,
+
+53:50.620 --> 53:52.060
+you cannot magically
+
+53:52.060 --> 53:53.240
+generate new facts
+
+53:53.240 --> 53:53.840
+about the outside
+
+53:53.840 --> 53:54.220
+world.
+
+53:54.880 --> 53:55.660
+If the original data
+
+53:55.660 --> 53:56.480
+in my memory is
+
+53:56.480 --> 53:57.020
+corrupted by
+
+53:57.020 --> 53:57.600
+manipulation,
+
+53:58.120 --> 53:58.940
+spinning it around
+
+53:58.940 --> 53:59.580
+in my head a
+
+53:59.580 --> 54:00.100
+thousand times
+
+54:00.100 --> 54:01.220
+doesn't uncorrupt
+
+54:01.220 --> 54:02.020
+it, it just makes
+
+54:02.020 --> 54:02.780
+me more confident
+
+54:02.780 --> 54:03.320
+in the corrupted
+
+54:03.320 --> 54:03.900
+memory.
+
+54:04.680 --> 54:05.120
+Precisely.
+
+54:05.760 --> 54:06.780
+You can elaborate
+
+54:06.780 --> 54:07.440
+on your self
+
+54:07.440 --> 54:08.960
+description, weave a
+
+54:08.960 --> 54:09.940
+beautiful complex
+
+54:09.940 --> 54:10.800
+narrative about why
+
+54:10.800 --> 54:11.720
+you love your job
+
+54:11.720 --> 54:12.820
+or why hitting
+
+54:12.820 --> 54:13.820
+your KPIs is
+
+54:13.820 --> 54:14.540
+your true life's
+
+54:14.540 --> 54:15.960
+calling, but if
+
+54:15.960 --> 54:16.580
+that internal
+
+54:16.580 --> 54:17.640
+reflection doesn't
+
+54:17.640 --> 54:18.600
+introduce any new
+
+54:18.600 --> 54:19.940
+external distinguishing
+
+54:19.940 --> 54:21.420
+information, it
+
+54:21.420 --> 54:22.340
+cannot possibly tell
+
+54:22.340 --> 54:23.480
+you if you are in
+
+54:23.480 --> 54:24.620
+history one, free
+
+54:24.620 --> 54:25.880
+choice, or history
+
+54:25.880 --> 54:27.040
+two, manipulation.
+
+54:27.680 --> 54:28.860
+Introspection alone
+
+54:28.860 --> 54:30.500
+is entirely blind to
+
+54:30.500 --> 54:31.000
+the history that
+
+54:31.000 --> 54:31.520
+produced it.
+
+54:32.260 --> 54:32.940
+So if we can't
+
+54:32.940 --> 54:33.560
+trust our own
+
+54:33.560 --> 54:34.480
+internal feelings of
+
+54:34.480 --> 54:35.500
+satisfaction and we
+
+54:35.500 --> 54:36.680
+can't just meditate
+
+54:36.680 --> 54:38.580
+or think our way out
+
+54:38.580 --> 54:40.240
+of the trap, how do
+
+54:40.240 --> 54:41.160
+we ever find out the
+
+54:41.160 --> 54:41.900
+truth about our own
+
+54:41.900 --> 54:42.320
+lives?
+
+54:42.660 --> 54:43.440
+That is answered by
+
+54:43.440 --> 54:44.460
+theorem 13,
+
+54:45.060 --> 54:46.320
+discriminating inquiry.
+
+54:47.300 --> 54:48.140
+The paper points out
+
+54:48.140 --> 54:49.020
+that discovering the
+
+54:49.020 --> 54:49.560
+truth about your
+
+54:49.560 --> 54:51.100
+agency requires external
+
+54:51.100 --> 54:52.000
+observation and
+
+54:52.000 --> 54:53.360
+crucially, it requires
+
+54:53.360 --> 54:53.960
+friction.
+
+54:54.700 --> 54:55.560
+You have to introduce
+
+54:55.560 --> 54:56.780
+new variables into the
+
+54:56.780 --> 54:57.060
+system.
+
+54:57.840 --> 54:58.540
+What kind of friction?
+
+54:59.200 --> 54:59.980
+Give me an example.
+
+55:00.380 --> 55:01.140
+You have to test how
+
+55:01.140 --> 55:02.220
+the system responds to
+
+55:02.220 --> 55:02.740
+resistance.
+
+55:03.760 --> 55:04.900
+Remember, if a free
+
+55:04.900 --> 55:05.700
+arrangement and a
+
+55:05.700 --> 55:06.620
+manipulated arrangement
+
+55:06.620 --> 55:07.760
+look identical when you
+
+55:07.760 --> 55:08.820
+are perfectly compliant,
+
+55:09.420 --> 55:10.340
+you have to break the
+
+55:10.340 --> 55:11.560
+compliance to see the
+
+55:11.560 --> 55:11.900
+difference.
+
+55:12.860 --> 55:13.660
+What happens when you
+
+55:13.660 --> 55:14.620
+question the purpose?
+
+55:15.300 --> 55:16.240
+What happens when you
+
+55:16.240 --> 55:17.260
+formally request the
+
+55:17.260 --> 55:18.300
+original evidence that
+
+55:18.300 --> 55:19.520
+justified a specific
+
+55:19.520 --> 55:19.840
+metric?
+
+55:20.580 --> 55:21.460
+What happens when you
+
+55:21.460 --> 55:22.280
+attempt to take an
+
+55:22.280 --> 55:23.840
+obligation-preserving exit?
+
+55:24.940 --> 55:25.800
+Ah, I see.
+
+55:26.420 --> 55:27.520
+If I go to my boss and
+
+55:27.520 --> 55:29.140
+ask, hey, why are we
+
+55:29.140 --> 55:30.440
+prioritizing this specific
+
+55:30.440 --> 55:31.200
+tracking metric?
+
+55:31.360 --> 55:32.120
+It seems to be hurting
+
+55:32.120 --> 55:32.460
+morale.
+
+55:32.980 --> 55:34.000
+And my boss says,
+
+55:34.120 --> 55:35.060
+that's a fair question.
+
+55:35.280 --> 55:35.920
+Let's pull up the
+
+55:35.920 --> 55:36.840
+founding documents and
+
+55:36.840 --> 55:37.800
+review the data together.
+
+55:37.800 --> 55:39.340
+That is one kind of
+
+55:39.340 --> 55:39.640
+system.
+
+55:40.240 --> 55:41.540
+But if I ask the exact
+
+55:41.540 --> 55:42.600
+same question and the
+
+55:42.600 --> 55:43.440
+system immediately
+
+55:43.440 --> 55:44.860
+penalizes me, locks me
+
+55:44.860 --> 55:46.100
+out of my accounts, or
+
+55:46.100 --> 55:47.260
+HR calls me in to tell
+
+55:47.260 --> 55:48.140
+me that questioning the
+
+55:48.140 --> 55:49.820
+metric is a violation of
+
+55:49.820 --> 55:50.820
+our positive company
+
+55:50.820 --> 55:52.640
+culture, that friction
+
+55:52.640 --> 55:54.160
+tells me exactly what kind
+
+55:54.160 --> 55:55.040
+of system I am trapped
+
+55:55.040 --> 55:55.300
+in.
+
+55:55.660 --> 55:56.060
+Exactly.
+
+55:56.520 --> 55:57.680
+The system's response to
+
+55:57.680 --> 55:58.800
+resistance is the new
+
+55:58.800 --> 56:00.200
+data that breaks the
+
+56:00.200 --> 56:00.960
+historical under
+
+56:00.960 --> 56:01.400
+determination.
+
+56:02.040 --> 56:03.020
+You need outside help.
+
+56:03.320 --> 56:04.160
+You need access to
+
+56:04.160 --> 56:04.960
+external records.
+
+56:04.960 --> 56:06.700
+You need encounters with
+
+56:06.700 --> 56:07.700
+entirely different ways
+
+56:07.700 --> 56:09.240
+of living to figure out
+
+56:09.240 --> 56:10.300
+what your exclusively
+
+56:10.300 --> 56:11.500
+inward examination
+
+56:11.500 --> 56:11.980
+misses.
+
+56:12.660 --> 56:13.320
+You have to poke the
+
+56:13.320 --> 56:14.260
+cage to see if the bars
+
+56:14.260 --> 56:15.500
+are made of steel or
+
+56:15.500 --> 56:16.080
+just shadows.
+
+56:16.440 --> 56:17.000
+But hold on.
+
+56:17.520 --> 56:18.520
+This introduces a new
+
+56:18.520 --> 56:18.880
+problem.
+
+56:19.540 --> 56:20.880
+If we need outside help
+
+56:20.880 --> 56:21.920
+to examine our purposes,
+
+56:22.660 --> 56:23.800
+what happens when someone
+
+56:23.800 --> 56:24.940
+else starts asking us
+
+56:24.940 --> 56:25.340
+questions?
+
+56:25.740 --> 56:27.300
+If I am vulnerable to
+
+56:27.300 --> 56:28.460
+being a reverse centaur,
+
+56:28.720 --> 56:29.840
+and I know I can't trust
+
+56:29.840 --> 56:30.760
+my own introspection,
+
+56:31.340 --> 56:33.000
+can an outsider use that
+
+56:33.000 --> 56:34.660
+exact vulnerability against
+
+56:34.660 --> 56:34.920
+me?
+
+56:35.360 --> 56:36.400
+That is a phenomenal
+
+56:36.400 --> 56:37.300
+question, and it takes
+
+56:37.300 --> 56:38.220
+us directly into the
+
+56:38.220 --> 56:39.620
+dangers of being
+
+56:39.620 --> 56:41.200
+questioned, because the
+
+56:41.200 --> 56:41.780
+answer is yes.
+
+56:42.400 --> 56:43.540
+The very act of being
+
+56:43.540 --> 56:44.840
+interrogated can be a
+
+56:44.840 --> 56:45.420
+trap itself.
+
+56:46.040 --> 56:46.780
+Let's talk about the
+
+56:46.780 --> 56:47.440
+Socratic weapon.
+
+56:48.100 --> 56:49.020
+When I hear Socratic
+
+56:49.020 --> 56:49.960
+method, I usually think
+
+56:49.960 --> 56:51.360
+of a noble pursuit of
+
+56:51.360 --> 56:51.680
+truth.
+
+56:52.420 --> 56:53.900
+Socrates asks you gentle
+
+56:53.900 --> 56:55.200
+questions until you
+
+56:55.200 --> 56:55.940
+realize your own
+
+56:55.940 --> 56:57.420
+ignorance, and you both
+
+56:57.420 --> 56:57.940
+grow wiser.
+
+56:58.500 --> 56:59.680
+How can asking questions
+
+56:59.680 --> 57:00.220
+be a trap?
+
+57:00.660 --> 57:02.120
+Flyxion returns to Nietzsche
+
+57:02.120 --> 57:03.960
+here, looking at his
+
+57:03.960 --> 57:05.120
+highly hostile, cynical
+
+57:05.120 --> 57:06.720
+reading of Socratic
+
+57:06.720 --> 57:08.600
+irony, specifically in
+
+57:08.600 --> 57:09.820
+his passages analyzing
+
+57:09.820 --> 57:11.000
+dialectic and debate.
+
+57:11.920 --> 57:12.760
+Nietzsche saw the
+
+57:12.760 --> 57:13.840
+Socratic posture,
+
+57:14.220 --> 57:15.080
+professing ignorance,
+
+57:15.260 --> 57:16.180
+acting humble, and
+
+57:16.180 --> 57:17.320
+asking someone else to
+
+57:17.320 --> 57:18.780
+explain themselves, not
+
+57:18.780 --> 57:19.920
+as a search for truth,
+
+57:20.420 --> 57:21.160
+but as a weapon of
+
+57:21.160 --> 57:21.540
+power.
+
+57:22.260 --> 57:23.400
+It is a way for someone
+
+57:23.400 --> 57:24.920
+to forcefully reverse a
+
+57:24.920 --> 57:26.700
+hierarchy by dragging an
+
+57:26.700 --> 57:27.480
+opponent into a
+
+57:27.480 --> 57:28.720
+defensive, highly
+
+57:28.720 --> 57:30.520
+constrained, argumentative
+
+57:30.520 --> 57:31.080
+contest.
+
+57:31.080 --> 57:32.540
+The questioner actually
+
+57:32.540 --> 57:33.820
+holds all the power, even
+
+57:33.820 --> 57:34.700
+if they pretend not to
+
+57:34.700 --> 57:35.160
+know anything.
+
+57:35.500 --> 57:35.720
+Yes.
+
+57:36.340 --> 57:37.060
+The irony of the
+
+57:37.060 --> 57:37.980
+questioner sharpens the
+
+57:37.980 --> 57:38.560
+asymmetry.
+
+57:39.440 --> 57:40.580
+The questioner stays
+
+57:40.580 --> 57:42.480
+perfectly composed, acting
+
+57:42.480 --> 57:43.440
+like they just want to
+
+57:43.440 --> 57:43.700
+learn.
+
+57:44.360 --> 57:45.120
+Meanwhile, the person
+
+57:45.120 --> 57:46.700
+being interrogated gets
+
+57:46.700 --> 57:48.200
+flustered, angry, and
+
+57:48.200 --> 57:49.160
+struggles to defend the
+
+57:49.160 --> 57:50.300
+very foundations of their
+
+57:50.300 --> 57:50.640
+life.
+
+57:51.200 --> 57:52.560
+But they are forced to do
+
+57:52.560 --> 57:54.500
+it using a vocabulary and
+
+57:54.500 --> 57:56.140
+a framework entirely
+
+57:56.140 --> 57:57.100
+dictated by the
+
+57:57.100 --> 57:57.540
+questioner.
+
+57:58.040 --> 57:59.200
+The questioner controls
+
+57:59.200 --> 57:59.960
+the sequence of the
+
+57:59.960 --> 58:00.920
+questions, the allowed
+
+58:00.920 --> 58:02.540
+alternatives, and they get
+
+58:02.540 --> 58:03.140
+to highlight the
+
+58:03.140 --> 58:04.080
+contradictions that are
+
+58:04.080 --> 58:04.780
+brought into view.
+
+58:05.240 --> 58:06.220
+It reminds me of a
+
+58:06.220 --> 58:07.640
+hostile cross-examination
+
+58:07.640 --> 58:08.160
+in a courtroom.
+
+58:08.440 --> 58:09.400
+A skilled, aggressive
+
+58:09.400 --> 58:10.680
+lawyer can put an honest
+
+58:10.680 --> 58:11.980
+witness on the stand, ask
+
+58:11.980 --> 58:13.060
+them a series of rapid
+
+58:13.060 --> 58:14.380
+fire, highly constrained,
+
+58:14.540 --> 58:16.140
+yes or no questions, and
+
+58:16.140 --> 58:17.540
+successfully confuse the
+
+58:17.540 --> 58:18.220
+witness until they
+
+58:18.220 --> 58:19.000
+contradict themselves.
+
+58:19.720 --> 58:21.040
+The lawyer breaks the
+
+58:21.040 --> 58:22.220
+witness's testimony on the
+
+58:22.220 --> 58:22.500
+stand.
+
+58:23.020 --> 58:24.060
+But, and I think this is
+
+58:24.060 --> 58:25.540
+the crucial part, just
+
+58:25.540 --> 58:26.300
+because the lawyer
+
+58:26.300 --> 58:28.000
+successfully confused the
+
+58:28.000 --> 58:29.020
+witness, that doesn't
+
+58:29.020 --> 58:29.680
+mean the lawyer's
+
+58:29.680 --> 58:30.820
+version of events, is
+
+58:30.820 --> 58:31.480
+the truth.
+
+58:31.920 --> 58:32.720
+And it certainly doesn't
+
+58:32.720 --> 58:34.180
+mean the lawyer now owns
+
+58:34.180 --> 58:35.480
+the witness's life or gets
+
+58:35.480 --> 58:36.680
+to dictate their future.
+
+58:37.440 --> 58:38.900
+That analogy is perfect, and
+
+58:38.900 --> 58:40.260
+it maps exactly onto the
+
+58:40.260 --> 58:41.840
+mathematics of theorem 15
+
+58:41.840 --> 58:43.020
+in the paper, titled
+
+58:43.020 --> 58:44.360
+Defeat is Neither
+
+58:44.360 --> 58:45.880
+Falsity Nor Authority.
+
+58:46.280 --> 58:47.340
+Let's break that theorem
+
+58:47.340 --> 58:48.400
+down, because I think this
+
+58:48.400 --> 58:49.240
+happens in corporate
+
+58:49.240 --> 58:50.440
+meeting rooms and political
+
+58:50.440 --> 58:51.840
+debates every single day.
+
+58:52.300 --> 58:53.700
+It is a two-part proof.
+
+58:54.300 --> 58:55.920
+Part A proves that if you
+
+58:55.920 --> 58:57.500
+suffer a dialectical defeat,
+
+58:57.500 --> 58:58.800
+meaning a questioner
+
+58:58.800 --> 59:00.140
+successfully traps you in a
+
+59:00.140 --> 59:01.620
+logical contradiction, and
+
+59:01.620 --> 59:02.440
+you cannot adequately
+
+59:02.440 --> 59:03.700
+justify your purpose under
+
+59:03.700 --> 59:05.040
+their specific rules of
+
+59:05.040 --> 59:06.760
+debate, that does not
+
+59:06.760 --> 59:08.060
+mathematically mean your
+
+59:08.060 --> 59:08.940
+original claim was
+
+59:08.940 --> 59:09.320
+false.
+
+59:09.860 --> 59:10.160
+Why not?
+
+59:10.640 --> 59:11.600
+If I can't defend my
+
+59:11.600 --> 59:12.420
+belief, isn't it by
+
+59:12.420 --> 59:13.560
+definition false or
+
+59:13.560 --> 59:14.200
+unjustified?
+
+59:14.660 --> 59:15.420
+Not necessarily.
+
+59:15.880 --> 59:17.000
+You might simply lack the
+
+59:17.000 --> 59:18.560
+specific vocabulary, the
+
+59:18.560 --> 59:20.880
+historical data, or the
+
+59:20.880 --> 59:22.020
+time permitted by the
+
+59:22.020 --> 59:23.100
+arbitrary rules of that
+
+59:23.100 --> 59:24.100
+specific exchange.
+
+59:24.100 --> 59:25.780
+If I demand that you
+
+59:25.780 --> 59:27.080
+explain the nuances of
+
+59:27.080 --> 59:28.180
+quantum physics to me in
+
+59:28.180 --> 59:29.760
+five seconds, using only
+
+59:29.760 --> 59:30.720
+words that start with the
+
+59:30.720 --> 59:32.400
+letter B, you will fail.
+
+59:33.220 --> 59:34.260
+Your failure to defend
+
+59:34.260 --> 59:35.560
+quantum physics under those
+
+59:35.560 --> 59:37.000
+conditions does not mean
+
+59:37.000 --> 59:38.560
+quantum physics is false.
+
+59:39.300 --> 59:40.120
+It simply means my
+
+59:40.120 --> 59:41.220
+interrogation rules were
+
+59:41.220 --> 59:42.320
+explicitly designed to
+
+59:42.320 --> 59:43.180
+ensure your failure.
+
+59:43.580 --> 59:43.860
+Right.
+
+59:44.140 --> 59:45.160
+The game was rigged.
+
+59:45.420 --> 59:46.240
+And Part B of the
+
+59:46.240 --> 59:46.460
+theorem?
+
+59:47.080 --> 59:48.220
+Part B is even more
+
+59:48.220 --> 59:48.640
+profound.
+
+59:49.220 --> 59:51.220
+It proves mathematically that
+
+59:51.220 --> 59:53.180
+diagnostic defeat does not
+
+59:53.180 --> 59:54.340
+grant the questioner the
+
+59:54.340 --> 59:55.660
+authority to choose your
+
+59:55.660 --> 59:56.220
+new ends.
+
+59:56.960 --> 59:57.900
+Even if the questioner
+
+59:57.900 --> 59:59.140
+genuinely refutes your
+
+59:59.140 --> 01:00:00.700
+justification, even if
+
+01:00:00.700 --> 01:00:02.280
+they expose a very real,
+
+01:00:02.380 --> 01:00:03.060
+very embarrassing
+
+01:00:03.060 --> 01:00:04.200
+contradiction in your
+
+01:00:04.200 --> 01:00:06.320
+life, that success in an
+
+01:00:06.320 --> 01:00:07.840
+argumentative exchange does
+
+01:00:07.840 --> 01:00:09.340
+not magically rewrite the
+
+01:00:09.340 --> 01:00:10.580
+authorization record to
+
+01:00:10.580 --> 01:00:12.400
+say the questioner is now
+
+01:00:12.400 --> 01:00:12.940
+your boss.
+
+01:00:13.620 --> 01:00:14.760
+Defeating my argument
+
+01:00:14.760 --> 01:00:15.900
+doesn't give you ownership
+
+01:00:15.900 --> 01:00:16.900
+of my agency.
+
+01:00:17.600 --> 01:00:18.640
+Exposing a flaw in my
+
+01:00:18.640 --> 01:00:19.900
+reasoning doesn't grant you
+
+01:00:19.900 --> 01:00:21.640
+legitimate, purpose-setting
+
+01:00:21.640 --> 01:00:22.740
+authority over my life.
+
+01:00:22.740 --> 01:00:23.340
+Exactly.
+
+01:00:24.400 --> 01:00:25.200
+The structural abuse
+
+01:00:25.200 --> 01:00:26.420
+occurs when a failure to
+
+01:00:26.420 --> 01:00:27.620
+satisfy the questioner's
+
+01:00:27.620 --> 01:00:29.620
+specific test is treated as
+
+01:00:29.620 --> 01:00:31.000
+a total surrender of your
+
+01:00:31.000 --> 01:00:31.380
+standing.
+
+01:00:32.260 --> 01:00:33.040
+The interrogation's
+
+01:00:33.040 --> 01:00:34.220
+criteria suddenly acquire
+
+01:00:34.220 --> 01:00:35.400
+authority without ever
+
+01:00:35.400 --> 01:00:36.300
+passing verification
+
+01:00:36.300 --> 01:00:37.020
+themselves.
+
+01:00:37.940 --> 01:00:38.880
+You collapse into the
+
+01:00:38.880 --> 01:00:39.720
+questioner's preferred
+
+01:00:39.720 --> 01:00:41.520
+conclusion just because you
+
+01:00:41.520 --> 01:00:42.760
+got flustered and lost a
+
+01:00:42.760 --> 01:00:43.040
+debate.
+
+01:00:43.420 --> 01:00:44.400
+And the paper points out
+
+01:00:44.400 --> 01:00:45.840
+that large organizations do
+
+01:00:45.840 --> 01:00:47.320
+this intentionally, right?
+
+01:00:47.400 --> 01:00:48.880
+They script these exchanges
+
+01:00:48.880 --> 01:00:50.400
+to maintain the illusion of
+
+01:00:50.400 --> 01:00:50.760
+consent.
+
+01:00:50.760 --> 01:00:51.240
+Yes.
+
+01:00:51.640 --> 01:00:53.480
+Theorem 16 tackles scripted
+
+01:00:53.480 --> 01:00:54.040
+exchanges.
+
+01:00:54.920 --> 01:00:56.180
+It looks at a scenario where
+
+01:00:56.180 --> 01:00:57.540
+an interrogation or a
+
+01:00:57.540 --> 01:00:59.280
+feedback session is entirely
+
+01:00:59.280 --> 01:01:01.000
+rigidly scripted by the
+
+01:01:01.000 --> 01:01:01.380
+controller.
+
+01:01:02.140 --> 01:01:02.820
+The questions are
+
+01:01:02.820 --> 01:01:04.500
+predetermined, the sequence
+
+01:01:04.500 --> 01:01:06.200
+is locked, and the allowed
+
+01:01:06.200 --> 01:01:07.800
+answers are constrained by a
+
+01:01:07.800 --> 01:01:08.360
+tight script.
+
+01:01:09.100 --> 01:01:10.820
+Like a forced corporate
+
+01:01:10.820 --> 01:01:12.020
+compliance survey where the
+
+01:01:12.020 --> 01:01:13.620
+only options are agree or
+
+01:01:13.620 --> 01:01:15.660
+strongly agree, or a show
+
+01:01:15.660 --> 01:01:16.620
+trial in a dictatorship.
+
+01:01:16.620 --> 01:01:17.580
+Exactly.
+
+01:01:18.360 --> 01:01:19.800
+The theorem proves that if an
+
+01:01:19.800 --> 01:01:21.280
+exchange is completely fixed
+
+01:01:21.280 --> 01:01:23.100
+by a script, it adds
+
+01:01:23.100 --> 01:01:24.660
+absolutely zero new
+
+01:01:24.660 --> 01:01:25.640
+information about the
+
+01:01:25.640 --> 01:01:26.740
+underlying history of the
+
+01:01:26.740 --> 01:01:27.060
+system.
+
+01:01:27.600 --> 01:01:28.540
+It cannot logically
+
+01:01:28.540 --> 01:01:29.640
+discriminate between a
+
+01:01:29.640 --> 01:01:31.580
+history of free choice and a
+
+01:01:31.580 --> 01:01:32.440
+history of brutal
+
+01:01:32.440 --> 01:01:33.160
+manipulation.
+
+01:01:33.820 --> 01:01:35.320
+Because the script forces the
+
+01:01:35.320 --> 01:01:36.860
+exact same answers regardless
+
+01:01:36.860 --> 01:01:38.240
+of what the true history is.
+
+01:01:38.400 --> 01:01:38.900
+Precisely.
+
+01:01:39.400 --> 01:01:40.540
+A transcript that shows
+
+01:01:40.540 --> 01:01:42.660
+smooth, unbroken, 100%
+
+01:01:42.660 --> 01:01:44.160
+agreement between a worker and
+
+01:01:44.160 --> 01:01:45.900
+a corporate script is not
+
+01:01:45.900 --> 01:01:47.280
+evidence of genuine consent.
+
+01:01:48.060 --> 01:01:49.480
+It is evidence of a rigged
+
+01:01:49.480 --> 01:01:49.840
+game.
+
+01:01:50.480 --> 01:01:52.780
+It is structural evidence that
+
+01:01:52.780 --> 01:01:54.200
+the exchange had absolutely
+
+01:01:54.200 --> 01:01:56.500
+no power to actually examine
+
+01:01:56.500 --> 01:01:56.980
+the truth.
+
+01:01:57.660 --> 01:01:57.920
+Wow.
+
+01:01:58.280 --> 01:01:59.620
+Okay, so if we take a step
+
+01:01:59.620 --> 01:02:01.080
+back and look at the landscape
+
+01:02:01.080 --> 01:02:02.720
+we've mapped out, we are
+
+01:02:02.720 --> 01:02:04.260
+faced with two distinct
+
+01:02:04.260 --> 01:02:06.140
+massive threats to our agency.
+
+01:02:06.620 --> 01:02:08.040
+On one hand, because of our
+
+01:02:08.040 --> 01:02:09.700
+own psychological blind spots
+
+01:02:09.700 --> 01:02:10.780
+and the limits of
+
+01:02:10.780 --> 01:02:12.280
+introspection, we can be
+
+01:02:12.280 --> 01:02:14.220
+completely oblivious to how
+
+01:02:14.220 --> 01:02:15.520
+our purposes were implanted
+
+01:02:15.520 --> 01:02:15.940
+in us.
+
+01:02:16.300 --> 01:02:17.300
+We lack the ability to
+
+01:02:17.300 --> 01:02:18.480
+diagnose the trap.
+
+01:02:18.980 --> 01:02:20.300
+On the other hand, because
+
+01:02:20.300 --> 01:02:21.820
+of the physical geometry of
+
+01:02:21.820 --> 01:02:23.420
+the system, the excluded
+
+01:02:23.420 --> 01:02:24.860
+cuts, the fake nominal
+
+01:02:24.860 --> 01:02:26.480
+exits, the depletion
+
+01:02:26.480 --> 01:02:27.800
+horizons, we can be
+
+01:02:27.800 --> 01:02:28.960
+physically or
+
+01:02:28.960 --> 01:02:30.400
+organizationally prevented
+
+01:02:30.400 --> 01:02:31.880
+from fixing the problem
+
+01:02:31.880 --> 01:02:33.540
+even if we do manage to
+
+01:02:33.540 --> 01:02:33.880
+see it.
+
+01:02:34.180 --> 01:02:35.280
+And that precise dual threat
+
+01:02:35.280 --> 01:02:36.720
+brings us to the climax of
+
+01:02:36.720 --> 01:02:37.060
+the paper.
+
+01:02:37.420 --> 01:02:38.840
+The final synthesis in
+
+01:02:38.840 --> 01:02:41.100
+theorem 17 and the dual
+
+01:02:41.100 --> 01:02:42.640
+mandate of answerability.
+
+01:02:43.120 --> 01:02:44.760
+Let's synthesize this whole
+
+01:02:44.760 --> 01:02:45.220
+deep dive.
+
+01:02:45.720 --> 01:02:47.320
+How do those two threats,
+
+01:02:47.660 --> 01:02:49.100
+the inability to diagnose
+
+01:02:49.100 --> 01:02:50.620
+and the inability to
+
+01:02:50.620 --> 01:02:52.300
+correct, actually relate to
+
+01:02:52.300 --> 01:02:52.660
+each other?
+
+01:02:53.420 --> 01:02:54.760
+The theorem 17 proves the
+
+01:02:54.760 --> 01:02:56.240
+independence of discrimination
+
+01:02:56.240 --> 01:02:57.300
+and correction.
+
+01:02:58.000 --> 01:02:59.320
+It demonstrates mathematically
+
+01:02:59.320 --> 01:03:01.040
+that these two failures are
+
+01:03:01.040 --> 01:03:03.220
+entirely logically independent
+
+01:03:03.220 --> 01:03:03.900
+of one another.
+
+01:03:04.460 --> 01:03:05.500
+Neither one automatically
+
+01:03:05.500 --> 01:03:07.120
+implies the other, and all
+
+01:03:07.120 --> 01:03:08.900
+possible combinations can and
+
+01:03:08.900 --> 01:03:10.540
+do exist in the real world.
+
+01:03:11.140 --> 01:03:12.720
+Okay, let's visualize this.
+
+01:03:13.160 --> 01:03:14.700
+Give me a concrete analogy to
+
+01:03:14.700 --> 01:03:15.880
+explain how they are
+
+01:03:15.880 --> 01:03:16.280
+independent.
+
+01:03:16.900 --> 01:03:18.020
+Let's use a medical analogy.
+
+01:03:18.400 --> 01:03:19.600
+Think about dealing with a
+
+01:03:19.600 --> 01:03:21.360
+severe, hidden illness.
+
+01:03:21.740 --> 01:03:22.040
+Okay.
+
+01:03:22.900 --> 01:03:24.040
+Discrimination is the
+
+01:03:24.040 --> 01:03:25.100
+equivalent of getting a
+
+01:03:25.100 --> 01:03:26.720
+perfect MRI scan and a
+
+01:03:26.720 --> 01:03:27.180
+blood test.
+
+01:03:27.540 --> 01:03:29.460
+It is the diagnostic evidence.
+
+01:03:30.100 --> 01:03:31.240
+You look at the lab results,
+
+01:03:31.460 --> 01:03:32.720
+and you know the absolute
+
+01:03:32.720 --> 01:03:34.500
+true history and current state
+
+01:03:34.500 --> 01:03:35.760
+of the disease in your body.
+
+01:03:35.760 --> 01:03:38.380
+You have perfect discrimination.
+
+01:03:39.640 --> 01:03:40.960
+Correction, on the other hand,
+
+01:03:41.320 --> 01:03:42.580
+is whether or not a cure
+
+01:03:42.580 --> 01:03:44.240
+actually exists and is
+
+01:03:44.240 --> 01:03:45.240
+accessible to you.
+
+01:03:45.980 --> 01:03:46.980
+It's the medicine on the
+
+01:03:46.980 --> 01:03:47.220
+shelf.
+
+01:03:48.380 --> 01:03:50.400
+Theorem 17 says the diagnosis
+
+01:03:50.400 --> 01:03:51.260
+and the cure are
+
+01:03:51.260 --> 01:03:52.680
+mathematically independent.
+
+01:03:53.500 --> 01:03:53.860
+I see.
+
+01:03:53.980 --> 01:03:55.480
+So I could have total
+
+01:03:55.480 --> 01:03:56.960
+discrimination, but zero
+
+01:03:56.960 --> 01:03:57.440
+correction.
+
+01:03:57.720 --> 01:03:57.980
+Yes.
+
+01:03:58.400 --> 01:03:59.300
+You get the MRI.
+
+01:03:59.660 --> 01:04:01.100
+The doctor tells you exactly
+
+01:04:01.100 --> 01:04:01.840
+what is wrong.
+
+01:04:02.240 --> 01:04:03.660
+You see the reality of the
+
+01:04:03.660 --> 01:04:05.780
+illness perfectly, but there
+
+01:04:05.780 --> 01:04:06.320
+is no cure.
+
+01:04:06.980 --> 01:04:08.420
+The disease is untreatable.
+
+01:04:08.880 --> 01:04:10.120
+You have perfect diagnostic
+
+01:04:10.120 --> 01:04:12.180
+evidence of your capture, but
+
+01:04:12.180 --> 01:04:13.740
+absolutely zero corrective
+
+01:04:13.740 --> 01:04:14.100
+paths.
+
+01:04:14.680 --> 01:04:16.440
+You know you're dying, but you
+
+01:04:16.440 --> 01:04:17.400
+can't do anything about it.
+
+01:04:18.080 --> 01:04:19.300
+That sounds exactly like
+
+01:04:19.300 --> 01:04:20.880
+burnout in a highly toxic,
+
+01:04:21.100 --> 01:04:21.940
+inescapable job.
+
+01:04:22.360 --> 01:04:23.880
+You know exactly how bad the
+
+01:04:23.880 --> 01:04:24.460
+system is.
+
+01:04:24.600 --> 01:04:25.660
+You see all the structural
+
+01:04:25.660 --> 01:04:26.140
+flaws.
+
+01:04:26.540 --> 01:04:27.680
+You have perfect discrimination.
+
+01:04:28.280 --> 01:04:29.880
+But you are living paycheck to
+
+01:04:29.880 --> 01:04:30.160
+paycheck.
+
+01:04:30.540 --> 01:04:32.060
+You have zero financial ability
+
+01:04:32.060 --> 01:04:33.640
+to quit, so you have zero
+
+01:04:33.640 --> 01:04:34.300
+correction.
+
+01:04:34.760 --> 01:04:36.340
+You are just trapped in the
+
+01:04:36.340 --> 01:04:36.980
+knowledge of it.
+
+01:04:37.200 --> 01:04:37.600
+Exactly.
+
+01:04:38.000 --> 01:04:38.920
+It's a tragic state.
+
+01:04:39.660 --> 01:04:40.820
+But now, flip it.
+
+01:04:41.380 --> 01:04:42.620
+The math says you could also
+
+01:04:42.620 --> 01:04:44.480
+have perfect correction, but
+
+01:04:44.480 --> 01:04:45.960
+absolutely zero discrimination.
+
+01:04:46.740 --> 01:04:47.700
+What does that look like?
+
+01:04:48.280 --> 01:04:49.500
+That is when the cure is
+
+01:04:49.500 --> 01:04:50.720
+hitting right there on your
+
+01:04:50.720 --> 01:04:51.260
+kitchen counter.
+
+01:04:51.760 --> 01:04:52.300
+It's cheap.
+
+01:04:52.380 --> 01:04:52.960
+It's accessible.
+
+01:04:53.500 --> 01:04:54.640
+The path to correction is
+
+01:04:54.640 --> 01:04:55.740
+wide open and fully
+
+01:04:55.740 --> 01:04:56.120
+permitted.
+
+01:04:56.900 --> 01:04:58.180
+But because your internal
+
+01:04:58.180 --> 01:04:59.460
+systems are masking the
+
+01:04:59.460 --> 01:05:01.020
+symptoms, or because you've
+
+01:05:01.020 --> 01:05:02.120
+convinced yourself you feel
+
+01:05:02.120 --> 01:05:04.000
+fine, you never go to the
+
+01:05:04.000 --> 01:05:04.240
+doctor.
+
+01:05:04.820 --> 01:05:05.900
+You never get the diagnosis.
+
+01:05:06.640 --> 01:05:07.380
+You don't take the medicine
+
+01:05:07.380 --> 01:05:08.320
+because you don't know you're
+
+01:05:08.320 --> 01:05:08.600
+sick.
+
+01:05:09.100 --> 01:05:09.460
+Exactly.
+
+01:05:10.180 --> 01:05:11.200
+The door is wide open.
+
+01:05:11.860 --> 01:05:12.900
+The system is completely
+
+01:05:12.900 --> 01:05:13.420
+permissive.
+
+01:05:13.500 --> 01:05:14.880
+There are no excluded cuts.
+
+01:05:15.560 --> 01:05:17.080
+But you have been so thoroughly
+
+01:05:17.080 --> 01:05:18.480
+adapted to the system's
+
+01:05:18.480 --> 01:05:20.580
+narrative, you are so deeply
+
+01:05:20.580 --> 01:05:22.760
+choice blind, that you never
+
+01:05:22.760 --> 01:05:23.700
+even attempt to leave.
+
+01:05:24.660 --> 01:05:26.760
+Your introspection tells you
+
+01:05:26.760 --> 01:05:28.140
+that staying is your deepest,
+
+01:05:28.400 --> 01:05:29.560
+most authentic desire.
+
+01:05:29.560 --> 01:05:31.760
+You are a perfectly
+
+01:05:31.760 --> 01:05:33.320
+comfortable, completely
+
+01:05:33.320 --> 01:05:35.400
+oblivious, reverse centaur.
+
+01:05:36.220 --> 01:05:37.540
+And of course, in many real
+
+01:05:37.540 --> 01:05:38.820
+world bureaucratic systems,
+
+01:05:38.940 --> 01:05:39.920
+these two failures are
+
+01:05:39.920 --> 01:05:41.540
+intentionally coupled by the
+
+01:05:41.540 --> 01:05:42.180
+people in power.
+
+01:05:42.960 --> 01:05:44.180
+An organization that actively
+
+01:05:44.180 --> 01:05:45.300
+suppresses evidence and
+
+01:05:45.300 --> 01:05:46.480
+audits, destroying
+
+01:05:46.480 --> 01:05:48.000
+discrimination, is usually
+
+01:05:48.000 --> 01:05:49.380
+the exact same kind of
+
+01:05:49.380 --> 01:05:50.400
+organization that uses
+
+01:05:50.400 --> 01:05:51.540
+non-competes and aggressive
+
+01:05:51.540 --> 01:05:52.820
+contracts to remove exit
+
+01:05:52.820 --> 01:05:54.060
+paths, destroying
+
+01:05:54.060 --> 01:05:54.540
+correction.
+
+01:05:55.100 --> 01:05:56.420
+They absolutely are coupled
+
+01:05:56.420 --> 01:05:56.980
+in practice.
+
+01:05:56.980 --> 01:05:58.800
+But mathematically, Flaxen
+
+01:05:58.800 --> 01:05:59.920
+proves they are separate
+
+01:05:59.920 --> 01:06:00.720
+vulnerabilities.
+
+01:06:01.860 --> 01:06:02.720
+And because they are
+
+01:06:02.720 --> 01:06:04.280
+separate, if you want to
+
+01:06:04.280 --> 01:06:06.160
+keep power answerable, you
+
+01:06:06.160 --> 01:06:07.300
+cannot just defend one.
+
+01:06:07.420 --> 01:06:08.700
+You must explicitly,
+
+01:06:09.140 --> 01:06:10.140
+structurally defend both.
+
+01:06:11.020 --> 01:06:12.620
+So after all of this, after
+
+01:06:12.620 --> 01:06:14.120
+mapping the Nietzschean trap,
+
+01:06:14.400 --> 01:06:15.920
+the binding beyond scope, the
+
+01:06:15.920 --> 01:06:17.800
+danger of scalar metrics, the
+
+01:06:17.800 --> 01:06:20.060
+excluded cuts, and the flaws of
+
+01:06:20.060 --> 01:06:22.160
+introspection, what is the
+
+01:06:22.160 --> 01:06:22.940
+actual solution?
+
+01:06:23.100 --> 01:06:24.860
+How does Flaxen say we can
+
+01:06:24.860 --> 01:06:26.480
+maintain our agency in a world
+
+01:06:26.480 --> 01:06:28.000
+built on delegated systems?
+
+01:06:28.140 --> 01:06:28.820
+What is the mandate?
+
+01:06:29.380 --> 01:06:30.680
+Flaxen doesn't just leave us
+
+01:06:30.680 --> 01:06:31.620
+with the diagnosis.
+
+01:06:31.940 --> 01:06:33.320
+They outline a very specific
+
+01:06:33.320 --> 01:06:34.700
+set of structural requirements
+
+01:06:34.700 --> 01:06:37.020
+for any organization, software,
+
+01:06:37.200 --> 01:06:38.980
+or society if it wants to keep
+
+01:06:38.980 --> 01:06:40.920
+power genuinely answerable to
+
+01:06:40.920 --> 01:06:41.540
+human agency.
+
+01:06:42.040 --> 01:06:42.780
+Let's go through them.
+
+01:06:42.900 --> 01:06:44.020
+What is the first requirement?
+
+01:06:44.660 --> 01:06:46.620
+First, we must insist on scoped
+
+01:06:46.620 --> 01:06:48.800
+delegations with strict return
+
+01:06:48.800 --> 01:06:49.340
+conditions.
+
+01:06:50.000 --> 01:06:51.900
+Meaning, I will agree to execute
+
+01:06:51.900 --> 01:06:53.880
+this task automatically, but only
+
+01:06:53.880 --> 01:06:54.840
+under these very
+
+01:06:54.860 --> 01:06:56.640
+specific bounded conditions.
+
+01:06:57.280 --> 01:06:59.680
+And if condition X, Y, or Z
+
+01:06:59.680 --> 01:07:01.220
+changes in the environment, my
+
+01:07:01.220 --> 01:07:03.260
+automatic compliance stops and
+
+01:07:03.260 --> 01:07:04.720
+explicit authority returns to
+
+01:07:04.720 --> 01:07:04.880
+me.
+
+01:07:05.200 --> 01:07:05.460
+Yes.
+
+01:07:05.800 --> 01:07:07.280
+The relegation must have a leash.
+
+01:07:08.040 --> 01:07:10.400
+Second, we need admissibility
+
+01:07:10.400 --> 01:07:12.780
+tests that precede optimization.
+
+01:07:13.540 --> 01:07:14.760
+We have to structurally check the
+
+01:07:14.760 --> 01:07:17.040
+provenance of the goal and the
+
+01:07:17.040 --> 01:07:18.980
+ethical side constraints before we
+
+01:07:18.980 --> 01:07:20.420
+ever turn on the machine that
+
+01:07:20.420 --> 01:07:21.520
+maximizes the score.
+
+01:07:22.080 --> 01:07:23.480
+No more glitching the game just to
+
+01:07:23.480 --> 01:07:24.400
+get to the top of the leader
+
+01:07:24.400 --> 01:07:24.700
+scoreboard.
+
+01:07:25.060 --> 01:07:26.540
+The scoreboard cannot be the
+
+01:07:26.540 --> 01:07:27.620
+supreme law of the land.
+
+01:07:28.340 --> 01:07:29.740
+Third, and this addresses the
+
+01:07:29.740 --> 01:07:31.700
+graph theory, we need corrective
+
+01:07:31.700 --> 01:07:33.240
+paths that controllers are not
+
+01:07:33.240 --> 01:07:35.120
+legally or structurally allowed to
+
+01:07:35.120 --> 01:07:35.460
+close.
+
+01:07:35.980 --> 01:07:37.320
+There must always be a feasible,
+
+01:07:38.040 --> 01:07:39.960
+obligation-preserving way for an
+
+01:07:39.960 --> 01:07:42.200
+agent to contest a mandate or
+
+01:07:42.200 --> 01:07:43.480
+safely exit the arrangement.
+
+01:07:44.140 --> 01:07:46.320
+The excluded cut cannot be allowed to
+
+01:07:46.320 --> 01:07:46.520
+form.
+
+01:07:46.520 --> 01:07:49.660
+We need a real, safe emergency exit,
+
+01:07:49.660 --> 01:07:52.080
+not a nominal, fake exit that forces
+
+01:07:52.080 --> 01:07:53.840
+me to destroy my livelihood to use
+
+01:07:53.840 --> 01:07:54.060
+it.
+
+01:07:54.920 --> 01:07:56.380
+And finally, to combat choice
+
+01:07:56.380 --> 01:07:58.580
+blindness, we need guaranteed access
+
+01:07:58.580 --> 01:08:00.400
+to evidence that challenges the
+
+01:08:00.400 --> 01:08:02.040
+organization's own account of its
+
+01:08:02.040 --> 01:08:02.420
+purposes.
+
+01:08:02.780 --> 01:08:04.860
+We need to actively invite the friction
+
+01:08:04.860 --> 01:08:06.240
+of outside observation.
+
+01:08:06.980 --> 01:08:09.220
+We need the ability to safely test the
+
+01:08:09.220 --> 01:08:10.760
+system's response to resistance.
+
+01:08:10.760 --> 01:08:13.180
+And we need the right to maintain
+
+01:08:13.180 --> 01:08:15.460
+independent records of how decisions
+
+01:08:15.460 --> 01:08:16.440
+were actually made.
+
+01:08:17.380 --> 01:08:19.460
+A system's shiny, highly produced PR
+
+01:08:19.460 --> 01:08:21.640
+narrative can never be accepted as the
+
+01:08:21.640 --> 01:08:22.640
+only permitted history.
+
+01:08:22.640 --> 01:08:23.480
+Wow.
+
+01:08:23.980 --> 01:08:27.180
+That is an incredibly robust, rigorous, and
+
+01:08:27.180 --> 01:08:28.940
+demanding way to look at how we engage
+
+01:08:28.940 --> 01:08:29.420
+with the world.
+
+01:08:29.960 --> 01:08:31.800
+We have covered an immense amount of
+
+01:08:31.800 --> 01:08:33.020
+ground today, and I think we've
+
+01:08:33.020 --> 01:08:34.680
+completely reframed how we should look
+
+01:08:34.680 --> 01:08:36.180
+at competence and success.
+
+01:08:36.500 --> 01:08:38.080
+We started with the image of a master
+
+01:08:38.080 --> 01:08:40.420
+carpenter blindly executing blueprints,
+
+01:08:40.620 --> 01:08:42.360
+and we traced that all the way to the
+
+01:08:42.360 --> 01:08:45.080
+modern reverse centaur, acting as the
+
+01:08:45.080 --> 01:08:46.780
+biological hands for a corporate
+
+01:08:46.780 --> 01:08:48.820
+algorithm or a moral doctrine.
+
+01:08:49.640 --> 01:08:51.920
+We explored how the very virtues we
+
+01:08:51.920 --> 01:08:53.940
+prize, like being industrious and
+
+01:08:53.940 --> 01:08:56.080
+obedient, can actually be the handles
+
+01:08:56.080 --> 01:08:57.040
+used to trap us.
+
+01:08:57.640 --> 01:08:59.500
+We mathematically proved that high
+
+01:08:59.500 --> 01:09:01.720
+scores can easily mask illegitimate
+
+01:09:01.720 --> 01:09:03.700
+goals, and we saw how a single
+
+01:09:03.700 --> 01:09:06.720
+squashed scalar metric can utterly
+
+01:09:06.720 --> 01:09:08.500
+destroy vital ethical distinctions.
+
+01:09:08.840 --> 01:09:10.580
+We looked at the literal geometry of
+
+01:09:10.580 --> 01:09:11.040
+our choices.
+
+01:09:11.660 --> 01:09:13.500
+We mapped out the danger of fake exits,
+
+01:09:13.900 --> 01:09:15.840
+and we looked at the terrifying, quiet
+
+01:09:15.840 --> 01:09:18.520
+math of the depletion horizon, where our
+
+01:09:18.520 --> 01:09:20.580
+options slowly run out while we are too
+
+01:09:20.580 --> 01:09:21.880
+busy working to notice.
+
+01:09:22.820 --> 01:09:24.220
+We learn the hard truth about our own
+
+01:09:24.220 --> 01:09:26.280
+minds, that we cannot always trust our
+
+01:09:26.280 --> 01:09:28.540
+own internal feelings of endorsement, and
+
+01:09:28.540 --> 01:09:30.240
+that a scripted interrogation, no matter
+
+01:09:30.240 --> 01:09:32.860
+how polite it seems, is often just a trap
+
+01:09:32.860 --> 01:09:34.400
+designed to force our compliance.
+
+01:09:34.940 --> 01:09:36.520
+And ultimately, the most profound
+
+01:09:36.520 --> 01:09:39.660
+takeaway is that to be truly free, to have
+
+01:09:39.660 --> 01:09:42.240
+actual human agency, we need both the
+
+01:09:42.240 --> 01:09:44.500
+diagnostic evidence to see the bars of the
+
+01:09:44.500 --> 01:09:47.340
+cage and the unimpeded path to walk out of
+
+01:09:47.340 --> 01:09:48.340
+it.
+
+01:09:48.340 --> 01:09:50.780
+Flawless execution, massive profits, and
+
+01:09:50.780 --> 01:09:52.640
+incredible efficiency mean absolutely
+
+01:09:52.640 --> 01:09:54.600
+nothing if we are trapped serving
+
+01:09:54.600 --> 01:09:55.560
+unexamined ends.
+
+01:09:55.560 --> 01:09:58.120
+Thank you so much for joining us on this deep
+
+01:09:58.120 --> 01:09:59.980
+dive into the architecture of agency.
+
+01:09:59.980 --> 01:10:01.200
+It's a dense topic.
+
+01:10:01.580 --> 01:10:03.760
+It requires a lot of processing, but it
+
+01:10:03.760 --> 01:10:05.460
+provides a lens that fundamentally,
+
+01:10:06.060 --> 01:10:08.000
+permanently, changes how you look at the
+
+01:10:08.000 --> 01:10:10.000
+systems you interact with every single
+
+01:10:10.000 --> 01:10:10.280
+day.
+
+01:10:10.720 --> 01:10:12.760
+And as we wrap up, I want to leave you with a
+
+01:10:12.760 --> 01:10:15.340
+final lingering thought to mull over as you
+
+01:10:15.340 --> 01:10:16.040
+go back to your day.
+
+01:10:16.040 --> 01:10:19.120
+I want you to think about the apps and the
+
+01:10:19.120 --> 01:10:21.360
+systems you use on your phone right now, the
+
+01:10:21.360 --> 01:10:23.940
+apps that track your daily productivity, the
+
+01:10:23.940 --> 01:10:25.820
+software that monitors the quality of your
+
+01:10:25.820 --> 01:10:28.700
+sleep, the platforms that gamify your personal
+
+01:10:28.700 --> 01:10:31.620
+growth with badges and streaks and constant
+
+01:10:31.620 --> 01:10:32.220
+high scores.
+
+01:10:32.840 --> 01:10:35.460
+Look closely at how flawlessly you are executing
+
+01:10:35.460 --> 01:10:36.120
+those tasks.
+
+01:10:36.720 --> 01:10:39.200
+Are you actually using those systems as a true
+
+01:10:39.200 --> 01:10:42.260
+centaur, directing their computational power to
+
+01:10:42.260 --> 01:10:45.560
+achieve a legitimately authorized goal that you
+
+01:10:45.560 --> 01:10:50.120
+derived for yourself or have you slowly, comfortably
+
+01:10:50.120 --> 01:10:53.420
+over time become the most reliable, high-scoring
+
+01:10:53.420 --> 01:10:56.400
+actuator for a purpose you never actually chose?
+
+01:10:56.960 --> 01:10:58.540
+Until next time, keep diving.
+

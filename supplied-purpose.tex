@@ -1,0 +1,528 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Adm}{\operatorname{Adm}}
+\newcommand{\Reach}{\operatorname{Reach}}
+
+\title{The Supplied Purpose:\\
+Nietzsche, Delegated Agency, and the Admissibility of Ends}
+\author{Flyxion\\ \small Independent Researcher}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+A person can execute a task competently without having selected its end, and this separation is often useful. It becomes a problem when the executor's competence, participation, or dependence is treated as evidence that the end has been authorised. This essay separates four achievements that are routinely run together: reliable execution, beneficial consequence, organisational endurance, and legitimate purpose-setting. A Nietzschean passage on the moral ideal supplies a genealogical point of departure, since it describes a person made useful to purposes that person cannot establish. The formal apparatus distinguishes effective control from authorisation, and feasibility from controller permission, obligation preservation, and admissibility. On that basis seventeen short results are proved. Execution records do not determine authorisation. Maximising estimated benefit does not secure admissibility, and a representation preserves admissibility exactly when admissibility is constant on its fibres. An excluded cut characterises when correction is unreachable, a nominal exit need not be corrective, and added exclusions can only shrink the corrective options measured over a fixed domain. A rendering of the present does not determine the authorisation history behind it, and sustained depletion, in continuous or discrete form, bounds the time for which revision capacity can decline. A person's sincere endorsement of a purpose is itself a rendering of the history that produced it, so it cannot establish authorisation alone. Additional observations refine what can be inferred, and reflection that introduces no new information cannot discriminate histories that its starting report fails to discriminate. Loss of the distinctions needed to judge an arrangement and loss of the paths needed to correct it are shown to be logically independent failures. An interlocutor's success in examining a purpose is distinguished from the truth of the claim examined and from any authority to select the examined person's ends, and an exchange whose answers are fixed by the report and the script cannot discriminate the histories behind the report. The results are conditional on stated obligations and authorisation rules, and the mathematics does not supply those normative premises. The essay does not claim that Nietzsche held these definitions, that altruistic purposes are inherently suspect, or that delegation is a defect. Its question is what an organisation must preserve so that those who carry out its purposes retain an effective relationship to the authority directing them.
+\end{abstract}
+
+\section{Four achievements that are not one}
+
+Ordinary life is full of competent action in service of ends chosen elsewhere. A carpenter builds to a client's drawings, a pilot flies the route assigned, a clerk applies the rule as written. Nothing here is defective. Division of labour depends on it, and an arrangement in which every executor re-derived every purpose would be paralysed.
+
+The difficulty begins with an inference that arrangements of this kind invite. The executor is skilled, so the arrangement works. The arrangement works, so its purposes must be sound. The purposes are sound, so questioning them is unnecessary, and eventually improper. Each step borrows credit from a different achievement. This essay distinguishes four of them.
+
+\begin{description}[leftmargin=1.5em,style=nextline]
+\item[Reliable execution.] The ability of a party to carry out a specified purpose with low error.
+\item[Beneficial consequence.] The degree to which outcomes are good by some stated measure.
+\item[Organisational endurance.] The persistence of an arrangement over time, including its ability to reproduce its own conditions.
+\item[Legitimate purpose-setting.] The standing of a particular party, or process, to select the ends the arrangement serves, together with the continuing ability of affected parties to examine, contest, and revise that selection.
+\end{description}
+
+Each can be present while the others are absent. A system may execute flawlessly in service of an unauthorised end, produce benefits through an arrangement nobody agreed to, endure because exit has been made impracticable, and still lack any process by which its purposes could be revised. The thesis of the essay is that none of the first three silently supplies the fourth.
+
+The setting is deliberately wider than technology. The term \emph{reverse centaur} is used in discussions of automation for a human who serves a machine's pace and goals, in contrast to the centaur, a human whose work a machine augments.\footnote{The centaur usage arose around advanced chess, in which human players use computer assistance \cite{harmon2003,kasparov2017}. The phrase \emph{reverse centaur} appears in the academic literature at least by 2021 \cite{samothrakis2021} and has been popularised by Cory Doctorow \cite{doctorow2026}. Its first coinage has not been established here.} The structure it names does not depend on machines. A moral doctrine, a bureaucracy, or a metric can occupy the controller's position, and that generality is the reason to begin with a philosophical source rather than a technical one.
+
+The essay proves two families of results. The first concerns discrimination: whether the evidence available within an arrangement can distinguish authorised from unauthorised histories, treated through the representation criterion, historical underdetermination, the self-knowledge results, and the results on examination by an interlocutor. The second concerns correction: whether a path to admissible repair remains reachable, treated through the excluded cut, the nominal exit, and the monotonicity and depletion results. The penultimate section shows that the two failures are logically independent. Section~\ref{sec:setup} sets out the formal apparatus and ends with a table of symbols.
+
+\section{A genealogical point of departure}
+
+Nietzsche's notebook material on the moral ideal, as arranged in the posthumous compilation \emph{The Will to Power}, contains several passages that bear on the problem.\footnote{Passage numbers follow the Ludovici translation \cite{nietzscheWTP}. Other translations and editions of the notes may number them differently, and a citation to another edition should locate each passage by its content.} Passage \S354 describes the means by which a particular kind of life preserves itself being promoted into a universal standard imposed on other kinds. Passage \S356 imagines industrious, benevolent, temperate people becoming the slaves of the future, and \S358 describes a person who cannot give himself an aim and who therefore honours unselfishness \cite[\S\S354, 356, 358]{nietzscheWTP}.
+
+Two cautions on provenance are required. First, \emph{The Will to Power} is an editorial arrangement of unpublished notes \cite{montinari2003}, so its sequence is not a completed argumentative design by the author, and passages from it ought to be corroborated against the published works wherever a claim leans on them. The parallels cited below, including the treatment of origin and purpose in the \emph{Genealogy} and of Socrates in \emph{Twilight of the Idols}, are of this kind \cite{nietzscheGM,nietzscheTI}. Second, the diagnosis that moral ideals can turn people into instruments of purposes they did not choose must be separated from the hierarchical prescriptions Nietzsche attaches to it. The essay uses the first and takes no position here on the second.
+
+What the passages supply is a structural observation. A virtue can make a person reliably useful to ends the person cannot establish for themselves, and the language of morality can render the arrangement self-justifying. The person retains the capacities needed to execute while authority over purpose resides elsewhere. The connection to the reverse centaur is a structural analogy. Nietzsche is discussing moral subordination, not computer systems, and the formal reconstruction below is the essay's own.
+
+The genealogical method also has limits that bear on its use. The origin of a purpose, the reasons for its appeal, its truth, and its authority to govern are four separate questions. The separation of origin from present purpose is Nietzsche's own point in the \emph{Genealogy} \cite[II, \S12]{nietzscheGM}, and the separation of origin from truth is the familiar warning against the genetic fallacy \cite{cohennagel1934}. A grievance can generate a sound proposal, and benevolent sincerity can generate an unsound arrangement. Ancestry and intention settle neither. The method is therefore applied reflexively here: the preference for contestability that organises this essay has grounds, stated in the closing section, rather than being exempted from examination.
+
+\section{Effective control, authorisation, and feasible continuation}\label{sec:setup}
+
+Let $\mathcal P$ be a set of parties, $\Theta$ a set of purposes, and $\mathcal X$ a set of organisational states. A state is
+\[
+x=(H,S,\mathcal C,\mathcal K,\mathcal U,\mathcal O),
+\]
+where $H$ is the committed history, $S$ the maintained state, $\mathcal C$ the relevant capacities, $\mathcal K$ the allocation of effective control, $\mathcal U$ the authorisation record, and $\mathcal O$ the applicable obligations.
+
+Three quantities are kept apart, because the essay's central case consists of their coming apart. For a party $p$ and purpose $\theta$, write
+\[
+K_{\mathrm{sel}}(p,\theta,x)\ \ge 0
+\]
+for \emph{effective control} over purpose selection, the actual ability to determine which purpose is pursued. Write
+\[
+U_{\mathrm{sel}}(p,\theta,x)=\alpha(\mathcal U,p,\theta)\in\{0,1\}
+\]
+for \emph{authorisation} to select that purpose, where $\alpha$ is a stated authorisation rule applied to the authorisation record. Write $E(p,\theta,x)$ for \emph{execution responsibility}, recorded separately and not as a component of either of the others. Analogous quantities can be defined for proposing, evaluating, revising, and terminating. A party may hold large operational discretion while holding neither control nor authorisation over the ends within which that discretion operates, and a controller may hold effective control while lacking authorisation. The second case is the one of interest. The distinction between effective control and authorisation is the familiar one between de facto power and legitimate authority \cite{raz1986}.
+
+Let $G=(V,E)$ be a directed graph of operationally feasible transitions on $V=\mathcal X$, each edge carrying the action that effects it, and write $\Gamma(x)$ for the set of operationally feasible actions at $x$. Controller exclusions remove a set $E_{\mathrm{ex}}\subseteq E$ of transitions, giving the permitted graph
+\[
+G_{\mathrm{perm}}=(V,\,E\setminus E_{\mathrm{ex}}).
+\]
+Applicable obligations determine a further edge set $E_{\mathcal O}\subseteq E\setminus E_{\mathrm{ex}}$ of transitions that preserve those obligations, giving the obligation-preserving graph
+\[
+G_{\mathcal O}=(V,\,E_{\mathcal O}).
+\]
+Admissibility is a predicate $\Adm(a,x)\in\{0,1\}$ on feasible actions, and
+\[
+\Gamma^{\mathrm{adm}}(x)=\{a\in\Gamma(x):\ \Adm(a,x)=1\}.
+\]
+It checks the provenance of the objective and estimates, applicable obligations, consequential exclusions, exposure of costs, and whatever authorisation or contestability the arrangement requires.
+
+These predicates answer different questions. By construction, controller permission implies operational feasibility, and obligation preservation in $G_{\mathcal O}$ implies controller permission. Admissibility is evaluated on feasible actions. The converses do not hold in general, and neither controller permission nor obligation preservation alone establishes admissibility: an action can be feasible and excluded by the controller, permitted and obligation-violating, or obligation-preserving and still inadmissible for want of authorisation.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$K_{\mathrm{sel}}(p,\theta,x)$ & effective control over purpose selection \\
+$U_{\mathrm{sel}}(p,\theta,x)$ & authorisation to select, fixed by a rule $\alpha$ on the record $\mathcal U$ \\
+$E(p,\theta,x)$ & execution responsibility \\
+$G,\ G_{\mathrm{perm}},\ G_{\mathcal O}$ & feasible, permitted, and obligation-preserving graphs \\
+$\Gamma(x),\ \Gamma^{\mathrm{adm}}(x)$ & feasible actions at $x$, and the admissible subset \\
+$\mathcal R,\ \mathcal R_j$ & corrective states, and completion states of task type $j$ \\
+$Q(G_{\mathcal O},x)$ & corrective task types reachable from $x$ in $G_{\mathcal O}$ \\
+$\rho,\ I,\ O$ & renderings of history: general, introspective, additional observation \\
+$u(H)$ & authorisation status of a history $H$ \\
+\bottomrule
+\end{tabular}
+\caption{Principal symbols.}
+\end{table}
+
+A purpose $\theta$ induces a preference relation $\succeq_\theta$ over possible continuations. Four things are kept apart: a descriptive prediction, an evaluative ranking, a proposed objective, and an authorised commitment. Many failures of optimisation practice consist in letting a numerical objective stand in for an authorised commitment while hiding unresolved disagreement about what success should mean.
+
+\section{The commitment grammar}
+
+Commitment to a purpose proceeds through five operations:
+\[
+\operatorname{DISTINGUISH}(\theta)\to\operatorname{REFUSE}\to\operatorname{BIND}\to\operatorname{VERIFY}\to\operatorname{COLLAPSE}\to H'.
+\]
+Distinction makes the proposed purpose available as a candidate. Refusal removes candidates that fail applicable constraints. Binding relates the surviving proposal to agents, resources, and obligations. Verification tests whether commitment is warranted. Collapse commits one continuation, whose provenance enters the history $H'$. The grammar follows the author's earlier work on commitment and refusal \cite{flyxionCalculus}.
+
+An attractive purpose remains a proposal until it has passed the relevant gates. Failures can be located by stage. Premature collapse commits before verification. Refusal under an unverified objective excludes rival purposes because they fail to maximise a measure whose authority was never established. Binding beyond scope attaches a purpose to obligations its authorisation did not cover. The last two are the failures of most interest here, because both can coexist with efficient execution.
+
+\section{The reverse centaur as a role structure}
+
+Let $h$ be a human executor and $m$ an external controller. The controller may be a machine, an institution, or an authoritative doctrine, and the analysis depends on the allocation of control and authorisation, not on the substrate.
+
+\begin{definition}[Reverse-centaur allocation]
+At a state $x$, an arrangement is a \emph{reverse-centaur allocation} for a purpose $\theta$ when
+\[
+K_{\mathrm{sel}}(m,\theta,x)>0,\qquad K_{\mathrm{sel}}(h,\theta,x)=0,\qquad E(h,\theta,x)>0.
+\]
+\end{definition}
+
+This identifies a role structure and does not yet establish inadmissibility. A person may authorise a bounded task whose immediate purpose is externally supplied, and many such delegations are unobjectionable. The decisive further questions are whether the controller's selection is authorised and whether the human retains a corrective path. Let $j_{\mathrm{rev}}$ be the corrective task type of contesting, revising, or terminating the delegation, with acceptable completion states $\mathcal R_{j_{\mathrm{rev}}}$, which include the discharge of the obligations the delegation carries.
+
+\begin{definition}[Captured delegation]
+A reverse-centaur allocation is a \emph{captured delegation} when, in addition,
+\[
+U_{\mathrm{sel}}(m,\theta,x)=0
+\quad\text{and}\quad
+\mathcal R_{j_{\mathrm{rev}}}\ \text{is not reachable from }x\text{ in }G_{\mathcal O}.
+\]
+The two added conditions are independent failures, unwarranted authority at the top and foreclosed correction at the bottom, and a captured delegation is their coincidence.
+\end{definition}
+
+The person remains necessary as an actuator while becoming unavailable as an author of the arrangement. Two features make the structure self-sealing. Nominal exit differs from practical exit, a point made precise in Section~\ref{sec:cut}. And a doctrine can classify the questioning of the purpose as itself a wrong, which removes the very continuation through which the doctrine could be examined. A moral injunction of this form already functions as an external controller, with no machine involved.
+
+The consequence is that human involvement ceases to be a sufficient test of human governance. A human may sit in every loop of an arrangement and author none of its ends. The human-factors literature documents the neighbouring pattern, in which operators retain responsibility for systems they cannot meaningfully control \cite{bainbridge1983,parasuraman1997,elish2019}.
+
+\section{From preservation measure to universal authority}
+
+Let $v$ be a valuation that ranks outcomes and let $\mathcal D_v$ be the class of situations in which its application has been warranted. A valuation that preserves some form of life or organisation is useful and, within $\mathcal D_v$, may be well founded. The problematic operation is an expansion
+\[
+\mathcal D_v\subsetneq\mathcal D'_v
+\]
+made without corresponding evidence or authorisation, followed by treating $v$ as the final arbiter throughout $\mathcal D'_v$.
+
+In the commitment grammar this is a binding error. The valuation is bound to a broader domain than its warrant permits. If rival purposes are then excluded merely because they fail to maximise $v$, refusal operates under an unverified authority, and the subsequent collapse may be efficient while remaining inadmissible. This is the formal counterpart of the passage in which the means of preserving one kind of life becomes a standard for every kind. It also isolates what is and is not objectionable. The valuation $v$ is not at fault. The unwarranted extension of its jurisdiction is.
+
+\section{Execution cannot determine authorisation}
+
+Delegating execution can be understood through Aspect Relegation Theory: a previously explicit activity becomes automatic once performed adequately \cite{flyxionART}, a pattern with a long history in the study of skill acquisition \cite{fittsposner1967,anderson1982}. Successful repetition can justify moving execution from explicit deliberation into automatic control, and this is an efficiency, not a lapse. Purpose-setting requires a separate authorisation. The point is stated as a limit on what any function of the execution record can establish.
+
+\begin{theorem}[Independence of execution and authorisation]\label{thm:indep}
+Let $r$ be an execution record. Suppose the model contains states $x_1,x_2$ (that is, the model does not rule out such a pair) in which $p$ pursues $\theta$ with the common execution record $r$, whose authorisation records differ so that
+\[
+U_{\mathrm{sel}}(p,\theta,x_1)=1,\qquad U_{\mathrm{sel}}(p,\theta,x_2)=0.
+\]
+Then no predicate $f$ of the execution record alone satisfies $f(r)=U_{\mathrm{sel}}(p,\theta,x)$ at both states.
+\end{theorem}
+\begin{proof}
+A predicate depending only on the execution record takes the same value $f(r)$ at $x_1$ and $x_2$. Authorisation takes the values $1$ and $0$. A single value cannot equal both. \qedhere
+\end{proof}
+
+\begin{remark}
+A concrete pair is obtained from the authorisation rule $\alpha$ that selection authority requires a grant recorded by the affected parties. In $x_1$ the record contains such a grant. In $x_2$ it contains none, and the same execution arises through accumulated dependence. If $r$ meets a chosen reliability criterion, the pair is a countermodel to the inference from reliability to authorised purpose selection. The premise that such states are admitted expresses the separation between performance and authorisation. It is a modelling premise, and the claim is only that performance alone cannot settle which state obtains.
+\end{remark}
+
+The reverse-centaur transition occurs when success at a relegated task is used to justify an unexamined transfer of authority over the task's ends. Authority migrates through three channels: convenience, accumulated dependence, and the rising cost of returning to explicit judgment. An admissible delegation therefore specifies the task, the assumptions on which it rests, its duration, its permissible actions, its monitoring conditions, and, critically, return conditions that reactivate explicit human judgment when assumptions change, obligations conflict, or the controller exceeds its authorised scope.
+
+\section{Benefit optimisation and obligatory constraints}
+
+Suppose a proposal selects an action by maximising an estimated benefit $\widehat B$ over the feasible set, so that $a^\star\in\arg\max_{a\in\Gamma(x)}\widehat B(a)$. The score alone does not establish that the objective, the estimates, the exclusions, or the allocation of authority are warranted.
+
+\begin{theorem}[Benefit maximisation is insufficient]\label{thm:benefit}
+Suppose an applicable obligation makes $o(a)=1$ a necessary condition for admissibility. Let $\Gamma(x)=\{a,b\}$ with
+\[
+\widehat B(a)>\widehat B(b),\qquad o(a)=0,\qquad \Adm(b,x)=1.
+\]
+Then the unique maximiser of estimated benefit over $\Gamma(x)$ is inadmissible.
+\end{theorem}
+\begin{proof}
+The strict inequality makes $a$ the unique maximiser. Since $o(a)=0$ violates a necessary condition for admissibility, $\Adm(a,x)=0$. \qedhere
+\end{proof}
+
+\begin{theorem}[Optimisation after admissibility]\label{thm:optadm}
+Let $\Gamma^{\mathrm{adm}}(x)$ be finite and nonempty. Then
+\[
+a^\star\in\arg\max_{a\in\Gamma^{\mathrm{adm}}(x)}\widehat B(a)
+\]
+exists and is admissible. No conclusion about maximality over $\Gamma(x)$ follows.
+\end{theorem}
+\begin{proof}
+A real-valued function attains a maximum on a finite nonempty set. Membership in $\Gamma^{\mathrm{adm}}(x)$ establishes admissibility. An excluded action may have a larger estimated benefit, as in Theorem~\ref{thm:benefit}. \qedhere
+\end{proof}
+
+If $\Gamma^{\mathrm{adm}}(x)$ is empty, the system must revise or refuse the proposal rather than convert a high benefit estimate into permission.
+
+These results concern the insufficiency of a benefit score as a permission, not the value of the purposes it measures. The idea that obligations constrain the maximisation of a good, and do not enter it as one more term, is the idea of side constraints \cite{nozick1974} and of the separateness of persons \cite{rawls1971}, and it is a standard strand of the debate over aggregative moral theories \cite{sen1982}. They supply a structural question that can be asked of any programme that optimises a stated good: who determined what counts as benefit, whose purposes became authoritative through that definition, and which forms of life became merely instrumental to achieving it.\footnote{A scholarly application to effective altruism in particular would need to distinguish particular arguments and institutions within that movement and avoid treating it as one uniform doctrine. Representative statements and criticisms include \cite{singer1972,macaskill2015,srinivasan2015,crary2021}.} The structural question applies equally to a utilitarian programme, a corporate metric, and a religious mission, and it does not make altruistic purposes inherently inadmissible. A benevolent purpose adopted through an admissible process is untouched by it.
+
+\section{When a representation preserves admissibility}
+
+\begin{theorem}[Sufficient representation criterion]\label{thm:repr}
+Let $A$ be an action set and $s:A\to Z$ a representation. There exists a function $f:Z\to\{0,1\}$ satisfying
+\[
+\Adm(a)=f(s(a))\quad\text{for every }a\in A
+\]
+if and only if admissibility is constant on every fibre of $s$:
+\[
+s(a)=s(b)\ \Longrightarrow\ \Adm(a)=\Adm(b).
+\]
+\end{theorem}
+\begin{proof}
+If such an $f$ exists, actions with equal representations receive equal values under $f$, which gives necessity. Conversely, suppose admissibility is constant on every fibre. For $z\in s(A)$, define $f(z)$ as the admissibility of any action represented by $z$. Constancy on fibres makes this independent of the chosen action. Define $f$ arbitrarily outside $s(A)$. Then $\Adm=f\circ s$. \qedhere
+\end{proof}
+
+\begin{remark}
+Taking $s=\widehat B$ yields the scalar-benefit case. Two alternatives with equal estimated benefit and different admissibility, as in Theorem~\ref{thm:benefit} with the strict inequality relaxed to equality, are identified by $s$ and separated by $\Adm$, so no function of the score is an admissibility test. The obstruction is the identification of actions whose admissibility differs, not scalarity as such. A richer scalar that encodes the obligation as a penalty can preserve admissibility, and the same obstruction applies to a vector or narrative representation that loses a required distinction. The criterion itself is the standard fact that a function factors through a map exactly when it is constant on the fibres of that map \cite{maclane1998}, and the scalar-benefit case is developed further in the author's work on claim graphs \cite{flyxionAdversaria}.
+\end{remark}
+
+\section{Corrective reachability and excluded cuts}\label{sec:cut}
+
+Where admissibility requires effective revision, the system must preserve at least one feasible path to a corrective state. Let $\mathcal R\subseteq V$ be the set of corrective states. A corrective state must include the discharge, preservation, or admissibly transferred disposition of the obligations relevant to correction. For $W\subseteq V$ let
+\[
+\delta^+(W)=\{(u,v)\in E:\ u\in W,\ v\notin W\}
+\]
+be its outgoing boundary.
+
+\begin{theorem}[Excluded cut]\label{thm:cut}
+Let $x\in V$. No corrective state is reachable from $x$ in $G_{\mathrm{perm}}$ if and only if there is a set $W\subseteq V$ with $x\in W$, $W\cap\mathcal R=\varnothing$, and $\delta^+(W)\subseteq E_{\mathrm{ex}}$.
+\end{theorem}
+\begin{proof}
+Suppose such a $W$ exists. Any path from $x\in W$ to $\mathcal R$ must leave $W$, because $W$ contains no corrective state, and its first exit uses an edge of $\delta^+(W)$. Every such edge is excluded, so no path in $G_{\mathrm{perm}}$ reaches $\mathcal R$.
+
+Conversely, suppose no corrective state is reachable from $x$ in $G_{\mathrm{perm}}$, and let $W$ be the set of states reachable from $x$ in $G_{\mathrm{perm}}$. Then $x\in W$ and $W\cap\mathcal R=\varnothing$. If an edge $(u,v)\in E$ had $u\in W$ and $v\notin W$ without being excluded, it would lie in $G_{\mathrm{perm}}$ and make $v$ reachable, contradicting the choice of $W$. Hence $\delta^+(W)\subseteq E_{\mathrm{ex}}$. \qedhere
+\end{proof}
+
+The theorem converts the statement that every path to correction crosses an excluded transition into a structural certificate, a region from which the only ways out are the ones the controller has closed. Execution quality is a property of traversals along permitted edges and cannot enlarge the reachable set. The characterisation is a reachability-closure argument of the kind standard in the study of graph algorithms \cite{clrs2022}.
+
+\begin{theorem}[A nominal exit need not be corrective]\label{thm:nominal}
+An exit transition in $G_{\mathrm{perm}}$ does not establish corrective reachability in $G_{\mathcal O}$.
+\end{theorem}
+\begin{proof}
+Take vertices $x,y,z,r$ with $\mathcal R=\{r\}$, permitted edges $(x,y)$, $(y,r)$, and $(x,z)$, and $E_{\mathcal O}=\{(x,z)\}$. Interpret $(x,y)$ as the nominal exit, which violates an applicable obligation. Then $r$ is reachable from $x$ in $G_{\mathrm{perm}}$. In $G_{\mathcal O}$ the only edge leaving $x$ is $(x,z)$ and $z$ has no outgoing edge, so the states reachable from $x$ are $x$ and $z$, and $r$ is not among them. Thus $x$ is not a dead end in $G_{\mathcal O}$, yet correction is unreachable there. \qedhere
+\end{proof}
+
+A termination command can exist while using it leaves an obligation undischarged. Correction must therefore include a feasible way to preserve or discharge required commitments while relinquishing optional capabilities, and this is where admissible degradation and compensating continuation contribute. Three corrective modes are distinguished: immediate refusal, eventual revision, and termination followed by compensating continuation.
+
+Reachability of $\mathcal R$ in $G_{\mathcal O}$ is a necessary test for correction and not a sufficient one. The graph $G_{\mathcal O}$ preserves obligations but can still contain unauthorised transitions, so a path to $\mathcal R$ in it need not be an admissible repair. A sufficient test would replace $G_{\mathcal O}$ by the graph of admissible transitions, and the targets $\mathcal R_j$ are understood to include admissible completion and not merely the discharge of obligations.
+
+\section{Corrective options under a fixed comparison domain}
+
+The contraction of possible futures is not by itself a marker of decline. In a fixed graph, ordinary commitment shrinks what is reachable.
+
+\begin{proposition}\label{prop:reachmono}
+In a fixed directed graph, if $y\in\Reach(x)$ then $\Reach(y)\subseteq\Reach(x)$.
+\end{proposition}
+\begin{proof}
+If $z\in\Reach(y)$, concatenating a path from $x$ to $y$ with a path from $y$ to $z$ gives a path from $x$ to $z$. \qedhere
+\end{proof}
+
+Strict contraction can accompany ordinary irreversible transitions, since the only state lost may be the departed state itself, and it therefore does not, by itself, establish depletion. The comparison must instead be made over a fixed classification of corrective capability. Let $J$ be a fixed set of corrective task types, and for each $j\in J$ let $\mathcal R_j\subseteq V$ be its acceptable completion states. Define
+\[
+Q(G_{\mathcal O},x)=\{\,j\in J:\ \mathcal R_j\ \text{is reachable from }x\text{ in }G_{\mathcal O}\,\}.
+\]
+This measures available corrective task types, not the raw set of future states, and it distinguishes the expected closure of completed alternatives from the loss of options for revising purposes.
+
+\begin{theorem}[Monotonicity under additional exclusions]\label{thm:monoex}
+Let $G_1=(V,E_1)$ and $G_2=(V,E_2)$ be obligation-preserving graphs with $E_2\subseteq E_1$. Holding $x$, $J$, and the target sets fixed,
+\[
+Q(G_2,x)\subseteq Q(G_1,x).
+\]
+The inclusion is strict if some task $j$ is reachable in $G_1$ and every path completing it uses an edge of $E_1\setminus E_2$.
+\end{theorem}
+\begin{proof}
+Every path in $G_2$ is a path in $G_1$, which gives the inclusion. Under the additional hypothesis, $j$ belongs to $Q(G_1,x)$ but not to $Q(G_2,x)$. \qedhere
+\end{proof}
+
+The strictness condition is the cut condition of Theorem~\ref{thm:cut} applied to the targets of $j$, with $E_1\setminus E_2$ as the excluded set. The theorem isolates the effect of changed permissions while holding the comparison state and corrective tasks fixed. Comparison across different current states requires further assumptions, and the theorem does not classify ordinary historical irreversibility as decline.
+
+The regenerative account of decline \cite{flyxionDecadence} defines, for a capacity $C$,
+\[
+\frac{dC}{dt}=G(t)-R(t),\qquad R=R_{\mathrm{loss}}+R_{\mathrm{inhibition}}+R_{\mathrm{foregone}},
+\]
+where regeneration is opposed by destroyed capacities, inhibited exercise, and foregone formation. Apply it to the capacity $C^{\mathrm{rev}}(t)\ge0$ to formulate, assess, and revise purposes. An arrangement is decadent with respect to revision when the net rate remains negative over the relevant interval. A continuous measure requires separate justification. Where counting corrective task types is defensible, the count $|Q|$ is integer valued and changes by jumps, so it is treated by a discrete result below. In either form, added exclusions are one realisation of the inhibition term, by Theorem~\ref{thm:monoex}.
+
+\begin{theorem}[Sustained depletion bound]\label{thm:deplete}
+Let $C^{\mathrm{rev}}\ge0$ be absolutely continuous and suppose, almost everywhere on $[t_0,t_1]$,
+\[
+\frac{dC^{\mathrm{rev}}}{dt}=G_{\mathrm{rev}}(t)-R_{\mathrm{rev}}(t)\le-\varepsilon
+\]
+for some $\varepsilon>0$. Then
+\[
+C^{\mathrm{rev}}(t_1)\le C^{\mathrm{rev}}(t_0)-\varepsilon\,(t_1-t_0),
+\]
+and consequently $t_1-t_0\le C^{\mathrm{rev}}(t_0)/\varepsilon$.
+\end{theorem}
+\begin{proof}
+Absolute continuity permits integration of the derivative \cite{folland1999}:
+\[
+C^{\mathrm{rev}}(t_1)-C^{\mathrm{rev}}(t_0)=\int_{t_0}^{t_1}\frac{dC^{\mathrm{rev}}}{dt}\,dt\le-\varepsilon\,(t_1-t_0).
+\]
+Nonnegativity of $C^{\mathrm{rev}}(t_1)$ gives the duration bound. \qedhere
+\end{proof}
+
+\begin{theorem}[Discrete depletion horizon]\label{thm:discrete}
+Let $J$ be finite and let $Q_n\subseteq J$ be the corrective task types available at step $n$. Suppose that, for $n=0,\ldots,N-1$,
+\[
+|Q_{n+1}|\le|Q_n|-k
+\]
+for an integer $k\ge1$. Then
+\[
+|Q_N|\le|Q_0|-Nk,\qquad N\le\left\lfloor\frac{|Q_0|}{k}\right\rfloor.
+\]
+\end{theorem}
+\begin{proof}
+Repeated substitution gives $|Q_N|\le|Q_0|-Nk$. Since $|Q_N|\ge0$, we have $Nk\le|Q_0|$, which yields the bound on $N$. \qedhere
+\end{proof}
+
+Both depletion results are bookkeeping, and they are stated because they convert a sustained rate of loss into a finite horizon. It requires a defensible capacity measure and an empirically supported depletion bound. Increasing task output does not contradict it, since output and revision capacity are separate variables unless the model explicitly relates them. Two restraints keep the diagnosis from becoming rhetoric. It is a trajectory property that needs comparative evidence, so no single snapshot, however comfortable or constrained, establishes it. And it does not condemn comfort, automation, or cooperation as such, since a highly automated arrangement whose revision capacity is stable or growing is not decadent in this sense.
+
+\section{Historical rendering and authorisation evidence}
+
+Present compliance is a rendering of an arrangement, not a complete account of how it arose. Let $\mathcal H$ be the possible histories, $\rho:\mathcal H\to Y$ an observable rendering, and $u:\mathcal H\to\{0,1\}$ the authorisation status.
+
+\begin{theorem}[Historical underdetermination]\label{thm:hist}
+If histories $H_1,H_2$ satisfy $\rho(H_1)=\rho(H_2)$ and $u(H_1)\ne u(H_2)$, then no function of the rendering alone determines authorisation throughout $\mathcal H$.
+\end{theorem}
+\begin{proof}
+Any function evaluated on the common rendering gives the same value for both histories, while $u$ gives different values. \qedhere
+\end{proof}
+
+The theorem excludes unique determination and not probabilistic evidence. Compliance may raise or lower the likelihood of a given history, and additional records can resolve the ambiguity. The structure is the problem of identification familiar from econometrics, where distinct structures can generate the same observable distribution \cite{koopmans1949}. An authorisation certificate must preserve enough information to distinguish histories whose authorisation status differs. For the same reason, a many-to-one transformation of history prevents unique recovery of the earlier arrangement from the resulting state alone, and it does not make restoration impossible in every case, since preserved records may permit reconstruction in particular instances. Where they do not, repair cannot be a rollback. It must be a further admissible continuation that acknowledges irreversible consequences and discharges the applicable obligations.
+
+The consequence follows the requirement of epistemic immutability \cite{flyxionEI,flyxionLayer}: the history must preserve that a purpose was proposed, selected, delegated, and possibly contested, and a later rendering must not recast imposed compliance as original consent. Successful execution cannot retrospectively supply the authorisation missing from the commitment that produced it.
+
+\section{Self-knowledge beyond self-description}\label{sec:self}
+
+The account so far concerns who selects an end and whether that selection is authorised. A prior epistemic problem remains: a person may sincerely identify an end as their own while misunderstanding the processes that made it compelling. Nietzsche's criticism of introspection bears on this. In \emph{Human, All Too Human} II (``Assorted Opinions and Maxims'') \S223 \cite{nietzscheHAH2} he argues that immediate self-observation is insufficient for self-knowledge because the past continues to flow through us, and he recommends historical and comparative inquiry, including encounters with other ways of living, as means of discovering what an exclusively inward examination misses. In \emph{Daybreak} \S119 \cite{nietzscheDawn} the complementary claim is that the picture a person forms of the instincts constituting his individuality is deeply incomplete.\footnote{Passage numbers follow the Cohn and Kennedy translations cited.}
+
+The position needs careful statement. It is not that true knowledge must come from outside. Introspection is an interpreted observation, not a transparent inspection of its own generating conditions. Outward observation is also perspectival, but it can introduce distinctions and resistance that are unavailable within a person's existing self-description. Contemporary cognitive science supplies the same orientation, and philosophical work on introspection points the same way \cite{schwitzgebel2008,wilson2002}. Accessible treatments include Steven Novella's \emph{Your Deceptive Mind} \cite{novella} and Joseph T.\ Hallinan's \emph{Why We Make Mistakes} \cite{hallinan2009}, which survey errors in perception, memory, and judgment. They serve as entry points only. Primary work includes Nisbett and Wilson's review of verbal reports on mental processes, which found that people can fail to report accurately the causes of their own judgments, and the choice blindness experiments of Johansson, Hall, Sikstr\"om, and Olsson, in which participants often failed to detect mismatches between their choices and outcomes and gave reasons for choices they had not made \cite{nisbettwilson1977,johansson2005}. These studies show that introspective report can diverge from its causes. They do not show that every report is unreliable.
+
+Three claims are accordingly separated: that a person sincerely endorses a purpose, that the person accurately understands how the purpose was acquired, and that the purpose's authority over the arrangement is warranted. The first does not automatically establish either of the others.
+
+Let $F$ map a history $H\in\mathcal H$ to the resulting maintained state, let $r_{\mathrm{self}}$ be the rendering by which a person reports on that state, and let
+\[
+I(H)=r_{\mathrm{self}}(F(H))
+\]
+be the introspective rendering. Introspection is then one rendering among others, and Theorem~\ref{thm:hist} applies to it.
+
+\begin{remark}\label{rem:endorse}
+If $I(H_1)=I(H_2)$ and $u(H_1)\neq u(H_2)$, then no rule that determines authorisation from introspective endorsement alone can be correct at both histories. One history may involve informed selection among effective alternatives and the other systematically restricted alternatives and dependence, while both yield the report ``this is what I want''. This does not show that the report is false. It shows that the report alone cannot distinguish the histories.
+\end{remark}
+
+The positive counterpart concerns what outward inquiry can contribute. For an introspective report $i$ let $\mathcal H_i=\{H:I(H)=i\}$ be its compatible histories. Let $O:\mathcal H\to Z$ collect additional observations, such as records of instruction, available alternatives, responses to disagreement, or the consequences borne by other parties, and write $\mathcal H_{i,o}=\{H:\ I(H)=i,\ O(H)=o\}$.
+
+\begin{theorem}[Additional observation]\label{thm:obs}
+\begin{enumerate}[label=(\alph*),leftmargin=2em,itemsep=0pt]
+\item $\mathcal H_{i,o}\subseteq\mathcal H_i$, and the inclusion is strict if and only if some history in $\mathcal H_i$ has $O(H)\neq o$.
+\item There is a function $g$ with $u=g\circ(I,O)$ if and only if $u$ is constant on every $\mathcal H_{i,o}$.
+\item If $u$ is a function of $I$, then $u$ is a function of $(I,O)$. The converse can fail.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(a) holds by definition, since $\mathcal H_{i,o}$ is the subset of $\mathcal H_i$ on which $O=o$. For (b), the sets $\mathcal H_{i,o}$ are the fibres of $(I,O)$, and the argument of Theorem~\ref{thm:repr} applies to $u$ with $s=(I,O)$. For (c), if $u=f\circ I$ then $u=(f\circ\pi)\circ(I,O)$ for the projection $\pi$. For the failure of the converse take $\mathcal H=\{H_1,H_2\}$ with $I(H_1)=I(H_2)$, $O(H_1)\neq O(H_2)$, and $u(H_1)\neq u(H_2)$. Then each history is its own fibre of $(I,O)$, so $u$ is trivially constant on fibres and hence a function of $(I,O)$, and by Theorem~\ref{thm:hist} it is not a function of $I$. \qedhere
+\end{proof}
+
+The theorem treats $O(H)=o$ as a faithfully recorded observation of a fixed history. It shows the potential value of additional evidence without assuming that any new observation resolves the question. Fallible reports would require a compatibility relation or a likelihood model in place of exact filtering, since exact filtering can exclude the actual history.
+
+A stronger formulation uses responses under changed conditions. Two arrangements can produce identical compliance while differing in what happens when a participant questions the purpose, requests evidence, proposes an alternative, or attempts an obligation-preserving exit. For an inquiry $e$ let $O_e(H)$ denote the response generated by applying $e$ to the state resulting from $H$, with the dynamics assumed deterministic or the relevant uncertainty represented in the model.
+
+\begin{theorem}[Discriminating inquiry]\label{thm:inquiry}
+Suppose $I(H_1)=I(H_2)$ and $O_e(H_1)\neq O_e(H_2)$. Then there is a function $g$ of $(I,O_e)$ with $g=u$ on $\{H_1,H_2\}$. If also $u(H_1)\neq u(H_2)$, no function of $I$ alone agrees with $u$ on both histories.
+\end{theorem}
+\begin{proof}
+The pairs $(I(H_1),O_e(H_1))$ and $(I(H_2),O_e(H_2))$ differ because their second coordinates differ, so setting $g$ to $u(H_1)$ at the first pair and $u(H_2)$ at the second is well defined. The final claim is Theorem~\ref{thm:hist}. \qedhere
+\end{proof}
+
+An organisation's account of itself can therefore be tested through its response to relevant resistance, provided the test is itself admissible, which excludes inquiries that coerce participants or impose costs the arrangement has no standing to impose. The reachability of corrective task types from Section~\ref{sec:cut} onward is one such observable, since whether $j_{\mathrm{rev}}$ lies in $Q(G_{\mathcal O},x)$ can differ between histories that generate identical compliance. The existence of a separating function does not show that an investigator knows which response signifies authorisation. That requires a model linking responses to authorisation status, which is itself a premise.
+
+The same framework gives ``navel gazing'' an informational interpretation.
+
+\begin{theorem}[Reflection without new information]\label{thm:reflect}
+Let $I_0=I$ and $I_{n+1}=f_n\circ I_n$ for functions $f_n$ of the previous report alone. If $I_0(H_1)=I_0(H_2)$, then $I_n(H_1)=I_n(H_2)$ for every $n$. Consequently, if $u(H_1)\neq u(H_2)$, no $I_n$ determines authorisation at both histories.
+\end{theorem}
+\begin{proof}
+The case $n=0$ is the hypothesis. If $I_n(H_1)=I_n(H_2)$ then $I_{n+1}(H_1)=f_n(I_n(H_1))=f_n(I_n(H_2))=I_{n+1}(H_2)$. The final claim follows from Theorem~\ref{thm:hist}. \qedhere
+\end{proof}
+
+The theorem is a deterministic analogue of the data-processing inequality, under which processing a signal cannot increase what it carries about its source \cite{cover2006}. Redescription can become more elaborate without acquiring the evidence needed to discriminate its rival explanations. Actual reflection can retrieve previously neglected memories or generate new observations, and is then not sterile. In the model those contributions enter through $O$ and not through $f_n$, and the theorem applies only when the process introduces no distinguishing information.
+
+The consequence for the main argument is that answerability requires access to evidence capable of challenging an organisation's preferred account of its purposes. A person's confidence, an institution's declaration of benevolence, and a controller's explanation of its objective are all evidence to examine. Their authority depends partly on whether the surrounding arrangement permits the observations and corrective encounters through which those accounts could prove inadequate. An arrangement may preserve people's confidence in their purposes while restricting the evidence and encounters through which they could discover how those purposes were supplied.
+
+\section{Examination without ownership}\label{sec:socratic}
+
+A third dimension concerns how an interlocutor can help a person examine a purpose without supplying a replacement. The familiar Socratic posture of professing ignorance and asking another to explain creates an asymmetry between apparent and effective authority \cite{vlastos1987,vlastos1983}. The questioner presents as someone seeking instruction while controlling the sequence of questions, the alternatives considered, and the contradictions brought into view. That posture can make examination possible by suspending a contest of assertions, and it can also conceal how strongly the inquiry is steered. The structure is distinct from the stronger historical claim that every profession of ignorance by Socrates was insincere, which the essay does not make. The interpretive question is contested \cite{vlastos1987}, and the complaint that Socratic irony is a pose is already voiced against Socrates in Plato's \emph{Republic} \cite{plato}.
+
+Nietzsche's hostile reading of Socratic irony, in a passage on dialectic, is a useful foil.\footnote{The passage is \S431 of \emph{The Will to Power} in the Ludovici translation \cite{nietzscheWTP}, where the irony of the dialectician is called a form of revenge by the oppressed. A parallel in the published works is \emph{Twilight of the Idols}, ``The Problem of Socrates'', \S\S6--7 \cite{nietzscheTI}, which asks whether Socratic irony expresses revolt and resentment.} He treats dialectic as a weapon by which someone without recognised standing reverses a hierarchy, compelling an opponent to defend himself within an argumentative contest. Irony sharpens the asymmetry: the questioner stays composed while the opponent grows angry and struggles to establish his competence, and Nietzsche reads the apparent detachment as an expression of antagonism. His neighbouring discussion also asks how both decadence and strength appear in the Socratic disposition, so the reading is not simply dismissive. The essay takes from it a structural point without adopting his contempt for argument. Dialectical defeat, defeat under the rules of an exchange, must be kept apart from epistemic defeat, as the study of fallacies and of argumentative practice has long insisted \cite{hamblin1970}, and success in an exchange must be kept apart from any entitlement to govern.
+
+In the commitment grammar, the constructive possibility is distinction without premature collapse. A person begins with the proposition ``I freely chose this purpose''. Questioning distinguishes choosing an action from authorising its end, willingness from dependence, and present endorsement from knowledge of provenance. Refusal then removes explanations incompatible with the person's other commitments or available evidence. The inquiry need not install a new purpose, and can leave the person with a better differentiated continuation field in which further judgment becomes possible. The abuse occurs when failure to satisfy the questioner's test becomes refusal of the person's standing, followed by collapse into the questioner's preferred conclusion, with the interrogation's criteria acquiring authority without themselves passing verification.
+
+Let $e$ be an exchange between a questioner $q$ and a participant $p$, with rules fixing the permitted answers and a criterion $\kappa_e$ of adequate justification. For a claim $c$, write $D_e(p,c)$ when $p$ fails to produce a justification meeting $\kappa_e$ for $c$ within the permitted answers, and $F(c)$ when $c$ is false.
+
+\begin{theorem}[Defeat is neither falsity nor authority]\label{thm:defeat}
+\begin{enumerate}[label=(\alph*),leftmargin=2em,itemsep=0pt]
+\item $D_e(p,c)$ does not imply $F(c)$.
+\item Neither $D_e(p,c)$ nor a genuine refutation of $p$'s justification for a purpose $\theta$ implies $U_{\mathrm{sel}}(q,\theta',x)=1$ for any purpose $\theta'$ the questioner proposes.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(a) Take a model with a true claim $c$ whose only available justification uses vocabulary or time that the rules of $e$ exclude. Then $p$ cannot meet $\kappa_e$ within the permitted answers, so $D_e(p,c)$ holds while $F(c)$ fails.
+
+(b) Take an authorisation rule $\alpha$ that grants $q$ authority to test reasons and reserves purpose selection to $p$, so that $\alpha(\mathcal U,q,\theta')=0$ for every record $\mathcal U$ lacking a grant by $p$. Let the record contain no such grant, and let the exchange refute $p$'s justification for $\theta$. Diagnostic success holds while $U_{\mathrm{sel}}(q,\theta',x)=0$. \qedhere
+\end{proof}
+
+The theorem separates diagnostic authority from purpose-setting authority. A questioner can demonstrate that someone's stated reasons are inconsistent without acquiring the standing to choose that person's ends, and a genuine contradiction remains a contradiction even when it is exposed with hostile intent.
+
+The positive question is when an exchange discloses something about the histories behind a report. Let $A_e$ collect the answers elicited, so that the compatible histories are $\mathcal H_{i,a}=\{H\in\mathcal H_i:\ A_e(H)=a\}$ as in Theorem~\ref{thm:obs}. The difficulty is that leading questions, coerced concessions, and an artificially restricted vocabulary can manufacture an apparent contradiction instead of disclosing one. The limiting case is an exchange whose answers are fixed by the report and the questioner's script.
+
+\begin{theorem}[Scripted exchange adds no discrimination]\label{thm:script}
+Let $s$ be a script and suppose the elicited answers satisfy $A_s(H)=h_s(I(H))$ for some function $h_s$. Then $u$ is a function of $(I,A_s)$ if and only if $u$ is a function of $I$. In particular, if $I(H_1)=I(H_2)$ and $u(H_1)\neq u(H_2)$, no such exchange discriminates the two histories.
+\end{theorem}
+\begin{proof}
+The map $H\mapsto(I(H),A_s(H))=(I(H),h_s(I(H)))$ is determined by $I(H)$, and $I(H)$ is recovered from it, so the two maps have the same fibres. The claim follows from Theorem~\ref{thm:obs}(b) and Theorem~\ref{thm:repr}. \qedhere
+\end{proof}
+
+The theorem does not say that questioning is useless. An answer that depends on the history beyond the report enters through $O$, as in Theorem~\ref{thm:obs}, and such an exchange can discriminate. An inconsistency within the report is a property of $I$ itself, which a scripted exchange can expose. What a scripted exchange cannot disclose is which history lies behind the report, and a transcript that shows only smooth agreement is not evidence that the answers carried information about it.
+
+An exchange therefore needs provenance. The record should preserve what was asked, which answers were permitted, and where the participant resisted the proposed interpretation, in line with the requirement that a later rendering must not recast a pressured concession as a discovery. An admissible inquiry would preserve the participant's ability to question the framing, decline a concession, inspect the transcript, and leave the matter unresolved. Successfully unsettling another person's certainty does not confer ownership of their subsequent judgment.
+
+\section{Two failures, independently}
+
+The two families of results concern different failures. Say that an arrangement has \emph{discrimination} when authorisation is a function of the available renderings, that is, $u=g\circ(I,O)$ for some $g$, as in Theorem~\ref{thm:obs}(b). Reachability in $G_{\mathcal O}$ is only a necessary test for correction, as shown above, so correction is defined on a further graph. Let
+\[
+E_{\mathrm{adm}}=\{(x,a,y)\in E_{\mathcal O}:\ \Adm(a,x)=1\},\qquad G_{\mathrm{adm}}=(V,E_{\mathrm{adm}}),
+\]
+where edges are labelled by the actions that effect them, so that two actions joining the same states may differ in admissibility. Say that the arrangement has \emph{correction} when $\mathcal R_{j_{\mathrm{rev}}}$ is reachable from $x$ in $G_{\mathrm{adm}}$.
+
+\begin{theorem}[Independence of discrimination and correction]\label{thm:twofail}
+Neither discrimination nor correction implies the other. All four combinations of the two properties occur in the model.
+\end{theorem}
+\begin{proof}
+Take two histories $H_1,H_2$ with $I(H_1)=I(H_2)$, $u(H_1)\neq u(H_2)$, and either $O(H_1)\neq O(H_2)$, which gives discrimination, or $O(H_1)=O(H_2)$, which gives none, since then $(I,O)$ takes one value on both histories. Take vertices $x,r$ with $\mathcal R_{j_{\mathrm{rev}}}=\{r\}$ and a single feasible edge $(x,a,r)$ that is permitted and obligation-preserving, so that $(x,a,r)\in E_{\mathcal O}$. Either set $\Adm(a,x)=1$, so that $(x,a,r)\in E_{\mathrm{adm}}$ and correction holds, or set $\Adm(a,x)=0$, so that $E_{\mathrm{adm}}=\varnothing$ and correction fails although $r$ remains reachable in $G_{\mathcal O}$. Now build full states $x=(H,S,\mathcal C,\mathcal K,\mathcal U,\mathcal O)$ by pairing the history component, $H=H_1$ or $H=H_2$ with its renderings and authorisation value as chosen above, with the graph component fixed by the choice of $\Adm(a,x)$. The history component enters discrimination only through $I$, $O$ and $u$, and the graph component enters correction only through $E_{\mathrm{adm}}$, and the two may be specified independently because nothing in the definition of a state ties the history to the admissibility of $a$. Each of the four pairings is therefore realised by some state. \qedhere
+\end{proof}
+
+The pairings are informative. An arrangement can preserve correction paths while concealing which correction is warranted, and it can preserve diagnostic evidence while blocking every corrective path. In real arrangements the two failures are often coupled, since an organisation that suppresses observation may also exclude correction, and that coupling is an empirical matter that the model does not assume. The theorem shows only that neither can be inferred from the other. Answerability, in the standard proposed here, therefore has two components: evidence sufficient to discriminate authorisation, and an admissible path to correction. Each is independently necessary for that standard, neither implies the other, and each must be checked separately. The theorem does not establish that the standard itself is correct, which is a normative premise taken up in the next section.
+
+\section{Limits, and the grounds of the standard}
+
+Several limits should be stated plainly.
+
+\begin{itemize}[leftmargin=1.5em]
+\item The Nietzschean passages supply a point of departure, and the author's earlier reading of the genealogical argument is in \cite{flyxionFBC}. The definitions above are structural reconstructions in the author's own framework and are not attributed to Nietzsche, whose hierarchical prescriptions remain outside the argument.
+\item The seventeen results are narrow, and most are elementary. They establish separations between concepts and conditional bounds. They do not establish that any particular arrangement is captured, that any particular programme is inadmissible, or that regenerative decline is occurring anywhere. Each such claim needs its own evidence, an explicit obligation set, an authorisation rule, and a defensible capacity measure.
+\item Authority over purposes is itself distributed, contested, and historically formed. The framework does not posit a sovereign individual standing outside every influence. It asks whether the capacities and evidence through which commitments can remain answerable have been preserved.
+\item The preference for contestability is a premise with grounds, not an exemption. The grounds are that purposes are proposed under uncertainty, that their selectors are fallible and positioned, and that examination can disclose grounds for revision while effective corrective paths make revision possible. Neither guarantees the other, as Theorem~\ref{thm:twofail} establishes. Their joint preservation supports repair beyond the initial selection without guaranteeing that every repair will succeed. A reader who rejects those grounds should be able to see exactly where the argument depends on them.
+\item The Nietzsche texts are cited from older public-domain English translations, and passage numbers should be checked against a modern critical edition. The author's earlier works are cited as manuscripts that have not been peer reviewed. Two are publicly available at the URLs given, and the others, including those on epistemic immutability and on Nietzsche, have no public URL that has been verified. The bibliography records that each work exists, and the use made of each is a reading by the author that has not been audited entry by entry against the source.
+\end{itemize}
+
+\section{Conclusion}
+
+Reliable execution, beneficial consequence, organisational endurance, and legitimate purpose-setting are distinct achievements, and a system can have the first three while lacking the fourth. A moral ideal, a metric, or a machine can occupy the controller's position, and what matters is the allocation of effective control and authorisation and the reachability of correction. Nietzsche's passages on the moral ideal give the problem a genealogical form: a virtue can make a person useful to ends the person cannot establish. The formal apparatus makes the separation inspectable. It identifies two failures, the loss of the distinctions needed to judge an arrangement, treated in the representation and observation results, and the loss of the paths needed to correct it, treated in the excluded cut. The two are logically independent, so answerability requires both sufficient discrimination and a feasible admissible path to correction. What would have to be preserved to keep power answerable is scoped delegation with return conditions, an admissibility test that precedes optimisation, corrective paths that the controller cannot exclude, and a history that cannot be rewritten as consent, together with access to evidence that can challenge the arrangement's own account of its purposes. The governing question stays concrete. What must an organisation preserve so that those who carry out its purposes retain an effective relationship to the authority directing them?
+
+
+\begin{thebibliography}{99}
+\bibitem{anderson1982} Anderson, J. R. (1982). Acquisition of cognitive skill. \emph{Psychological Review} 89(4), 369--406.
+\bibitem{bainbridge1983} Bainbridge, L. (1983). Ironies of automation. \emph{Automatica} 19(6), 775--779.
+\bibitem{cohennagel1934} Cohen, M. R. and Nagel, E. (1934). \emph{An Introduction to Logic and Scientific Method}. New York: Harcourt, Brace.
+\bibitem{clrs2022} Cormen, T. H., Leiserson, C. E., Rivest, R. L. and Stein, C. (2022). \emph{Introduction to Algorithms}, 4th ed. Cambridge, MA: MIT Press.
+\bibitem{cover2006} Cover, T. M. and Thomas, J. A. (2006). \emph{Elements of Information Theory}, 2nd ed. Hoboken: Wiley.
+\bibitem{crary2021} Crary, A. (2021). Against ``effective altruism''. \emph{Radical Philosophy} 2.10, 33--43.
+\bibitem{doctorow2026} Doctorow, C. (2026). \emph{The Reverse Centaur's Guide to Life After AI}. London: Verso.
+\bibitem{elish2019} Elish, M. C. (2019). Moral crumple zones: Cautionary tales in human-robot interaction. \emph{Engaging Science, Technology, and Society} 5, 40--60.
+\bibitem{fittsposner1967} Fitts, P. M. and Posner, M. I. (1967). \emph{Human Performance}. Belmont, CA: Brooks/Cole.
+\bibitem{flyxionAdversaria} Flyxion (2026). \emph{Adversaria: A Specification for a Public Claim Graph}. Unpublished manuscript.
+\bibitem{flyxionCalculus} Flyxion (2026). \emph{The Calculus of Disposition}. Unpublished manuscript.
+\bibitem{flyxionDecadence} Flyxion (2026). \emph{Decadence as Transformation: Nietzsche, Voltaire, and Rousseau on Decline}. Unpublished manuscript.
+\bibitem{flyxionART} Flyxion (2026). \emph{The Myth of Dual Cognition: Automaticity, Attention, and the Misreading of System 1}. 8 February. Publicly available manuscript. \url{https://standardgalactic.github.io/library/the-myth-of-dual-cognition.pdf}.
+\bibitem{flyxionEI} Flyxion (2026). \emph{Epistemic Immutability: Provenance, Counterexamples, and Selective Continuation}. August. Manuscript, 10 pp.
+\bibitem{flyxionFBC} Flyxion (2026). \emph{Form Before Command: Nietzsche, Admissible Creation, and the Making of Worlds}. Manuscript.
+\bibitem{flyxionLayer} Flyxion (2026). \emph{Layering the World: History, State, and Appearance in Persistent Generative Worlds}. September. Publicly available manuscript. \url{https://standardgalactic.github.io/userland/layering-the-world.pdf}.
+\bibitem{folland1999} Folland, G. B. (1999). \emph{Real Analysis}, 2nd ed. New York: Wiley.
+\bibitem{hallinan2009} Hallinan, J. T. (2009). \emph{Why We Make Mistakes}. New York: Broadway Books.
+\bibitem{hamblin1970} Hamblin, C. L. (1970). \emph{Fallacies}. London: Methuen.
+\bibitem{harmon2003} Harmon, A. (2003). Queen, captured by mouse, may still win the chess match. \emph{New York Times}, 6 February 2003, p.\ B6.
+\bibitem{johansson2005} Johansson, P., Hall, L., Sikstr\"om, S. and Olsson, A. (2005). Failure to detect mismatches between intention and outcome in a simple decision task. \emph{Science} 310(5745), 116--119.
+\bibitem{kasparov2017} Kasparov, G. (2017). \emph{Deep Thinking}. New York: PublicAffairs.
+\bibitem{koopmans1949} Koopmans, T. C. (1949). Identification problems in economic model construction. \emph{Econometrica} 17(2), 125--144.
+\bibitem{macaskill2015} MacAskill, W. (2015). \emph{Doing Good Better}. New York: Gotham Books.
+\bibitem{maclane1998} Mac Lane, S. (1998). \emph{Categories for the Working Mathematician}, 2nd ed. New York: Springer.
+\bibitem{montinari2003} Montinari, M. (2003). \emph{Reading Nietzsche}, trans.\ G. Whitlock. Urbana: University of Illinois Press.
+\bibitem{nietzscheWTP} Nietzsche, F. \emph{The Will to Power}, Books I and II, trans.\ A. M. Ludovici, ed.\ O. Levy. Project Gutenberg eBook 52914.
+\bibitem{nietzscheHAH2} Nietzsche, F. \emph{Human, All-Too-Human}, Part II, trans.\ P. V. Cohn. Project Gutenberg eBook 37841.
+\bibitem{nietzscheDawn} Nietzsche, F. \emph{The Dawn of Day}, trans.\ J. M. Kennedy. Project Gutenberg eBook 39955.
+\bibitem{nietzscheTI} Nietzsche, F. \emph{Twilight of the Idols}, trans.\ A. M. Ludovici. Project Gutenberg eBook 52263.
+\bibitem{nietzscheGM} Nietzsche, F. \emph{The Genealogy of Morals}, trans.\ H. B. Samuel. Project Gutenberg eBook 52319.
+\bibitem{nisbettwilson1977} Nisbett, R. E. and Wilson, T. D. (1977). Telling more than we can know: Verbal reports on mental processes. \emph{Psychological Review} 84(3), 231--259.
+\bibitem{novella} Novella, S. (2012). \emph{Your Deceptive Mind: A Scientific Guide to Critical Thinking Skills}. The Great Courses, The Teaching Company. Lecture series and course guidebook.
+\bibitem{nozick1974} Nozick, R. (1974). \emph{Anarchy, State, and Utopia}. New York: Basic Books.
+\bibitem{parasuraman1997} Parasuraman, R. and Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. \emph{Human Factors} 39(2), 230--253.
+\bibitem{plato} Plato. \emph{Apology} 21b--23b; \emph{Republic} I, 337a.
+\bibitem{rawls1971} Rawls, J. (1971). \emph{A Theory of Justice}. Cambridge, MA: Harvard University Press.
+\bibitem{raz1986} Raz, J. (1986). \emph{The Morality of Freedom}. Oxford: Clarendon Press.
+\bibitem{samothrakis2021} Samothrakis, S. (2021). Artificial Intelligence inspired methods for the allocation of common goods and services. \emph{PLOS ONE} 16(9), e0257399. \url{https://doi.org/10.1371/journal.pone.0257399}.
+\bibitem{schwitzgebel2008} Schwitzgebel, E. (2008). The unreliability of naive introspection. \emph{Philosophical Review} 117(2), 245--273.
+\bibitem{sen1982} Sen, A. and Williams, B. (eds.) (1982). \emph{Utilitarianism and Beyond}. Cambridge: Cambridge University Press.
+\bibitem{singer1972} Singer, P. (1972). Famine, affluence, and morality. \emph{Philosophy \& Public Affairs} 1(3), 229--243.
+\bibitem{srinivasan2015} Srinivasan, A. (2015). Stop the robot apocalypse. \emph{London Review of Books} 37(18).
+\bibitem{vlastos1983} Vlastos, G. (1983). The Socratic elenchus. \emph{Oxford Studies in Ancient Philosophy} 1, 27--58.
+\bibitem{vlastos1987} Vlastos, G. (1987). Socratic irony. \emph{Classical Quarterly} 37(1), 79--96.
+\bibitem{wilson2002} Wilson, T. D. (2002). \emph{Strangers to Ourselves}. Cambridge, MA: Harvard University Press/Belknap.
+\end{thebibliography}
+
+\end{document}

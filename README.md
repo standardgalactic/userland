@@ -1,3 +1,11 @@
+# Userland
+
+[The Supplied Purpose](https://standardgalactic.github.io/userland/supplied-purpose.pdf)
+
+[Epistemic Immutability](https://standardgalactic.github.io/userland/epistemic-immutability.pdf)
+
+![](blank-line.png)
+
 [The Stigmergic Berm](https://standardgalactic.github.io/userland/stigmergic-berm.pdf)
 
 [Signal Before System](https://standardgalactic.github.io/userland/signal-before-system.pdf)
